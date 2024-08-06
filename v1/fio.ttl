@@ -1,0 +1,234 @@
+@prefix : <http://sawgraph.spatialai.org/v1/fio#> .
+@prefix fio: <http://sawgraph.spatialai.org/v1/fio#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix coso: <http://sawgraph.spatialai.org/v1/contaminoso#> .
+@prefix pfas: <http://sawgraph.spatialai.org/v1/pfas#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov-o: <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix naics: <http://sawgraph.spatialai.org/v1/fio/naics#> .
+@base <http://sawgraph.spatialai.org/v1/fio#> .
+
+<http://sawgraph.spatialai.org/v1/fio#> rdf:type owl:Ontology ;
+                                         owl:versionIRI <http://sawgraph.spatialai.org/v1/fio#/> ;
+                                         dcterms:created "2024-03-06"@en-us ;
+                                         dcterms:creator <http://orcid.org/0000-0002-5331-5052> ,
+                                                         <http://orcid.org/0000-0003-3547-8058> ,
+                                                         <https://orcid.org/0000-0003-3271-6700> ;
+                                         dcterms:description "The facilities and industries ontology developed as part of the AIKnowsPFAS and SAWGraph projects."@en-us ;
+                                         dcterms:issued "2024-03-06"^^xsd:date ;
+                                         dcterms:modified "2024-03-06"^^xsd:date ;
+                                         dcterms:publisher <http://spatialai.org> ;
+                                         dcterms:title "Facilities and Industries Ontology"@en-us ;
+                                         owl:versionInfo "1"@en-us .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+dcterms:source rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sawgraph.spatialai.org/v1/fio#hasName
+fio:hasName rdf:type owl:ObjectProperty ;
+            rdfs:domain fio:Facility .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#hasParentCompany
+fio:hasParentCompany rdf:type owl:ObjectProperty ;
+                     rdfs:domain fio:Facility ;
+                     rdfs:range fio:Agency .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#ofAgency
+fio:ofAgency rdf:type owl:ObjectProperty ;
+             rdfs:domain fio:Facility ;
+             rdfs:range fio:Agency .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#ofIndustry
+fio:ofIndustry rdf:type owl:ObjectProperty ;
+               rdfs:domain fio:Facility .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://sawgraph.spatialai.org/v1/fio#hasName
+fio:hasName rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#Facility
+fio:Facility rdf:type owl:Class ;
+              rdfs:subClassOf coso:MonitoredFeature ;
+			  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty fio:ofIndustry ;
+                               owl:someValuesFrom fio:Industry-Code
+                             ] .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#Agency
+fio:Agency rdf:type owl:Class ;
+           rdfs:subClassOf prov-o:Organization .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#Company
+fio:Company rdf:type owl:Class ;
+            rdfs:subClassOf prov-o:Organization .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#Industry
+fio:Industry rdf:type owl:Class .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#Industry-Code
+fio:Industry-Code rdf:type owl:Class ;
+                  rdfs:subClassOf fio:Industry .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-Industry-Code
+naics:NAICS-Industry-Code rdf:type owl:Class ;
+                        rdfs:subClassOf naics:NAICS-IndustryGroup .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-Industry-Code-48811
+#naics:NAICS-Industry-Code-48811 rdf:type owl:Class ;
+#                              rdfs:subClassOf naics:NAICS-IndustryGroup-4881 .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-IndustryGroup
+naics:NAICS-IndustryGroup rdf:type owl:Class ;
+                        rdfs:subClassOf naics:NAICS-Subsector .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-IndustryGroup-4881
+#naics:NAICS-IndustryGroup-4881 rdf:type owl:Class ;
+#                             rdfs:subClassOf naics:NAICS-Subsector-488 .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-Sector
+naics:NAICS-Sector rdf:type owl:Class ;
+                 rdfs:subClassOf fio:Industry-Code .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-Sector-48
+#naics:NAICS-Sector-48 rdfs:subClassOf naics:NAICS-Sector .
+
+naics:NAICS-Sector-32 rdfs:subClassOf naics:NAICS-Sector ;
+                    rdfs:label "Manufacturing" ;
+					owl:equivalentClass naics:NAICS-Sector-31.
+
+naics:NAICS-Sector-33 rdfs:subClassOf naics:NAICS-Sector ;
+                    rdfs:label "Manufacturing" ;
+					owl:equivalentClass naics:NAICS-Sector-31.
+
+naics:NAICS-Sector-45 rdfs:subClassOf naics:NAICS-Sector;
+					rdfs:label "Retail Trade";
+					owl:equivalentClass naics:NAICS-Sector-44.
+
+naics:NAICS-Sector-49 rdfs:subClassOf naics:NAICS-Sector;
+					rdfs:label "Transportation and Warehousing";
+					owl:equivalentClass naics:NAICS-Sector-48.
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-Subsector
+naics:NAICS-Subsector rdf:type owl:Class ;
+                    rdfs:subClassOf naics:NAICS-Sector .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-Subsector-488
+#naics:NAICS-Subsector-488 rdf:type owl:Class ;
+#                        rdfs:subClassOf naics:NAICS-Sector-48 .
+
+
+###  http://www.w3.org/ns/prov#Organization
+prov-o:Organization rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-Industry-Code-48811
+#naics:NAICS-Industry-Code-48811 rdf:type owl:NamedIndividual ,
+#                                      naics:NAICS-Industry-Code ,
+#                                      naics:NAICS-IndustryGroup-4881 .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-IndustryGroup-4881
+#naics:NAICS-IndustryGroup-4881 rdf:type owl:NamedIndividual ,
+#                                      naics:NAICS-IndustryGroup ,
+#                                      naics:NAICS-Subsector-488 .
+
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-Sector-48
+#naics:NAICS-Sector-48 rdf:type owl:NamedIndividual ,
+#                           naics:NAICS-Sector .
+naics:NAICS-Sector-31 rdf:type owl:NamedIndividual ,
+                            naics:NAICS-Sector .
+naics:NAICS-Sector-32 rdf:type owl:NamedIndividual ,
+                            naics:NAICS-Sector .
+naics:NAICS-Sector-33 rdf:type owl:NamedIndividual ,
+                            naics:NAICS-Sector .
+
+
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-Subsector-488
+#naics:NAICS-Subsector-488 rdf:type owl:NamedIndividual ,
+#                                 naics:NAICS-Sector-48 ,
+#                                 naics:NAICS-Subsector .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
