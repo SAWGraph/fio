@@ -1,0 +1,1167 @@
+@prefix us_frs: <http://sawgraph.spatialai.org/v1/us-frs#> .
+@prefix us_frs_data: <http://sawgraph.spatialai.org/v1/us-frs-data#> .
+
+us_frs_data:d.FRS-Facility.110000314222 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314295 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314339 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314357 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314375 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314384 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314393 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314419 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314437 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314455 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314491 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314534 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314543 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314561 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314570 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314589 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314730 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000314749 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000498211 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000568877 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000581353 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000581399 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000581451 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000581460 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000581497 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000581512 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000581521 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000581530 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000581549 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000601714 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000603008 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000603017 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000603026 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000614130 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000732930 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000732967 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000732976 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000732994 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000736936 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000759849 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000759858 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000763111 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000763139 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000797059 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000797077 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000797111 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000797308 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000835419 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000865485 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000865582 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000865617 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000865644 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000865699 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000865760 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110000865813 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110001092969 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110001102538 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110001134415 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110001298293 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110001827783 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110001830733 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110001838986 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110001839208 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110001839725 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110001854084 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110001854093 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110002041219 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110002045288 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110002050752 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110002052206 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110002052215 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110002057862 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110002070188 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110002088302 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110002088400 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110002334091 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110002464039 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110002476650 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110002476687 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110003552708 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110003552815 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110003553048 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110003553208 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110003554993 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110003555368 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110003555698 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110003556027 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110003556330 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110003556713 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110003556811 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110003557525 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110003558212 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110006618384 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110006618543 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110006618589 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110006618623 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110006618650 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110006618730 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110006618758 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110006744041 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110006744087 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110007271898 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110007273020 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110007274074 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110007277936 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110007401702 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110007401766 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110007401793 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110007401873 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110007401891 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110007906454 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110008053587 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110008053630 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110008053836 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110008062602 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110008433356 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110008433971 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110008434471 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110008434916 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110008435318 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110008435354 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110008435746 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110008437290 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110008437496 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110008438324 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110008459916 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110009048146 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110009048173 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110009912791 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110009912817 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110009912835 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110009912880 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110009913068 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110009913086 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110009913111 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110009913166 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110009913415 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110009913870 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110009913969 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110010392529 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110010392538 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110010426976 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110011127075 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110012311578 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110012311649 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110012461004 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110012461308 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110012708971 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110013288566 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110013343729 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110013359178 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110013694742 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110013835181 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110013869527 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110013917155 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110013917280 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110013980264 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110014022921 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110014326185 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110014430446 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110015329928 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110015743739 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110015814243 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110015815616 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110015863546 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110015863653 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110017385239 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110017413468 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110017619727 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110017778109 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110017883058 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110018896523 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110018930497 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110020694266 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110020857134 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110021131639 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110021175477 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110021297434 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110022329461 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110022438432 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110024266355 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110025246847 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110025247793 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110025247800 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110025329963 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110025390253 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110027973762 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110028004273 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110028276513 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110031442990 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110032670161 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110032749177 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110032893670 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110033595438 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110035441741 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110037143089 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110037143150 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110037143221 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110037186461 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110037189869 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110037937579 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038020049 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038297081 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038330393 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038379064 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038921619 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038929327 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038929336 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038929345 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038929997 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038930048 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038930057 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038930137 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038930146 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038930155 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038930501 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038930510 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038930609 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038930681 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038931136 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038937416 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038937470 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038937595 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038944765 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038944827 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038944836 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038944872 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038944881 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038948137 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038948217 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038948235 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110038948958 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039519278 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039662905 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039664217 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039664324 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039664342 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039665083 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039666073 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039667045 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039667599 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039667857 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039668437 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039669150 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039670969 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039671281 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039672048 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039673109 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039673163 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039673564 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039675839 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039675946 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039676053 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039676197 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039678060 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039679559 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039679666 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110039681190 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110040073899 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110040175734 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110040176145 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110040176172 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110040176181 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110040176190 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110040176261 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110040852459 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110041131147 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110041432170 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110041461511 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110041461520 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110042016644 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110042021941 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110042022174 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110042246977 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110042247128 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110043178343 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110043546204 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110043630363 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110043630764 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110043630906 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110044973641 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110044974258 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110045293133 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110045949177 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110046118287 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110046237540 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110046237586 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110055020409 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110055531731 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110055531848 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110055618577 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110056512340 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110057086825 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110057468770 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110057830138 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110057843856 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110058114776 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110058407941 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110058886683 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110059191912 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110059228928 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110059368704 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110060253951 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110062690066 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110063099864 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110063381521 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110063381530 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110063588844 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064048347 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064258921 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064259403 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064340850 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064435106 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064472501 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064606350 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064776808 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064777031 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064777772 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064777978 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064778094 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064778192 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064778227 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064778691 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064778842 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064778922 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064779093 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064779191 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064779743 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064780615 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064780740 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064780759 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064780811 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064780893 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064780973 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064780982 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064781017 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064781561 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064781598 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064781749 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064781794 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064781801 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064782196 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064782793 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064782855 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064783738 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064783943 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064784041 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064784050 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064784648 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064786487 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064787609 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064787618 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064788608 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110064788662 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110067015900 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110067132837 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110067185432 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110067208578 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110067417165 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110067444894 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110067529142 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110067558869 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110067559092 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110069220738 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110069360685 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110070030267 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110070033247 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110070072188 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110070125189 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110070224909 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110070327520 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110070557729 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110070624561 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110070624643 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110070697819 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110070740332 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110070740335 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110070740336 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110070864488 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110070887316 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110071042644 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110071100914 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110071132744 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110071132758 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110071369170 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110071394843 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110071434477 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
+us_frs_data:d.FRS-Facility.110071442492 a us_frs:EPA-PFAS-Facility,
+        us_frs:FRS-Facility .
+
