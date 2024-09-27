@@ -1,0 +1,16 @@
+# FIO Basics
+# CQ 2
+# Retrieve all broader codes for landfills (indicated by the six-digit NAICS code 562212)
+# should produce Sector-56, Subsector-562, and IndustryGroup-5622
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX fio: <http://sawgraph.spatialai.org/v1/fio#>
+PREFIX naics: <http://sawgraph.spatialai.org/v1/fio/naics#>
+
+select * where {
+	SERVICE <repository:FIO> {
+    naics:NAICS-Industry-Code-562212 rdf:type ?code .
+    ?code rdf:type fio:Industry.
+	}
+}
