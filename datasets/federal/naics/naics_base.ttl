@@ -1,0 +1,44 @@
+@prefix fio: <http://sawgraph.spatialai.org/v1/fio#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix coso: <http://sawgraph.spatialai.org/v1/contaminoso#> .
+@prefix pfas: <http://sawgraph.spatialai.org/v1/pfas#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov-o: <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix naics: <http://sawgraph.spatialai.org/v1/fio/naics#> .
+@base <http://sawgraph.spatialai.org/v1/fio#> .
+
+###Classes
+
+naics:NAICS-Industry rdf:type owl:Class ;
+    rdfs:subClassOf fio:Industry.
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-Industry-Code
+naics:NAICS-IndustryCode rdf:type owl:Class ;
+                        rdfs:subClassOf naics:NAICS-Industry.
+
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-IndustryGroup
+naics:NAICS-IndustryGroup rdf:type owl:Class ;
+                        rdfs:subClassOf naics:NAICS-Industry .
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-Sector
+naics:NAICS-Sector rdf:type owl:Class ;
+                 rdfs:subClassOf naics:NAICS-Industry.
+
+
+###  http://sawgraph.spatialai.org/v1/fio#NAICS-Subsector
+naics:NAICS-Subsector rdf:type owl:Class ;
+                    rdfs:subClassOf naics:NAICS-Industry .
+
+## Object Properties
+
+naics:subcodeOf rdf:type owl:ObjectProperty, owl:TransitiveProperty.
+
+fio:ofIndustry owl:propertyChainAxiom (fio:ofIndustry naics:subcodeOf). 

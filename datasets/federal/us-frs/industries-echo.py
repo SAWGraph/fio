@@ -25,7 +25,7 @@ code_dir = Path(__file__).resolve().parent.parent
 
 ## declare variables
 logname = "log"
-state = 'OH'
+state = 'ME'
 
 ## data path
 root_folder =Path(__file__).resolve().parent.parent.parent
@@ -109,7 +109,7 @@ def get_iris(facility):
     #industry iri
     if 'naics_code' in facility.keys():
         if len(facility['naics_code'])>4:
-            industry_iri = naics['NAICS-Industry-Code-'+str(facility['naics_code'])]
+            industry_iri = naics['NAICS-IndustryCode-'+str(facility['naics_code'])]
         elif len(facility['naics_code'])==4:
             industry_iri = naics['NAICS-IndustryGroup-' + str(facility['naics_code'])]
         elif len(facility['naics_code']) == 3:
@@ -118,7 +118,7 @@ def get_iris(facility):
             industry_iri = naics['NAICS-Sector-' + str(facility['naics_code'])]
     elif 'sic_code' in facility.keys():
         if len(facility['sic_code']) == 4:
-            industry_iri = sic['SIC-Industry-Code-' + str(facility['sic_code'])]
+            industry_iri = sic['SIC-IndustryCode-' + str(facility['sic_code'])]
     else:
         print('error on: ', facility['facility_id'], facility['sic_code'])
         industry_iri = False
