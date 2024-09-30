@@ -20,3 +20,23 @@ select * where {
 
 # Notes:
 # The facilities are not instances of the industry-group or sectors
+
+
+# 2024-09-30 Update: Now using the subcodeOf object property
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+PREFIX fio: <http://sawgraph.spatialai.org/v1/fio#>
+prefix naics: <http://sawgraph.spatialai.org/v1/fio/naics#>
+PREFIX us_frs: <http://sawgraph.spatialai.org/v1/us-frs#>
+
+select * where {
+	SERVICE <repository:FIO> {
+        ?facility rdf:type us_frs:EPA-PFAS-Facility ;
+    		fio:ofIndustry ?icode.
+			?icode fio:subcodeOf naics:NAICS-IndustryGroup-5622 ;
+    		rdfs:label ?code_label .
+    }
+}

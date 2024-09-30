@@ -1,0 +1,27 @@
+# FIO Basics
+# CQ 5
+# Retrieve the NAICS Industry Code and other classifications (Sector, Subsector, Group) of a specific facility.
+# 2024-09-30 Update: Using the fio:ofIndustry property chain axiom
+
+PREFIX fio: <http://sawgraph.spatialai.org/v1/fio#>
+PREFIX naics: <http://sawgraph.spatialai.org/v1/fio/naics#> 
+
+select * where {
+    <http://sawgraph.spatialai.org/v1/us-frs-data#d.FRS-Facility.110000428662> fio:ofIndustry ?o .
+} 
+
+
+# FIO Basics
+# CQ 5b
+# Retrieve the NAICS Industry Codes of all facilities in NAICS sector 32.
+# Works without relying on the fio:ofIndustry property chain axiom
+
+
+PREFIX fio: <http://sawgraph.spatialai.org/v1/fio#>
+PREFIX naics: <http://sawgraph.spatialai.org/v1/fio/naics#> 
+
+select * where {
+    ?f fio:ofIndustry ?o .
+    ?o naics:subcodeOf naics:NAICS-Sector-32 .
+} limit 100
+

@@ -14,3 +14,18 @@ select * where {
     ?code rdf:type fio:Industry.
 	}
 }
+
+
+# UPDATE 2024-09-30:  With the updated FIO ontology, the following simplified version should work:
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX fio: <http://sawgraph.spatialai.org/v1/fio#>
+PREFIX naics: <http://sawgraph.spatialai.org/v1/fio/naics#> 
+
+select * where {
+	SERVICE <repository:FIO> {
+    naics:NAICS-Industry-Code-562212 fio:subcodeOf ?code.
+	}
+} 
+
+
