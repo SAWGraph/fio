@@ -1,0 +1,20 @@
+# FIO Basics
+# CQ 3
+# Retrieve all facilities in the NAICS Industry Group 5622 and their specific NAICS Industry Code.
+# updated with new version of FIO Ontology (2024-10-03)
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+PREFIX fio: <http://sawgraph.spatialai.org/v1/fio#>
+prefix naics: <http://sawgraph.spatialai.org/v1/fio/naics#>
+PREFIX us_frs: <http://sawgraph.spatialai.org/v1/us-frs#>
+
+select * where {
+	SERVICE <repository:FIO> {
+        ?facility rdf:type us_frs:EPA-PFAS-Facility ;
+    		fio:ofIndustry ?icode.
+			?icode naics:subcodeOf naics:NAICS-IndustryGroup-5622 ;
+    		rdfs:label ?code_label .
+    }
+}
