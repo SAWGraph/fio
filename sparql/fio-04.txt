@@ -14,7 +14,8 @@ select ?facility (concat('[',group_concat(DISTINCT ?industry;separator='; '),']'
     }}
      SERVICE <repository:S2L13_AdminRegions>
     {{
-        ?s2 a kwg-ont:S2Cell_Level13.
+        # Basic classification of spatial entities (e.g. S2 cells, admin regions) should be added to the FIO repository to allow querying without federation
+		?s2 a kwg-ont:S2Cell_Level13.
 
     }}
     }} GROUP BY ?facility
