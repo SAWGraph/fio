@@ -1,0 +1,17 @@
+# Retrieve all facilities of a particular set of industries (for example, all power generation facilities as indicated by the four-digit NAICS code 2211). Group them by their most specific industry code and count how many exist of that code.
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+PREFIX fio: <http://sawgraph.spatialai.org/v1/fio#>
+prefix naics: <http://sawgraph.spatialai.org/v1/fio/naics#>
+PREFIX us_frs: <http://sawgraph.spatialai.org/v1/us-frs#>
+
+select ?code ?code_label (Count(?facility) as ?no_facilities) where {
+        ?facility rdf:type us_frs:EPA-PFAS-Facility ;
+    		fio:ofIndustry ?code .
+        	?code 	fio:subcodeOf ?icode ;
+    				rdfs:label ?code_label .
+    	FILTER (?icode IN (naics:NAICS-IndustryGroup-2211))
+} group by ?code ?code_label limit 100
