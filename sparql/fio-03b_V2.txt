@@ -1,0 +1,24 @@
+# FIO Basics
+# CQ 3
+# Retrieve all facilities from multiple industry codes: 
+here for example NAICS Industry Group 3221 (Pulp, Paper, and Paperboard Mills) and 3222 (Converted Paper Product Manufacturing)  and their specific NAICS Industry Code.
+#https://www.naics.com/naics-code-description/?v=2022&code=3221
+#https://www.naics.com/naics-code-description/?v=2022&code=3222
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+PREFIX fio: <http://sawgraph.spatialai.org/v1/fio#>
+prefix naics: <http://sawgraph.spatialai.org/v1/fio/naics#>
+PREFIX us_frs: <http://sawgraph.spatialai.org/v1/us-frs#>
+
+select * where {
+	SERVICE <repository:FIO> {
+        ?facility rdf:type us_frs:EPA-PFAS-Facility ;
+    		fio:ofIndustry ?code .
+        	?code fio:subcodeOf ?icode .
+			?code rdfs:label ?code_label .
+    	FILTER (?icode IN (naics:NAICS-IndustryGroup-3221, naics:NAICS-IndustryGroup-3222))
+    		
+    }
+}
