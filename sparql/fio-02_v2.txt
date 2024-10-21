@@ -9,6 +9,6 @@ PREFIX fio: <http://sawgraph.spatialai.org/v1/fio#>
 PREFIX naics: <http://sawgraph.spatialai.org/v1/fio/naics#> 
 
 select * where {
-    naics:NAICS-IndustryCode-562212 naics:subcodeOf ?code.
+    naics:NAICS-IndustryCode-562212 fio:subcodeOf ?code.
 } 
 
