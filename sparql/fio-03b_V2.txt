@@ -1,7 +1,7 @@
 # FIO Basics
 # CQ 3
 # Retrieve all facilities from multiple industry codes: 
-here for example NAICS Industry Group 3221 (Pulp, Paper, and Paperboard Mills) and 3222 (Converted Paper Product Manufacturing)  and their specific NAICS Industry Code.
+# here for example NAICS Industry Group 3221 (Pulp, Paper, and Paperboard Mills) and 3222 (Converted Paper Product Manufacturing)  and their specific NAICS Industry Code.
 #https://www.naics.com/naics-code-description/?v=2022&code=3221
 #https://www.naics.com/naics-code-description/?v=2022&code=3222
 
