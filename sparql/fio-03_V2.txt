@@ -14,7 +14,7 @@ select * where {
 	SERVICE <repository:FIO> {
         ?facility rdf:type us_frs:EPA-PFAS-Facility ;
     		fio:ofIndustry ?icode.
-			?icode naics:subcodeOf naics:NAICS-IndustryGroup-5622 ;
+			?icode fio:subcodeOf naics:NAICS-IndustryGroup-5622 ;
     		rdfs:label ?code_label .
     }
 }
