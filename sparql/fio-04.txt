@@ -1,29 +1,21 @@
-# FIO Basics
-# CQ 6
-# Retrieve all facilities with NAICS Industry Code 562212 and return their location as S2 cell (approximate location) and the specified point geometry for them. 
+# Get all facilities from a specific industry sector or group and list all their specific industry codes as a concatenated list 
 
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
+PREFIX naics: <http://sawgraph.spatialai.org/v1/fio/naics#>
 PREFIX fio: <http://sawgraph.spatialai.org/v1/fio#>
-prefix naics: <http://sawgraph.spatialai.org/v1/fio/naics#>
-PREFIX us_frs: <http://sawgraph.spatialai.org/v1/us-frs#>
-
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
 
+select ?facility (concat('[',group_concat(DISTINCT ?industry;separator='; '),']') as ?industries) where  {{
+    SERVICE <repository:FIO> {{
+    	?facility a fio:Facility .
+    	?facility fio:ofIndustry ?industry.
+      ?industry fio:subcodeOf naics:NAICS-IndustryGroup-3222. #Converted Paper Manufacturing
+      ?facility kwg-ont:sfWithin ?s2.
+    }}
+     SERVICE <repository:S2L13_AdminRegions>
+    {{
+        # Basic classification of spatial entities (e.g. S2 cells, admin regions) should be added to the FIO repository to allow querying without federation
+		?s2 a kwg-ont:S2Cell_Level13.
 
-SELECT * WHERE {
-	?fac rdf:type fio:Facility ;
-		 fio:ofIndustry ?code ;
-		 kwg-ont:sfWithin ?fac_s2.
-    SERVICE <repository:S2L13_AdminRegions>
-    {
-        ?fac_s2 a kwg-ont:S2Cell_Level13.
-    	?fac_s2 geo:hasGeometry/geo:asWKT ?fac_wkt .
-        }
-	
-	# also retrieve any labels associated with the facility and industry 
-	OPTIONAL { ?fac rdfs:label ?faclabel . }
-	OPTIONAL { ?code rdfs:label ?ind . }
-	FILTER (?code IN (naics:NAICS-IndustryCode-562212))
+    }}
+    }} GROUP BY ?facility
