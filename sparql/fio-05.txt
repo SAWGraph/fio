@@ -22,6 +22,6 @@ PREFIX naics: <http://sawgraph.spatialai.org/v1/fio/naics#>
 
 select * where {
     ?f fio:ofIndustry ?o .
-    ?o naics:subcodeOf naics:NAICS-Sector-32 .
+    ?o fio:subcodeOf naics:NAICS-Sector-32 .
 } limit 100
 
