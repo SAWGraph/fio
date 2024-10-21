@@ -1,6 +1,6 @@
 # FIO Basics
 # CQ 6
-# Retrieve all facilities with NAICS Industry Code 562212 and return their location as S2 cell (approxomate location) and the specified point geometry for them. 
+# Retrieve all facilities with NAICS Industry Code 562212 and return their location as S2 cell (approximate location) and the specified point geometry for them. 
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -16,11 +16,15 @@ PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
 SELECT * WHERE {
 	?fac rdf:type fio:Facility ;
 		 fio:ofIndustry ?code ;
-		 kwg-ont:sfWithin ?fac_s2 ;
-		 geo:hasGeometry/geo:asWKT ?fac_wkt .
-	?s2 a kwg-ont:S2Cell_Level13.
+		 kwg-ont:sfWithin ?fac_s2.
+    SERVICE <repository:S2L13_AdminRegions>
+    {
+        ?fac_s2 a kwg-ont:S2Cell_Level13.
+    	?fac_s2 geo:hasGeometry/geo:asWKT ?fac_wkt .
+        }
+	
 	# also retrieve any labels associated with the facility and industry 
 	OPTIONAL { ?fac rdfs:label ?faclabel . }
 	OPTIONAL { ?code rdfs:label ?ind . }
-	FILTER (?code IN (naics:NAICS-Industry-Code-562212))
+	FILTER (?code IN (naics:NAICS-IndustryCode-562212))
 }
