@@ -9,7 +9,7 @@ select ?facility (concat('[',group_concat(DISTINCT ?industry;separator='; '),']'
     SERVICE <repository:FIO> {{
     	?facility a fio:Facility .
     	?facility fio:ofIndustry ?industry.
-      ?industry rdfs:subClassOf naics:NAICS-IndustryGroup-3222. #Converted Paper Manufacturing
+      ?industry fio:subcodeOf naics:NAICS-IndustryGroup-3222. #Converted Paper Manufacturing
       ?facility kwg-ont:sfWithin ?s2.
     }}
      SERVICE <repository:S2L13_AdminRegions>
