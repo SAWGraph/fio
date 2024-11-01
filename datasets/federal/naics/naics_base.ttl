@@ -29,16 +29,14 @@ naics:NAICS-IndustryGroup rdf:type owl:Class ;
                         rdfs:subClassOf naics:NAICS-Industry .
 
 ###  http://sawgraph.spatialai.org/v1/fio#NAICS-Sector
-naics:NAICS-Sector rdf:type owl:Class ;
+naics:NAICS-IndustrySector rdf:type owl:Class ;
                  rdfs:subClassOf naics:NAICS-Industry.
 
 
 ###  http://sawgraph.spatialai.org/v1/fio#NAICS-Subsector
-naics:NAICS-Subsector rdf:type owl:Class ;
+naics:NAICS-IndustrySubsector rdf:type owl:Class ;
                     rdfs:subClassOf naics:NAICS-Industry .
 
 ## Object Properties
-
-naics:subcodeOf rdf:type owl:ObjectProperty, owl:TransitiveProperty.
 
 fio:ofIndustry owl:propertyChainAxiom (fio:ofIndustry naics:subcodeOf). 

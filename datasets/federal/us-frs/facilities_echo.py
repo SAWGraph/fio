@@ -39,7 +39,6 @@ us_frs_data = Namespace(f"http://sawgraph.spatialai.org/v1/us-frs-data#")
 fio = Namespace(f"http://sawgraph.spatialai.org/v1/fio#")
 naics = Namespace(f"http://sawgraph.spatialai.org/v1/fio/naics#")
 sic = Namespace(f"http://sawgraph.spatialai.org/v1/fio/sic#")
-#aik_pfas_ont = Namespace(f"http://aiknowspfas.skai.maine.edu/lod/ontology/")  #this will be replaced with something for sawgraph, but unsure of namespace for geospatial entities
 kwgr = Namespace(f'http://stko-kwg.geog.ucsb.edu/lod/resource/')
 kwg_ont = Namespace(f'http://stko-kwg.geog.ucsb.edu/lod/ontology/')
 coso = Namespace(f'http://sawgraph.spatialai.org/v1/contaminoso#')
@@ -67,15 +66,18 @@ def load_data():
     #df = pd.read_csv(data_dir / f"industrysectors_{state}.csv")
     df = pd.read_csv(data_dir / str('state_combined_'+state.lower()) / str(state + '_FACILITY_FILE.CSV'), low_memory=False)
     #TODO agency codes for all states
-    #df_federal = pd.read_csv(data_dir /str('state_combined_'+state.lower()) /'222910070_ME_FEDERAL.CSV') #this was a custom ezquery to get agency codes
-    #print(df_federal.info())
-    #df = df.set_index('REGISTRY_ID', drop=False)
-    #df_federal = df_federal.set_index('REGISTRY_ID')
-    #df = df.join(df_federal, how='left', rsuffix='_FEDERAL')
+    if state=='ME':
+        df_federal = pd.read_csv(data_dir /str('state_combined_'+state.lower()) /'222910070_ME_FEDERAL.CSV') #this was a custom ezquery to get agency codes
+        #print(df_federal.info())
+        df = df.set_index('REGISTRY_ID', drop=False)
+        df_federal = df_federal.set_index('REGISTRY_ID')
+        df = df.join(df_federal, how='left', rsuffix='_FEDERAL')
+        df_agencies = df[['FEDERAL_AGENCY_CODE', 'FEDERAL_AGENCY_NAME']].dropna()
+        with open('agency_codes.txt', 'w') as code_file:
+            df_agencies.to_csv(code_file)
+
     #replace - with nan
     print(df.info(verbose=True))
-    #print(df[df.REGISTRY_ID_FEDERAL > 0])
-    #print(df.describe())
     logger = logging.getLogger('Data loaded to dataframe.')
     #print(df)
     return df
@@ -122,8 +124,8 @@ def get_attributes(row):
         if pd.notnull(row.FEDERAL_AGENCY_NAME):
             facility['federalAgency'] = row.FEDERAL_AGENCY_NAME #don't need this if find a lookup table
         #TODO integrate agency code for all states
-        #if pd.notnull(row.FEDERAL_AGENCY_CODE):
-        #    facility['federalAgencyCode'] = row.FEDERAL_AGENCY_CODE #this will be used in the iri
+        if pd.notnull(row.FEDERAL_AGENCY_CODE):
+            facility['federalAgencyCode'] = row.FEDERAL_AGENCY_CODE #this will be used in the iri
     else:
         facility['federal_bool'] = False
 
@@ -145,6 +147,7 @@ def get_iris(facility):
 
     if 'county_fips' in facility.keys():
         extra_iris['county_iri'] = kwgr['administrativeRegion.USA.' + str(facility['county_fips'])]  # namespace needs to be replaced
+        #TODO add uri for the state and triplify the state to sfWithin
     #TODO agency codes need labels  FRS_PROGRAM_FACILITY.FEDERAL_AGENCY_CODE
     if 'federalAgencyCode' in facility.keys():
         agency_iri = fio['d.Agency.'+str(facility['federalAgencyCode'])]
@@ -162,6 +165,8 @@ def get_iris(facility):
 
 def triplify(df):
     kg = Initial_KG()
+    if state=='ME':
+        kg_agency = Initial_KG()
     for idx, row in df.iterrows():
         #get attributes
         facility = get_attributes(row)
@@ -178,7 +183,7 @@ def triplify(df):
             kg.add((facility_iri, geo['hasGeometry'], geo_iri))
             kg.add((geo_iri, geo["asWKT"], Literal(facility['WKT'], datatype=geo["wktLiteral"])))
         if 'county_fips' in facility.keys():
-            kg.add((facility_iri, kwg_ont['sfWithin'], extra_iris['county_iri'])) #TODO should this predicate be kwg-ont:sfWithin ?
+            kg.add((facility_iri, kwg_ont['sfWithin'], extra_iris['county_iri'])) 
         if 'tribal_bool' in facility.keys():
             #kg.add((facility_iri, coso['locatedIn'], ))
             pass
@@ -194,7 +199,13 @@ def triplify(df):
         if 'type' in extra_iris.keys():
             kg.add((facility_iri, RDF.type, extra_iris['type']))
 
+        if state=='ME' and 'federalAgencyCode' in facility.keys():
+            kg_agency.add((extra_iris['agency'], RDF.type, fio['Agency']))
+            kg_agency.add((extra_iris['agency'], RDFS.label, Literal(facility['federalAgency'], datatype=XSD.string)))
 
+    if state=='ME':
+        kg_turtle_file = "us-frs-agency-codes-"+ state+".ttl".format(output_dir)
+        kg_agency.serialize(kg_turtle_file, format='turtle')
 
     return kg
 

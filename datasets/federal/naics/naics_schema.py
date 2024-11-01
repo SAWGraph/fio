@@ -96,11 +96,11 @@ def get_attributes(row):
         'length': len(str(row['2022 NAICS US   Code'])),
         'year': 2022
     }
-
+    #determine which class and parent class based on length
     if industry['length']<=2:
-        industry['class'] = 'NAICS-Sector'
+        industry['class'] = 'NAICS-IndustrySector'
     elif industry['length']== 3:
-        industry['class'] = 'NAICS-Subsector'
+        industry['class'] = 'NAICS-IndustrySubsector'
         industry['sector'] = str(industry['code'])[:2]
     elif industry['length']==4:
         industry['class'] = 'NAICS-IndustryGroup'
@@ -110,7 +110,7 @@ def get_attributes(row):
             industry['class'] = 'NAICS-IndustryCode'
             industry['group'] = str(industry['code'])[:4]
         else: #deal with sectors with multiple codes
-            industry['class'] = 'NAICS-Sector'
+            industry['class'] = 'NAICS-IndustrySector'
             industry['code'] = industry['code'][:2] #only take the first two digits (31, 44, or 48), the rest are manually added below
             #print(industry['code'], industry['name'])
 
@@ -123,11 +123,11 @@ def get_iris(industry):
     if industry['class']: #make sure its a valid row
         industry_iri = naics[industry['class']+'-'+str(industry['code'])]
         extra_iris['class'] = naics[industry['class']]
-
+    #build iris for parent class
     if 'sector' in industry.keys():
-        extra_iris['sector'] = naics['NAICS-Sector-'+ str(industry['sector'])]
+        extra_iris['sector'] = naics['NAICS-IndustrySector-'+ str(industry['sector'])]
     if 'subsector' in industry.keys():
-        extra_iris['subsector'] = naics['NAICS-Subsector-'+ str(industry['subsector'])]
+        extra_iris['subsector'] = naics['NAICS-IndustrySubsector-'+ str(industry['subsector'])]
     if 'group' in industry.keys():
         extra_iris['group'] = naics['NAICS-IndustryGroup-'+ str(industry['group'])]
 
@@ -158,50 +158,39 @@ def triplify(df):
             if str(industry['code'])[5:6] == '0':
                 #print(industry_iri, 'sameAs', str(industry['code'])[0:5])
                 kg.add((industry_iri, OWL.sameAs, naics['NAICS-IndustryCode-'+str(industry['code'])[0:5]]))
+
         #link subcodes to parents
         if 'sector' in extra_iris.keys():
-            kg.add((industry_iri, naics['subcodeOf'], extra_iris['sector']))
-            #kg.add((industry_iri, RDF.type, extra_iris['sector']))
+            kg.add((industry_iri, fio['subcodeOf'], extra_iris['sector']))
+
         elif 'subsector' in extra_iris.keys():
-            kg.add((industry_iri, naics['subcodeOf'], extra_iris['subsector']))
-           # kg.add((industry_iri, RDF.type, extra_iris['subsector']))
+            kg.add((industry_iri, fio['subcodeOf'], extra_iris['subsector']))
+           
         elif 'group' in extra_iris.keys():
-            kg.add((industry_iri,naics['subcodeOf'], extra_iris['group']))
-           # kg.add((industry_iri, RDF.type, extra_iris['group']))
-        else: #codes
-            #kg.add((industry_iri, naics['subcodeOf'], extra_iris['class']))
+            kg.add((industry_iri, fio['subcodeOf'], extra_iris['group']))
+           
+        else: #sector codes with no parent
             pass
+
     ##manual additions for industry with multiple sector codes
-    kg.add((naics['NAICS-Sector-32'], RDF.type, naics['NAICS-Sector']))
-    kg.add((naics['NAICS-Sector-32'], RDFS.label, Literal('Manufacturing', datatype=XSD.string)))
-    kg.add((naics['NAICS-Sector-32'], OWL.sameAs, naics['NAICS-Sector-31']))
-    #naics:NAICS-Sector-32 rdfs:subClassOf naics:NAICS-Sector ;
-#                    rdfs:label "Manufacturing" ;
-#					owl:equivalentClass naics:NAICS-Sector-31.
+    kg.add((naics['NAICS-IndustrySector-32'], RDF.type, naics['NAICS-IndustrySector']))
+    kg.add((naics['NAICS-IndustrySector-32'], RDFS.label, Literal('Manufacturing', datatype=XSD.string)))
+    kg.add((naics['NAICS-IndustrySector-32'], OWL.sameAs, naics['NAICS-IndustrySector-31']))
 
-    kg.add((naics['NAICS-Sector-33'], RDF.type, naics['NAICS-Sector']))
-    kg.add((naics['NAICS-Sector-33'], RDFS.label, Literal('Manufacturing', datatype=XSD.string)))
-    kg.add((naics['NAICS-Sector-33'], OWL.sameAs, naics['NAICS-Sector-31']))
 
-#naics:NAICS-Sector-33 rdfs:subClassOf naics:NAICS-Sector ;
-#                    rdfs:label "Manufacturing" ;
-#					owl:equivalentClass naics:NAICS-Sector-31.
+    kg.add((naics['NAICS-IndustrySector-33'], RDF.type, naics['NAICS-IndustrySector']))
+    kg.add((naics['NAICS-IndustrySector-33'], RDFS.label, Literal('Manufacturing', datatype=XSD.string)))
+    kg.add((naics['NAICS-IndustrySector-33'], OWL.sameAs, naics['NAICS-IndustrySector-31']))
 
-    kg.add((naics['NAICS-Sector-45'], RDF.type, naics['NAICS-Sector']))
-    kg.add((naics['NAICS-Sector-45'], RDFS.label, Literal('Retail Trade', datatype=XSD.string)))
-    kg.add((naics['NAICS-Sector-45'], OWL.sameAs, naics['NAICS-Sector-44']))
 
-#naics:NAICS-Sector-45 rdfs:subClassOf naics:NAICS-Sector;
-#					rdfs:label "Retail Trade";
-#					owl:equivalentClass naics:NAICS-Sector-44.
+    kg.add((naics['NAICS-IndustrySector-45'], RDF.type, naics['NAICS-IndustrySector']))
+    kg.add((naics['NAICS-IndustrySector-45'], RDFS.label, Literal('Retail Trade', datatype=XSD.string)))
+    kg.add((naics['NAICS-IndustrySector-45'], OWL.sameAs, naics['NAICS-IndustrySector-44']))
 
-    kg.add((naics['NAICS-Sector-49'], RDF.type, naics['NAICS-Sector']))
-    kg.add((naics['NAICS-Sector-49'], RDFS.label, Literal('Transportation and Warehousing', datatype=XSD.string)))
-    kg.add((naics['NAICS-Sector-49'], OWL.sameAs, naics['NAICS-Sector-48']))
+    kg.add((naics['NAICS-IndustrySector-49'], RDF.type, naics['NAICS-IndustrySector']))
+    kg.add((naics['NAICS-IndustrySector-49'], RDFS.label, Literal('Transportation and Warehousing', datatype=XSD.string)))
+    kg.add((naics['NAICS-IndustrySector-49'], OWL.sameAs, naics['NAICS-IndustrySector-48']))
 
-#naics:NAICS-Sector-49 rdfs:subClassOf naics:NAICS-Sector;
-#					rdfs:label "Transportation and Warehousing";
-#					owl:equivalentClass naics:NAICS-Sector-48.
 
     return kg
 

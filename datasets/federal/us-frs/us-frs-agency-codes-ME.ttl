@@ -1,0 +1,49 @@
+@prefix fio: <http://sawgraph.spatialai.org/v1/fio#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fio:d.Agency.C1017 a fio:Agency ;
+    rdfs:label "Agriculture: Agricultural Research Service"^^xsd:string .
+
+fio:d.Agency.C1400 a fio:Agency ;
+    rdfs:label "Interior: not otherwise classified"^^xsd:string .
+
+fio:d.Agency.C1409 a fio:Agency ;
+    rdfs:label "Interior: Bureau of Indian Affairs"^^xsd:string .
+
+fio:d.Agency.C1417 a fio:Agency ;
+    rdfs:label "Interior: National Park Service"^^xsd:string .
+
+fio:d.Agency.C1436 a fio:Agency ;
+    rdfs:label "Interior: Fish and Wildlife Service"^^xsd:string .
+
+fio:d.Agency.C1800 a fio:Agency ;
+    rdfs:label "Postal Service"^^xsd:string .
+
+fio:d.Agency.C3600 a fio:Agency ;
+    rdfs:label "Veterans Affairs: not otherwise classified"^^xsd:string .
+
+fio:d.Agency.C4700 a fio:Agency ;
+    rdfs:label "General Services Administration"^^xsd:string .
+
+fio:d.Agency.C6905 a fio:Agency ;
+    rdfs:label "Transportation: Federal Aviation Administration"^^xsd:string .
+
+fio:d.Agency.C7000 a fio:Agency ;
+    rdfs:label "Homeland Security: not otherwise classified"^^xsd:string .
+
+fio:d.Agency.C7060 a fio:Agency ;
+    rdfs:label "Homeland Security: Coast Guard"^^xsd:string .
+
+fio:d.Agency.D1700 a fio:Agency ;
+    rdfs:label "Defense: Navy"^^xsd:string .
+
+fio:d.Agency.D2100 a fio:Agency ;
+    rdfs:label "Defense: Army"^^xsd:string .
+
+fio:d.Agency.D5700 a fio:Agency ;
+    rdfs:label "Defense: Air Force"^^xsd:string .
+
+fio:d.Agency.D9715 a fio:Agency ;
+    rdfs:label "Defense: Defense Logistics Agency"^^xsd:string .
+

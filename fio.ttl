@@ -1,4 +1,3 @@
-@prefix : <http://sawgraph.spatialai.org/v1/fio#> .
 @prefix fio: <http://sawgraph.spatialai.org/v1/fio#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -82,7 +81,7 @@ fio:hasName rdf:type owl:ObjectProperty ;
 ###  http://sawgraph.spatialai.org/v1/fio#hasParentCompany
 fio:hasParentCompany rdf:type owl:ObjectProperty ;
                      rdfs:domain fio:Facility ;
-                     rdfs:range fio:Agency .
+                     rdfs:range fio:Company .
 
 
 ###  http://sawgraph.spatialai.org/v1/fio#ofAgency
@@ -95,6 +94,10 @@ fio:ofAgency rdf:type owl:ObjectProperty ;
 fio:ofIndustry rdf:type owl:ObjectProperty ;
                rdfs:domain fio:Facility;
                rdfs:range fio:Industry.
+
+fio:subcodeOf rdf:type owl:ObjectProperty, owl:TransitiveProperty;
+              rdfs:domain fio:Industry;
+              rdfs:range fio:Industry.
 
 
 #################################################################
