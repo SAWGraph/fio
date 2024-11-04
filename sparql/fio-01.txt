@@ -10,7 +10,7 @@ PREFIX us_frs: <http://sawgraph.spatialai.org/v1/us-frs#>
 select * where {
     SERVICE <repository:FIO> {
     	?facility rdf:type us_frs:EPA-PFAS-Facility .
-    	?facility fio:ofIndustry naics:NAICS-Industry-Code-562212 .
+    	?facility fio:ofIndustry naics:NAICS-IndustryCode-562212 .
 	}
 } 
     
