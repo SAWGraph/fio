@@ -1,0 +1,125 @@
+<http://w3id.org/fio/fio#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://w3id.org/fio/fio#> <http://www.w3.org/2002/07/owl#versionIRI> <http://w3id.org/fio/v1/fio#> .
+<http://w3id.org/fio/fio#> <http://purl.org/dc/terms/created> "2024-03-06"@en-us .
+<http://w3id.org/fio/fio#> <http://purl.org/dc/terms/creator> <http://orcid.org/0000-0002-5331-5052> .
+<http://w3id.org/fio/fio#> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-3271-6700> .
+<http://w3id.org/fio/fio#> <http://purl.org/dc/terms/description> "The facilities and industries ontology developed as part of the AIKnowsPFAS and SAWGraph projects."@en-us .
+<http://w3id.org/fio/fio#> <http://purl.org/dc/terms/issued> "2024-03-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://w3id.org/fio/fio#> <http://purl.org/dc/terms/modified> "2024-03-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://w3id.org/fio/fio#> <http://purl.org/dc/terms/publisher> <http://spatialai.org> .
+<http://w3id.org/fio/fio#> <http://purl.org/dc/terms/title> "Facilities and Industries Ontology"@en-us .
+<http://w3id.org/fio/fio#> <http://www.w3.org/2002/07/owl#versionInfo> "1"@en-us .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://w3id.org/fio/v1/fio#hasParentCompany
+<http://w3id.org/fio/v1/fio#hasParentCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/fio/v1/fio#hasParentCompany> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/fio/v1/fio#Facility> .
+<http://w3id.org/fio/v1/fio#hasParentCompany> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/fio/v1/fio#Company> .
+<http://w3id.org/fio/v1/fio#hasParentCompany> <http://www.w3.org/2000/01/rdf-schema#label> "has parent company" .
+# 
+# http://w3id.org/fio/v1/fio#ofAgency
+<http://w3id.org/fio/v1/fio#ofAgency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/fio/v1/fio#ofAgency> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/fio/v1/fio#Facility> .
+<http://w3id.org/fio/v1/fio#ofAgency> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/fio/v1/fio#Agency> .
+<http://w3id.org/fio/v1/fio#ofAgency> <http://www.w3.org/2000/01/rdf-schema#label> "of agency" .
+# 
+# http://w3id.org/fio/v1/fio#ofIndustry
+<http://w3id.org/fio/v1/fio#ofIndustry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/fio/v1/fio#ofIndustry> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/fio/v1/fio#Facility> .
+<http://w3id.org/fio/v1/fio#ofIndustry> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/fio/v1/fio#Industry> .
+<http://w3id.org/fio/v1/fio#ofIndustry> <http://www.w3.org/2000/01/rdf-schema#label> "of industry" .
+# 
+# http://w3id.org/fio/v1/fio#subcodeOf
+<http://w3id.org/fio/v1/fio#subcodeOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/fio/v1/fio#subcodeOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<http://w3id.org/fio/v1/fio#subcodeOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/fio/v1/fio#Industry> .
+<http://w3id.org/fio/v1/fio#subcodeOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/fio/v1/fio#Industry> .
+<http://w3id.org/fio/v1/fio#subcodeOf> <http://www.w3.org/2000/01/rdf-schema#label> "subcode of" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://w3id.org/fio/v1/fio#Agency
+<http://w3id.org/fio/v1/fio#Agency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/fio/v1/fio#Agency> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Organization> .
+<http://w3id.org/fio/v1/fio#Agency> <http://www.w3.org/2000/01/rdf-schema#label> "Agency" .
+# 
+# http://w3id.org/fio/v1/fio#Company
+<http://w3id.org/fio/v1/fio#Company> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/fio/v1/fio#Company> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Organization> .
+<http://w3id.org/fio/v1/fio#Company> <http://www.w3.org/2000/01/rdf-schema#label> "Company" .
+# 
+# http://w3id.org/fio/v1/fio#Facility
+<http://w3id.org/fio/v1/fio#Facility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/fio/v1/fio#Facility> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://w3id.org/fio/v1/fio#Industry> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/fio/v1/fio#ofIndustry> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/fio/v1/fio#Facility> <http://www.w3.org/2000/01/rdf-schema#label> "Facility" .
+# 
+# http://w3id.org/fio/v1/fio#Industry
+<http://w3id.org/fio/v1/fio#Industry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/fio/v1/fio#Industry> <http://www.w3.org/2000/01/rdf-schema#label> "Industry" .
+# 
+# http://www.w3.org/ns/prov#Organization
+<http://www.w3.org/ns/prov#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

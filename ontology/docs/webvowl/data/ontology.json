@@ -1,0 +1,223 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en-us", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://w3id.org/fio/v1/fio", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/ns/prov", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "en-us" : "Facilities and Industries Ontology"
+    },
+    "iri" : "http://w3id.org/fio/fio#",
+    "version" : "1",
+    "author" : [ "https://orcid.org/0000-0003-3271-6700", "http://orcid.org/0000-0002-5331-5052" ],
+    "description" : {
+      "en-us" : "The facilities and industries ontology developed as part of the AIKnowsPFAS and SAWGraph projects."
+    },
+    "other" : {
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "https://orcid.org/0000-0003-3271-6700",
+        "type" : "iri"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "http://orcid.org/0000-0002-5331-5052",
+        "type" : "iri"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "en-us",
+        "value" : "2024-03-06",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "http://spatialai.org",
+        "type" : "iri"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2024-03-06",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "en-us",
+        "value" : "1",
+        "type" : "label"
+      } ],
+      "issued" : [ {
+        "identifier" : "issued",
+        "language" : "undefined",
+        "value" : "2024-03-06",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en-us",
+        "value" : "Facilities and Industries Ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://w3id.org/fio/v1/fio#Industry",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Industry",
+      "undefined" : "Industry"
+    },
+    "attributes" : [ "external" ],
+    "id" : "7"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/fio#Agency",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Agency",
+      "undefined" : "Agency"
+    },
+    "attributes" : [ "external" ],
+    "id" : "2",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#Organization",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Organization"
+    },
+    "subClasses" : [ "4", "2" ],
+    "attributes" : [ "external" ],
+    "id" : "6"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/fio#Company",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Company",
+      "undefined" : "Company"
+    },
+    "attributes" : [ "external" ],
+    "id" : "4",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://w3id.org/fio/v1/fio#Facility",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Facility",
+      "undefined" : "Facility"
+    },
+    "attributes" : [ "external" ],
+    "id" : "1"
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "3",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "5",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "8",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "9",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "10",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "11",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://w3id.org/fio/v1/fio#ofAgency",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "ofAgency",
+      "undefined" : "of agency"
+    },
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/fio#hasParentCompany",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "hasParentCompany",
+      "undefined" : "has parent company"
+    },
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "3"
+  }, {
+    "range" : "6",
+    "domain" : "2",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "5"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/fio#subcodeOf",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "subcodeOf",
+      "undefined" : "subcode of"
+    },
+    "domain" : "7",
+    "attributes" : [ "external", "object", "transitive" ],
+    "id" : "8"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/fio#ofIndustry",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "ofIndustry",
+      "undefined" : "of industry"
+    },
+    "domain" : "1",
+    "attributes" : [ "external", "object", "someValues" ],
+    "id" : "9"
+  }, {
+    "range" : "6",
+    "domain" : "4",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "10"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/fio#ofIndustry",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "ofIndustry",
+      "undefined" : "of industry"
+    },
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "11"
+  } ]
+}

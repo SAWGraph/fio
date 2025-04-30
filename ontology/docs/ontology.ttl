@@ -1,0 +1,132 @@
+@prefix : <http://w3id.org/fio/fio#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://w3id.org/fio/fio#> .
+
+<http://w3id.org/fio/fio#> rdf:type owl:Ontology ;
+                            owl:versionIRI <http://w3id.org/fio/v1/fio#> ;
+                            <http://purl.org/dc/terms/created> "2024-03-06"@en-us ;
+                            <http://purl.org/dc/terms/creator> <http://orcid.org/0000-0002-5331-5052> ,
+                                                               <https://orcid.org/0000-0003-3271-6700> ;
+                            <http://purl.org/dc/terms/description> "The facilities and industries ontology developed as part of the AIKnowsPFAS and SAWGraph projects."@en-us ;
+                            <http://purl.org/dc/terms/issued> "2024-03-06"^^xsd:date ;
+                            <http://purl.org/dc/terms/modified> "2024-03-06"^^xsd:date ;
+                            <http://purl.org/dc/terms/publisher> <http://spatialai.org> ;
+                            <http://purl.org/dc/terms/title> "Facilities and Industries Ontology"@en-us ;
+                            owl:versionInfo "1"@en-us .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://w3id.org/fio/v1/fio#hasParentCompany
+<http://w3id.org/fio/v1/fio#hasParentCompany> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <http://w3id.org/fio/v1/fio#Facility> ;
+                                              rdfs:range <http://w3id.org/fio/v1/fio#Company> ;
+                                              rdfs:label "has parent company" .
+
+
+###  http://w3id.org/fio/v1/fio#ofAgency
+<http://w3id.org/fio/v1/fio#ofAgency> rdf:type owl:ObjectProperty ;
+                                      rdfs:domain <http://w3id.org/fio/v1/fio#Facility> ;
+                                      rdfs:range <http://w3id.org/fio/v1/fio#Agency> ;
+                                      rdfs:label "of agency" .
+
+
+###  http://w3id.org/fio/v1/fio#ofIndustry
+<http://w3id.org/fio/v1/fio#ofIndustry> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <http://w3id.org/fio/v1/fio#Facility> ;
+                                        rdfs:range <http://w3id.org/fio/v1/fio#Industry> ;
+                                        rdfs:label "of industry" .
+
+
+###  http://w3id.org/fio/v1/fio#subcodeOf
+<http://w3id.org/fio/v1/fio#subcodeOf> rdf:type owl:ObjectProperty ,
+                                                owl:TransitiveProperty ;
+                                       rdfs:domain <http://w3id.org/fio/v1/fio#Industry> ;
+                                       rdfs:range <http://w3id.org/fio/v1/fio#Industry> ;
+                                       rdfs:label "subcode of" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://w3id.org/fio/v1/fio#Agency
+<http://w3id.org/fio/v1/fio#Agency> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.w3.org/ns/prov#Organization> ;
+                                    rdfs:label "Agency" .
+
+
+###  http://w3id.org/fio/v1/fio#Company
+<http://w3id.org/fio/v1/fio#Company> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://www.w3.org/ns/prov#Organization> ;
+                                     rdfs:label "Company" .
+
+
+###  http://w3id.org/fio/v1/fio#Facility
+<http://w3id.org/fio/v1/fio#Facility> rdf:type owl:Class ;
+                                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <http://w3id.org/fio/v1/fio#ofIndustry> ;
+                                                        owl:someValuesFrom <http://w3id.org/fio/v1/fio#Industry>
+                                                      ] ;
+                                      rdfs:label "Facility" .
+
+
+###  http://w3id.org/fio/v1/fio#Industry
+<http://w3id.org/fio/v1/fio#Industry> rdf:type owl:Class ;
+                                      rdfs:label "Industry" .
+
+
+###  http://www.w3.org/ns/prov#Organization
+<http://www.w3.org/ns/prov#Organization> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
