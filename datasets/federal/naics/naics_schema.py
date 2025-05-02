@@ -34,12 +34,12 @@ metadata_dir = None
 output_dir = root_folder / "datasets/federal/naics/"
 
 ##namespaces
-us_frs = Namespace(f"http://sawgraph.spatialai.org/v1/us-frs#")
-us_frs_data = Namespace(f"http://sawgraph.spatialai.org/v1/us-frs-data#")
-fio = Namespace(f"http://sawgraph.spatialai.org/v1/fio#")
-naics = Namespace(f"http://sawgraph.spatialai.org/v1/fio/naics#")
-sic = Namespace(f"http://sawgraph.spatialai.org/v1/fio/sic#")
-coso = Namespace(f'http://sawgraph.spatialai.org/v1/contaminoso#')
+epa_frs = Namespace(f"http://w3id.org/fio/v1/epa-frs#")
+epa_frs_data = Namespace(f"http://w3id.org/fio/v1/epa-frs-data#")
+fio = Namespace(f"http://w3id.org/fio/v1/fio#")
+naics = Namespace(f"http://w3id.org/fio/v1/naics#")
+sic = Namespace(f"http://w3id.org/fio/v1/sic#")
+coso = Namespace(f'http://w3id.org/coso/v1/contaminoso#')
 geo = Namespace(f'http://www.opengis.net/ont/geosparql#')
 ## initiate log file
 logging.basicConfig(filename=logname,
@@ -76,8 +76,8 @@ def Initial_KG():
     # for prefix in prefixes:
     #    kg.bind(prefix, prefixes[prefix])
     kg.bind('fio', fio)
-    kg.bind('us_frs', us_frs)
-    kg.bind('us_frs_data', us_frs_data)
+    kg.bind('epa_frs', epa_frs)
+    kg.bind('epa_frs_data', epa_frs_data)
     kg.bind('naics', naics)
     kg.bind('sic', sic)
     kg.bind('coso', coso)
@@ -121,15 +121,15 @@ def get_iris(industry):
     extra_iris = {}
     # build iris for any entities
     if industry['class']: #make sure its a valid row
-        industry_iri = naics[industry['class']+'-'+str(industry['code'])]
+        industry_iri = naics['NAICS-'+str(industry['code'])]
         extra_iris['class'] = naics[industry['class']]
     #build iris for parent class
     if 'sector' in industry.keys():
-        extra_iris['sector'] = naics['NAICS-IndustrySector-'+ str(industry['sector'])]
+        extra_iris['sector'] = naics['NAICS-'+ str(industry['sector'])]
     if 'subsector' in industry.keys():
-        extra_iris['subsector'] = naics['NAICS-IndustrySubsector-'+ str(industry['subsector'])]
+        extra_iris['subsector'] = naics['NAICS-'+ str(industry['subsector'])]
     if 'group' in industry.keys():
-        extra_iris['group'] = naics['NAICS-IndustryGroup-'+ str(industry['group'])]
+        extra_iris['group'] = naics['NAICS-'+ str(industry['group'])]
 
     extra_iris['class'] = naics[industry['class']]
 
