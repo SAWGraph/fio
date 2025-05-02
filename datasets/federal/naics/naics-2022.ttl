@@ -1,5 +1,5 @@
-@prefix fio: <http://sawgraph.spatialai.org/v1/fio#> .
-@prefix naics: <http://sawgraph.spatialai.org/v1/fio/naics#> .
+@prefix fio: <http://w3id.org/fio/v1/fio#> .
+@prefix naics: <http://w3id.org/fio/v1/naics#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .

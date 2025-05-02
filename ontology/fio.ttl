@@ -5,12 +5,9 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix prov-o: <http://www.w3.org/ns/prov#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix naics: <http://sawgraph.spatialai.org/v1/fio/naics#> .
-@base <http://sawgraph.spatialai.org/v1/fio#> .
 
 <http://w3id.org/fio/fio#> rdf:type owl:Ontology ;
                                          owl:versionIRI <http://w3id.org/fio/v1/fio#> ;
@@ -72,22 +69,20 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-
-###  http://sawgraph.spatialai.org/v1/fio#hasParentCompany
 fio:hasParentCompany rdf:type owl:ObjectProperty ;
                      rdfs:label "has parent company" ;
+                     rdfs:subPropertyOf prov-o:wasAttributedTo ;
                      rdfs:domain fio:Facility ;
                      rdfs:range fio:Company .
 
 
-###  http://sawgraph.spatialai.org/v1/fio#ofAgency
 fio:ofAgency rdf:type owl:ObjectProperty ;
              rdfs:label "of agency";
+             rdfs:subPropertyOf prov-o:wasAttributedTo ;
              rdfs:domain fio:Facility ;
              rdfs:range fio:Agency .
 
 
-###  http://sawgraph.spatialai.org/v1/fio#ofIndustry
 fio:ofIndustry rdf:type owl:ObjectProperty ;
                rdfs:label "of industry";
                rdfs:domain fio:Facility;
@@ -102,7 +97,6 @@ fio:subcodeOf rdf:type owl:ObjectProperty, owl:TransitiveProperty;
 #    Classes
 #################################################################
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#Facility
 fio:Facility rdf:type owl:Class ;
         rdfs:label "Facility" ;
 			  rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -111,24 +105,20 @@ fio:Facility rdf:type owl:Class ;
                              ] .
 
 
-###  http://sawgraph.spatialai.org/v1/fio#Agency
 fio:Agency rdf:type owl:Class ;
            rdfs:label "Agency";
            rdfs:subClassOf prov-o:Organization .
 
 
-###  http://sawgraph.spatialai.org/v1/fio#Company
 fio:Company rdf:type owl:Class ;
             rdfs:label "Company" ;
             rdfs:subClassOf prov-o:Organization .
 
 
-###  http://sawgraph.spatialai.org/v1/fio#Industry
 fio:Industry rdf:type owl:Class ;
           rdfs:label "Industry" .
 
 
-###  http://www.w3.org/ns/prov#Organization
 prov-o:Organization rdf:type owl:Class .
 
 
