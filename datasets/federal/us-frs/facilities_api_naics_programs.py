@@ -8,7 +8,7 @@ import math
 import datetime
 from datetime import date
 
-from rdflib.namespace import OWL, XMLNS, XSD, RDF, RDFS, DCTERMS, GEO
+from rdflib.namespace import OWL, XMLNS, XSD, RDF, RDFS, DCTERMS, GEO, PROV
 from rdflib import Namespace
 from rdflib import Graph
 from rdflib import URIRef, BNode, Literal
@@ -26,7 +26,7 @@ code_dir = Path(__file__).resolve().parent.parent
 root_folder =Path(__file__).resolve().parent.parent.parent
 output_dir = root_folder / "federal/us-frs/triples/"
 logname = "log"
-testing = False  #only gets 5 records when set to true
+testing = False #only gets 15 records when set to true
 
 ##namespaces
 epa_frs = Namespace(f"http://w3id.org/fio/v1/epa-frs#")
@@ -67,13 +67,13 @@ def load_data():
 
     #temporary limit to 5 for testing
     if testing == True:
-        facilities_count = 5
-        increment = 5
-        limit = 5
+        facilities_count = 15
+        increment = 15
+        limit = 15
 
     # query the facilities 10000 (limit) at a time, and merge into one list
     while True: #limit < facilities_count+increment:
-        facilities_url = f'https://data.epa.gov/efservice/frs.v_pub_frs_naics_ez/state_code/equals/{state_code}/join/frs.frs_supplemental_interest/{start}:{limit}/json'
+        facilities_url = f'https://data.epa.gov/efservice/frs.v_pub_frs_naics_ez/state_code/equals/{state_code}/join/frs.frs_interest/join/frs.frs_supplemental_interest/{start}:{limit}/json' #join/frs.frs_supplemental_interest/
         print(facilities_url)
         resp = urllib3.request("GET", facilities_url)
         facilities_subset = resp.json()
@@ -81,7 +81,7 @@ def load_data():
             # stop when there are no results left
             break
         print(facilities_subset[0])
-        print(type(facilities_subset[0]))
+        #print(type(facilities_subset[0]))
         if 'error' in facilities_subset[0].keys():
             #stop if an error is returned from the server
             print(facilities_subset['error'])
@@ -91,6 +91,7 @@ def load_data():
             facilities.append(facility)
         
         start += limit
+        print(f'retrieved {limit}')
         limit += limit
 
         #stop after one loop if testing
@@ -130,12 +131,37 @@ def clean_attributes(facilities):
     
     # format various columns for triplification
     fac['primary_indicator'] = fac['primary_indicator'].apply(lambda x: x.lower())
-    fac['pgm_sys_acrnm'] = fac['pgm_sys_acrnm'].apply(lambda x: x.lower().replace("/", "-"))
+    fac['pgm_sys_acrnm'] = fac['pgm_sys_acrnm'].apply(lambda x: x.upper().replace("/", "-"))
+    
+    fac['interest_id'] = fac['pgm_sys_id']
+    #fac['interest_type'] = fac['interest_type'].apply(lambda x:''.join(x.title().split()))
+    
+    replacements = str.maketrans({"(":"- ",
+                     ")":"",
+                     "&":"",
+                     "-":"- ",
+                     "/":" ",
+                     ",":"",
+                     ":":"-"})
+    
+    fac['interest_type'] = fac['interest_type'].apply(lambda x: (''.join(((word if word in ['NSR', 'NPDES', 'ICIS', 'OSHA', 'ICIS-', 'CESQG', 'SQG', 'AFO','SW', 'BRAC', 'CZM', 'EPCRA', 'FRP', 'LQG', "II", "WIPP", 'NPL', 'TRI', 'TSCA', 'TSD', "UIC", 'VSQG', 'NESHAPS', 'SPCC'] else word.title()) for word in x.translate(replacements).split()))))
+    fac['sup_interest_type'] = fac['sup_interest_type'].apply(lambda x: (''.join(((word if word in ['NSR', 'NPDES', 'ICIS', 'OSHA', 'ICIS-', 'CESQG', 'SQG', 'AFO','SW', 'BRAC', 'CZM', 'EPCRA', 'FRP', 'LQG', "II", "WIPP", 'NPL', 'TRI', 'TSCA', 'TSD', "UIC", 'VSQG', 'NESHAPS', 'SPCC'] else word.title()) for word in x.translate(replacements).split()))))
+    fs_lookup = {'F':'Federal', 'S': 'State', 'T':'Tribal', 'P':'Private'}
+    fac['fed_state_desc'] = fac['fed_state_code'].apply(lambda x: fs_lookup[x] if pd.notnull(x) else pd.NA)
+    
+    fac['interest_label'] = fac[['active_status', "reported_sup_interest_type", 'sup_pgm_sys_id']].apply(lambda x: ' '.join(x.dropna().astype(str)), axis=1)
+    fac['interest_description'] = fac[['start_date_qualifier','start_date','end_date_qualifier','end_date']].apply(lambda x: ' '.join(x.dropna().astype(str)), axis=1) 
+    fac['start_date'] = pd.to_datetime(fac['start_date'], format='%Y-%m-%d %H:%M:%S')
+    fac['end_date'] = pd.to_datetime(fac['end_date'], format='%Y-%m-%d %H:%M:%S')
+    fac['last_reported_date']
+
     # drop attributes that won't be triplified or referenced
     fac = fac.drop(axis=1, labels=['city_name', 'country_name', 'county_name', 'epa_region_code', 'legislative_dist_num', 'location_address', 'postal_code', 'supplemental_location','state_name', 'tribal_land_code', 'tribal_land_name'])
-    fac = fac.drop(axis=1, labels=["code_description", "latitude83", "longitude83", "primary_name", "small_bus_ind", "source_of_data", "state_code"])
+    fac = fac.drop(axis=1, labels=["code_description", "latitude83", "longitude83", "primary_name", "small_bus_ind", "state_code"])
     print("USED SCHEMA:")
     print(fac.info())
+    print(fac.start_date.unique())
+    print(fac.end_date.unique())
 
     return fac
 
@@ -143,14 +169,22 @@ def clean_attributes(facilities):
 def get_iris(facility):
     #build iris for any entities
     #print(facility)
-    #facility_iri = epa_frs_data[f"d.FRS-Facility.{facility['registry_id']}"]
-    facility_iri = epa_frs_data[f"d.PGM-Facility.{facility['pgm_sys_id']}"]
+    facility_iri = epa_frs_data[f"d.FRS-Facility.{facility['registry_id']}"]
+    facility_class = epa_frs[f"{facility['pgm_sys_acrnm'].upper()}-Facility"] #can also infer this
 
     #geo_iri = epa_frs_data[f"d.FRS-Facility-Geometry.{facility['registry_id']}"]
     naics_iri = naics[f"NAICS-{facility['naics_code']}"]
+    interest = {}
+    if facility['fed_state_code'] in ['F'] and facility['pgm_sys_acrnm'] != 'NPDES':
+        interest['iri'] = epa_frs_data[f"d.EnvironmentalInterest.{facility['pgm_sys_acrnm']}.{facility['interest_id']}"]
+        interest['class'] = epa_frs[facility['interest_type']]
+    else:
+        interest['iri'] = epa_frs_data[f"d.EnvironmentalInterest.Supplemental.{facility['frs.frs_supplemental_interest.pgm_sys_acrnm']}.{facility['sup_interest_id']}"]
+        interest['class'] = epa_frs[facility['sup_interest_type']]
+    
+        
 
-
-    return facility_iri, naics_iri
+    return facility_iri, naics_iri, facility_class, interest
 
 
 def triplify(facilities):
@@ -160,14 +194,33 @@ def triplify(facilities):
 
     for idx, facility in facilities.iterrows():
         #get iris
-        facility_iri, naics_iri = get_iris(facility)
+        facility_iri, naics_iri, facility_class, interest = get_iris(facility)
 
         #create facility
-        kg.add((facility_iri, RDF.type, epa_frs["PGM-Facility"]))
-        kg.add((facility_iri, epa_frs[f'{facility.pgm_sys_acrnm}-Industry'], naics_iri))
-        kg.add((facility_iri, epa_frs[f'has{str(facility.pgm_sys_acrnm).upper()}id'], Literal(facility.pgm_sys_id, datatype=XSD.string)))
+        kg.add((facility_iri, RDF.type, epa_frs["FRS-Facility"]))
+        kg.add((facility_iri, RDF.type, facility_class))
+        kg.add((facility_iri, epa_frs[f'ofIndustry.{facility.pgm_sys_acrnm.upper()}'], naics_iri)) #subproperty for fio:ofIndustry
+        kg.add((facility_iri, epa_frs[f'hasIdentifier.{str(facility.pgm_sys_acrnm).upper()}'], Literal(facility.pgm_sys_id, datatype=XSD.string))) #subproperty for dcterms:identifier
+        
         if facility.primary_indicator == 'primary':
-            kg.add((facility_iri, epa_frs[f'{facility.primary_indicator}Industry'], naics_iri))
+            kg.add((facility_iri, epa_frs[f'{facility.primary_indicator}Industry'], naics_iri)) #subproperty for fio:ofIndustry
+
+        #environmental Interest
+        kg.add((facility_iri, epa_frs['hasEnvironmentalInterest'], interest['iri']))
+        if pd.notnull(facility.start_date):
+            kg.add((interest['iri'], PROV.startedAtTime, Literal(facility['start_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+        if pd.notnull(facility.end_date):
+            kg.add((interest['iri'], PROV.startedAtTime, Literal(facility['end_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+        kg.add((interest['iri'], RDF.type, interest['class']))
+
+        if pd.notnull(facility.interest_description) and facility.interest_description != "":
+            kg.add((interest['iri'], DCTERMS.description, Literal(facility['interest_description'], datatype=XSD.string)))
+        if pd.notnull(facility.interest_label) and facility.interest_label != "":
+            kg.add((interest['iri'], RDFS.label, Literal(facility.interest_label, datatype=XSD.string)))
+        if pd.notnull(facility['sup_pgm_sys_id']):
+            kg.add((interest['iri'], DCTERMS.identifier, Literal(f"{facility['sup_pgm_sys_acrnm']}:{facility['sup_pgm_sys_id']}", datatype=XSD.string)))
+        if pd.notnull(facility.source_of_data):
+            pass
 
     return kg
 
@@ -184,11 +237,11 @@ def main():
     data = load_data()
     kg = triplify(data)
     if testing:
-        kg_turtle_file = f"us-frs-data-facility-naics-{state}-test.ttl".format(output_dir)
+        kg_turtle_file = output_dir/ f"us-frs-data-facility-naics-{state}-test.ttl"
     else:
-        kg_turtle_file = f"us-frs-data-facility-naics-{state}.ttl".format(output_dir)
+        kg_turtle_file = output_dir / f"us-frs-data-facility-naics-{state}.ttl"
     kg.serialize(kg_turtle_file, format='turtle')
-    logger = logging.getLogger('Finished triplifying pfas analytics tool facilities.')
+    logger = logging.getLogger(f'Finished triplifying {state} program facilities and NAICS codes.')
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-@prefix epa_frs: <http://w3id.org/fio/v1/epa-frs#> .
+@prefix epa-frs: <http://w3id.org/fio/v1/epa-frs#> .
 @prefix fio:  <http://w3id.org/fio/v1/fio#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -59,233 +59,206 @@ dcterms:title rdf:type owl:AnnotationProperty .
 #################################################################
 #    Object Properties
 #################################################################
-epa_frs:caaIndustry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Clean Air Act (Air) programs Industry Code'^^xsd:string;
-			rdfs:subPropertyOf fio:ofIndustry.
 
-# animal operations, assistance and support programs, chemical storage, coastal and oceans
+epa-frs:ofFacilityType rdf:type owl:ObjectProperty ;
+		rdfs:domain epa-frs:FRS-Facility;
+		rdfs:range epa-frs:FacilityType. 
 
-epa_frs:cwaIndustry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Clean Water Act programs Industry Code'^^xsd:string;
-			rdfs:subPropertyOf fio:ofIndustry.
 
-epa_frs:odaIndustry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Ocean Dumping Act Industry Code'^^xsd:string;
-			rdfs:subPropertyOf fio:ofIndustry.
+
+# epa-frs:caaIndustry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Clean Air Act (Air) programs Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf fio:ofIndustry.
+
+# # animal operations, assistance and support programs, chemical storage, coastal and oceans
+
+# epa-frs:cwaIndustry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Clean Water Act programs Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf fio:ofIndustry.
+
+# epa-frs:odaIndustry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Ocean Dumping Act Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf fio:ofIndustry.
 			
-epa_frs:rcraIndustry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Resource Conservation and Recovery Act (Hazardous Waste) programs Industry Code'^^xsd:string;
-			rdfs:subPropertyOf fio:ofIndustry.
+# epa-frs:rcraIndustry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Resource Conservation and Recovery Act (Hazardous Waste) programs Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf fio:ofIndustry.
 
-epa_frs:cerclaIndustry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Comprehensive Environmental Response, Compensation and Liability Act Industry Code'^^xsd:string;
-			rdfs:subPropertyOf fio:ofIndustry.
+# epa-frs:cerclaIndustry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Comprehensive Environmental Response, Compensation and Liability Act Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf fio:ofIndustry.
 			
-epa_frs:sdwaIndustry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Safe Drinking Water Act programs Industry Code'^^xsd:string;
-			rdfs:subPropertyOf fio:ofIndustry.
+# epa-frs:sdwaIndustry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Safe Drinking Water Act programs Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf fio:ofIndustry.
 
-epa_frs:tscaIndustry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Toxic Substances Control Act Industry Code'^^xsd:string;
-			rdfs:subPropertyOf fio:ofIndustry.
+# epa-frs:tscaIndustry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Toxic Substances Control Act Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf fio:ofIndustry.
 
-epa_frs:fifraIndustry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Federal Insecticide, Fungicide and Rodenticide Act Industry Code'^^xsd:string;
-			rdfs:subPropertyOf fio:ofIndustry.
+# epa-frs:fifraIndustry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Federal Insecticide, Fungicide and Rodenticide Act Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf fio:ofIndustry.
 
-epa_frs:epcraIndustry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Emergency Planning and Community Right-to-Know Act Industry Code'^^xsd:string;
-			rdfs:subPropertyOf fio:ofIndustry.
+# epa-frs:epcraIndustry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Emergency Planning and Community Right-to-Know Act Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf fio:ofIndustry.
 
-#epa_frs:crIndustry rdf:type owl:ObjectProperty ;
-#			dcterms:description 'Chemical Release programs Industry Code'^^xsd:string;
-#			rdfs:subPropertyOf fio:ofIndustry.
+# #epa-frs:crIndustry rdf:type owl:ObjectProperty ;
+# #			dcterms:description 'Chemical Release programs Industry Code'^^xsd:string;
+# #			rdfs:subPropertyOf fio:ofIndustry.
 
-epa_frs:stateIndustry rdf:type owl:ObjectProperty ;
-			dcterms:description 'State programs Industry Code'^^xsd:string;
-			rdfs:subPropertyOf fio:ofIndustry.
+# epa-frs:stateIndustry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'State programs Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf fio:ofIndustry.
 
-#ground water programs, ecology programs, chemical storage programs, coastal and oceans programs, drinking water programs, groundwater programs, 
-#legal/enforement activities, pesticides programs, radiation protection programs, remediation and redevelopment programs, solid waste programs, 
-#underground storage tank programs, water resources programs, not in a program category
-
-
-##  specific program level 
-epa_frs:airs-afs-Industry rdf:type owl:ObjectProperty ;
-			rdfs:subPropertyOf epa_frs:caaIndustry.
-
-epa_frs:air-Industry rdf:type owl:ObjectProperty ;
-			rdfs:subPropertyOf epa_frs:caaIndustry.
-
-epa_frs:camdbs-Industry rdf:type owl:ObjectProperty ;
-			dcterms:description 'CAM (Compliance Assurance Monitoring) database system Industry Code'^^xsd:string;
-			rdfs:subPropertyOf epa_frs:caaIndustry.
-
-epa_frs:cedri-Industry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Compliance and Emissions data reporting Interface Industry Code'^^xsd:string;
-			rdfs:subPropertyOf epa_frs:caaIndustry.
-
-epa_frs:e-ggrt-Industry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Electronic Greenhous Gas Reporting Tool Industry Code'^^xsd:string;
-			rdfs:subPropertyOf epa_frs:caaIndustry.
-
-epa_frs:eis-Industry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Emissions Inventory System Industry Code'^^xsd:string;
-			rdfs:subPropertyOf epa_frs:caaIndustry.
-
-epa_frs:npdes-Industry rdf:type owl:ObjectProperty ;
-			rdfs:subPropertyOf epa_frs:cwaIndustry ;
-			dcterms:description 'National Pollutant Discharge Elimination system Industry Code'^^xsd:string.
-
-epa_frs:rcrainfo rdf:type owl:ObjectProperty;
-			dcterms:description 'Resource Conservation and Recovery Act Information System Industry Code'^^xsd:string; 
-			rdfs:subPropertyOf epa_frs:rcraIndustry. 
-
-epa_frs:tris-Industry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Toxic Release Inventory program Industry Code'^^xsd:string;
-			rdfs:subPropertyOf epa_frs:epcraIndustry.
-
-epa_frs:ssts-Industry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Section Seven Tracking System (pesticides programs) Industry Code'^^xsd:string;
-			rdfs:subPropertyOf epa_frs:fifraIndustry.
-
-epa_frs:ncdb-Industry rdf:type owl:ObjectProperty ;
-			dcterms:description 'National Compliance Database System (pesticide/ toxic substances programs) Industry Code'^^xsd:string;
-			rdfs:subPropertyOf epa_frs:fifraIndustry;
-			rdfs:subPropertyOf epa_frs:tscaIndustry.
-
-epa_frs:rblc-Industry rdf:type owl:ObjectProperty ;
-			dcterms:description 'RACT/BACT/LAER CLEARINGHOUSE Industry Code'^^xsd:string;
-			rdfs:subPropertyOf epa_frs:caaIndustry.
+# #ground water programs, ecology programs, chemical storage programs, coastal and oceans programs, drinking water programs, groundwater programs, 
+# #legal/enforement activities, pesticides programs, radiation protection programs, remediation and redevelopment programs, solid waste programs, 
+# #underground storage tank programs, water resources programs, not in a program category
 
 
-## epa general 
-epa_frs:eps-Industry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Electronic Permit System Industry Code'^^xsd:string;
-			rdfs:subPropertyOf fio:ofIndustry.
+# ##  specific program level 
+# epa-frs:airs-afs-Industry rdf:type owl:ObjectProperty ;
+# 			rdfs:subPropertyOf epa-frs:caaIndustry.
 
-epa_frs:icis-Industry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Integrated Compliance Information System Industry Code'^^xsd:string;
-			rdfs:subPropertyOf fio:ofIndustry.
+# epa-frs:air-Industry rdf:type owl:ObjectProperty ;
+# 			rdfs:subPropertyOf epa-frs:caaIndustry.
 
-epa_frs:rmp-Industry rdf:type owl:ObjectProperty ; 
-			dcterms:description 'Risk Management Plan Industry Code'^^xsd:string;
-			rdfs:subPropertyOf fio:ofIndustry.
+# epa-frs:camdbs-Industry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'CAM (Compliance Assurance Monitoring) database system Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf epa-frs:caaIndustry.
 
-### federal non-epa databases
-epa_frs:osha-ois-Industry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Occupational Safety and Health Administration Information System Industry Code'^^xsd:string;
-			rdfs:subPropertyOf fio:ofIndustry.
+# epa-frs:cedri-Industry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Compliance and Emissions data reporting Interface Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf epa-frs:caaIndustry.
 
-epa_frs:eia-860-Industry rdf:type owl:ObjectProperty ;
-			dcterms:description 'Energy Information Administration-860 database Industry Code'^^xsd:string;
-			rdfs:subPropertyOf fio:ofIndustry.
+# epa-frs:e-ggrt-Industry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Electronic Greenhous Gas Reporting Tool Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf epa-frs:caaIndustry.
 
-### state databases
-epa_frs:me-efis-Industry rdf:type owl:ObjectProperty ;
-			rdfs:subPropertyOf epa_frs:stateIndustry.
+# epa-frs:eis-Industry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Emissions Inventory System Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf epa-frs:caaIndustry.
 
-#Primary and secondary
-epa_frs:primaryIndustry rdf:type owl:ObjectProperty ;
-			rdfs:label "primary industry" ;
-			rdfs:subPropertyOf fio:ofIndustry .
+# epa-frs:npdes-Industry rdf:type owl:ObjectProperty ;
+# 			rdfs:subPropertyOf epa-frs:cwaIndustry ;
+# 			dcterms:description 'National Pollutant Discharge Elimination system Industry Code'^^xsd:string.
+
+# epa-frs:rcrainfo rdf:type owl:ObjectProperty;
+# 			dcterms:description 'Resource Conservation and Recovery Act Information System Industry Code'^^xsd:string; 
+# 			rdfs:subPropertyOf epa-frs:rcraIndustry. 
+
+# epa-frs:tris-Industry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Toxic Release Inventory program Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf epa-frs:epcraIndustry.
+
+# epa-frs:ssts-Industry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Section Seven Tracking System (pesticides programs) Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf epa-frs:fifraIndustry.
+
+# epa-frs:ncdb-Industry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'National Compliance Database System (pesticide/ toxic substances programs) Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf epa-frs:fifraIndustry;
+# 			rdfs:subPropertyOf epa-frs:tscaIndustry.
+
+# epa-frs:rblc-Industry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'RACT/BACT/LAER CLEARINGHOUSE Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf epa-frs:caaIndustry.
 
 
-epa_frs:secondaryIndustry rdf:type owl:ObjectProperty ;
-			rdfs:label "secondary industry" ; 
-			rdfs:subPropertyOf fio:ofIndustry .
+# ## epa general 
+# epa-frs:eps-Industry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Electronic Permit System Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf fio:ofIndustry.
+
+# epa-frs:icis-Industry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Integrated Compliance Information System Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf fio:ofIndustry.
+
+# epa-frs:rmp-Industry rdf:type owl:ObjectProperty ; 
+# 			dcterms:description 'Risk Management Plan Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf fio:ofIndustry.
+
+# ### federal non-epa databases
+# epa-frs:osha-ois-Industry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Occupational Safety and Health Administration Information System Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf fio:ofIndustry.
+
+# epa-frs:eia-860-Industry rdf:type owl:ObjectProperty ;
+# 			dcterms:description 'Energy Information Administration-860 database Industry Code'^^xsd:string;
+# 			rdfs:subPropertyOf fio:ofIndustry.
+
+# ### state databases
+# epa-frs:me-efis-Industry rdf:type owl:ObjectProperty ;
+# 			rdfs:subPropertyOf epa-frs:stateIndustry.
+
+# #Primary and secondary
+# epa-frs:primaryIndustry rdf:type owl:ObjectProperty ;
+# 			rdfs:label "primary industry" ;
+# 			rdfs:subPropertyOf fio:ofIndustry .
+
+
+# epa-frs:secondaryIndustry rdf:type owl:ObjectProperty ;
+# 			rdfs:label "secondary industry" ; 
+# 			rdfs:subPropertyOf fio:ofIndustry .
 
 #################################################################
 #    Data properties
 #################################################################
-epa_frs:hasAirId rdf:type owl:DatatypeProperty ;
-			rdfs:label "has ICIS-Air Id" ; 
-			rdfs:subPropertyOf dcterms:identifier ;
-			rdfs:domain epa_frs:FRS-Facility . 
+# epa-frs:hasAIRid rdf:type owl:DatatypeProperty ;
+# 			rdfs:label "has ICIS-Air Id" ; 
+# 			rdfs:subPropertyOf dcterms:identifier ;
+# 			rdfs:domain epa-frs:FRS-Facility . 
 
-epa_frs:hasNPDESId rdf:type owl:DatatypeProperty ;
-			rdfs:label "has NPDES Id" ;
-			rdfs:subPropertyOf dcterms:identifier ;
-			rdfs:domain epa_frs:FRS-Facility .
+epa-frs:hasNPDESid rdf:type owl:DatatypeProperty ;
+ 			rdfs:label "has NPDES Id" ;
+ 			rdfs:subPropertyOf dcterms:identifier ;
+ 			rdfs:domain epa-frs:NPDES-Facility .
 			
-epa_frs:hasRCRAId rdf:type owl:DatatypeProperty ;
-			rdfs:label "has RCRA Id" ;
-			rdfs:subPropertyOf dcterms:identifier ;
-			rdfs:domain epa_frs:FRS-Facility .
+# epa-frs:hasRCRAid rdf:type owl:DatatypeProperty ;
+# 			rdfs:label "has RCRA Id" ;
+# 			rdfs:subPropertyOf dcterms:identifier ;
+# 			rdfs:domain epa-frs:FRS-Facility .
 
-epa_frs:hasSDWAId rdf:type owl:DatatypeProperty ;
-			rdfs:label "has SDWA Id" ;
-			rdfs:subPropertyOf dcterms:identifier ;
-			rdfs:domain epa_frs:FRS-Facility .
+# epa-frs:hasSDWAid rdf:type owl:DatatypeProperty ;
+# 			rdfs:label "has SDWA Id" ;
+# 			rdfs:subPropertyOf dcterms:identifier ;
+# 			rdfs:domain epa-frs:FRS-Facility .
 
-epa_frs:hasTRIId rdf:type owl:DatatypeProperty ;
-			rdfs:label "has TRI Id"; 
+# epa-frs:hasTRIid rdf:type owl:DatatypeProperty ;
+# 			rdfs:label "has TRI Id"; 
+# 			rdfs:subPropertyOf dcterms:identifier ;
+# 			rdfs:domain epa-frs:FRS-Facility .
+
+epa-frs:hasFRSId rdf:type owl:DatatypeProperty ;
+			rdfs:label "has FRS Id";
 			rdfs:subPropertyOf dcterms:identifier ;
-			rdfs:domain epa_frs:FRS-Facility .
+			rdfs:domain epa-frs:FRS-Facility . 
 
 
 
 #################################################################
 #    Classes
 #################################################################
-epa_frs:FRS-Facility rdf:type owl:Class ;
+epa-frs:FRS-Facility rdf:type owl:Class ;
 				rdfs:label "FRS Facility";
 				rdfs:subClassOf fio:Facility .
 
-epa_frs:EPA-PFAS-Facility rdf:type owl:Class ;
-				rdfs:label "EPA PFAS handling facility"; 
-				dcterms:description "Facility likely to handle PFAS based on industry sector as identified by EPA PFAS Analytic tools.";
-                rdfs:subClassOf epa_frs:FRS-Facility .
+#epa-frs:EPA-PFAS-Facility rdf:type owl:Class ;
+#				rdfs:label "EPA PFAS handling facility"; 
+#				dcterms:description "Facility likely to handle PFAS based on industry sector as identified by EPA PFAS Analytic tools.";
+#                rdfs:subClassOf epa-frs:FRS-Facility .
 
-epa_frs:Federal-Facility rdf:type owl:Class ;
-				rdfs:label "Federal Facility";
-				rdfs:subClassOf epa_frs:FRS-Facility .
+epa-frs:NPDES-Facility rdf:type owl:Class ;
+		       rdfs:label "NPDES Facility";
+			   rdfs:subClassOf epa-frs:FRS-Facility .
 
-##other site types
-epa_frs:Stationary-Facility rdf:type owl:Class;
-				rdfs:label "Stationary Facility"; 
-				rdfs:subClassOf epa_frs:FRS-Facility .
+epa-frs:FacilityType rdf:type owl:Class ;
+				rdfs:label "Facility Type".
 
-epa_frs:BrownfieldsSite-Facility rdf:type owl:Class;
-				rdfs:label "Brownfields Site" ;
-				rdfs:subClassOf epa_frs:FRS-Facility .
-
-epa_frs:ContaminatedSite-Facility rdf:type owl:Class;
-				rdfs:label "Contaminated Site" ;
-				rdfs:subClassOf epa_frs:FRS-Facility .
-
-epa_frs:ContaminationAddressed-Facility rdf:type owl:Class;
-				rdfs:label "Contamination Addressed Site" ;
-				rdfs:subClassOf epa_frs:FRS-Facility .
-
-epa_frs:ContaminatedSite-Facility rdf:type owl:Class;
-				rdfs:label "Contaminated Site" ;
-				rdfs:subClassOf epa_frs:FRS-Facility .
-
-epa_frs:MonitoringStation-Facility rdf:type owl:Class;
-				rdfs:label "Monitoring Station" ;
-				rdfs:subClassOf epa_frs:FRS-Facility .
-
-epa_frs:Portable-Facility rdf:type owl:Class;
-				rdfs:label "Portable Facility" ;
-				rdfs:subClassOf epa_frs:FRS-Facility .
-
-epa_frs:PotentiallyContaminatedSite-Facility rdf:type owl:Class;
-				rdfs:label "Potentially Contaminated Site";
-				rdfs:subClassOf epa_frs:FRS-Facility .
-
-epa_frs:WaterSystem-Facility rdf:type owl:Class;
-				rdfs:label "Water System" ;
-				rdfs:subClassOf epa_frs:FRS-Facility .
-
-epa_frs:WaterfrontFacility-Facility rdf:type owl:Class;
-				rdfs:label "Waterfront Facility";
-				rdfs:subClassOf epa_frs:FRS-Facility .
-
-epa_frs:Barge-Facility rdf:type owl:Class;
-				rdfs:label "Barge Facility"; 
-                rdfs:subClassOf epa_frs:FRS-Facility.
-
+epa-frs:Agency rdf:type owl:Class ;
+		rdfs:label "Federal Agency as identified in EPA Facility Registry Service";
+		rdfs:subClassOf fio:Agency. 
 
 #################################################################
 #    General axioms

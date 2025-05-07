@@ -1,5 +1,5 @@
 import os
-from rdflib.namespace import OWL, XMLNS, XSD, RDF, RDFS
+from rdflib.namespace import OWL, XMLNS, XSD, RDF, RDFS, GEO, DCTERMS
 from rdflib import Namespace
 from rdflib import Graph
 from rdflib import URIRef, BNode, Literal
@@ -40,7 +40,7 @@ fio = Namespace(f"http://w3id.org/fio/v1/fio#")
 naics = Namespace(f"http://w3id.org/fio/v1/naics#")
 sic = Namespace(f"http://w3id.org/fio/v1/sic#")
 coso = Namespace(f'http://w3id.org/coso/v1/contaminoso#')
-geo = Namespace(f'http://www.opengis.net/ont/geosparql#')
+
 ## initiate log file
 logging.basicConfig(filename=logname,
                     filemode='a',
@@ -48,7 +48,7 @@ logging.basicConfig(filename=logname,
                     datefmt='%H:%M:%S',
                     level=logging.DEBUG)
 
-logging.info("Running triplification for facilities")
+logging.info("Running triplification for naics")
 
 
 def main():
@@ -56,7 +56,7 @@ def main():
     df = load_data()
     kg = triplify(df)
 
-    kg_turtle_file = "naics-schema.ttl".format(output_dir)
+    kg_turtle_file = "naics-2022.ttl".format(output_dir)
     kg.serialize(kg_turtle_file, format='turtle')
     logger = logging.getLogger('Finished triplifying naics schema.')
 
@@ -81,7 +81,6 @@ def Initial_KG():
     kg.bind('naics', naics)
     kg.bind('sic', sic)
     kg.bind('coso', coso)
-    kg.bind('geo', geo)
     return kg
 
 
@@ -112,7 +111,6 @@ def get_attributes(row):
         else: #deal with sectors with multiple codes
             industry['class'] = 'NAICS-IndustrySector'
             industry['code'] = industry['code'][:2] #only take the first two digits (31, 44, or 48), the rest are manually added below
-            #print(industry['code'], industry['name'])
 
     return industry
 
@@ -150,6 +148,7 @@ def triplify(df):
         # create industries (instances)
         kg.add((industry_iri, RDF.type, extra_iris['class'])) #make it an instance of the specific type
         kg.add((industry_iri, RDF.type, OWL.NamedIndividual))
+        kg.add((industry_iri, DCTERMS.identifier, Literal(industry['code'], datatype=XSD.string)))
         kg.add((industry_iri, RDFS.label, Literal(industry['name'], datatype=XSD.string)))
         kg.add((industry_iri, fio['ofYear'], Literal(industry['year'], datatype=XSD.gYear)))#year of code
         
@@ -157,7 +156,7 @@ def triplify(df):
         if industry['class']== 'NAICS-IndustryCode' and len(str(industry['code'])) == 6:
             if str(industry['code'])[5:6] == '0':
                 #print(industry_iri, 'sameAs', str(industry['code'])[0:5])
-                kg.add((industry_iri, OWL.sameAs, naics['NAICS-IndustryCode-'+str(industry['code'])[0:5]]))
+                kg.add((industry_iri, OWL.sameAs, naics['NAICS-'+str(industry['code'])[0:5]]))
 
         #link subcodes to parents
         if 'sector' in extra_iris.keys():
@@ -173,23 +172,23 @@ def triplify(df):
             pass
 
     ##manual additions for industry with multiple sector codes
-    kg.add((naics['NAICS-IndustrySector-32'], RDF.type, naics['NAICS-IndustrySector']))
-    kg.add((naics['NAICS-IndustrySector-32'], RDFS.label, Literal('Manufacturing', datatype=XSD.string)))
-    kg.add((naics['NAICS-IndustrySector-32'], OWL.sameAs, naics['NAICS-IndustrySector-31']))
+    kg.add((naics['NAICS-32'], RDF.type, naics['NAICS-IndustrySector']))
+    kg.add((naics['NAICS-32'], RDFS.label, Literal('Manufacturing', datatype=XSD.string)))
+    kg.add((naics['NAICS-32'], OWL.sameAs, naics['NAICS-31']))
 
 
-    kg.add((naics['NAICS-IndustrySector-33'], RDF.type, naics['NAICS-IndustrySector']))
-    kg.add((naics['NAICS-IndustrySector-33'], RDFS.label, Literal('Manufacturing', datatype=XSD.string)))
-    kg.add((naics['NAICS-IndustrySector-33'], OWL.sameAs, naics['NAICS-IndustrySector-31']))
+    kg.add((naics['NAICS-33'], RDF.type, naics['NAICS-IndustrySector']))
+    kg.add((naics['NAICS-33'], RDFS.label, Literal('Manufacturing', datatype=XSD.string)))
+    kg.add((naics['NAICS-33'], OWL.sameAs, naics['NAICS-31']))
 
 
-    kg.add((naics['NAICS-IndustrySector-45'], RDF.type, naics['NAICS-IndustrySector']))
-    kg.add((naics['NAICS-IndustrySector-45'], RDFS.label, Literal('Retail Trade', datatype=XSD.string)))
-    kg.add((naics['NAICS-IndustrySector-45'], OWL.sameAs, naics['NAICS-IndustrySector-44']))
+    kg.add((naics['NAICS-45'], RDF.type, naics['NAICS-IndustrySector']))
+    kg.add((naics['NAICS-45'], RDFS.label, Literal('Retail Trade', datatype=XSD.string)))
+    kg.add((naics['NAICS-45'], OWL.sameAs, naics['NAICS-44']))
 
-    kg.add((naics['NAICS-IndustrySector-49'], RDF.type, naics['NAICS-IndustrySector']))
-    kg.add((naics['NAICS-IndustrySector-49'], RDFS.label, Literal('Transportation and Warehousing', datatype=XSD.string)))
-    kg.add((naics['NAICS-IndustrySector-49'], OWL.sameAs, naics['NAICS-IndustrySector-48']))
+    kg.add((naics['NAICS-49'], RDF.type, naics['NAICS-IndustrySector']))
+    kg.add((naics['NAICS-49'], RDFS.label, Literal('Transportation and Warehousing', datatype=XSD.string)))
+    kg.add((naics['NAICS-49'], OWL.sameAs, naics['NAICS-48']))
 
 
     return kg

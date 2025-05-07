@@ -1,0 +1,95 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix epa_frs: <http://w3id.org/fio/v1/epa-frs#> .
+@prefix epa_frs_data: <http://w3id.org/fio/v1/epa-frs-data#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/> .
+@prefix kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+epa_frs_data:d.FRS-Facility.110000314204 a epa_frs:FRS-Facility ;
+    rdfs:label "PRATT AND WHITNEY"^^xsd:string ;
+    dcterms:alternative "PRATT & WHITNEY"^^xsd:string ;
+    dcterms:created "2000-03-01"^^xsd:date ;
+    schema1:address "113 WELLS ST, NORTH BERWICK, ME  03906 US"^^xsd:string ;
+    schema1:dateModified "2017-06-01"^^xsd:date ;
+    kwg-ont:sfWithin kwgr:administrativeRegion.USA.23031 ;
+    epa_frs:hasFRSId "110000314204"^^xsd:string ;
+    epa_frs:ofFacilityType epa_frs:d.Stationary-Facility ;
+    geo:hasGeometry epa_frs_data:d.FRS-Facility-Geometry.110000314204 .
+
+epa_frs_data:d.FRS-Facility.110000314204 a epa_frs:FRS-Facility,
+        epa_frs:ME-EFIS-Facility ;
+    epa_frs:hasEnvironmentalInterest epa_frs_data:d.EnvironmentalInterest.Supplemental.ME-EFIS.5633860,
+        epa_frs_data:d.EnvironmentalInterest.Supplemental.ME-EFIS.5634892,
+        epa_frs_data:d.EnvironmentalInterest.Supplemental.ME-EFIS.5634958,
+        epa_frs_data:d.EnvironmentalInterest.Supplemental.ME-EFIS.5635798,
+        epa_frs_data:d.EnvironmentalInterest.Supplemental.ME-EFIS.8162091,
+        epa_frs_data:d.EnvironmentalInterest.Supplemental.ME-EFIS.8162112 ;
+    epa_frs:hasIdentifier.ME-EFIS "FN000000001212506427"^^xsd:string,
+        "FN000000001212661735"^^xsd:string,
+        "FN00000000129239950"^^xsd:string,
+        "FN00000000129245908"^^xsd:string ;
+    epa_frs:ofIndustry.ME-EFIS naics:NAICS-336412 ;
+    epa_frs:primaryIndustry naics:NAICS-336412 .
+
+epa_frs_data:d.EnvironmentalInterest.Supplemental.ME-EFIS.5633860 a epa_frs:NPDESPermit ;
+    rdfs:label "MEPDES PERMITS ME0022861"^^xsd:string ;
+    dcterms:identifier "ME-EFIS:ME0022861"^^xsd:string .
+
+epa_frs_data:d.EnvironmentalInterest.Supplemental.ME-EFIS.5634892 a epa_frs:AirProgram ;
+    rdfs:label "AIR EMISSIONS LICENSE A-000453"^^xsd:string ;
+    dcterms:identifier "ME-EFIS:A-000453"^^xsd:string .
+
+epa_frs_data:d.EnvironmentalInterest.Supplemental.ME-EFIS.5634958 a epa_frs:NPDESStormwaterPermit ;
+    rdfs:label "GENERAL SECTOR MULTI-PURPOSE STORMWATER MER05B446"^^xsd:string ;
+    dcterms:identifier "ME-EFIS:MER05B446"^^xsd:string .
+
+epa_frs_data:d.EnvironmentalInterest.Supplemental.ME-EFIS.8162091 a epa_frs:NPDESStormwaterPermit ;
+    rdfs:label "INDUSTRIAL STORMWATER MULTI-SECTOR GENERAL PERMIT MER05B446"^^xsd:string ;
+    dcterms:identifier "ME-EFIS:MER05B446"^^xsd:string .
+
+epa_frs_data:d.EnvironmentalInterest.Supplemental.ME-EFIS.8162112 a epa_frs:InfectiousWaste ;
+    rdfs:label "BIOMEDICAL WASTE GENERATORS 1403"^^xsd:string ;
+    dcterms:identifier "ME-EFIS:1403"^^xsd:string .
+
+epa_frs_data:d.EnvironmentalInterest.Supplemental.ME-EFIS.5635798 a epa_frs:InfectiousWaste ;
+    rdfs:label "MEDICAL WASTE PROGRAM 1403"^^xsd:string ;
+    dcterms:identifier "ME-EFIS:1403"^^xsd:string .
+
+epa_frs_data:d.FRS-Facility-Geometry.110000314204 schema1:dateModified "2024-10-02"^^xsd:date ;
+    geo:asWKT "POINT (43.30808 -70.72914)"^^geo:wktLiteral .
+
+epa_frs:d.Stationary-Facility a epa_frs:FacilityType ;
+    rdfs:label "STATIONARY" .
+
+epa_frs:NPDESPermit a owl:Class ;
+    rdfs:label "NPDES PERMIT"^^xsd:string ;
+    dcterms:description "A CLEAN WATER ACT (CWA) NATIONAL POLLUTANT DISCHARGE ELIMINATION SYSTEM (NPDES) PERMIT, WHICH ESTABLISHES POLLUTION LIMITS, AND SPECIFIES MONITORING AND REPORTING REQUIREMENTS FOR DISCHARGERS OF POLLUTANTS INTO WATERS OF THE UNITED STATES."^^xsd:string ;
+    rdfs:subClassOf epa_frs:WasteWaterPrograms .
+
+epa_frs:AirPrograms a owl:Class ;
+    rdfs:label "AIR PROGRAMS"^^xsd:string ;
+    dcterms:description "ENVIRONMENTAL PROGRAMS THAT REGULATE OR MONITOR AIR EMISSIONS FROM AREA, STATIONARY, AND MOBILE SOURCES, AS REQUIRED BY THE CLEAN AIR ACT."^^xsd:string ;
+    rdfs:subClassOf epa_frs:EnvironmentalInterest .
+
+epa_frs:NPDESStormwaterPermit a owl:Class ;
+    rdfs:label "NPDES STORMWATER PERMIT"^^xsd:string ;
+    dcterms:description "THE STORM WATER PROGRAM, A COMPONENT OF THE CLEAN WATER ACT (CWA) NATIONAL POLLUTANT DISCHARGE ELIMINATION SYSTEM (NPDES), REQUIRES NPDES PERMITS FOR STORM WATER DISCHARGES FROM MUNICIPAL SEPARATE STORM SEWER SYSTEMS (MS4S), INDUSTRIES, AND CONSTRUCTIONS SITES."^^xsd:string ;
+    rdfs:subClassOf epa_frs:WasteWaterPrograms .
+
+epa_frs:InfectiousWaste a owl:Class ;
+    rdfs:label "INFECTIOUS WASTE"^^xsd:string ;
+    dcterms:description "A COMPREHENSIVE STATE PROGRAM THAT MONITORS COMPLIANCE WITH INFECTIOUS WASTE MANAGEMENT REGULATIONS.  THE PROGRAM IS ACTIVELY INVOLVED IN THE REGISTRATION OF GENERATORS AND TRANSPORTERS OF INFECTIOUS WASTE.  INFECTIOUS WASTE GENERATORS ARE RESPONSIBLE FOR THE STORAGE, COLLECTION AND DISPOSAL OF THEIR INFECTIOUS WASTE, AND FOR ENSURING THAT THE WASTE IS TRANSPORTED OFF SITE FOR TREATMENT BY A REGISTERED TRANSPORTER AND DISPOSED OF AT A SITE OR FACILITY WHICH HAS ALL APPLICABLE PERMITS REQUIRED TO RECEIVE WASTE.  INFECTIOUS WASTE INCLUDES ANY WASTE ITEM FROM RESEARCH OR THE HEALTH CARE COMMUNITY IN THESE CATEGORIES:  SHARPS, MICROBIOLOGICALS, BLOOD AND BLOOD PRODUCTS, PATHOLOGICAL WASTE, ISOLATION WASTE AND CONTAMINATED ANIMAL WASTE."^^xsd:string ;
+    rdfs:subClassOf epa_frs:HazardousWastePrograms .
+
+epa_frs:WasteWaterPrograms a owl:Class ;
+    rdfs:label "WASTE WATER PROGRAMS"^^xsd:string ;
+    dcterms:description "ENVIRONMENTAL PROGRAMS THAT REGULATE DISCHARGES OF POLLUTANTS TO WATERS OF THE UNITED STATES, AS REQUIRED BY THE CLEAN WATER ACT."^^xsd:string ;
+    rdfs:subClassOf epa_frs:EnvironmentalInterest .
+
+epa_frs:HazardousWastePrograms a owl:Class ;
+    rdfs:label "HAZARDOUS WASTE PROGRAMS"^^xsd:string ;
+    dcterms:description "ENVIRONMENTAL PROGRAMS THAT REGULATE HAZARDOUS WASTE, INCLUDING THE GENERATION, TRANSPORTATION, TREATMENT, STORAGE, AND DISPOSAL OF HAZARDOUS WASTE, AS REQUIRED BY THE RESOURCE CONSERVATION AND RECOVERY ACT (RCRA)."^^xsd:string ;
+    rdfs:subClassOf epa_frs:EnvironmentalInterest .

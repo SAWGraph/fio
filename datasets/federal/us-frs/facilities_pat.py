@@ -19,11 +19,11 @@ from pathlib import Path
 code_dir = Path(__file__).resolve().parent.parent
 #print(code_dir)
 sys.path.insert(0, str(code_dir))
-from variable import NAME_SPACE, _PREFIX
+#from variable import NAME_SPACE, _PREFIX
 
 ## declare variables
 logname = "log"
-state = ' OH'
+state = ' ME'
 
 ## data path
 root_folder =Path(__file__).resolve().parent.parent.parent
@@ -31,11 +31,12 @@ data_dir = root_folder / "data/epa_pfas_analytic_tool/"
 metadata_dir = None
 output_dir = root_folder / "federal/us-frs"
 
-us_frs = Namespace(f"http://sawgraph.spatialai.org/v1/us-frs#")
-us_frs_data = Namespace(f"http://sawgraph.spatialai.org/v1/us-frs-data#")
-fio = Namespace(f"http://sawgraph.spatialai.org/v1/fio#")
-naics = Namespace(f"http://sawgraph.spatialai.org/v1/fio/naics#")
-sic = Namespace(f"http://sawgraph.spatialai.org/v1/fio/sic#")
+
+epa_frs = Namespace(f"http://w3id.org/fio/v1/epa-frs#")
+epa_frs_data = Namespace(f"http://w3id.org/fio/v1/epa-frs-data#")
+fio = Namespace(f"http://w3id.org/fio/v1/fio#")
+naics = Namespace(f"http://w3id.org/fio/v1/naics#")
+sic = Namespace(f"http://w3id.org/fio/v1/sic#")
 
 ## initiate log file
 logging.basicConfig(filename=logname,
@@ -74,12 +75,16 @@ def Initial_KG(_PREFIX: object) -> object:
     for prefix in prefixes:
         kg.bind(prefix, prefixes[prefix])
     kg.bind('fio', fio)
-    kg.bind('us_frs', us_frs)
-    kg.bind('us_frs_data', us_frs_data)
+    kg.bind('epa_frs', epa_frs)
+    kg.bind('epa_frs_data', epa_frs_data)
     kg.bind('naics', naics)
     kg.bind('sic', sic)
     return kg
 
+def clean_attributes(df):
+    print(df.info())
+
+    return df
 
 def get_attributes(row):
 
@@ -131,7 +136,7 @@ def get_attributes(row):
 def get_iris(facility):
     #remove airports with no frs_id
     if facility != False:
-        facility_iri = us_frs_data['d.'+'FRS-Facility.'+facility['facility_id']]
+        facility_iri = epa_frs_data['d.'+'FRS-Facility.'+facility['facility_id']]
     else:
         return False
     return facility_iri
@@ -139,13 +144,15 @@ def get_iris(facility):
 
 def triplify(df, _PREFIX):
     kg = Initial_KG(_PREFIX)
+
+    df = clean_attributes(df)
     for idx, row in df.iterrows():
         facility = get_attributes(row)
         facility_iri = get_iris(facility)
         if facility != False:
             #create facility
-            kg.add((facility_iri, RDF.type, us_frs["FRS-Facility"]))
-            kg.add((facility_iri, RDF.type, us_frs["EPA-PFAS-Facility"]))
+            kg.add((facility_iri, RDF.type, epa_frs["FRS-Facility"]))
+            kg.add((facility_iri, RDF.type, epa_frs["EPA-PFAS-Facility"]))
 
     return kg
 

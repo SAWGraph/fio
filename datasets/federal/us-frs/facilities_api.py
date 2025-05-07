@@ -8,7 +8,7 @@ import math
 import datetime
 from datetime import date
 
-from rdflib.namespace import OWL, XMLNS, XSD, RDF, RDFS, DCTERMS, GEO
+from rdflib.namespace import OWL, XMLNS, XSD, RDF, RDFS, DCTERMS, GEO, PROV
 from rdflib import Namespace
 from rdflib import Graph
 from rdflib import URIRef, BNode, Literal
@@ -26,7 +26,7 @@ code_dir = Path(__file__).resolve().parent.parent
 root_folder =Path(__file__).resolve().parent.parent.parent
 output_dir = root_folder / "federal/us-frs/triples/"
 logname = "log"
-testing = True  #only gets 5 records when set to true
+testing = False  #only gets 5 records when set to true
 
 ##namespaces
 epa_frs = Namespace(f"http://w3id.org/fio/v1/epa-frs#")
@@ -61,7 +61,7 @@ def load_data():
 
     facilities = []
     limit = 10000
-    increment= 1000
+    increment= 10000
     start = 0
 
     #temporary limit to 5 for testing
@@ -79,6 +79,7 @@ def load_data():
             facilities.append(facility)
         
         start += limit
+        print(f'retrieved to {limit}')
         limit += limit
 
     #report count of records
@@ -104,6 +105,7 @@ def Initial_KG():
     kg.bind('kwgr', kwgr)
     kg.bind('kwg-ont', kwg_ont)
     kg.bind('schema', schema)
+
     return kg
 
 def get_point(registry_id):
@@ -141,18 +143,20 @@ def clean_attributes(facilities):
     #format various columns for triplification
     fac = fac.assign(federal_bool= lambda x: x.federal_agency_code.astype(bool))  #boolean for federal sites
     fac = fac.assign(tribal_bool= lambda x: False if (x.tribal_land_code.notna or x.tribal_land_code == 'N') else True) #boolean for tribal sites
+    fac = fac.assign(small_business_bool = lambda x: False if (x.small_bus_ind.notna or x.small_bus_ind == 'N') else True)
     fac = fac.assign(siteType = lambda x: x.site_type_name.str.title().str.replace(' ','')) #reformated type for use in Facility subclass
     fac['updated'] = pd.to_datetime(fac['update_date'], format="%d-%b-%y") #updated date to pd.datetime
     fac['created'] = pd.to_datetime(fac['create_date'], format="%d-%b-%y") #created date to pd.datetime
     fac['refreshed'] = pd.to_datetime(fac['refresh_date'], format="%d-%b-%y") #refreshed date to pd.datetime
     fac['geo_time'] = pd.to_datetime(fac['timestamp'], format='%Y-%m-%d %H:%M:%S')
     fac['WKT'] = fac.apply(lambda x: Point(x.latitude83, x.longitude83).wkt, axis=1)
-    
+    print(fac.operating_status.unique())
     #drop attributes that won't be triplified or referenced
-    fac = fac.drop(axis=1, labels=['state_name', 'location_address', 'user_id', 'std_city_name', 'std_county_name', 'legislative_dist_num', 'objectid', 'std_postal_code', 'std_country','country_name', 'county_name', 'std_stype_before', 'std_base_name', 'std_stype_after',  'city_name', 'std_street_name', 'postal_code', 'fips_code', 'std_house_number', 'icis_identifier', 'review_flag', 'state_code', 'std_suffix', 'review_reason', 'sensitive_ind', 'stand_alone_flag', 'public_ind'])
+    fac = fac.drop(axis=1, labels=['state_name', 'location_address', 'supplemental_location', 'epa_region_code', 'data_quality_code', 'user_id', 'interest_status_code', 'std_city_name', 'std_county_name', 'legislative_dist_num', 'objectid', 'std_postal_code', 'std_country','country_name', 'county_name', 'std_stype_before', 'std_base_name', 'std_stype_after',  'city_name', 'std_street_name', 'postal_code', 'fips_code', 'std_house_number', 'icis_identifier', 'review_flag', 'state_code', 'std_suffix', 'review_reason', 'sensitive_ind', 'stand_alone_flag', 'public_ind'])
     #drop additional attributes that have been reformated
-    fac = fac.drop(axis=1, labels=['federal_facility_code', 'tribal_land_code', 'site_type_name', 'timestamp', 'update_date', 'create_date', 'refresh_date'])
+    fac = fac.drop(axis=1, labels=['federal_facility_code', 'tribal_land_code', 'timestamp', 'update_date', 'create_date', 'refresh_date', 'small_bus_ind'])
     print(fac.info())
+
 
     return fac
 
@@ -165,16 +169,15 @@ def get_iris(facility):
     extra_iris ={}
 
     if pd.notnull(facility['std_county_fips']):
-        extra_iris['county_iri'] = kwgr['administrativeRegion.USA.' + str(facility['std_county_fips'])]  # namespace needs to be replaced
-        #TODO add uri for the state and triplify the state to sfWithin
-    #TODO agency codes need labels  FRS_PROGRAM_FACILITY.FEDERAL_AGENCY_CODE
+        extra_iris['county_iri'] = kwgr['administrativeRegion.USA.' + str(facility['std_county_fips'])]  # align to Admin 2 in Spatial Graph
+        
     if pd.notnull(facility['federal_agency_code']):
-        agency_iri = fio['d.Agency.'+str(facility['federal_agency_code'])]
+        agency_iri = fio['d.Agency.'+str(facility['federal_agency_code'])] #agency codes defined frs.frs_agency_ref in controlled vocab script
         extra_iris['agency'] = agency_iri
     
     #siteType to class
     if pd.notnull(facility['siteType']) and facility['siteType'] != 'Facility':
-            extra_iris['type'] = epa_frs[facility['siteType']+'-Facility']
+            extra_iris['type'] = epa_frs_data[f"d.{facility['siteType']}-Facility"]
 
     return facility_iri, geo_iri, extra_iris
 
@@ -192,7 +195,7 @@ def triplify(facilities):
         kg.add((facility_iri, RDF.type, epa_frs["FRS-Facility"]))
         kg.add((facility_iri, RDFS.label, Literal(facility['std_name'], datatype= XSD.string)))
         if pd.notnull(facility.std_full_address):
-            kg.add((facility_iri, schema['address'], Literal(facility['std_full_address'])))
+            kg.add((facility_iri, schema['address'], Literal(facility['std_full_address'], datatype=XSD.string)))
         kg.add((facility_iri, DCTERMS.alternative, Literal(facility['primary_name'], datatype=XSD.string)))
         kg.add((facility_iri, epa_frs['hasFRSId'], Literal(facility['registry_id'], datatype=XSD.string)))
         kg.add((facility_iri, DCTERMS.created, Literal(facility['created'].strftime('%Y-%m-%d'), datatype=XSD.date)))
@@ -208,21 +211,27 @@ def triplify(facilities):
             kg.add((geo_iri, GEO["asWKT"], Literal(facility['WKT'], datatype=GEO["wktLiteral"])))
             if pd.notnull(facility.geo_time):
                 kg.add((geo_iri, schema['dateModified'],  Literal(facility['geo_time'].strftime('%Y-%m-%d'), datatype=XSD.date)))
-
-        if facility['tribal_bool']:
-            #kg.add((facility_iri, coso['locatedIn'], ))
-            pass
-        #TODO huc code
         
+        #tribal
+        if facility['tribal_bool']:
+            kg.add((facility_iri, epa_frs['ofFacilityType'], epa_frs_data['d.Tribal-Facility'])) #TODO needs a label
+            #kg.add((facility_iri, coso['locatedIn'], ))
 
         #federal
-        if facility['federal_bool'] == True:
-            kg.add((facility_iri, RDF.type, epa_frs['Federal-Facility']))
+        if facility['federal_bool']:
+            kg.add((facility_iri, epa_frs['ofFacilityType'], epa_frs_data['d.Federal-Facility'])) #TODO needs a label
             if 'agency' in extra_iris.keys():
-                kg.add((facility_iri, fio['ofAgency'], extra_iris['agency']))
+                kg.add((facility_iri, PROV['wasAttributedTo'], extra_iris['agency']))
+
+        #smallbusiness
+        if facility['small_business_bool']:
+            kg.add((facility_iri, epa_frs['ofFacilityType'], epa_frs_data['d.SmallBusiness-Facility'])) #TODO needs a label
+
         #siteType
         if 'type' in extra_iris.keys():
-            kg.add((facility_iri, RDF.type, extra_iris['type']))
+            kg.add((facility_iri, epa_frs['ofFacilityType'], extra_iris['type']))
+            kg.add((extra_iris['type'], RDF.type, epa_frs['FacilityType']))
+            kg.add((extra_iris['type'], RDFS.label, Literal(facility['site_type_name'])))
 
     return kg
 
@@ -239,7 +248,10 @@ def main():
     data = load_data()
     kg = triplify(data)
 
-    kg_turtle_file = "us-frs-data-facility-site-"+ state+"-test.ttl".format(output_dir)
+    if testing:
+        kg_turtle_file = output_dir / f"us-frs-data-facility-site-{state}-test.ttl"
+    else:
+        kg_turtle_file = output_dir / f"us-frs-data-facility-site-{state}.ttl"
     kg.serialize(kg_turtle_file, format='turtle')
     logger = logging.getLogger('Finished triplifying pfas analytics tool facilities.')
 

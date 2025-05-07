@@ -31,89 +31,102 @@
 
  FRS State Downloads (11 csv files per state), or API access via table
 
-### *_FACILITY_FILE.csv / FRS_FACILITY_SITE api table
+### FRS_FACILITY_SITE api table (joined with GEO_FACILITY_POINT) / *_FACILITY_FILE.csv
 
-**CODE**: \us-frs\older_scripts\facilities_statedownload.py
-\us-frs\facilities_api.py
+**API CODE**: \us-frs\facilities_api.py
+
+**from file code(outdated):**\us-frs\older_scripts\facilities_statedownload.py
+
+**[REFERENCE](https://enviro.epa.gov/envirofacts/metadata/table/frs/frs_program_facility)**
 
 | State download Attribute    | API Attribute |  Description  | Lift to Graph | Ontology Property    |
 |--------------|--------------|---------------|----------------------|------|
 | FRS_FACILITY_DETAIL_REPORT_URL | - | report url   |   |    |
-| REGISTRY_ID  | registry_id | registry id to uniquely identify facility  | Yes     | us_frs:FRS-Facility (URI) ,  us_frs:facilityId (dcterms:identifier) |
-| PRIMARY_NAME | primary_name| public or commercial name|     |  |
-| | std_name| The primary name after a set of standardization rules are applied for comparison purposes. The rules include removing special characters and certain words (e.g., "/", "Inc.") and replacing abbreviated words with standardized equivalents (e.g., "Assoc" becomes "Association"). | Yes | us_frs:Facility rdfs:Label  |
-| LOCATION_ADDRESS   |location_address |  | ? |     |
-| _ |  std_full_address | The standardized complete address including STD_LOC_ADDRESS STD_CITY_NAME STD_STATE_CODE  AND STD_POSTAL_CODE.  | | |
-| SUPPLEMENTAL_LOCATION |  supplemental_location  | text that provides additional information about a place, including a building name with its secondary unit and number, an industrial park name, an installation name or descriptive text where no formal address is available. | ? |    |
+| REGISTRY_ID  | registry_id | registry id to uniquely identify facility  | Yes     | epa-frs:FRS-Facility (in URI)  epa-frs:hasFRSid (xsd:string, owl:subPropertyOf dcterms:identifier ) |
+| PRIMARY_NAME | primary_name| public or commercial name| Yes    | epa-frs:FRS-Facility dcterms:alternative (xsd:string) |
+| | std_name| The primary name after a set of standardization rules are applied for comparison purposes. The rules include removing special characters and certain words (e.g., "/", "Inc.") and replacing abbreviated words with standardized equivalents (e.g., "Assoc" becomes "Association"). | Yes | epa-frs:FRS-Facility rdfs:label  |
+| LOCATION_ADDRESS   |location_address | The address that describes the physical (geographic) location of the front door or main entrance of a facility site, including urban-style street address or rural address.| (only use standardized form) |    |
+| _ |  std_full_address | The standardized complete address including STD_LOC_ADDRESS STD_CITY_NAME STD_STATE_CODE  AND STD_POSTAL_CODE.  | Yes | epa-frs:FRS-Facility schema:address (xsd:string)|
+| | std_stype_before | | No | |
+| | std_base_name | The name of the street or road, not including the prefix, suffix, or pre- or postdirectional codes. | No ||
+| | std_street_name| The name assigned to a street or road, not including other urban-style street address components.| No ||
+| | std_stype_after || No ||
+| | std_loc_address|| No ||
+| | std_suffix|| No ||
+| | std_house_number || No ||
+| | std_prefix|| No ||
+| SUPPLEMENTAL_LOCATION |  supplemental_location  | text that provides additional information about a place, including a building name with its secondary unit and number, an industrial park name, an installation name or descriptive text where no formal address is available. | |    |
 | CITY_NAME    | city_name, std_city_name | locality name - nameof city, town village or other locality within whose boundaries (the majority of) the facility site is located.  |   |    |
 | COUNTY_NAME  | county_name, std_county_name |  | No      |    |
-| FIPS_CODE    | fips_code, std_county_fips| county fips code (state and county)  | Yes     | kwg-ont:sfWithin kwg-ont:AdministrativeRegion_2      |
-| STATE_CODE   | state_code, std_state_code | USPS abbreviation for state    |   |    |
-| STATE_NAME   | state_name |   |   |    |
-| COUNTRY_NAME | country_name |   |   |    |
-| POSTAL_CODE  | postal_code, std_postal_code |  5 digit zip code and 4 digit extension code (if available)   |   |    |
-| FEDERAL_FACILITY_CODE | federal_facility_code   | Yes/No the facility is property of the Federal Government    | Yes     | rdf:type us_frs:Federal-Facility |
-| FEDERAL_AGENCY_NAME  |  federal_agency_code   | name of federal agency (derived from FEDERAL_AGENCY_CODE lookup)   | Yes  | fio:ofAgency   |
-| TRIBAL_LAND_CODE | tribal_land_code  | Yes if tribal land |   |    |
+| FIPS_CODE    | fips_code, std_county_fips| county fips code (state and county)  | Yes     | epa-frs:FRS-Facility kwg-ont:sfWithin kwg-ont:AdministrativeRegion_2      |
+| STATE_CODE   | state_code, std_state_code | USPS abbreviation for state    |  For initial filter only |    |
+| STATE_NAME   | state_name |   | No  |    |
+| COUNTRY_NAME | country_name, std_country |   | No  |    |
+| POSTAL_CODE  | postal_code, std_postal_code |  5 digit zip code and 4 digit extension code (if available)   | No  |    |
+| FEDERAL_FACILITY_CODE | federal_facility_code   | Yes/No the facility is property of the Federal Government    | Yes     | epa-frs:FRS-Facility epa-frs:ofFacilityType epa-frs-data:d.Federal-Facility |
+| FEDERAL_AGENCY_NAME  |     | name of federal agency (derived from FEDERAL_AGENCY_CODE lookup)   | yes | epa-frs:Agency rdfs:label (in controlled vocab script) |
+| | federal_agency_code | The Federal Agency/Bureau code. The five character code consists of a letter followed by  four numbers. There are four possible letters that can occupy the first character position: 'C' for Civilian Federal Agency; 'D' for Department of Defense; 'E' for Department of Energy; 'X' for Unknown. The second and third characters represent the agency code, while the fourth and fifth characters represent the bureau code. | Yes | epa-frs:FRS-Facility prov:wasAttributedTo epa-frs:Agency (in URI) |
+| TRIBAL_LAND_CODE | tribal_land_code  | Code indicating whether or not the facility site is located on tribal land.  | Yes  |  epa-frs:FRS-Facility epa-frs:ofFacilityType epa-frs-data:d.Tribal-Facility  |
 | TRIBAL_LAND_NAME | tribal_land_name | Name of Tribal Reservation, statistical area, or Public Domain Allotment.      | ?    |  |
-| CONGRESSIONAL_DIST_NUM | legislative_dist_num  |  | ?  |    |
-| CENSUS_BLOCK_CODE | |  | ?  |    |
-| HUC_CODE   |  | The Hydrologic Unit Code (HUC) that represents a geographic area representing part or all of a surface drainage basin, a combination of drainage basins, or a distinct hydrologic feature. | ?   | kwg-ont:sfWithin     |
-| EPA_REGION_CODE  | epa_region_code | The code that represents an EPA Region.    | ? |    |
-| SITE_TYPE_NAME   | site_type_name | Allowable Values: [ Stationary, Monitoring Site, Brownfields Site, Water System ,  Contamination Addressed,  Contaminated Site,  Potentially Contaminated Site  ]  | Yes     |  added to URI -> rdfs:subClassOf us_frs:FRS-Facility  |
-| LOCATION_DESCRIPTION  |  location_description | Descriptive information about location of facility, including directions.      |   |    |
-| CREATE_DATE | create_date | date first posted to database  |  Yes |    |
-| UPDATE_DATE | update_date, last_reported_date | most recent calendar update    | Yes |    |
-| US_MEXICO_BORDER_IND  |   | An indicator that the facility is located within 62.5 miles (100 km) of the United States - Mexico Border. Only applicable to facilities in California, Arizona, New Mexico, and Texas.    |   |    |
+| CONGRESSIONAL_DIST_NUM | legislative_dist_num  | The number that represents a Legislative District within a state. | No |    |
+| CENSUS_BLOCK_CODE | |  | No |    |
+| HUC_CODE   |  | The Hydrologic Unit Code (HUC) that represents a geographic area representing part or all of a surface drainage basin, a combination of drainage basins, or a distinct hydrologic feature. | No  |    |
+| EPA_REGION_CODE  | epa_region_code | The code that represents an EPA Region.    | No |    |
+| SITE_TYPE_NAME   | site_type_name | The descriptive name for the type of site the facility occupies.  Allowable Values: [ Stationary, Monitoring Site, Brownfields Site, Water System ,  Contamination Addressed,  Contaminated Site,  Potentially Contaminated Site  ]  | Yes     |  added to URI -> rdfs:subClassOf us_frs:FRS-Facility  |
+| LOCATION_DESCRIPTION  |  location_description | Descriptive information about location of facility, including directions.      |  No |    |
+| CREATE_DATE | create_date | date first posted to database  |  Yes |  epa-frs:FRS-Facility dcterms:created xsd:date  |
+| UPDATE_DATE | update_date, last_reported_date | A system-generated value that represents the most recent calendar date and time the corresponding information was updated in the database.  | Yes | epa-frs:FRS-Facility schema:dateModified xsd:date   |
+| US_MEXICO_BORDER_IND  |   | An indicator that the facility is located within 62.5 miles (100 km) of the United States - Mexico Border. Only applicable to facilities in California, Arizona, New Mexico, and Texas.    | No  |    |
 | PGM_SYS_ACRNMS  |   | list of program acronyms the facility is tracked by    | from other tables | |
-| LATITUDE83   |  | | Yes     |    |
-| LONGITUDE83  |  | | Yes     |    |
-| CONVEYOR     | | Identification of the party that transmitted the latitude and longitude  |   |    |
-| COLLECT_DESC | | Method used to determine Lat/Long    |   |    |
-| ACCURACY_VALUE |    | Measure of accuracy in meters of latitude/longitude    |   |    |
-| REF_POINT_DESC |    | Name that identifies the place for which geographic coordinates were established     |   |    |
-| HDATUM_DESC  | | Horizontal reference datum used in determining latitude longitude coordinates  |   |    |
-| SOURCE_DESC  | | Name of party responsible for providing lat/long coordinates |   |    |
-| | user_id | | | |
-| | std_stype_before | | | |
-| | std_base_name ||||
-| | std_stype_after ||||
+| LATITUDE83   | frs.GEO_FACILITY_POINT.latitude83 | | Yes     |  epa-frs:FRS-Facility geo:hasGeometry/geo:asWKT  |
+| LONGITUDE83  | frs.GEO_FACILITY_POINT.longitude83 | | Yes     |  epa-frs:FRS-Facility geo:hasGeometry/geo:asWKT  |
+| CONVEYOR     | - (geo_pgm_facility_coordinate) | Identification of the party that transmitted the latitude and longitude  |  No |    |
+| COLLECT_DESC | - (geo_pgm_facility_coordinate) | Method used to determine Lat/Long    | No  |    |
+| ACCURACY_VALUE | - (geo_pgm_facility_coordinate) | Measure of accuracy in meters of latitude/longitude    |  No |    |
+| REF_POINT_DESC |  - (geo_pgm_facility_coordinate) | Name that identifies the place for which geographic coordinates were established     |  No |    |
+| HDATUM_DESC  | - (geo_pgm_facility_coordinate) | Horizontal reference datum used in determining latitude longitude coordinates  |  No |    |
+| SOURCE_DESC  | - (geo_pgm_facility_coordinate) | Name of party responsible for providing lat/long coordinates |  No |    |
+| | user_id | The user ID of the person who entered the data or the method by which the data was entered into the system. | No | |
 | | refresh_date | The date the data was last extracted from the data source. | No ||
-| | parent_registry_id |  The unique identification number, assigned by the EPA Facility Registry System, to the parent facility site (for example, the SDWIS water system). | ||
-| | env_justice_code||||
-| | small_bus_ind||||
-| | std_street_name||||
-| | interest_status_code||||
-| | review_reason||||
-| | sensitive_ind||||
-| | operating_status||||
-| | stand_alone_flag | Indicates whether or not the facility is standalone (i.e., only one environmental interest is linked to the facility) or multimedia (more than one environmental interest is linked to the facility).'Y' means the facility is standalone, and 'N' means the facility is not standalone.|||
-| | std_house_number ||||
-| | std_prefix||||
-| | std_country||||
-| | icis_identifier | This column is not currently being used. | ||
-| | public_ind | Indicates whether or not the associated data is accessible by the public on the Internet. |||
-| | review_flag ||||
-| | data_quality_code||||
-| | addr_type||||
-| | std_loc_address||||
-| | std_suffix||||
+| | parent_registry_id |  The unique identification number, assigned by the EPA Facility Registry System, to the parent facility site (for example, the SDWIS water system). | ? ||
+| | env_justice_code| Note:Dropped from schema in April 2025. The code that identifies the type of environmental justice concern affecting the facility or enforcement action.| No ||
+| | small_bus_ind| | Yes | epa-frs:FRS-Facility epa-frs:ofFacilityType epa-frs-data:d.SmallBusiness-Facility|
+| | interest_status_code| Null | no ||
+| | review_reason| The reason the record is flagged for manual review. | No ||
+| | sensitive_ind|Indicates whether or not the associated data is enforcement sensitive. | No ||
+| | operating_status|| No ||
+| | stand_alone_flag | Indicates whether or not the facility is standalone (i.e., only one environmental interest is linked to the facility) or multimedia (more than one environmental interest is linked to the facility).'Y' means the facility is standalone, and 'N' means the facility is not standalone.| No ||
+| | icis_identifier | This column is not currently being used. | No ||
+| | public_ind | Indicates whether or not the associated data is accessible by the public on the Internet. |No - only public data accessed ||
+| | review_flag |A flag that indicates the record requires a manual review due to changes from a data source | No ||
+| | data_quality_code| Quality of the location | No ||
+| | addr_type|The type of address given in the LOCATION_ADDRESS column (i.e., standard urban, PO Box). | No ||
 
-### ME_NAICS_FILE.csv
+### frs.v_pub_frs_naics_ez / ME_NAICS_FILE.csv
 
 many to one relation with facility file
 
-**CODE**: \us-frs\industries-echo.py
+**OLD CODE**: \us-frs\industries-echo.py
 
-| Attribute   | Description    | Lift to Graph | Ontology Property/Class      |
-|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|------------------------------------------------------|
-| REGISTRY_ID |    | Yes     | us_frs:FRS-Facility    |
-| PGM_SYS_ACRNM     | The abbreviated name that represents the name of an information management system for an environmental program.      | Yes     | used of URI predicate  fio:ofIndustry sub properties    |
-| PGM_SYS_ID  | The identification number, such as the permit number assigned by an information management system that represents a facility site, waste site, operable unit, or other feature tracked by that Environmental Information System. |   |      |
-| INTEREST_TYPE     | The environmental permit or regulatory program that applies to the facility site | ? |      |
-| NAICS_CODE  | The code that represents a subdivision of an industry that accommodates user needs in the United States (six-digits).      | Yes     | fio:ofIndustry naics:NAICS-Industry      |
-| PRIMARY_INDICATOR | The name that indicates whether the associated NAICS Code represents the primary activity occurring at the facility site   | Yes     | us_frs:primary_industry or us_frs:secondary_industry |
-| CODE_DESCRIPTION  | The text that represents a subdivision of an industry that accommodates user needs in the United States  |   |      |
+| Attribute   | API attribute | Description    | Lift to Graph | Ontology Property/Class      |
+|-------------| --------------|----------------|---------------| ---------------------------- |
+|  | city_name | | No | |
+| CODE_DESCRIPTION| code_description | The text that represents a subdivision of an industry that accommodates user needs in the United States  | No (pull from Census bureau files)  |      |
+| | country_name | | No | |
+| | county_name | | No | |
+| | epa_region_code | | No | |
+| | latitude83 | | No(from other table) | |
+| | legislative_dist_num| | No | |
+| | location_address | | No | |
+| | longitude83 | | No | |
+| NAICS_CODE | naics_code| The code that represents a subdivision of an industry that accommodates user needs in the United States (six-digits). | Yes     | fio:ofIndustry naics:NAICS-Industry (in URI)      |
+ PGM_SYS_ACRNM|  pgm_sys_acrnm    | The abbreviated name that represents the name of an information management system for an environmental program.      | Yes     | owl:subclassOf epa-frs:FRS-Facility (also in iri of fio:ofIndustry and dcterms:identifier subproperties )  |
+| REGISTRY_ID | registry_id |  | Yes     | us_frs:FRS-Facility    |
+|
+| PGM_SYS_ID  | | The identification number, such as the permit number assigned by an information management system that represents a facility site, waste site, operable unit, or other feature tracked by that Environmental Information System. |   |      |
+| INTEREST_TYPE |    | The environmental permit or regulatory program that applies to the facility site | ? |      |
+
+| PRIMARY_INDICATOR | | The name that indicates whether the associated NAICS Code represents the primary activity occurring at the facility site   | Yes     | us_frs:primary_industry or us_frs:secondary_industry |
 
 ### ME_SIC_FILE.csv
 
@@ -126,10 +139,10 @@ many to one relation with facility file
 | REGISTRY_ID |     |   | |
 | PGM_SYS_ACRNM     | The abbreviated name that represents the name of an information management system for an environmental program. |   | |
 | PGM_SYS_ID  | The identification number, such as the permit number, assigned by an information management system that represents a facility site, waste site, operable unit, or other feature tracked by that Environmental Information System. |   | |
-| INTEREST_TYPE     | The environmental permit or regulatory program that applies to the facility site  |   | |
-| SIC_CODE    | The code that represents the economic activity of a company (4-digits).     |   | |
-| PRIMARY_INDICATOR | The name that indicates whether the associated SIC Code represents the primary activity occurring at the facility site      |   | |
-| CODE_DESCRIPTION  | The text that represents a subdivision of an industry that accommodates user needs in the United States   |   | |
+| INTEREST_TYPE|     | The environmental permit or regulatory program that applies to the facility site  |   |
+| SIC_CODE |   | The code that represents the economic activity of a company (4-digits).     |   |
+| PRIMARY_INDICATOR|  | The name that indicates whether the associated SIC Code represents the primary activity occurring at the facility site      |   |
+| CODE_DESCRIPTION |  | The text that represents a subdivision of an industry that accommodates user needs in the United States   |   |
 
 ### ALTERNATIVE NAME FILE
 
