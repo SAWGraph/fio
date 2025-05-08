@@ -2122,3 +2122,153 @@ ValueError: Invalid isoformat string: '2014-10-1900:00:00'
 17:33:38,634 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/join/frs.frs_interest/join/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
 17:33:39,791 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/join/frs.frs_interest/join/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
 17:33:39,792 root INFO finished fetching facilities.
+17:57:14,279 root INFO ****** Testing Run *********
+17:57:14,279 root INFO Getting facility programs and naics for ME from server.
+17:57:14,280 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+17:57:20,350 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/join/frs.frs_interest/join/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+17:57:21,422 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/join/frs.frs_interest/join/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+17:57:21,423 root INFO finished fetching facilities.
+18:02:25,658 root INFO ****** Testing Run *********
+18:02:25,659 root INFO Getting facility programs and naics for ME from server.
+18:02:25,659 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+18:02:33,739 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+18:02:36,871 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+18:02:36,873 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json
+18:02:36,873 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+18:02:40,134 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+18:02:40,135 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json
+18:02:40,135 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+18:02:41,376 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+18:02:41,379 root INFO finished fetching facilities.
+18:04:13,840 root INFO ****** Testing Run *********
+18:04:13,840 root INFO Getting facility programs and naics for ME from server.
+18:04:13,840 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+18:04:23,657 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+18:04:24,815 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+18:04:24,818 root INFO finished fetching facilities.
+18:06:26,118 root INFO ****** Testing Run *********
+18:06:26,118 root INFO Getting facility programs and naics for ME from server.
+18:06:26,118 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+18:06:33,995 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+18:06:35,127 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+18:06:35,130 root INFO finished fetching facilities.
+18:13:12,803 root INFO ****** Testing Run *********
+18:13:12,803 root INFO Getting facility programs and naics for ME from server.
+18:13:12,804 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+18:13:19,396 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+18:13:20,848 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+18:13:20,851 root INFO finished fetching facilities.
+18:23:07,726 root INFO ****** Testing Run *********
+18:23:07,726 root INFO Getting facility programs and naics for ME from server.
+18:23:07,727 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+18:23:13,52 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+18:23:14,439 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+18:23:14,443 root INFO finished fetching facilities.
+18:28:23,425 root INFO ****** Testing Run *********
+18:28:23,425 root INFO Getting facility programs and naics for ME from server.
+18:28:23,425 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+18:28:28,985 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+18:28:30,195 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+18:28:30,198 root INFO finished fetching facilities.
+18:28:45,475 root INFO ****** Testing Run *********
+18:28:45,475 root INFO Getting facility programs and naics for ME from server.
+18:28:45,476 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+18:28:51,321 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+18:28:52,734 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+18:28:52,736 root INFO finished fetching facilities.
+18:30:46,751 root INFO ****** Testing Run *********
+18:30:46,751 root INFO Getting facility programs and naics for ME from server.
+18:30:46,752 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+18:30:52,909 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+18:30:54,143 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+18:30:54,145 root INFO finished fetching facilities.
+18:31:50,87 root INFO ****** Testing Run *********
+18:31:50,88 root INFO Getting facility programs and naics for ME from server.
+18:31:50,89 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+18:31:55,852 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+18:31:57,29 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+18:31:57,32 root INFO finished fetching facilities.
+18:32:43,122 root INFO ****** Testing Run *********
+18:32:43,122 root INFO Getting facility programs and naics for ME from server.
+18:32:43,123 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+18:32:49,546 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+18:32:50,704 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+18:32:50,706 root INFO finished fetching facilities.
+18:45:30,763 root INFO ****** Testing Run *********
+18:45:30,763 root INFO Getting facility programs and naics for ME from server.
+18:45:30,764 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+18:45:40,668 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+18:45:42,335 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+18:45:42,339 root INFO finished fetching facilities.
+18:53:32,584 root INFO ****** Testing Run *********
+18:53:32,584 root INFO Getting facility programs and naics for ME from server.
+18:53:32,585 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+18:53:42,60 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+18:53:43,347 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+18:53:43,350 root INFO finished fetching facilities.
+19:00:07,393 root INFO ****** Testing Run *********
+19:00:07,394 root INFO Getting facility programs and naics for ME from server.
+19:00:07,395 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+19:00:13,336 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+19:00:14,509 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+19:00:14,512 root INFO finished fetching facilities.
+19:01:45,743 root INFO ****** Testing Run *********
+19:01:45,743 root INFO Getting facility programs and naics for ME from server.
+19:01:45,744 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+19:01:51,898 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+19:01:53,432 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+19:01:53,437 root INFO finished fetching facilities.
+19:02:18,298 root INFO ****** Testing Run *********
+19:02:18,299 root INFO Getting facility programs and naics for ME from server.
+19:02:18,299 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+19:02:27,477 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+19:02:28,668 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+19:02:28,670 root INFO finished fetching facilities.
+19:03:18,644 root INFO ****** Testing Run *********
+19:03:18,644 root INFO Getting facility programs and naics for ME from server.
+19:03:18,645 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+19:03:25,225 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+19:03:26,437 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+19:03:26,440 root INFO finished fetching facilities.
+19:11:46,471 root INFO ****** Testing Run *********
+19:11:46,471 root INFO Getting facility programs and naics for ME from server.
+19:11:46,472 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+19:11:52,68 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+19:11:53,310 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+19:11:53,315 root INFO finished fetching facilities.
+19:15:51,723 root INFO ****** Testing Run *********
+19:15:51,723 root INFO Getting facility programs and naics for ME from server.
+19:15:51,724 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+19:15:58,792 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+19:16:00,76 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+19:16:00,79 root INFO finished fetching facilities.
+19:25:11,49 root INFO ****** Testing Run *********
+19:25:11,49 root INFO Getting facility programs and naics for ME from server.
+19:25:11,50 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+19:25:18,600 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+19:25:19,826 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+19:25:19,829 root INFO finished fetching facilities.
+19:46:18,943 root INFO ****** Testing Run *********
+19:46:18,943 root INFO Getting facility programs and naics for ME from server.
+19:46:18,944 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+19:46:27,569 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+19:46:28,841 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+19:46:28,844 root INFO finished fetching facilities.
+19:48:25,80 root INFO ****** Testing Run *********
+19:48:25,80 root INFO Getting facility programs and naics for ME from server.
+19:48:25,81 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+19:48:32,896 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+19:48:34,513 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+19:48:34,516 root INFO finished fetching facilities.
+19:50:01,761 root INFO ****** Testing Run *********
+19:50:01,761 root INFO Getting facility programs and naics for ME from server.
+19:50:01,762 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+19:50:11,47 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+19:50:12,314 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+19:50:12,318 root INFO finished fetching facilities.
+19:54:49,427 root INFO ****** Testing Run *********
+19:54:49,428 root INFO Getting facility programs and naics for ME from server.
+19:54:49,428 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+19:54:55,379 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/0:10000/json HTTP/1.1" 200 None
+19:54:56,578 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.v_pub_frs_naics_ez/state_code/equals/ME/left/frs.frs_interest/left/frs.frs_supplemental_interest/10000:20000/json HTTP/1.1" 200 None
+19:54:56,582 root INFO finished fetching facilities.

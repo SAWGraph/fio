@@ -73,7 +73,7 @@ def load_data():
 
     # query the facilities 10000 (limit) at a time, and merge into one list
     while True: #limit < facilities_count+increment:
-        facilities_url = f'https://data.epa.gov/efservice/frs.v_pub_frs_naics_ez/state_code/equals/{state_code}/join/frs.frs_interest/join/frs.frs_supplemental_interest/{start}:{limit}/json' #join/frs.frs_supplemental_interest/
+        facilities_url = f'https://data.epa.gov/efservice/frs.v_pub_frs_naics_ez/state_code/equals/{state_code}/left/frs.frs_interest/left/frs.frs_supplemental_interest/{start}:{limit}/json' #join/frs.frs_supplemental_interest/
         print(facilities_url)
         resp = urllib3.request("GET", facilities_url)
         facilities_subset = resp.json()
@@ -131,9 +131,12 @@ def clean_attributes(facilities):
     
     # format various columns for triplification
     fac['primary_indicator'] = fac['primary_indicator'].apply(lambda x: x.lower())
-    fac['pgm_sys_acrnm'] = fac['pgm_sys_acrnm'].apply(lambda x: x.upper().replace("/", "-"))
+    fac['pgm_sys_acrnm'] = fac['pgm_sys_acrnm'].apply(lambda x: x.upper().replace("/", "-")) #this is the main program for the naics code
+    fac['frs.frs_interest.pgm_sys_acrnm'] = fac['frs.frs_interest.pgm_sys_acrnm'].apply(lambda x: x.upper().replace("/", "-") if pd.notnull(x) else None) #program for main federal programs
+    fac['frs.frs_supplemental_interest.pgm_sys_acrnm'] = fac['frs.frs_supplemental_interest.pgm_sys_acrnm'].apply(lambda x: x.upper().replace("/", "-") if pd.notnull(x) else None) #program for supplemental
     
     fac['interest_id'] = fac['pgm_sys_id']
+    #fac['sup_pgm_interest_id'] = fac['frs.frs_supplemental_interest.pgm_sys_id']
     #fac['interest_type'] = fac['interest_type'].apply(lambda x:''.join(x.title().split()))
     
     replacements = str.maketrans({"(":"- ",
@@ -145,23 +148,30 @@ def clean_attributes(facilities):
                      ":":"-"})
     
     fac['interest_type'] = fac['interest_type'].apply(lambda x: (''.join(((word if word in ['NSR', 'NPDES', 'ICIS', 'OSHA', 'ICIS-', 'CESQG', 'SQG', 'AFO','SW', 'BRAC', 'CZM', 'EPCRA', 'FRP', 'LQG', "II", "WIPP", 'NPL', 'TRI', 'TSCA', 'TSD', "UIC", 'VSQG', 'NESHAPS', 'SPCC'] else word.title()) for word in x.translate(replacements).split()))))
-    fac['sup_interest_type'] = fac['sup_interest_type'].apply(lambda x: (''.join(((word if word in ['NSR', 'NPDES', 'ICIS', 'OSHA', 'ICIS-', 'CESQG', 'SQG', 'AFO','SW', 'BRAC', 'CZM', 'EPCRA', 'FRP', 'LQG', "II", "WIPP", 'NPL', 'TRI', 'TSCA', 'TSD', "UIC", 'VSQG', 'NESHAPS', 'SPCC'] else word.title()) for word in x.translate(replacements).split()))))
+    fac['sup_interest_type'] = fac['sup_interest_type'].apply(lambda x: (''.join(((word if word in ['NSR', 'NPDES', 'ICIS', 'OSHA', 'ICIS-', 'CESQG', 'SQG', 'AFO','SW', 'BRAC', 'CZM', 'EPCRA', 'FRP', 'LQG', "II", "WIPP", 'NPL', 'TRI', 'TSCA', 'TSD', "UIC", 'VSQG', 'NESHAPS', 'SPCC'] else word.title()) for word in x.translate(replacements).split()))) if not pd.isna(x) else None)
     fs_lookup = {'F':'Federal', 'S': 'State', 'T':'Tribal', 'P':'Private'}
     fac['fed_state_desc'] = fac['fed_state_code'].apply(lambda x: fs_lookup[x] if pd.notnull(x) else pd.NA)
     
-    fac['interest_label'] = fac[['active_status', "reported_sup_interest_type", 'sup_pgm_sys_id']].apply(lambda x: ' '.join(x.dropna().astype(str)), axis=1)
+    fac['interest_label'] = fac[['active_status', 'frs.frs_interest.pgm_sys_acrnm', 'frs.frs_interest.pgm_sys_id', "reported_sup_interest_type", 'sup_pgm_sys_id']].apply(lambda x: ' '.join(x.dropna().astype(str)), axis=1)
     fac['interest_description'] = fac[['start_date_qualifier','start_date','end_date_qualifier','end_date']].apply(lambda x: ' '.join(x.dropna().astype(str)), axis=1) 
     fac['start_date'] = pd.to_datetime(fac['start_date'], format='%Y-%m-%d %H:%M:%S')
+    fac['sup_start_date'] = pd.to_datetime(fac['frs.frs_supplemental_interest.start_date'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
     fac['end_date'] = pd.to_datetime(fac['end_date'], format='%Y-%m-%d %H:%M:%S')
-    fac['last_reported_date']
+    fac['sup_end_date'] = pd.to_datetime(fac['frs.frs_supplemental_interest.end_date'], format='%Y-%m-%d %H:%M:%S')
+    fac['create_date'] = pd.to_datetime(fac['create_date'], format='%Y-%m-%d %H:%M:%S')
+    fac['update_date'] = pd.to_datetime(fac['update_date'], format='%Y-%m-%d %H:%M:%S')
+    fac['sup_create_date'] = pd.to_datetime(fac['frs.frs_supplemental_interest.create_date'], format='%Y-%m-%d %H:%M:%S')
+    fac['sup_update_date'] = pd.to_datetime(fac['frs.frs_supplemental_interest.update_date'], format='%Y-%m-%d %H:%M:%S')
+    
+    #fac['last_reported_date']
 
     # drop attributes that won't be triplified or referenced
     fac = fac.drop(axis=1, labels=['city_name', 'country_name', 'county_name', 'epa_region_code', 'legislative_dist_num', 'location_address', 'postal_code', 'supplemental_location','state_name', 'tribal_land_code', 'tribal_land_name'])
     fac = fac.drop(axis=1, labels=["code_description", "latitude83", "longitude83", "primary_name", "small_bus_ind", "state_code"])
     print("USED SCHEMA:")
     print(fac.info())
-    print(fac.start_date.unique())
-    print(fac.end_date.unique())
+    #print(fac.start_date.unique())
+    #print(fac.end_date.unique())
 
     return fac
 
@@ -175,12 +185,12 @@ def get_iris(facility):
     #geo_iri = epa_frs_data[f"d.FRS-Facility-Geometry.{facility['registry_id']}"]
     naics_iri = naics[f"NAICS-{facility['naics_code']}"]
     interest = {}
-    if facility['fed_state_code'] in ['F'] and facility['pgm_sys_acrnm'] != 'NPDES':
-        interest['iri'] = epa_frs_data[f"d.EnvironmentalInterest.{facility['pgm_sys_acrnm']}.{facility['interest_id']}"]
-        interest['class'] = epa_frs[facility['interest_type']]
-    else:
-        interest['iri'] = epa_frs_data[f"d.EnvironmentalInterest.Supplemental.{facility['frs.frs_supplemental_interest.pgm_sys_acrnm']}.{facility['sup_interest_id']}"]
+    if pd.notnull(facility['sup_interest_id']):
+        interest['iri'] = epa_frs_data[f"d.EnvironmentalInterest.Supplemental.{facility['frs.frs_supplemental_interest.pgm_sys_acrnm']}.{facility['sup_pgm_sys_id']}"]
         interest['class'] = epa_frs[facility['sup_interest_type']]
+    else: # pd.notnull(facility['pgm_sys_id']): #facility['fed_state_code'] in ['F'] and facility['pgm_sys_acrnm'] != 'NPDES':
+        interest['iri'] = epa_frs_data[f"d.EnvironmentalInterest.{facility['frs.frs_interest.pgm_sys_acrnm']}.{facility['interest_id']}"]
+        interest['class'] = epa_frs[facility['interest_type']]
     
         
 
@@ -199,8 +209,8 @@ def triplify(facilities):
         #create facility
         kg.add((facility_iri, RDF.type, epa_frs["FRS-Facility"]))
         kg.add((facility_iri, RDF.type, facility_class))
-        kg.add((facility_iri, epa_frs[f'ofIndustry.{facility.pgm_sys_acrnm.upper()}'], naics_iri)) #subproperty for fio:ofIndustry
-        kg.add((facility_iri, epa_frs[f'hasIdentifier.{str(facility.pgm_sys_acrnm).upper()}'], Literal(facility.pgm_sys_id, datatype=XSD.string))) #subproperty for dcterms:identifier
+        kg.add((facility_iri, epa_frs[f'ofIndustry.{facility.pgm_sys_acrnm}'], naics_iri)) #subproperty for fio:ofIndustry
+        kg.add((facility_iri, epa_frs[f'hasIdentifier.{facility.pgm_sys_acrnm}'], Literal(facility.pgm_sys_id, datatype=XSD.string))) #subproperty for dcterms:identifier
         
         if facility.primary_indicator == 'primary':
             kg.add((facility_iri, epa_frs[f'{facility.primary_indicator}Industry'], naics_iri)) #subproperty for fio:ofIndustry
@@ -209,8 +219,24 @@ def triplify(facilities):
         kg.add((facility_iri, epa_frs['hasEnvironmentalInterest'], interest['iri']))
         if pd.notnull(facility.start_date):
             kg.add((interest['iri'], PROV.startedAtTime, Literal(facility['start_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+            if facility.start_date_qualifier == 'CLS':
+                kg.add((interest['iri'], PROV.endedAtTime, Literal(facility['start_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+        if pd.notnull(facility.sup_start_date):
+            kg.add((interest['iri'], PROV.startedAtTime, Literal(facility['sup_start_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
         if pd.notnull(facility.end_date):
-            kg.add((interest['iri'], PROV.startedAtTime, Literal(facility['end_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+            kg.add((interest['iri'], PROV.endedAtTime, Literal(facility['end_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+        if pd.notnull(facility.sup_end_date):
+            kg.add((interest['iri'], PROV.endedAtTime, Literal(facility['sup_end_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+        if pd.notnull(facility.create_date):
+            kg.add((interest['iri'], DCTERMS.created, Literal(facility['create_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+        if pd.notnull(facility.sup_create_date):
+                    kg.add((interest['iri'], DCTERMS.created, Literal(facility['sup_create_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+        if pd.notnull(facility.update_date):
+            kg.add((interest['iri'], schema['dateModified'], Literal(facility['update_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+        if pd.notnull(facility.sup_update_date):
+            kg.add((interest['iri'], schema['dateModified'], Literal(facility['sup_update_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+
+
         kg.add((interest['iri'], RDF.type, interest['class']))
 
         if pd.notnull(facility.interest_description) and facility.interest_description != "":
