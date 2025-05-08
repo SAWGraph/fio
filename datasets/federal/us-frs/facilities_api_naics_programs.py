@@ -113,8 +113,8 @@ def Initial_KG():
     #for prefix in prefixes:
     #    kg.bind(prefix, prefixes[prefix])
     kg.bind('fio', fio)
-    kg.bind('epa_frs', epa_frs)
-    kg.bind('epa_frs_data', epa_frs_data)
+    kg.bind('epa-frs', epa_frs)
+    kg.bind('epa-frs-data', epa_frs_data)
     kg.bind('naics', naics)
     kg.bind('sic', sic)
     kg.bind('coso', coso)
@@ -132,7 +132,7 @@ def clean_attributes(facilities):
     # format various columns for triplification
     fac['primary_indicator'] = fac['primary_indicator'].apply(lambda x: x.lower())
     fac['pgm_sys_acrnm'] = fac['pgm_sys_acrnm'].apply(lambda x: x.upper().replace("/", "-")) #this is the main program for the naics code
-    fac['frs.frs_interest.pgm_sys_acrnm'] = fac['frs.frs_interest.pgm_sys_acrnm'].apply(lambda x: x.upper().replace("/", "-") if pd.notnull(x) else None) #program for main federal programs
+    fac['frs.frs_interest.pgm_sys_acrnm'] = fac['frs.frs_interest.pgm_sys_acrnm'].apply(lambda x: x.upper().replace("/", "-").replace(" ", "-") if pd.notnull(x) else None) #program for main federal programs
     fac['frs.frs_supplemental_interest.pgm_sys_acrnm'] = fac['frs.frs_supplemental_interest.pgm_sys_acrnm'].apply(lambda x: x.upper().replace("/", "-") if pd.notnull(x) else None) #program for supplemental
     
     fac['interest_id'] = fac['pgm_sys_id']

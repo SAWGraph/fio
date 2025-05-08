@@ -97,8 +97,8 @@ def Initial_KG():
     #for prefix in prefixes:
     #    kg.bind(prefix, prefixes[prefix])
     kg.bind('fio', fio)
-    kg.bind('epa_frs', epa_frs)
-    kg.bind('epa_frs_data', epa_frs_data)
+    kg.bind('epa-frs', epa_frs)
+    kg.bind('epa-frs-data', epa_frs_data)
     kg.bind('naics', naics)
     kg.bind('sic', sic)
     kg.bind('coso', coso)
