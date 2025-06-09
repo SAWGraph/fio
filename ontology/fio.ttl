@@ -121,7 +121,7 @@ fio:ofYear rdf:type owl:DatatypeProperty ;
 ###  http://w3id.org/fio/fio#yearDeprecated
 fio:yearDeprecated rdf:type owl:DatatypeProperty ;
         rdfs:label "year deprecated";
-        dcterms:description "A relation between an industry code and the schema year it was deprecated and removed as a industry code with the same meaning."
+        dcterms:description "A relation between an industry code and the schema year it was deprecated and removed as a industry code with the same meaning.";
                 rdfs:domain fio:Industry ;
                 rdfs:range xsd:date .
 
