@@ -7,6 +7,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix schema: <https://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
 <http://w3id.org/fio/epa-frs#> rdf:type owl:Ontology ;
@@ -26,7 +27,15 @@
 #################################################################
 
 ###  http://purl.org/dc/terms/created
-dcterms:created rdf:type owl:AnnotationProperty .
+dcterms:created
+    dcterms:description "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."@en ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a owl:AnnotationProperty ;
+    rdfs:comment "Date of creation of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Date Created"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date>, dcterms:date .
 
 
 ###  http://purl.org/dc/terms/creator
@@ -36,6 +45,17 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 ###  http://purl.org/dc/terms/description
 dcterms:description rdf:type owl:AnnotationProperty .
 
+dcterms:date
+    dcterms:description "Date may be used to express temporal information at any level of granularity.  Recommended practice is to express the date, date/time, or period of time according to ISO 8601-1 [[ISO 8601-1](https://www.iso.org/iso-8601-date-and-time-format.html)] or a published profile of the ISO standard, such as the W3C Note on Date and Time Formats [[W3CDTF](https://www.w3.org/TR/NOTE-datetime)] or the Extended Date/Time Format Specification [[EDTF](http://www.loc.gov/standards/datetime/)].  If the full date is unknown, month and year (YYYY-MM) or just year (YYYY) may be used. Date ranges may be specified using ISO 8601 period of time specification in which start and end dates are separated by a '/' (slash) character.  Either the start or end date may be missing."@en ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A point or period of time associated with an event in the lifecycle of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Date"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+
+
 
 ###  http://purl.org/dc/terms/issued
 dcterms:issued rdf:type owl:AnnotationProperty .
@@ -43,6 +63,15 @@ dcterms:issued rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/terms/modified
 dcterms:modified rdf:type owl:AnnotationProperty .
+dcterms:modified
+    dcterms:description "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."@en ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "Date on which the resource was changed."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Date Modified"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date>, dcterms:date .
 
 
 ###  http://purl.org/dc/terms/publisher
@@ -56,6 +85,26 @@ dcterms:source rdf:type owl:AnnotationProperty .
 ###  http://purl.org/dc/terms/title
 dcterms:title rdf:type owl:AnnotationProperty .
 
+schema:address rdf:type owl:AnnotationProperty. 
+
+dcterms:alternative
+    dcterms:description "The distinction between titles and alternative titles is application-specific."@en ;
+    a owl:AnnotationProperty ;
+    rdfs:comment "An alternative name for the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Alternative Title"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title>, dcterms:title .
+
+dcterms:identifier
+    dcterms:description "Recommended practice is to identify the resource by means of a string conforming to an identification system. Examples include International Standard Book Number (ISBN), Digital Object Identifier (DOI), and Uniform Resource Name (URN).  Persistent identifiers should be provided as HTTP URIs."@en ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a owl:AnnotationProperty ;
+    rdfs:comment "An unambiguous reference to the resource within a given context."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Identifier"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/identifier> .
 
 #################################################################
 #    Object Properties
@@ -66,17 +115,51 @@ epa-frs:ofFacilityType rdf:type owl:ObjectProperty ;
 		rdfs:domain epa-frs:FRS-Facility;
 		rdfs:range epa-frs:FacilityType. 
 
-epa-frs:hasEnvironmentalInterest rdf:type owl:ObjectProperty ;
-		rdfs:label "has environmental interest" ;
+epa-frs:hasRecord rdf:type owl:ObjectProperty ;
+		rdfs:label "has  record" ;
 		rdfs:domain epa-frs:FRS-Facility;
-		rdfs:range epa-frs:EnvironmentalInterest. 
+		rdfs:range epa-frs:Record.
 
+epa-frs:hasMonitoringRecord rdf:type owl:ObjectProperty ;
+		rdfs:label "has monitoring record" ;
+		rdfs:domain epa-frs:FRS-Facility;
+		rdfs:range epa-frs:MonitoringRecord.
+
+epa-frs:hasSupplementalRecord rdf:type owl:ObjectProperty ;
+		rdfs:label "has supplemental record" ;
+		rdfs:range epa-frs:SupplementalRecord.
+
+epa-frs:ofInterestType rdf:type owl:ObjectProperty ;
+		rdfs:label "of program category";
+		rdfs:range epa-frs:EnvironmentalInterestType. 
+
+epa-frs:hasEnvironmentalInterest rdf:type owl:ObjectProperty ;
+		rdfs:label "in program type" ;
+		owl:propertyChainAxiom (epa-frs:hasRecord epa-frs:ofInterestType);
+		#owl:propertyChainAxiom (epa-frs:hasSupplementalRecord epa-frs:ofInterestType);
+		rdfs:domain epa-frs:FRS-Facility;
+		rdfs:range epa-frs:EnvironmentalInterestType. 
+
+epa-frs:ofPrimaryIndustry rdf:type owl:ObjectProperty;
+        rdfs:label "of Primary Industry";
+        rdfs:subClassOf fio:ofIndustry.
+        
+epa-frs:ofSecondaryIndustry rdf:type owl:ObjectProperty;
+        rdfs:label "of Secondary Industry";
+        rdfs:subClassOf fio:ofIndustry. 
+
+fio:ofIndustry rdf:type owl:ObjectProperty;
+    owl:propertyChainAxiom (epa-frs:hasRecord epa-frs:ofPrimaryIndustry),
+                            (epa-frs:hasRecord epa-frs:ofSecondaryIndustry). 
+
+	
 #################################################################
 #    Data properties
 #################################################################
 
 epa-frs:hasFRSId rdf:type owl:DatatypeProperty ;
 			rdfs:label "has FRS Id";
+			dcterms:description "has Identifier in EPA Facility Registry Service";
 			rdfs:subPropertyOf dcterms:identifier ;
 			rdfs:domain epa-frs:FRS-Facility . 
 
@@ -86,19 +169,36 @@ epa-frs:hasFRSId rdf:type owl:DatatypeProperty ;
 #################################################################
 epa-frs:FRS-Facility rdf:type owl:Class ;
 				rdfs:label "FRS Facility";
+				dcterms:description "Facility from EPA Facility Registry Service";
 				rdfs:subClassOf fio:Facility .
 
 epa-frs:FacilityType rdf:type owl:Class ;
-				rdfs:label "Facility Type".
+				rdfs:label "Facility Type";
+				dcterms:description "Type of Facility as defined by EPA FRS facility type controlled vocabulary".
 
 epa-frs:Agency rdf:type owl:Class ;
-		rdfs:label "Federal Agency as identified in EPA Facility Registry Service";
-		rdfs:subClassOf fio:Agency. 
+		rdfs:label "Agency" ; 
+		dcterms:description "Federal Agency as identified in EPA Facility Registry Service";
+		rdfs:subClassOf fio:Organization. 
 
-epa-frs:EnvironmentalInterest rdf:type owl:Class ;
-		rdfs:label "Environmental Interest";
-		dcterms:description "Describes an environmental tracking or monitoring activity ".
+epa-frs:Record rdf:type owl:Class;
+        rdfs:label "Facility Record".
 
+epa-frs:MonitoringRecord rdf:type owl:Class ;
+		rdfs:label "Facility Monitoring Record";
+		dcterms:description "Monitoring Record for a facility".
+
+epa-frs:SupplementalRecord rdf:type owl:Class ;
+		rdfs:label "Facility Supplemental Record"; 
+		dcterms:description "Supplemental Record that relates to a facility but primarily identifies something other than the facility itself (e.g. permit, license, incident, enforcement action records) ".
+
+epa-frs:EnvironmentalInterestType rdf:type owl:Class ;
+		rdfs:label "Environmental Interest Type";
+		dcterms:description "The environmental permit or regulatory program type that applies to the facility site".
+
+epa-frs:ProgramInformationSystem rdf:type owl:Class ;
+		rdfs:label "Program Information System";
+		dcterms:description "An Information System maintained for an environmental program".
 #################################################################
 #    General axioms
 #################################################################

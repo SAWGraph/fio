@@ -1,0 +1,39 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix epa-frs: <http://w3id.org/fio/v1/epa-frs#> .
+@prefix epa-frs-data: <http://w3id.org/fio/v1/epa-frs-data#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# some air programs are licenses or permits. Depends on the system 
+
+epa-frs:PermitInterest rdf:type owl:Class;
+    dcterms:description "Environmental Interests that create records that are permits or licenses". 
+	
+epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesnon-Major rdf:type epa-frs:PermitInterest. 
+
+
+#epa-frs-data:d.EnvironmentalInterestType.401Certification 
+#epa-frs-data:d.EnvironmentalInterestType.Laboratory
+
+#	epa-frs-data:d.EnvironmentalInterestType.Coastalerosion
+
+epa-frs:PermitSystem rdf:type owl:Class.
+
+epa-frs-data:d.ProgramInformationSystem.NPDES rdf:type epa-frs:PermitSystem. 
+
+
+
+
+epa-frs:PermitRecord rdfs:subClassOf epa-frs:SupplementalRecord;
+    rdfs:label "Permit or license record";
+    owl:equivalentClass [
+        rdf:type owl:Restriction;
+        owl:onProperty epa-frs:ofInterestType;
+        owl:allValuesFrom epa-frs:PermitInterest.
+    ];
+    owl:equivalentClass [
+        rdf:type owl:Restriction;
+        owl:onProperty epa-frs:fromSystem;
+        owl:allValuesFrom epa-frs:PermitSystem. 
+    ]

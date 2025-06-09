@@ -37,10 +37,11 @@ schema = Namespace(f'http://schema.org/')
 replacements = str.maketrans({"(":"- ",
                      ")":"",
                      "&":"",
-                     "-":"- ",
-                     "/":" ",
+                     "/":"-",
                      ",":"",
-                     ":":"-"})
+                     ":":"-",
+                     " ":"",
+                     "#": "-"})
 
 logging.basicConfig(filename=logname,
                     filemode='a',
@@ -119,7 +120,7 @@ def clean_agencies(agencies):
 
 
 def clean_programs(programs):
-    programs['PGM_SYS'] = programs['PGM_SYS_ACRNM'].apply(lambda x: x.upper().replace("/", "-").replace(" ", "-")) #replace spaces and / in acrnm
+    programs['PGM_SYS'] = programs['PGM_SYS_ACRNM'].apply(lambda x: x.translate(replacements).upper()) 
     programs = programs[programs['Comments'].isnull()] #only keep programs with no comments (i.e. remove programs that are not public)
     return programs
 
@@ -127,15 +128,17 @@ def clean_programs(programs):
 def get_iris(data):
      iri = {}
      if 'program_category' in data.keys():
-        iri['interest'] = epa_frs[data['interest_short']]
-        iri['program'] = epa_frs[data['program_short']]
+        iri['interest'] = epa_frs_data[f"d.EnvironmentalInterestType.{data['interest_short']}"]
+        iri['program_cat'] = epa_frs[data['program_short']]
+        if data['program_short'] == 'HazardousWasteProgram': #clean up duplicate sub-class
+            iri['program_cat'] = epa_frs['HazardousWastePrograms']
      if 'federal_agency_code' in data.keys():
         iri['agency'] = epa_frs_data[f"d.Agency.{data['federal_agency_code']}"]
         iri['class']= epa_frs[f"Agency.{''.join(data[0].split(' '))}"]
      if 'PGM_SYS' in data.keys():
-         iri['pgm_sys'] = epa_frs[f"{data['PGM_SYS']}-Facility"]
-         iri['pgm_id_relation'] = epa_frs[f"hasIdentifier.{data['PGM_SYS']}"]
-         iri['pgm_industry_relation'] = epa_frs[f"ofIndustry.{data['PGM_SYS']}"]
+         iri['pgm_sys'] = epa_frs_data[f"d.ProgramInformationSystem.{data['PGM_SYS']}"]  #epa_frs[f"{data['PGM_SYS']}-Facility"]
+         #iri['pgm_id_relation'] = epa_frs[f"hasIdentifier.{data['PGM_SYS']}"]
+         #iri['pgm_industry_relation'] = epa_frs[f"ofIndustry.{data['PGM_SYS']}"]
 
      return iri
 
@@ -152,27 +155,25 @@ def triplify(interests, agencies, programs):
     for idx, interest in interests.iterrows():
          iri = get_iris(interest)
          # interest
-         kg.add((iri['interest'], RDF.type, OWL.Class ))
+         kg.add((iri['interest'], RDF.type, epa_frs['EnvironmentalInterestType'] ))
          kg.add((iri['interest'], RDFS.label, Literal(interest['interest_type'], datatype=XSD.string)))
          # description (interest_desc)
          kg.add((iri['interest'], DCTERMS.description, Literal(interest['interest_desc'], datatype=XSD.string)))
          # program category
          if interest['program_short'] != 'None':
-            kg.add((iri['interest'], RDFS.subClassOf, iri['program']))
-            #kg.add((iri['program'], RDFS.subClassOf, epa_frs['EnvironmentalInterest']))
+            kg.add((iri['interest'], RDF.type, iri['program_cat']))
+            #kg.add((iri['program_cat'], RDFS.subClassOf, epa_frs['ProgramCategory']))
             if interest['program_category'] != 'None':
-                kg.add((iri['program'], RDFS.label, Literal(interest['program_category'], datatype=XSD.string)))
-                if interest['program_category'] != 'HAZARDOUS WASTE PROGRAM': #ignore double nested class
-                    kg.add((iri['program'], RDFS.subClassOf, epa_frs['EnvironmentalInterest']))
-                    kg.add((iri['program'], RDF.type, OWL.Class))
+                kg.add((iri['program_cat'], RDFS.label, Literal(interest['program_category'], datatype=XSD.string)))
+                kg.add((iri['program_cat'], RDFS.subClassOf, epa_frs['EnvironmentalInterestType']))
+                kg.add((iri['program_cat'], RDF.type, OWL.Class))
             else:
-                kg.add((iri['interest'], RDFS.subClassOf, epa_frs['EnvironmentalInterest']))
+                kg.add((iri['interest'], RDF.type, epa_frs['ProgramCategory']))
             #print(list(kg.triples((iri['program'], DCTERMS.description, None))))
-            if interest['program_category_desc'] != 'None' and list(kg.triples((iri['program'], DCTERMS.description, None))) == []: #only program add desc first time
-                kg.add((iri['program'], DCTERMS.description, Literal(interest['program_category_desc'], datatype=XSD.string)))
+            if interest['program_category_desc'] != 'None' and list(kg.triples((iri['program_cat'], DCTERMS.description, None))) == []: #only program add desc first time
+                kg.add((iri['program_cat'], DCTERMS.description, Literal(interest['program_category_desc'], datatype=XSD.string)))
          else:
-             kg.add((iri['interest'], RDFS.subClassOf, epa_frs['EnvironmentalInterest']))
-             kg.add((iri['interest'], RDF.type, OWL.Class))
+             kg.add((iri['interest'],RDF.type, epa_frs['EnvironmentalInterestType']))
              
 
     #program category description
@@ -197,22 +198,22 @@ def triplify(interests, agencies, programs):
 
     for idx, program in programs.iterrows():
         iri = get_iris(program)
-        kg.add((iri['pgm_sys'], RDF.type, OWL.Class))
-        kg.add((iri['pgm_sys'], RDFS.subClassOf, epa_frs['FRS-Facility']))
+        kg.add((iri['pgm_sys'], RDF.type, epa_frs['ProgramInformationSystem']))
+        #kg.add((iri['pgm_sys'], RDFS.subClassOf, epa_frs['FRS-Facility']))
         kg.add((iri['pgm_sys'], RDFS.label, Literal(program['PGM_SYS_NAME'])))
         kg.add((iri['pgm_sys'], DCTERMS.description, Literal(program['PGM_SYS_DESC'])))
 
-        kg.add((iri['pgm_id_relation'], RDF.type, OWL.DatatypeProperty))
-        kg.add((iri['pgm_id_relation'], RDFS.label, Literal(f"has {program['PGM_SYS_ACRNM']} identifier")))
-        kg.add((iri['pgm_id_relation'], DCTERMS.description, Literal(f"connects a facility to the identifier in {program['PGM_SYS_NAME']}")))
-        kg.add((iri['pgm_id_relation'], RDFS.subPropertyOf, DCTERMS.identifier))
-        kg.add((iri['pgm_id_relation'], RDFS.domain, iri['pgm_sys']))
+        #kg.add((iri['pgm_id_relation'], RDF.type, OWL.DatatypeProperty))
+        #kg.add((iri['pgm_id_relation'], RDFS.label, Literal(f"has {program['PGM_SYS_ACRNM']} identifier")))
+        #kg.add((iri['pgm_id_relation'], DCTERMS.description, Literal(f"connects a facility to the identifier in {program['PGM_SYS_NAME']}")))
+        #kg.add((iri['pgm_id_relation'], RDFS.subPropertyOf, DCTERMS.identifier))
+        #kg.add((iri['pgm_id_relation'], RDFS.domain, iri['pgm_sys']))
 
-        kg.add((iri['pgm_industry_relation'], RDF.type, OWL.ObjectProperty))
-        kg.add((iri['pgm_industry_relation'], RDFS.label, Literal(f"of Industry in {program['PGM_SYS_ACRNM']}")))
-        kg.add((iri['pgm_industry_relation'], DCTERMS.description, Literal(f"connects a facility to an industry in {program['PGM_SYS_NAME']}")))
-        kg.add((iri['pgm_industry_relation'], RDFS.subPropertyOf, fio['ofIndustry']))
-        kg.add((iri['pgm_industry_relation'], RDFS.domain, iri['pgm_sys']))
+        #kg.add((iri['pgm_industry_relation'], RDF.type, OWL.ObjectProperty))
+        #kg.add((iri['pgm_industry_relation'], RDFS.label, Literal(f"of Industry in {program['PGM_SYS_ACRNM']}")))
+        #kg.add((iri['pgm_industry_relation'], DCTERMS.description, Literal(f"connects a facility to an industry in {program['PGM_SYS_NAME']}")))
+        #kg.add((iri['pgm_industry_relation'], RDFS.subPropertyOf, fio['ofIndustry']))
+        #kg.add((iri['pgm_industry_relation'], RDFS.domain, iri['pgm_sys']))
 
     return kg
 
