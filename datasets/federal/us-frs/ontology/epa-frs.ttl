@@ -142,11 +142,11 @@ epa-frs:hasEnvironmentalInterest rdf:type owl:ObjectProperty ;
 
 epa-frs:ofPrimaryIndustry rdf:type owl:ObjectProperty;
         rdfs:label "of Primary Industry";
-        rdfs:subClassOf fio:ofIndustry.
+        rdfs:subPropertyOf fio:ofIndustry.
         
 epa-frs:ofSecondaryIndustry rdf:type owl:ObjectProperty;
         rdfs:label "of Secondary Industry";
-        rdfs:subClassOf fio:ofIndustry. 
+        rdfs:subPropertyOf fio:ofIndustry. 
 
 fio:ofIndustry rdf:type owl:ObjectProperty;
     owl:propertyChainAxiom (epa-frs:hasRecord epa-frs:ofPrimaryIndustry),
@@ -171,6 +171,11 @@ epa-frs:FRS-Facility rdf:type owl:Class ;
 				rdfs:label "FRS Facility";
 				dcterms:description "Facility from EPA Facility Registry Service";
 				rdfs:subClassOf fio:Facility .
+
+epa-frs:EPA-PFAS-Facility rdf:type owl:Class ;
+               rdfs:label "EPA PFAS Facility";
+               dcterms:description "Facility identified as potentially handling PFAS in EPA PFAS Analytic tools based on industry. ";
+               rdfs:subClassOf epa-frs:FRS-Facility. 
 
 epa-frs:FacilityType rdf:type owl:Class ;
 				rdfs:label "Facility Type";
