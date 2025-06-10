@@ -1,0 +1,12 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+PREFIX naics: <http://w3id.org/fio/v1/naics#>
+PREFIX epa-frs: <http://w3id.org/fio/v1/epa-frs#>
+PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
+PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
+
+# Retrieve all facilities of NAICS code 562212 located in Penobscot County, Maine.
+SELECT * WHERE {
+    ?facility fio:ofIndustry naics:NAICS-562212;                # Solid Waste Landfill facilities
+            rdfs:label ?facilityName;                           # facility name
+            kwg-ont:sfWithin kwgr:administrativeRegion.USA.23019.    } #Penobscot County(by FIPS) 
