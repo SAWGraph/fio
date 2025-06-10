@@ -1,0 +1,13 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+PREFIX naics: <http://w3id.org/fio/v1/naics#>
+PREFIX epa-frs: <http://w3id.org/fio/v1/epa-frs#>
+PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
+PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
+
+# What NAICS industry subsector is facility X associated with?
+SELECT * WHERE {
+    epa-frs-data:d.FRS-Facility.110009913415 dcterms:identifier ?id; # One facility with ID
+    		fio:ofIndustry ?industry.                                # with associated industry codes
+    ?industry a naics:NAICS-IndustrySubsector;                       # that are NAICS Industry SubSectors
+    		rdfs:label ?industryLabel.  } 

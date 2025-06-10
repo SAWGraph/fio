@@ -1,0 +1,13 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+PREFIX naics: <http://w3id.org/fio/v1/naics#>
+PREFIX epa-frs: <http://w3id.org/fio/v1/epa-frs#>
+PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
+PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
+
+# Find all facilities located in a given set of S2 cells.
+SELECT * WHERE {
+    ?facility kwg-ont:sfWithin ?s2.   # Facilities by region
+    ?s2 a kwg-ont:S2Cell_Level13.     # Where region is an s2 cell
+    VALUES ?s2{kwgr:s2.level13.5523882010617053184 kwgr:s2.level13.9935713923632201728}. 
+    }                                            # Specific s2 cells to search

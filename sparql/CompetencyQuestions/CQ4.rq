@@ -1,0 +1,25 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+PREFIX naics: <http://w3id.org/fio/v1/naics#>
+PREFIX epa-frs: <http://w3id.org/fio/v1/epa-frs#>
+PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
+PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
+
+# Retrieve all facilities located in Maine in the NAICS Industry Groups 3221 
+# (Pulp, Paper, and Paperboard Mills) and 3222 (Converted Paper Product Manufacturing) 
+# and their specific NAICS Industry Codes and the county they are located in.
+
+SELECT * WHERE {
+    ?facility a fio:Facility;
+    	rdfs:label ?facilityName;
+    	fio:ofIndustry naics:NAICS-3221;       # all facilities in the Industry Group 3221
+    	fio:ofIndustry ?industryCode;          # with all additional industry codes
+    	kwg-ont:sfWithin ?region.              # by administrative region
+    ?region a kwg-ont:AdministrativeRegion_3.  # by county subdivision (Admin Level 3) 
+    ?industryCode a naics:NAICS-IndustryCode;  # only NAICS specific industry codes
+    	       rdfs:label ?industryName. 
+    SERVICE <repository:Spatial> #Federated query to filter region to Maine (FIPS 23)
+        {?region kwg-ont:administrativePartOf+ kwgr:administrativeRegion.USA.23; 
+                kwg-ont:administrativePartOf ?county. 
+        ?county a kwg-ont:AdministrativeRegion_2;   # labeled by County
+                rdfs:label ?countyName.} } 
