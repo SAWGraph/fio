@@ -9,10 +9,11 @@ PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
 # (Pulp, Paper, and Paperboard Mills) and 3222 (Converted Paper Product Manufacturing) 
 # and their specific NAICS Industry Codes and the county they are located in.
 
-SELECT * WHERE {
+SELECT DISTINCT ?facility (GROUP_CONCAT(DISTINCT(?industryName); separator=",") as ?industryName) (GROUP_CONCAT(DISTINCT(?countyName)) as ?county) WHERE {
+    VALUES ?industryGroup{naics:NAICS-3221 naics:NAICS-3222}
     ?facility a fio:Facility;
     	rdfs:label ?facilityName;
-    	fio:ofIndustry naics:NAICS-3221;       # all facilities in the Industry Group 3221
+    	fio:ofIndustry ?industryGroup;       # all facilities in the Industry Group 3221 or 3222
     	fio:ofIndustry ?industryCode;          # with all additional industry codes
     	kwg-ont:sfWithin ?region.              # by administrative region
     ?region a kwg-ont:AdministrativeRegion_3.  # by county subdivision (Admin Level 3) 
@@ -22,4 +23,5 @@ SELECT * WHERE {
         {?region kwg-ont:administrativePartOf+ kwgr:administrativeRegion.USA.23; 
                 kwg-ont:administrativePartOf ?county. 
         ?county a kwg-ont:AdministrativeRegion_2;   # labeled by County
-                rdfs:label ?countyName.} } 
+                rdfs:label ?countyName.
+    } } GROUP BY ?facility
