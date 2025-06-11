@@ -8,10 +8,10 @@
 *note: there are many ways to access FRS data, such as via ECHO, state downloads contain industry codes*
 * **Additional Data source:**
   * [Industry Sectors Data](https://echo.epa.gov/trends/pfas-tools#data) *note: this identifies facilities the epa suspects are using pfas*
-  * [Additional FRS identifiers](https://frs-public.epa.gov/ords/frs_public2/ez_frs_column.list?table_name=D_EF_FAC.V_PUB_FRS_FACILITY_SITE_GEOPGM)
   * [program reference](https://usepa.servicenowservices.com/oeca_icis/en/list-of-program-system-acronyms-found-in-icis?id=kb_article_view&sys_kb_id=42327c7f1bfc1954fd044262f54bcb8f)
 * **Metadata description:**
   * [Envirofacts api documentation](https://www.epa.gov/enviro/envirofacts-data-service-api)
+  * [API viewer](https://enviro.epa.gov/envirofacts/metadata/api-viewer)
   * [Envirofacts model page](https://enviro.epa.gov/envirofacts/metadata/model)
   * [Envirofacts table model(example)](https://enviro.epa.gov/envirofacts/metadata/table/frs/v_pub_frs_naics_ez)
   * [frs data dictionary](https://www.epa.gov/sites/default/files/2015-09/documents/frs_data_dictionary.pdf)
