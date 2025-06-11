@@ -8,3 +8,4 @@ datasets/federal/us-frs/us-frs-industry-sic-echo-OH.ttl
 datasets/federal/us-frs/us-frs-data-echo-ME.ttl
 datasets/federal/us-frs/__pycache__/variable.cpython-311.pyc
 datasets/federal/naics/catalog-v001.xml
+docs/readme.md

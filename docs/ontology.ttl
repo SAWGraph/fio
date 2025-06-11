@@ -30,6 +30,14 @@
 <http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/decription
+<http://purl.org/dc/terms/decription> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/decscription
+<http://purl.org/dc/terms/decscription> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/description
 <http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
 
@@ -66,25 +74,30 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://w3id.org/fio/v1/fio#hasParentCompany
-<http://w3id.org/fio/v1/fio#hasParentCompany> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain <http://w3id.org/fio/v1/fio#Facility> ;
-                                              rdfs:range <http://w3id.org/fio/v1/fio#Company> ;
-                                              rdfs:label "has parent company" .
-
-
-###  http://w3id.org/fio/v1/fio#ofAgency
-<http://w3id.org/fio/v1/fio#ofAgency> rdf:type owl:ObjectProperty ;
-                                      rdfs:domain <http://w3id.org/fio/v1/fio#Facility> ;
-                                      rdfs:range <http://w3id.org/fio/v1/fio#Agency> ;
-                                      rdfs:label "of agency" .
+###  http://w3id.org/fio/v1/fio#hasFacility
+<http://w3id.org/fio/v1/fio#hasFacility> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <http://w3id.org/fio/v1/fio#Organization> ;
+                                         rdfs:range <http://w3id.org/fio/v1/fio#Facility> ;
+                                         <http://purl.org/dc/terms/decscription> "A relation between an organization and a facility it has ownership, management or other affiliation with." ;
+                                         rdfs:label "has Facility" .
 
 
 ###  http://w3id.org/fio/v1/fio#ofIndustry
 <http://w3id.org/fio/v1/fio#ofIndustry> rdf:type owl:ObjectProperty ;
-                                        rdfs:domain <http://w3id.org/fio/v1/fio#Facility> ;
                                         rdfs:range <http://w3id.org/fio/v1/fio#Industry> ;
+                                        owl:propertyChainAxiom ( <http://w3id.org/fio/v1/fio#ofIndustry>
+                                                                 <http://w3id.org/fio/v1/fio#subcodeOf>
+                                                               ) ;
+                                        <http://purl.org/dc/terms/description> "A relation between an entity and the industry it is classified under" ;
                                         rdfs:label "of industry" .
+
+
+###  http://w3id.org/fio/v1/fio#sameCode
+<http://w3id.org/fio/v1/fio#sameCode> rdf:type owl:ObjectProperty ;
+                                      rdfs:domain <http://w3id.org/fio/v1/fio#Industry> ;
+                                      rdfs:range <http://w3id.org/fio/v1/fio#Industry> ;
+                                      <http://purl.org/dc/terms/decription> "A relation between an industry and another industry that have equivalent identifiers but slight differences in semantic coverage." ;
+                                      rdfs:label "same code" .
 
 
 ###  http://w3id.org/fio/v1/fio#subcodeOf
@@ -92,24 +105,37 @@ xsd:date rdf:type rdfs:Datatype .
                                                 owl:TransitiveProperty ;
                                        rdfs:domain <http://w3id.org/fio/v1/fio#Industry> ;
                                        rdfs:range <http://w3id.org/fio/v1/fio#Industry> ;
+                                       <http://purl.org/dc/terms/description> "A hierarchical relation between an industry and its parent industry" ;
                                        rdfs:label "subcode of" .
+
+
+###  http://www.w3.org/ns/prov#wasAttributedTo
+<http://www.w3.org/ns/prov#wasAttributedTo> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://w3id.org/fio/v1/fio#ofYear
+<http://w3id.org/fio/v1/fio#ofYear> rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain <http://w3id.org/fio/v1/fio#Industry> ;
+                                    rdfs:range xsd:date ;
+                                    <http://purl.org/dc/terms/description> "A relation between an industry code and the schema year it belongs to." ;
+                                    rdfs:label "of Year" .
+
+
+###  http://w3id.org/fio/v1/fio#yearDeprecated
+<http://w3id.org/fio/v1/fio#yearDeprecated> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <http://w3id.org/fio/v1/fio#Industry> ;
+                                            rdfs:range xsd:date ;
+                                            <http://purl.org/dc/terms/description> "A relation between an industry code and the schema year it was deprecated and removed as a industry code with the same meaning." ;
+                                            rdfs:label "year deprecated" .
 
 
 #################################################################
 #    Classes
 #################################################################
-
-###  http://w3id.org/fio/v1/fio#Agency
-<http://w3id.org/fio/v1/fio#Agency> rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://www.w3.org/ns/prov#Organization> ;
-                                    rdfs:label "Agency" .
-
-
-###  http://w3id.org/fio/v1/fio#Company
-<http://w3id.org/fio/v1/fio#Company> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://www.w3.org/ns/prov#Organization> ;
-                                     rdfs:label "Company" .
-
 
 ###  http://w3id.org/fio/v1/fio#Facility
 <http://w3id.org/fio/v1/fio#Facility> rdf:type owl:Class ;
@@ -117,12 +143,25 @@ xsd:date rdf:type rdfs:Datatype .
                                                         owl:onProperty <http://w3id.org/fio/v1/fio#ofIndustry> ;
                                                         owl:someValuesFrom <http://w3id.org/fio/v1/fio#Industry>
                                                       ] ;
+                                      <http://purl.org/dc/terms/description> "Any physical building, building complex or site (e.g. an airstrip, a mine, or superfund site) at which a commercial or institutional activity occurs." ;
                                       rdfs:label "Facility" .
 
 
 ###  http://w3id.org/fio/v1/fio#Industry
 <http://w3id.org/fio/v1/fio#Industry> rdf:type owl:Class ;
+                                      <http://purl.org/dc/terms/description> "A distinct group of productive or profit-making enterprises." ;
                                       rdfs:label "Industry" .
+
+
+###  http://w3id.org/fio/v1/fio#Organization
+<http://w3id.org/fio/v1/fio#Organization> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
+                                          <http://purl.org/dc/terms/description> "" ;
+                                          rdfs:label "Organization" .
+
+
+###  http://www.w3.org/ns/prov#Agent
+<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/prov#Organization

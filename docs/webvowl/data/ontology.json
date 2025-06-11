@@ -30,17 +30,17 @@
         "value" : "2024-03-06",
         "type" : "label"
       } ],
-      "publisher" : [ {
-        "identifier" : "publisher",
-        "language" : "undefined",
-        "value" : "http://spatialai.org",
-        "type" : "iri"
-      } ],
       "modified" : [ {
         "identifier" : "modified",
         "language" : "undefined",
         "value" : "2024-03-06",
         "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "http://spatialai.org",
+        "type" : "iri"
       } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
@@ -48,58 +48,83 @@
         "value" : "1",
         "type" : "label"
       } ],
-      "issued" : [ {
-        "identifier" : "issued",
-        "language" : "undefined",
-        "value" : "2024-03-06",
-        "type" : "label"
-      } ],
       "title" : [ {
         "identifier" : "title",
         "language" : "en-us",
         "value" : "Facilities and Industries Ontology",
+        "type" : "label"
+      } ],
+      "issued" : [ {
+        "identifier" : "issued",
+        "language" : "undefined",
+        "value" : "2024-03-06",
         "type" : "label"
       } ]
     }
   },
   "namespace" : [ ],
   "class" : [ {
+    "id" : "0",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "1",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "5",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "rdfs:Datatype"
+  }, {
     "id" : "7",
-    "type" : "owl:Class"
-  }, {
-    "id" : "2",
-    "type" : "owl:Class"
-  }, {
-    "id" : "6",
     "type" : "owl:Class"
   }, {
     "id" : "4",
     "type" : "owl:Class"
-  }, {
-    "id" : "1",
-    "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "0",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "1",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "5",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
     "iri" : "http://w3id.org/fio/v1/fio#Industry",
     "baseIri" : "http://w3id.org/fio/v1/fio",
     "instances" : 0,
+    "description" : {
+      "undefined" : "A distinct group of productive or profit-making enterprises."
+    },
     "label" : {
       "IRI-based" : "Industry",
       "undefined" : "Industry"
     },
     "attributes" : [ "external" ],
-    "id" : "7"
-  }, {
-    "iri" : "http://w3id.org/fio/v1/fio#Agency",
-    "baseIri" : "http://w3id.org/fio/v1/fio",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Agency",
-      "undefined" : "Agency"
-    },
-    "attributes" : [ "external" ],
-    "id" : "2",
-    "superClasses" : [ "6" ]
+    "id" : "8"
   }, {
     "iri" : "http://www.w3.org/ns/prov#Organization",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -107,117 +132,201 @@
     "label" : {
       "IRI-based" : "Organization"
     },
-    "subClasses" : [ "4", "2" ],
     "attributes" : [ "external" ],
-    "id" : "6"
+    "id" : "13"
   }, {
-    "iri" : "http://w3id.org/fio/v1/fio#Company",
+    "iri" : "http://w3id.org/fio/v1/fio#Organization",
     "baseIri" : "http://w3id.org/fio/v1/fio",
     "instances" : 0,
+    "description" : { },
     "label" : {
-      "IRI-based" : "Company",
-      "undefined" : "Company"
+      "IRI-based" : "Organization",
+      "undefined" : "Organization"
     },
     "attributes" : [ "external" ],
-    "id" : "4",
-    "superClasses" : [ "6" ]
+    "id" : "3",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "11",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#Agent",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Agent"
+    },
+    "subClasses" : [ "3" ],
+    "attributes" : [ "external" ],
+    "id" : "7"
   }, {
     "iri" : "http://w3id.org/fio/v1/fio#Facility",
     "baseIri" : "http://w3id.org/fio/v1/fio",
     "instances" : 0,
+    "description" : {
+      "undefined" : "Any physical building, building complex or site (e.g. an airstrip, a mine, or superfund site) at which a commercial or institutional activity occurs."
+    },
     "label" : {
       "IRI-based" : "Facility",
       "undefined" : "Facility"
     },
     "attributes" : [ "external" ],
-    "id" : "1"
+    "id" : "4"
   } ],
   "property" : [ {
-    "id" : "0",
+    "id" : "2",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "3",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "5",
+    "id" : "6",
     "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "8",
-    "type" : "owl:objectProperty"
   }, {
     "id" : "9",
-    "type" : "owl:someValuesFrom"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "10",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
-    "id" : "11",
+    "id" : "12",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "14",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "15",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "16",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "17",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
-    "iri" : "http://w3id.org/fio/v1/fio#ofAgency",
-    "baseIri" : "http://w3id.org/fio/v1/fio",
-    "range" : "2",
-    "label" : {
-      "IRI-based" : "ofAgency",
-      "undefined" : "of agency"
-    },
-    "domain" : "1",
-    "attributes" : [ "external", "object" ],
-    "id" : "0"
-  }, {
-    "iri" : "http://w3id.org/fio/v1/fio#hasParentCompany",
+    "iri" : "http://w3id.org/fio/v1/fio#hasFacility",
     "baseIri" : "http://w3id.org/fio/v1/fio",
     "range" : "4",
-    "label" : {
-      "IRI-based" : "hasParentCompany",
-      "undefined" : "has parent company"
+    "annotations" : {
+      "decscription" : [ {
+        "identifier" : "decscription",
+        "language" : "undefined",
+        "value" : "A relation between an organization and a facility it has ownership, management or other affiliation with.",
+        "type" : "label"
+      } ]
     },
-    "domain" : "1",
-    "attributes" : [ "external", "object" ],
-    "id" : "3"
+    "label" : {
+      "IRI-based" : "hasFacility",
+      "undefined" : "has Facility"
+    },
+    "domain" : "3",
+    "attributes" : [ "object", "external" ],
+    "id" : "2"
   }, {
-    "range" : "6",
-    "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "5"
+    "range" : "7",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "6"
   }, {
     "iri" : "http://w3id.org/fio/v1/fio#subcodeOf",
     "baseIri" : "http://w3id.org/fio/v1/fio",
-    "range" : "7",
+    "range" : "8",
+    "description" : {
+      "undefined" : "A hierarchical relation between an industry and its parent industry"
+    },
     "label" : {
       "IRI-based" : "subcodeOf",
       "undefined" : "subcode of"
     },
-    "domain" : "7",
-    "attributes" : [ "external", "object", "transitive" ],
-    "id" : "8"
-  }, {
-    "iri" : "http://w3id.org/fio/v1/fio#ofIndustry",
-    "baseIri" : "http://w3id.org/fio/v1/fio",
-    "range" : "7",
-    "label" : {
-      "IRI-based" : "ofIndustry",
-      "undefined" : "of industry"
-    },
-    "domain" : "1",
-    "attributes" : [ "external", "object", "someValues" ],
+    "domain" : "8",
+    "attributes" : [ "object", "transitive", "external" ],
     "id" : "9"
   }, {
-    "range" : "6",
-    "domain" : "4",
-    "attributes" : [ "object", "anonymous" ],
+    "iri" : "http://w3id.org/fio/v1/fio#ofYear",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "range" : "11",
+    "description" : {
+      "undefined" : "A relation between an industry code and the schema year it belongs to."
+    },
+    "label" : {
+      "IRI-based" : "ofYear",
+      "undefined" : "of Year"
+    },
+    "domain" : "8",
+    "attributes" : [ "datatype", "external" ],
     "id" : "10"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/fio#sameCode",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "range" : "8",
+    "annotations" : {
+      "decription" : [ {
+        "identifier" : "decription",
+        "language" : "undefined",
+        "value" : "A relation between an industry and another industry that have equivalent identifiers but slight differences in semantic coverage.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "sameCode",
+      "undefined" : "same code"
+    },
+    "domain" : "8",
+    "attributes" : [ "object", "external" ],
+    "id" : "12"
   }, {
     "iri" : "http://w3id.org/fio/v1/fio#ofIndustry",
     "baseIri" : "http://w3id.org/fio/v1/fio",
-    "range" : "7",
+    "range" : "8",
+    "description" : {
+      "undefined" : "A relation between an entity and the industry it is classified under"
+    },
     "label" : {
       "IRI-based" : "ofIndustry",
       "undefined" : "of industry"
     },
+    "domain" : "4",
+    "attributes" : [ "someValues", "object", "external" ],
+    "id" : "14"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/fio#yearDeprecated",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "range" : "0",
+    "description" : {
+      "undefined" : "A relation between an industry code and the schema year it was deprecated and removed as a industry code with the same meaning."
+    },
+    "label" : {
+      "IRI-based" : "yearDeprecated",
+      "undefined" : "year deprecated"
+    },
+    "domain" : "8",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "15"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#wasAttributedTo",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "wasAttributedTo"
+    },
     "domain" : "1",
-    "attributes" : [ "external", "object" ],
-    "id" : "11"
+    "attributes" : [ "object", "external" ],
+    "id" : "16"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/fio#ofIndustry",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "range" : "8",
+    "description" : {
+      "undefined" : "A relation between an entity and the industry it is classified under"
+    },
+    "label" : {
+      "IRI-based" : "ofIndustry",
+      "undefined" : "of industry"
+    },
+    "domain" : "5",
+    "attributes" : [ "object", "external" ],
+    "id" : "17"
   } ]
 }

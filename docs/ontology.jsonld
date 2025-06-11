@@ -1,5 +1,5 @@
 [ {
-  "@id" : "_:genid1",
+  "@id" : "_:genid3",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://w3id.org/fio/v1/fio#ofIndustry"
@@ -12,6 +12,12 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/decription",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/decscription",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/terms/description",
@@ -70,70 +76,98 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "http://w3id.org/fio/v1/fio#Agency",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Agency"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/ns/prov#Organization"
-  } ]
-}, {
-  "@id" : "http://w3id.org/fio/v1/fio#Company",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Company"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/ns/prov#Organization"
-  } ]
-}, {
   "@id" : "http://w3id.org/fio/v1/fio#Facility",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "Any physical building, building complex or site (e.g. an airstrip, a mine, or superfund site) at which a commercial or institutional activity occurs."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Facility"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid1"
+    "@id" : "_:genid3"
   } ]
 }, {
   "@id" : "http://w3id.org/fio/v1/fio#Industry",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "A distinct group of productive or profit-making enterprises."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Industry"
   } ]
 }, {
-  "@id" : "http://w3id.org/fio/v1/fio#hasParentCompany",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://w3id.org/fio/v1/fio#Facility"
+  "@id" : "http://w3id.org/fio/v1/fio#Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : ""
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has parent company"
+    "@value" : "Organization"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://w3id.org/fio/v1/fio#Company"
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Agent"
   } ]
 }, {
-  "@id" : "http://w3id.org/fio/v1/fio#ofAgency",
+  "@id" : "http://w3id.org/fio/v1/fio#hasFacility",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/terms/decscription" : [ {
+    "@value" : "A relation between an organization and a facility it has ownership, management or other affiliation with."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://w3id.org/fio/v1/fio#Facility"
+    "@id" : "http://w3id.org/fio/v1/fio#Organization"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "of agency"
+    "@value" : "has Facility"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://w3id.org/fio/v1/fio#Agency"
+    "@id" : "http://w3id.org/fio/v1/fio#Facility"
   } ]
 }, {
   "@id" : "http://w3id.org/fio/v1/fio#ofIndustry",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://w3id.org/fio/v1/fio#Facility"
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "A relation between an entity and the industry it is classified under"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "of industry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/fio/v1/fio#Industry"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "http://w3id.org/fio/v1/fio#ofIndustry"
+    }, {
+      "@id" : "http://w3id.org/fio/v1/fio#subcodeOf"
+    } ]
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/fio#ofYear",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "A relation between an industry code and the schema year it belongs to."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/fio/v1/fio#Industry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "of Year"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#date"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/fio#sameCode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/terms/decription" : [ {
+    "@value" : "A relation between an industry and another industry that have equivalent identifiers but slight differences in semantic coverage."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/fio/v1/fio#Industry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "same code"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://w3id.org/fio/v1/fio#Industry"
@@ -141,6 +175,9 @@
 }, {
   "@id" : "http://w3id.org/fio/v1/fio#subcodeOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "A hierarchical relation between an industry and its parent industry"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://w3id.org/fio/v1/fio#Industry"
   } ],
@@ -151,9 +188,30 @@
     "@id" : "http://w3id.org/fio/v1/fio#Industry"
   } ]
 }, {
+  "@id" : "http://w3id.org/fio/v1/fio#yearDeprecated",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "A relation between an industry code and the schema year it was deprecated and removed as a industry code with the same meaning."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/fio/v1/fio#Industry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "year deprecated"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#date"
+  } ]
+}, {
   "@id" : "http://www.w3.org/2001/XMLSchema#date",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
 }, {
+  "@id" : "http://www.w3.org/ns/prov#Agent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
   "@id" : "http://www.w3.org/ns/prov#Organization",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#wasAttributedTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 } ]
