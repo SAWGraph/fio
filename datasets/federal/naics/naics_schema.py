@@ -157,6 +157,10 @@ def triplify(df):
             if str(industry['code'])[5:6] == '0':
                 #print(industry_iri, 'sameAs', str(industry['code'])[0:5])
                 kg.add((industry_iri, OWL.sameAs, naics['NAICS-'+str(industry['code'])[0:5]]))
+            else:
+                #add an extra link between 5 and 6 digit codes
+                #print(industry_iri,str(industry['code'])[0:5])
+                kg.add((industry_iri, fio['subcodeOf'], naics['NAICS-'+str(industry['code'])[0:5]]))
 
         #link subcodes to parents
         if 'sector' in extra_iris.keys():
