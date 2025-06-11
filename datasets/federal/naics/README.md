@@ -5,6 +5,7 @@ The NAICS ontology is a dataset specific ontology that models industry classific
 ## Schema Diagram
 
 ### Overview
+
 ![NAICS Overview](./NAICS.png)
 
 ### Example of industry instances

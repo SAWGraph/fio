@@ -106,31 +106,6 @@ def get_attributes(row):
         'longitude': row['Longitude'],
     }
 
-    if pd.notnull(row['AIR_IDS']):
-        facility['air_id']= row['AIR_IDS']
-    if pd.notnull(row['CAA_PERMIT_TYPES']):
-        facility['caa_permit_type']= row['CAA_PERMIT_TYPES']
-    if pd.notnull(row['CAA_NAICS']):
-        facility['caa_naics']= row['CAA_NAICS']
-    if pd.notnull(row['CAA_SICS'] ):
-        facility['caa_sics']= row['CAA_SICS']
-    if pd.notnull(row['NPDES_IDS']):
-        facility['npdes_id']= row['NPDES_IDS']
-    if pd.notnull(row['CWA_NAICS']):
-        facility['cwa_naics'] = row['CWA_NAICS']
-    if pd.notnull(row['CWA_SICS'] ):
-        facility['cwa_sic']= row['CWA_SICS']
-    if pd.notnull(row['RCRA_IDS']):
-        facility['rcra_id']= row['RCRA_IDS']
-    if pd.notnull(row['RCRA_NAICS']):
-        facility['rcra_naics']= row['RCRA_NAICS']
-    if pd.notnull(row['SDWA_IDS']):
-        facility['sdwa_id']= row['SDWA_IDS']
-    if pd.notnull(row['SDWA_SYSTEM_TYPES'] ):
-        facility['sdwa_type']= row['SDWA_SYSTEM_TYPES']
-    if pd.notnull(row['TRI_IDS']):
-        facility['tri_id']= row['TRI_IDS']
-
     return facility
 
 def get_iris(facility):

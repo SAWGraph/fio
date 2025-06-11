@@ -23,7 +23,17 @@
 
 ## Schema Diagram
 
-![US FRS Schema](./ontology/FIO%20-%20facility.png)
+### Overview
+
+![US FRS Schema](./ontology/FIO-frsfacility.png)
+
+### Records and Environmental Interest
+
+![US FRS program Records schema](./ontology/FIO%20-%20Facility-updated%20(7).png)
+
+### Program Information Systems and Organizations
+
+![US FRS programs and Organizations](./ontology/FIO%20-%20Facility-updated%20(8).png)
 
 * [WIP](https://lucid.app/lucidchart/0b649dc4-e466-4d29-ae34-5c0f113f5a46/edit?viewport_loc=-1067%2C1107%2C3523%2C1881%2CcJplkqIup7-.&invitationId=inv_0e3483a0-96fc-4faf-8c17-1a5bf73fd23b)
 
@@ -33,173 +43,123 @@
 
 ### FRS_FACILITY_SITE api table (joined with GEO_FACILITY_POINT) / *_FACILITY_FILE.csv
 
-**API CODE**: \us-frs\facilities_api.py
+* **API CODE**: \us-frs\facilities_api.py
+* **from file code(outdated):**\us-frs\older_scripts\facilities_statedownload.py
+* **[REFERENCE](https://enviro.epa.gov/envirofacts/metadata/table/frs/frs_facility_site)**
 
-**from file code(outdated):**\us-frs\older_scripts\facilities_statedownload.py
-
-**[REFERENCE](https://enviro.epa.gov/envirofacts/metadata/table/frs/frs_program_facility)**
-
-| State download Attribute    | API Attribute |  Description  | Lift to Graph | Ontology Property    |
+| State CSV download Attribute    | API Attribute |  Description  | **Lift to Graph** | **Ontology Property**    |
 |--------------|--------------|---------------|----------------------|------|
-| FRS_FACILITY_DETAIL_REPORT_URL | - | report url   |   |    |
-| REGISTRY_ID  | registry_id | registry id to uniquely identify facility  | Yes     | epa-frs:FRS-Facility (in URI)  epa-frs:hasFRSid (xsd:string, owl:subPropertyOf dcterms:identifier ) |
-| PRIMARY_NAME | primary_name| public or commercial name| Yes    | epa-frs:FRS-Facility dcterms:alternative (xsd:string) |
-| | std_name| The primary name after a set of standardization rules are applied for comparison purposes. The rules include removing special characters and certain words (e.g., "/", "Inc.") and replacing abbreviated words with standardized equivalents (e.g., "Assoc" becomes "Association"). | Yes | epa-frs:FRS-Facility rdfs:label  |
-| LOCATION_ADDRESS   |location_address | The address that describes the physical (geographic) location of the front door or main entrance of a facility site, including urban-style street address or rural address.| (only use standardized form) |    |
-| _ |  std_full_address | The standardized complete address including STD_LOC_ADDRESS STD_CITY_NAME STD_STATE_CODE  AND STD_POSTAL_CODE.  | Yes | epa-frs:FRS-Facility schema:address (xsd:string)|
-| | std_stype_before | | No | |
-| | std_base_name | The name of the street or road, not including the prefix, suffix, or pre- or postdirectional codes. | No ||
-| | std_street_name| The name assigned to a street or road, not including other urban-style street address components.| No ||
-| | std_stype_after || No ||
-| | std_loc_address|| No ||
-| | std_suffix|| No ||
-| | std_house_number || No ||
-| | std_prefix|| No ||
-| SUPPLEMENTAL_LOCATION |  supplemental_location  | text that provides additional information about a place, including a building name with its secondary unit and number, an industrial park name, an installation name or descriptive text where no formal address is available. | |    |
-| CITY_NAME    | city_name, std_city_name | locality name - nameof city, town village or other locality within whose boundaries (the majority of) the facility site is located.  |   |    |
-| COUNTY_NAME  | county_name, std_county_name |  | No      |    |
-| FIPS_CODE    | fips_code, std_county_fips| county fips code (state and county)  | Yes     | epa-frs:FRS-Facility kwg-ont:sfWithin kwg-ont:AdministrativeRegion_2      |
-| STATE_CODE   | state_code, std_state_code | USPS abbreviation for state    |  For initial filter only |    |
 | STATE_NAME   | state_name |   | No  |    |
-| COUNTRY_NAME | country_name, std_country |   | No  |    |
-| POSTAL_CODE  | postal_code, std_postal_code |  5 digit zip code and 4 digit extension code (if available)   | No  |    |
-| FEDERAL_FACILITY_CODE | federal_facility_code   | Yes/No the facility is property of the Federal Government    | Yes     | epa-frs:FRS-Facility epa-frs:ofFacilityType epa-frs-data:d.Federal-Facility |
-| FEDERAL_AGENCY_NAME  |     | name of federal agency (derived from FEDERAL_AGENCY_CODE lookup)   | yes | epa-frs:Agency rdfs:label (in controlled vocab script) |
-| | federal_agency_code | The Federal Agency/Bureau code. The five character code consists of a letter followed by  four numbers. There are four possible letters that can occupy the first character position: 'C' for Civilian Federal Agency; 'D' for Department of Defense; 'E' for Department of Energy; 'X' for Unknown. The second and third characters represent the agency code, while the fourth and fifth characters represent the bureau code. | Yes | epa-frs:FRS-Facility prov:wasAttributedTo epa-frs:Agency (in URI) |
-| TRIBAL_LAND_CODE | tribal_land_code  | Code indicating whether or not the facility site is located on tribal land.  | Yes  |  epa-frs:FRS-Facility epa-frs:ofFacilityType epa-frs-data:d.Tribal-Facility  |
-| TRIBAL_LAND_NAME | tribal_land_name | Name of Tribal Reservation, statistical area, or Public Domain Allotment.      | ?    |  |
-| CONGRESSIONAL_DIST_NUM | legislative_dist_num  | The number that represents a Legislative District within a state. | No |    |
-| CENSUS_BLOCK_CODE | |  | No |    |
-| HUC_CODE   |  | The Hydrologic Unit Code (HUC) that represents a geographic area representing part or all of a surface drainage basin, a combination of drainage basins, or a distinct hydrologic feature. | No  |    |
-| EPA_REGION_CODE  | epa_region_code | The code that represents an EPA Region.    | No |    |
-| SITE_TYPE_NAME   | site_type_name | The descriptive name for the type of site the facility occupies.  Allowable Values: [ Stationary, Monitoring Site, Brownfields Site, Water System ,  Contamination Addressed,  Contaminated Site,  Potentially Contaminated Site  ]  | Yes     |  added to URI -> rdfs:subClassOf us_frs:FRS-Facility  |
-| LOCATION_DESCRIPTION  |  location_description | Descriptive information about location of facility, including directions.      |  No |    |
-| CREATE_DATE | create_date | date first posted to database  |  Yes |  epa-frs:FRS-Facility dcterms:created xsd:date  |
-| UPDATE_DATE | update_date, last_reported_date | A system-generated value that represents the most recent calendar date and time the corresponding information was updated in the database.  | Yes | epa-frs:FRS-Facility schema:dateModified xsd:date   |
-| US_MEXICO_BORDER_IND  |   | An indicator that the facility is located within 62.5 miles (100 km) of the United States - Mexico Border. Only applicable to facilities in California, Arizona, New Mexico, and Texas.    | No  |    |
-| PGM_SYS_ACRNMS  |   | list of program acronyms the facility is tracked by    | from other tables | |
-| LATITUDE83   | frs.GEO_FACILITY_POINT.latitude83 | | Yes     |  epa-frs:FRS-Facility geo:hasGeometry/geo:asWKT  |
-| LONGITUDE83  | frs.GEO_FACILITY_POINT.longitude83 | | Yes     |  epa-frs:FRS-Facility geo:hasGeometry/geo:asWKT  |
-| CONVEYOR     | - (geo_pgm_facility_coordinate) | Identification of the party that transmitted the latitude and longitude  |  No |    |
-| COLLECT_DESC | - (geo_pgm_facility_coordinate) | Method used to determine Lat/Long    | No  |    |
-| ACCURACY_VALUE | - (geo_pgm_facility_coordinate) | Measure of accuracy in meters of latitude/longitude    |  No |    |
-| REF_POINT_DESC |  - (geo_pgm_facility_coordinate) | Name that identifies the place for which geographic coordinates were established     |  No |    |
-| HDATUM_DESC  | - (geo_pgm_facility_coordinate) | Horizontal reference datum used in determining latitude longitude coordinates  |  No |    |
-| SOURCE_DESC  | - (geo_pgm_facility_coordinate) | Name of party responsible for providing lat/long coordinates |  No |    |
+| LOCATION_ADDRESS   |location_address | The address that describes the physical (geographic) location of the front door or main entrance of a facility site, including urban-style street address or rural address.| No |    |
+| UPDATE_DATE | update_date, last_reported_date | A system-generated value that represents the most recent calendar date and time the corresponding information was updated in the database.  | **Yes** | epa-frs:FRS-Facility schema:dateModified xsd:date   |
+| |  std_full_address | The standardized complete address including STD_LOC_ADDRESS STD_CITY_NAME STD_STATE_CODE  AND STD_POSTAL_CODE.  | Yes | epa-frs:FRS-Facility schema:address (xsd:string)|
 | | user_id | The user ID of the person who entered the data or the method by which the data was entered into the system. | No | |
+| |  std_city_name | standardized locality name - nameof city, town village or other locality within whose boundaries (the majority of) the facility site is located.  | No  |    |
+| COUNTRY_NAME | country_name |   | No  |    |
+| TRIBAL_LAND_NAME | tribal_land_name | Name of Tribal Reservation, statistical area, or Public Domain Allotment.      | ?    |  |
+| (FEDERAL_AGENCY_NAME)  | federal_agency_code  | code of federal agency (or name as derived from FEDERAL_AGENCY_CODE lookup)  The Federal Agency/Bureau code. The five character code consists of a letter followed by  four numbers. There are four possible letters that can occupy the first character position: 'C' for Civilian Federal Agency; 'D' for Department of Defense; 'E' for Department of Energy; 'X' for Unknown. The second and third characters represent the agency code, while the fourth and fifth characters represent the bureau code. | **Yes** | epa-frs:FRS-Facility prov:wasAttributedTo epa-frs:Agency (in URI)  |
+| | std_stype_before | street prefix| No | |
+| | std_base_name | The name of the street or road, not including the prefix, suffix, or pre- or postdirectional codes. | No ||
+| | std_stype_after | street suffix| No ||
 | | refresh_date | The date the data was last extracted from the data source. | No ||
-| | parent_registry_id |  The unique identification number, assigned by the EPA Facility Registry System, to the parent facility site (for example, the SDWIS water system). | ? ||
-| | env_justice_code| Note:Dropped from schema in April 2025. The code that identifies the type of environmental justice concern affecting the facility or enforcement action.| No ||
-| | small_bus_ind| | Yes | epa-frs:FRS-Facility epa-frs:ofFacilityType epa-frs-data:d.SmallBusiness-Facility|
-| | interest_status_code| Null | no ||
+| | parent_registry_id |  The unique identification number, assigned by the EPA Facility Registry System, to the parent facility site (for example, the SDWIS water system). | **??** ||
+| | std_name| The primary name after a set of standardization rules are applied for comparison purposes. The rules include removing special characters and certain words (e.g., /, Inc.) and replacing abbreviated words with standardized equivalents (e.g., Assoc becomes Association). | **Yes** | epa-frs:FRS-Facility dcterms:alternative  |
+| CREATE_DATE | create_date | date first posted to database  |  **Yes** |  epa-frs:FRS-Facility dcterms:created xsd:date  |
+| CITY_NAME | city_name | locality name - nameof city, town village or other locality within whose boundaries (the majority of) the facility site is located.  | No  |    |
+| FEDERAL_FACILITY_CODE | federal_facility_code   | Yes/No the facility is property of the Federal Government    | **Yes**     | epa-frs:FRS-Facility epa-frs:ofFacilityType epa-frs-data:d.Federal-Facility |
+| TRIBAL_LAND_CODE | tribal_land_code  | Code indicating whether or not the facility site is located on tribal land.  | **Yes**  |  epa-frs:FRS-Facility epa-frs:ofFacilityType epa-frs-data:d.Tribal-Facility  |
+| SITE_TYPE_NAME   | site_type_name | The descriptive name for the type of site the facility occupies.  Allowable Values: [ Stationary, Monitoring Site, Brownfields Site, Water System ,  Contamination Addressed,  Contaminated Site,  Potentially Contaminated Site  ]  | **Yes**     |  epa-frs:FRS-Facility epa-frs:ofFacilityType (builds URI of epa-frs:FacilityType) |
+| **REGISTRY_ID**  | **registry_id** | registry id to uniquely identify facility  | Yes     | epa-frs:FRS-Facility (in URI)  epa-frs:hasFRSid (xsd:string, owl:subPropertyOf dcterms:identifier ) |
+| **PRIMARY_NAME** | **primary_name**| public or commercial name| **Yes**    | epa-frs:FRS-Facility rdfs:label (xsd:string) |
+|   | std_state_code | USPS abbreviation for state - corrected/standardized   |  For initial filter only |    |
+| COUNTY_NAME  | county_name|  | No      |    |
+| | small_bus_ind| | **Yes** | epa-frs:FRS-Facility epa-frs:ofFacilityType epa-frs-data:d.SmallBusiness-Facility|
+| | std_street_name| The name assigned to a street or road, not including other urban-style street address components.| No ||
+| | interest_status_code| Null | No ||
 | | review_reason| The reason the record is flagged for manual review. | No ||
+| POSTAL_CODE  | postal_code |  5 digit zip code and 4 digit extension code (if available)   | No  |    |
 | | sensitive_ind|Indicates whether or not the associated data is enforcement sensitive. | No ||
 | | operating_status|| No ||
+| | std_county_fips| county fips code (state and county)  | **Yes**?     | epa-frs:FRS-Facility kwg-ont:sfWithin kwg-ont:AdministrativeRegion_2      |
+| FIPS_CODE    | fips_code| county fips code (state and county)  | No     |      |
 | | stand_alone_flag | Indicates whether or not the facility is standalone (i.e., only one environmental interest is linked to the facility) or multimedia (more than one environmental interest is linked to the facility).'Y' means the facility is standalone, and 'N' means the facility is not standalone.| No ||
+| | std_house_number || No ||
+| LOCATION_DESCRIPTION  |  location_description | Descriptive information about location of facility, including directions.      |  No |    |
+| |std_county_name |  | No      |    |
+| | std_prefix|| No ||
+| | std_country |   | No  |    |
 | | icis_identifier | This column is not currently being used. | No ||
 | | public_ind | Indicates whether or not the associated data is accessible by the public on the Internet. |No - only public data accessed ||
 | | review_flag |A flag that indicates the record requires a manual review due to changes from a data source | No ||
+| SUPPLEMENTAL_LOCATION |  supplemental_location  | text that provides additional information about a place, including a building name with its secondary unit and number, an industrial park name, an installation name or descriptive text where no formal address is available. | No? |    |
+| EPA_REGION_CODE  | epa_region_code | The code that represents an EPA Region.    | No |    |
+| STATE_CODE   | state_code, std_state_code | USPS abbreviation for state    |  For initial filter only |    |
 | | data_quality_code| Quality of the location | No ||
 | | addr_type|The type of address given in the LOCATION_ADDRESS column (i.e., standard urban, PO Box). | No ||
+| | std_postal_code |  5 digit zip code and 4 digit extension code (if available)   | No  |    |
+| | last_reported_date | | | |
+| CONGRESSIONAL_DIST_NUM | legislative_dist_num  | The number that represents a Legislative District within a state. | No |    |
+| | std_loc_address|| No ||
+| | std_suffix|| No ||
+| LATITUDE83   | frs.GEO_FACILITY_POINT.latitude83 | | **Yes**     |  epa-frs:FRS-Facility geo:hasGeometry/geo:asWKT  |
+| LONGITUDE83  | frs.GEO_FACILITY_POINT.longitude83 | | **Yes**     |  epa-frs:FRS-Facility geo:hasGeometry/geo:asWKT  |
+| | env_justice_code| Note:Dropped from schema in April 2025. The code that identifies the type of environmental justice concern affecting the facility or enforcement action.| No ||
 
-### frs.v_pub_frs_naics_ez / ME_NAICS_FILE.csv
+### frs.frs_program_facility
 
-many to one relation with facility file
+* **[REFERENCE](https://enviro.epa.gov/envirofacts/metadata/table/frs/frs_program_facility)**
+* **API CODE**: \us-frs\facilities_program_records.py
+* This table primarily bridges between the standard facility site table and any program information system data
 
-**OLD CODE**: \us-frs\industries-echo.py
+| API Attribute |  Description (/example)  | Lift to Graph | Ontology Property    |
+|--------------|---------------|----------------------|------|
+|  addr_type| null| | |
+|  city_name| LANDOVER HILLS| | |
+|  country_name| UNITED STATES| | |
+|  county_name| PRINCE GEORGE S| | |
+|  create_date| null| **Yes**| epa-frs:Record dcterms:created|
+|  data_quality_code| null| ? | |
+|  epa_region_code| 03| | |
+|  federal_agency_code| null| | |
+|  federal_facility_code| null| | |
+|  fips_code| null| | |
+|  huc_code_12| null| | |
+|  huc_code_8| null| | |
+|  last_reported_date| null| | |
+|  legislative_dist_num| null| | |
+|  location_address| 7401 ANNAPOLIS RD| | |
+|  location_description| null| | |
+|  pgm_sys_acrnm| RCRAINFO|**Yes** | epa-frs:Record epa-frs:fromSystem (URI of epa-frs:ProgramInformationSystem) (also used in record iri with standardization) |
+|  ***pgm_sys_id***| MDR000525591|**Yes** | URI of epa-frs:Record (with standardization) |
+|  postal_code| 20784| | |
+|  primary_name| CVS PHARMACY 1443| | |
+|  public_ind| Y| | |
+|  refresh_date| 29-JUL-16| | |
+|  **registry_id**| **110045544700**| Yes | epa-frs:FRS-Facility(in uri) epa-frs:hasRecord epa-frs:Record |
+|  sensitive_ind| null| | |
+|  site_type_name| null| | |
+|  small_bus_ind| null| | |
+|  source_of_data| RCRAINFO| | |
+|  state_code| MD| | |
+|  state_name| MARYLAND| | |
+|  supplemental_location| null| | |
+|  tribal_land_code| N| | |
+|  tribal_land_name| null| | |
+|  update_date| null| **Yes** | epa-frs:Record dcterms:updated|
+|  user_id| null | | |
 
-| Attribute   | API attribute | Description    | Lift to Graph | Ontology Property/Class      |
-|-------------| --------------|----------------|---------------| ---------------------------- |
-|  | city_name | | No | |
-| CODE_DESCRIPTION| code_description | The text that represents a subdivision of an industry that accommodates user needs in the United States  | No (pull from Census bureau files)  |      |
-| | country_name | | No | |
-| | county_name | | No | |
-| | epa_region_code | | No | |
-| | latitude83 | | No(from other table) | |
-| | legislative_dist_num| | No | |
-| | location_address | | No | |
-| | longitude83 | | No | |
-| NAICS_CODE | naics_code| The code that represents a subdivision of an industry that accommodates user needs in the United States (six-digits). | Yes     | fio:ofIndustry naics:NAICS-Industry (in URI)      |
- PGM_SYS_ACRNM|  pgm_sys_acrnm    | The abbreviated name that represents the name of an information management system for an environmental program.      | Yes     | owl:subclassOf epa-frs:FRS-Facility (also in iri of fio:ofIndustry and dcterms:identifier subproperties )  |
-| REGISTRY_ID | registry_id |  | Yes     | us_frs:FRS-Facility    |
-|
-| PGM_SYS_ID  | | The identification number, such as the permit number assigned by an information management system that represents a facility site, waste site, operable unit, or other feature tracked by that Environmental Information System. |   |      |
-| INTEREST_TYPE |    | The environmental permit or regulatory program that applies to the facility site | ? |      |
+### frs.frs_interest   /   ME_ENVIRONMENTAL_INTEREST_FILE.csv
 
-| PRIMARY_INDICATOR | | The name that indicates whether the associated NAICS Code represents the primary activity occurring at the facility site   | Yes     | us_frs:primary_industry or us_frs:secondary_industry |
-
-### ME_SIC_FILE.csv
-
-many to one relation with facility file
-
-**CODE**: \us-frs\industries-echo.py
-
-| Attribute   | Description     | Lift to Graph | Ontology Property |
-|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|-------------------|
-| REGISTRY_ID |     |   | |
-| PGM_SYS_ACRNM     | The abbreviated name that represents the name of an information management system for an environmental program. |   | |
-| PGM_SYS_ID  | The identification number, such as the permit number, assigned by an information management system that represents a facility site, waste site, operable unit, or other feature tracked by that Environmental Information System. |   | |
-| INTEREST_TYPE|     | The environmental permit or regulatory program that applies to the facility site  |   |
-| SIC_CODE |   | The code that represents the economic activity of a company (4-digits).     |   |
-| PRIMARY_INDICATOR|  | The name that indicates whether the associated SIC Code represents the primary activity occurring at the facility site      |   |
-| CODE_DESCRIPTION |  | The text that represents a subdivision of an industry that accommodates user needs in the United States   |   |
-
-### ALTERNATIVE NAME FILE
-
-Not currently triplified
-
-| Attribute | Description | Lift to Graph | Ontology Property |
-|-----------------------|-------------|---------------|-------------------|
-| REGISTRY_ID     | |   | |
-| PGM_SYS_ACRNM   | |   | |
-| PGM_SYS_ID      | |   | |
-| ALTERNATIVE_NAME      | |   | |
-| ALTERNATIVE_NAME_TYPE | |   | |
-
-### ORGANIZATION FILE
-
-Not currently triplified
-
-Describes organizations affiliated with a facility
-
-| Attribute  | Description  | Lift to Graph | Ontology Property |
-|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|---------------------------------------------------------------|
-| "REGISTRY_ID"    |  |   |   |
-| "PGM_SYS_ACRNM"  |  |   |   |
-| "PGM_SYS_ID"     |  |   |   |
-| "INTEREST_TYPE"  |  |   |   |
-| "AFFILIATION_TYPE"     | The name that describes the capacity or function that an organization or individual serves for a facility site (Legally Responsible Entity, Legal Operator, Waste Treater, Waste Handler, Land Owner, Parent Corporation, Owner/Operator)( Report Certifier, Regulatory Contact, Public Contact, Technical Contact, Owner, Operator) | Yes     | fio:hasAffiliation, mapped out under us_frs: as subproperties |
-| "START_DATE"     |  |   |   |
-| "END_DATE" |  |   |   |
-| "ORG_NAME" | Yes    | rdfs:label    |   |
-| "ORG_TYPE" | Yes    | maps to subclass of Prov:Organization |   |
-| "DUNS_NUMBER"    | The Data Universal Numbering System (DUNS) number assigned by Dun and Bradstreet to identify unique business establishments    |   |   |
-| "DIVISION_NAME"  |  |   |   |
-| "PHONE_NUMBER"   |  |   |   |
-| "ALTERNATE_PHONE"      |  |   |   |
-| "FAX_NUMBER"     |  |   |   |
-| "EMAIL_ADDRESS"  |  |   |   |
-| "EIN"      | The unique tax identification number issued by the Internal Revenue Service to the employer.     | ? |   |
-| "STATE_BUSINESS_ID"    | The uniform business number assigned to an official business by a state. | ? |   |
-| "MAILING_ADDRESS"      |  |   |   |
-| "SUPPLEMENTAL_ADDRESS" |  |   |   |
-| "CITY_NAME"      |  |   |   |
-| "STATE_CODE"     |  |   |   |
-| "STATE_NAME"     |  |   |   |
-| "POSTAL_CODE"    |  |   |   |
-| "COUNTRY_NAME"   |  |   |  |
-
-### ME_ENVIRONMENTAL_INTEREST_FILE.csv
-
-Provides identifiers across all EPA agency subprograms and state system identifiers.
-
-Many to one with facility table.
-
-**CODE**: \us-frs\environmentalInterest-echo.py
+* Classifies type of environmental interest in facility across all EPA agency subprograms and state system.
+* **[REFERENCE](https://enviro.epa.gov/envirofacts/metadata/table/frs/frs_interest)**
+* **[LOOKUP REFERENCE](https://enviro.epa.gov/envirofacts/metadata/table/frs/frs_interest_ref)**
+* Many to one (or 1-to-1?) with program_facility table.
+* **API CODE**: \us-frs\facilities_programs_records.py  (joined with frs.frs_program_facility file)
+* **OLD CODE**: \us-frs\environmentalInterest-echo.py
 
 | Attribute      | Description  | Lift to Graph | Ontology Property   |
-|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|---------------------------------|
-| REGISTRY_ID    |  |   |   |
+|----------------------|-------------------------|---------------|-----------------|
+| REGISTRY_ID    |  registry_id |   |   |
 | PGM_SYS_ACRNM  | The abbreviated name that represents the name of an information management system for an environmental program. Program System Definitions can be viewed at <http://www.epa.gov/enviro/html/fii/prog_sys.html> |  Yes |   builds predicate for us_frs:has___Id      |
 | PGM_SYS_ID     | The identification number, such as the permit number, assigned by an information management system     | Yes     | us_frs:has____Id xsd:string |
 | INTEREST_TYPE  | The environmental permit or regulatory program that applies to the facility site     | Yes     | us_frs:environmentalInterestType xsd:string|
@@ -214,112 +174,248 @@ Many to one with facility table.
 | UPDATE_DATE    | A system-generated value that represents the most recent calendar date and time that the corresponding information was updated in the database   |   |   |
 | ACTIVE_STATUS  | The status of the environmental interest at the facility or site   |   |   |
 
-### Contact File
+### frs.frs_supplemental_interest / Supplemental Interest File
 
-Not currently triplified
+* **API CODE**: \us_frs\facilities_program_supplemental.py
+* described supplemental programs (state, npdes permits, enforcement/compliance, etc.)
 
-"REGISTRY_ID"| "PGM_SYS_ACRNM"| "PGM_SYS_ID"| "INTEREST_TYPE"| "AFFILIATION_TYPE"| "START_DATE"| "END_DATE"| "FULL_NAME"| "TITLE"| "PHONE_NUMBER"| "ALTERNATE_PHONE"| "FAX_NUMBER"| "EMAIL_ADDRESS"| "MAILING_ADDRESS"| "SUPPLEMENTAL_ADDRESS"| "CITY_NAME"| "STATE_CODE"| "STATE_NAME"| "POSTAL_CODE"| "COUNTRY_NAME"
+| Attribute      | Description  | Lift to Graph | Ontology Property   |
+| --- | --- | --- | --- |
+| create_date| | | |
+| end_date| | | |
+| end_date_qualifier | | Yes | used in rdfs:label for epa-frs:SupplementalRecord|
+| last_reported_date | | | |
+| PGM_SYS_ACRNM| | | |
+| PGM_SYS_ID| | | |
+| public_ind | | | |
+| REPORTED_SUP_INTEREST_TYPE| | | |
+| sensitive_ind| | | |
+| SOURCE_OF_DATA| | | |
+| START_DATE| | | |
+| START_DATE_QUALIFIER| | | |
+| ***sup_interest_id*** | unique identifier from frs (used with pgm id is empty) | Yes | iri and dcterms:identifier of epa-frs:SupplementalRecord (when to sup_pgm_sys_id) | 
+| SUP_INTEREST_TYPE| | | |
+| SUP_PGM_SYS_ACRNM| | | |
+| ***SUP_PGM_SYS_ID*** | unique id from program (not available for some internal programs) | Yes | iri and dcterms:identifier of epa-frs:SupplementalRecord|
+| UPDATE_DATE | | | |
+| user_id | | | |
 
-### Mailing Address
+### frs.frs_naics / ME_NAICS_FILE.csv
 
-Not currently triplified
+* many to one relation with program facility file
+* **[REFERENCE](https://enviro.epa.gov/envirofacts/metadata/table/frs/frs_naics)**
+* **[LOOKUP Reference](https://enviro.epa.gov/envirofacts/metadata/table/frs/frs_code_description)**
+* **API CODE**: \us-frs\facilities_program_naics.py
+* **OLD CODE**: \us-frs\industries-echo.py
 
-"REGISTRY_ID"| "PGM_SYS_ACRNM"| "PGM_SYS_ID"| "INTEREST_TYPE"| "AFFILIATION_TYPE"| "START_DATE"| "END_DATE"| "MAILING_ADDRESS"| "SUPPLEMENTAL_ADDRESS"| "CITY_NAME"| "STATE_CODE"| "STATE_NAME"| "POSTAL_CODE"| "COUNTRY_NAME"
+| Attribute   | API attribute | Description    | Lift to Graph | Ontology Property/Class      |
+|-------------| --------------|----------------|---------------| ---------------------------- |
+| | create_date | | | |
+| | last_reported_date | | | |
+| NAICS_CODE | naics_code| The code that represents a subdivision of an industry that accommodates user needs in the United States (six-digits). | **Yes**     | fio:ofIndustry naics:NAICS-Industry (in URI)      |
+| | naics_uin |null | | |
+| PGM_SYS_ACRNM|  pgm_sys_acrnm    | The abbreviated name that represents the name of an information management system for an environmental program.      | **Yes**     |  |
+| PGM_SYS_ID  | ***pgm_sys_id*** | The identification number, such as the permit number assigned by an information management system that represents a facility site, waste site, operable unit, or other feature tracked by that Environmental Information System. |  **Yes** | epa-frs:Record (in uri) |
+| PRIMARY_INDICATOR | | The name that indicates whether the associated NAICS Code represents the primary activity occurring at the facility site   | Yes     | epa-frs:ofPrimaryIndustry or epa-frs:ofSecondaryIndustry |
+| | public_ind| | | |
+| | sensitive_ind | | | |
+| | source_of_data | ? | | |
+| | sup_interest_id | ? | | |
+| CODE_DESCRIPTION| frs_code_description.code_description | The text that represents a subdivision of an industry that accommodates user needs in the United States  | No (pull from Census bureau files)  |      |
+| | update_date| | | |
+| | user_id | | | | 
 
-### Program File
 
-Not currently triplified
+### frs.frs_sic / ME_SIC_FILE.csv
 
-"PGM_SYS_ACRNM"| "PGM_SYS_ID"| "REGISTRY_ID"| "PRIMARY_NAME"| "LOCATION_ADDRESS"| "SUPPLEMENTAL_LOCATION"| "CITY_NAME"| "COUNTY_NAME"| "FIPS_CODE"| "STATE_CODE"| "STATE_NAME"| "COUNTRY_NAME"| "POSTAL_CODE"| "FEDERAL_FACILITY_CODE"| "FEDERAL_AGENCY_CODE"| "TRIBAL_LAND_CODE"| "TRIBAL_LAND_NAME"| "LEGISLATIVE_DIST_NUM"| "HUC_CODE_8"| "HUC_CODE_12"| "EPA_REGION_CODE"| "SITE_TYPE_NAME"| "DATA_QUALITY_CODE"| "LAST_REPORTED_DATE"| "STD_NAME"| "STD_LOC_ADDRESS"| "STD_HOUSE_NUMBER"| "STD_STREET_NAME"| "STD_BASE_NAME"| "STD_PREFIX"| "STD_SUFFIX"| "STD_STYPE_BEFORE"| "STD_STYPE_AFTER"| "STD_POSTAL_CODE"| "STD_CITY_NAME"| "STD_COUNTY_NAME"| "STD_STATE_CODE"| "STD_COUNTY_FIPS"| "STD_COUNTRY"| "STD_FULL_ADDRESS"| "ADDR_TYPE"| "LINK_MTHD"| "LOCATION_DESCRIPTION"| "CREATE_DATE"| "UPDATE_DATE"| "USER_ID"| "SENSITIVE_IND"| "USER_COMMENT"| "PUBLIC_IND"| "REFRESH_DATE"| "SMALL_BUS_IND"| "ENV_JUSTICE_CODE"| "PARENT_PGM_SYS_ID"| "STAND_ALONE_FLAG"| "SOURCE_OF_DATA"
+* **[REFERENCE](https://enviro.epa.gov/envirofacts/metadata/table/frs/frs_sic)**
+* many to one relation with program facility file
+* **OLD CODE**: \us-frs\industries-echo.py
 
-### Program GIS File
+| CSV Attribute | API Attribute  | Description     | Lift to Graph | Ontology Property |
+|---------------|----|-------------------|---------------|-------------------|
+| REGISTRY_ID |   |  |   | |
+| PGM_SYS_ACRNM | pgm_sys_acrnm  | The abbreviated name that represents the name of an information management system for an environmental program. |   | |
+| PGM_SYS_ID  | ***pgm_sys_id*** | The identification number, such as the permit number, assigned by an information management system that represents a facility site, waste site, operable unit, or other feature tracked by that Environmental Information System. |   | |
+| **SIC_CODE** | **sic_code** |  | The code that represents the economic activity of a company (4-digits).     |   |
+| PRIMARY_INDICATOR| primary_indicator | The name that indicates whether the associated SIC Code represents the primary activity occurring at the facility site      |   | |
+| | public_ind| | | |
+| | sensitive_ind | | | |
+| | source_of_data | ? | | |
+| | sup_interest_id | ? | | |
+| CODE_DESCRIPTION | frs_code_description.code_description | The text that represents a subdivision of an industry that accommodates user needs in the United States   |   | |
 
-Not currently triplified
+### ORGANIZATION FILE
 
-"PGM_SYS_ACRNM"| "PGM_SYS_ID"| "LATITUDE83"| "LONGITUDE83"| "CONVEYOR"| "COLLECT_DESC"| "ACCURACY_VALUE"| "REF_POINT_DESC"| "HDATUM_DESC"| "SOURCE_DESC"| "STATE_CODE"
+* Not currently triplified
+* Describes organizations affiliated with a facility
 
-### Supplemental Interest File
-
-Not currently triplified
-
-"REGISTRY_ID"| "PGM_SYS_ACRNM"| "PGM_SYS_ID"| "INTEREST_TYPE"| "SUP_PGM_SYS_ACRNM"| "SUP_PGM_SYS_ID"| "SUP_INTEREST_TYPE"| "START_DATE"| "START_DATE_QUALIFIER"| "END_DATE"| "END_DATE_QUALIFIER"| "SOURCE_OF_DATA"| "LAST_REPORTED_DATE"| "REPORTED_SUP_INTEREST_TYPE"| "CREATE_DATE"| "UPDATE_DATE"
+| Attribute  | Description  | Lift to Graph | Ontology Property |
+|------------|--------------|---------------| -------|
+| REGISTRY_ID    |  |   |   |
+| PGM_SYS_ACRNM  |  |   |   |
+| PGM_SYS_ID     |  |   |   |
+| INTEREST_TYPE  |  |   |   |
+| AFFILIATION_TYPE     | The name that describes the capacity or function that an organization or individual serves for a facility site (Legally Responsible Entity, Legal Operator, Waste Treater, Waste Handler, Land Owner, Parent Corporation, Owner/Operator)( Report Certifier, Regulatory Contact, Public Contact, Technical Contact, Owner, Operator) | Yes     | fio:hasAffiliation, mapped out under us_frs: as subproperties |
+| START_DATE     |  |   |   |
+| END_DATE |  |   |   |
+| ORG_NAME | Yes    | rdfs:label    |   |
+| ORG_TYPE | Yes    | maps to subclass of Prov:Organization |   |
+| DUNS_NUMBER    | The Data Universal Numbering System (DUNS) number assigned by Dun and Bradstreet to identify unique business establishments    |   |   |
+| DIVISION_NAME  |  |   |   |
+| PHONE_NUMBER   |  |   |   |
+| ALTERNATE_PHONE      |  |   |   |
+| FAX_NUMBER     |  |   |   |
+| EMAIL_ADDRESS  |  |   |   |
+| EIN      | The unique tax identification number issued by the Internal Revenue Service to the employer.     | ? |   |
+| STATE_BUSINESS_ID    | The uniform business number assigned to an official business by a state. | ? |   |
+| MAILING_ADDRESS      |  |   |   |
+| SUPPLEMENTAL_ADDRESS |  |   |   |
+| CITY_NAME      |  |   |   |
+| STATE_CODE     |  |   |   |
+| STATE_NAME     |  |   |   |
+| POSTAL_CODE    |  |   |   |
+| COUNTRY_NAME   |  |   |  |
 
 ### Additional- EPA PFAS analytics tool industry sectors
 
-**CODE**: \us-frs\facilities_pat.py
+* **CODE**: \us-frs\facilities_pat.py
+* from pfas analytics tools, used to tag which facilities are of interest for PFAS 
 
 | Attribute | Description | Lift to Graph | Ontology Property |
 |-----------------------|-------------|---------------|-------------------|
-|**Facility**     |  | Yes     |  URI rdf:type us_frs:EPA-PFAS-Facility     |
-| Region ||||
-| State||||
-| State (Other)||||
-| City Status||||
-| Industry||||
-| ECHO Facility Report||||
-| FAC_PERCENT_MINORITY||||
-| FAC_DERIVED_TRIBES||||
-| FAC_POP_DEN||||
-| EJSCREEN_FLAG_US||||
-| EJSCREEN Report||||
-| EPA Programs||||
-| Federal Facility||||
-| Federal Agency||||
-| Latitude||||
-| Longitude||||
-| Count||||
-| FAC_COUNTY||||
-| FAC_FIPS_CODE||||
-| FAC_INDIAN_CNTRY_FLG||||
-| FAC_COLLECTION_METHOD||||
-| FAC_DERIVED_HUC||||
-| FAC_DERIVED_WBD||||
-| FAC_DERIVED_CD113||||
-| FAC_DERIVED_CB2010||||
-| FAC_MAJOR_FLAG||||
-| FAC_ACTIVE_FLAG||||
-| FAC_INSPECTION_COUNT||||
-| FAC_DATE_LAST_INSPECTION||||
-| FAC_DAYS_LAST_INSPECTION||||
-| FAC_INFORMAL_COUNT||||
-| FAC_DATE_LAST_INFORMAL_ACTION||||
-| FAC_FORMAL_ACTION_COUNT||||
-| FAC_DATE_LAST_FORMAL_ACTION||||
-| FAC_TOTAL_PENALTIES||||
-| FAC_PENALTY_COUNT||||
-| FAC_DATE_LAST_PENALTY||||
-| FAC_LAST_PENALTY_AMT||||
-| FAC_QTRS_WITH_NC||||
-| FAC_PROGRAMS_WITH_SNC||||
-| FAC_COMPLIANCE_STATUS||||
-| FAC_SNC_FLG||||
-| AIR_FLAG||||
-| NPDES_FLAG||||
-| SDWIS_FLAG||||
-| RCRA_FLAG||||
-| TRI_FLAG||||
-| GHG_FLAG||||
-| AIR_IDS||||
-| CAA_PERMIT_TYPES||||
-| CAA_NAICS||||
-| CAA_SICS||||
-| NPDES_IDS||||
-| CWA_PERMIT_TYPES||||
-| CWA_NAICS||||
-| CWA_SICS||||
-| RCRA_IDS||||
-| RCRA_PERMIT_TYPES||||
-| RCRA_NAICS||||
-| SDWA_IDS||||
-| SDWA_SYSTEM_TYPES||||
-| SDWA_COMPLIANCE_STATUS||||
-| SDWA_SNC_FLAG||||
-| TRI_IDS||||
-| TRI_RELEASES_TRANSFERS||||
-| TRI_ON_SITE_RELEASES||||
-| TRI_OFF_SITE_TRANSFERS||||
-| TRI_REPORTER||||
-| FAC_IMP_WATER_FLG ||||
+|**Facility**     |  | Yes     |  URI rdf:type epa-frs:EPA-PFAS-Facility     |
+
+* other attributes:
+  * Region 
+  * State
+  * State (Other)
+  * City Status
+  * Industry
+  * ECHO Facility Report
+  * FAC_PERCENT_MINORITY
+  * FAC_DERIVED_TRIBES
+  * FAC_POP_DEN
+  * EJSCREEN_FLAG_US
+  * EJSCREEN Report
+  * EPA Programs
+  * Federal Facility
+  * Federal Agency
+  * Latitude
+  * Longitude
+  * Count
+  * FAC_COUNTY
+  * FAC_FIPS_CODE
+  * FAC_INDIAN_CNTRY_FLG
+  * FAC_COLLECTION_METHOD
+  * FAC_DERIVED_HUC
+  * FAC_DERIVED_WBD
+  * FAC_DERIVED_CD113
+  * FAC_DERIVED_CB2010
+  * FAC_MAJOR_FLAG
+  * FAC_ACTIVE_FLAG
+  * FAC_INSPECTION_COUNT
+  * FAC_DATE_LAST_INSPECTION
+  * FAC_DAYS_LAST_INSPECTION
+  * FAC_INFORMAL_COUNT
+  * FAC_DATE_LAST_INFORMAL_ACTION
+  * FAC_FORMAL_ACTION_COUNT
+  * FAC_DATE_LAST_FORMAL_ACTION
+  * FAC_TOTAL_PENALTIES
+  * FAC_PENALTY_COUNT
+  * FAC_DATE_LAST_PENALTY
+  * FAC_LAST_PENALTY_AMT
+  * FAC_QTRS_WITH_NC
+  * FAC_PROGRAMS_WITH_SNC
+  * FAC_COMPLIANCE_STATUS
+  * FAC_SNC_FLG
+  * AIR_FLAG
+  * NPDES_FLAG
+  * SDWIS_FLAG
+  * RCRA_FLAG
+  * TRI_FLAG
+  * GHG_FLAG
+  * AIR_IDS
+  * CAA_PERMIT_TYPES
+  * CAA_NAICS
+  * CAA_SICS
+  * NPDES_IDS
+  * CWA_PERMIT_TYPES
+  * CWA_NAICS
+  * CWA_SICS
+  * RCRA_IDS
+  * RCRA_PERMIT_TYPES
+  * RCRA_NAICS
+  * SDWA_IDS
+  * SDWA_SYSTEM_TYPES
+  * SDWA_COMPLIANCE_STATUS
+  * SDWA_SNC_FLAG
+  * TRI_IDS
+  * TRI_RELEASES_TRANSFERS
+  * TRI_ON_SITE_RELEASES
+  * TRI_OFF_SITE_TRANSFERS
+  * TRI_REPORTER
+  * FAC_IMP_WATER_FLG 
+
+### Other files not triplified:
+
+#### ALTERNATIVE NAME FILE
+
+* Not currently triplified
+
+| Attribute | Description | Lift to Graph | Ontology Property |
+|-----------------------|-------------|---------------|-------------------|
+| REGISTRY_ID     | |   | |
+| PGM_SYS_ACRNM   | |   | |
+| PGM_SYS_ID      | |   | |
+| ALTERNATIVE_NAME      | |   | |
+| ALTERNATIVE_NAME_TYPE | |   | |
+
+#### Contact File
+
+* Not currently triplified
+* Attributes:
+  * REGISTRY_ID
+  * PGM_SYS_ACRNM
+  * PGM_SYS_ID
+  * INTEREST_TYPE
+  * AFFILIATION_TYPE
+  * START_DATE
+  * END_DATE
+  * FULL_NAME
+  * TITLE
+  * PHONE_NUMBER
+  * ALTERNATE_PHONE
+  * FAX_NUMBER
+  * EMAIL_ADDRESS
+  * MAILING_ADDRESS
+  * SUPPLEMENTAL_ADDRESS
+  * CITY_NAME
+  * STATE_CODE
+  * STATE_NAME
+  * POSTAL_CODE
+  * COUNTRY_NAME
+
+#### Mailing Address
+
+* Not currently triplified
+* Attributes:
+  * REGISTRY_ID
+  * PGM_SYS_ACRNM
+  * PGM_SYS_ID
+  * INTEREST_TYPE
+  * AFFILIATION_TYPE
+  * START_DATE
+  * END_DATE
+  * MAILING_ADDRESS
+  * SUPPLEMENTAL_ADDRESS
+  * CITY_NAME
+  * STATE_CODE
+  * STATE_NAME
+  * POSTAL_CODE
+  * COUNTRY_NAME
+
+
 
 ### API tables
 
