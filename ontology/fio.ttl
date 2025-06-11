@@ -101,6 +101,12 @@ fio:subcodeOf rdf:type owl:ObjectProperty ,
               dcterms:description "A hierarchical relation between an industry and its parent industry" ;
               rdfs:label "subcode of" .
 
+###  http://w3id.org/fio/v1/fio#sameCode
+fio:sameCode rdf:type owl:ObjectProperty ;
+        rdfs:label "same code" ;
+        dcterms:decription "A relation between an industry and another industry that have equivalent identifiers but slight differences in semantic coverage.";
+        rdfs:domain fio:Industry;
+        rdfs:range fio:Industry.
 
 ###  http://www.w3.org/ns/prov#wasAttributedTo
 prov-o:wasAttributedTo rdf:type owl:ObjectProperty .
