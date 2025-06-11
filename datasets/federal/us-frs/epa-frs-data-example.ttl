@@ -1,0 +1,141 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix epa_frs: <http://w3id.org/fio/v1/epa-frs#> .
+@prefix epa_frs_data: <http://w3id.org/fio/v1/epa-frs-data#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/> .
+@prefix kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+epa-frs-data:d.FRS-Facility.110000314204 a epa-frs:FRS-Facility ;
+    rdfs:label "PRATT & WHITNEY"^^xsd:string ;
+    dcterms:alternative "PRATT AND WHITNEY"^^xsd:string ;
+    dcterms:created "2000-03-01"^^xsd:date ;
+    dcterms:modified "2017-06-01"^^xsd:date ;
+    schema1:address "113 WELLS ST, NORTH BERWICK, ME  03906 US"^^xsd:string ;
+    kwg-ont:sfWithin kwgr:administrativeRegion.USA.23031 ;
+    epa-frs:hasFRSId "110000314204"^^xsd:string ;
+    epa-frs:ofFacilityType epa-frs-data:d.Stationary-Facility ;
+    geo:hasGeometry epa-frs-data:d.FRS-Facility-Geometry.110000314204 .
+
+epa-frs-data:d.FRS-Facility.110000314204 a epa-frs:FRS-Facility ;
+    epa-frs:hasRecord epa-frs-data:d.Record.AIR.ME0000002303100002,
+        epa-frs-data:d.Record.AIRS-AFS.2303100002,
+        epa-frs-data:d.Record.BR.MED000791681,
+        epa-frs-data:d.Record.EIS.8024911,
+        epa-frs-data:d.Record.ICIS.45944,
+        epa-frs-data:d.Record.ME-EFIS.FN000000001212506427,
+        epa-frs-data:d.Record.ME-EFIS.FN000000001212661735,
+        epa-frs-data:d.Record.ME-EFIS.FN00000000129239950,
+        epa-frs-data:d.Record.ME-EFIS.FN00000000129245908,
+        epa-frs-data:d.Record.NPDES.ME0022861,
+        epa-frs-data:d.Record.NPDES.MER05B446,
+        epa-frs-data:d.Record.OSHA-OIS.342133618,
+        epa-frs-data:d.Record.RCRAINFO.MED000791681,
+        epa-frs-data:d.Record.TRIS.03906PRTTWROUTE .
+
+epa-frs-data:d.Record.AIR.ME0000002303100002 rdfs:label "OPERATING AIR ME0000002303100002"^^xsd:string ;
+    dcterms:description "OPR 2014-10-19 00:00:00"^^xsd:string ;
+    dcterms:identifier "ME0000002303100002"^^xsd:string ;
+    epa-frs:fromSystem epa-frs-data:d.ProgramInformationSystem.AIR ;
+    epa-frs:ofInterestType epa-frs-data:d.EnvironmentalInterestType.Airsyntheticminor ;
+    prov:startedAtTime "2014-10-19T00:00:00"^^xsd:dateTime .
+
+epa-frs-data:d.Record.AIRS-AFS.2303100002 rdfs:label "OPERATING AIRS-AFS 2303100002"^^xsd:string ;
+    dcterms:identifier "2303100002"^^xsd:string ;
+    epa-frs:fromSystem epa-frs-data:d.ProgramInformationSystem.AIRS-AFS ;
+    epa-frs:ofInterestType epa-frs-data:d.EnvironmentalInterestType.Airsyntheticminor .
+
+epa-frs-data:d.Record.BR.MED000791681 rdfs:label "N BR MED000791681"^^xsd:string ;
+    dcterms:description "YEAR REPORTING STOPPED 2022-01-01 00:00:00"^^xsd:string ;
+    dcterms:identifier "MED000791681"^^xsd:string ;
+    epa-frs:fromSystem epa-frs-data:d.ProgramInformationSystem.BR ;
+    epa-frs:ofInterestType epa-frs-data:d.EnvironmentalInterestType.Hazardouswastebiennialreporter ;
+    prov:endedAtTime "2022-01-01T00:00:00"^^xsd:dateTime .
+
+epa-frs-data:d.Record.EIS.8024911 rdfs:label "OPERATING EIS 8024911"^^xsd:string ;
+    dcterms:identifier "8024911"^^xsd:string ;
+    epa-frs:fromSystem epa-frs-data:d.ProgramInformationSystem.EIS ;
+    epa-frs:ofInterestType epa-frs-data:d.EnvironmentalInterestType.Airsyntheticminor .
+
+epa-frs-data:d.Record.ICIS.45944 rdfs:label "ICIS 45944"^^xsd:string ;
+    dcterms:description "COMPLAINT/PROPOSED ORDER 1999-09-30 00:00:00"^^xsd:string ;
+    dcterms:identifier "45944"^^xsd:string ;
+    epa-frs:fromSystem epa-frs-data:d.ProgramInformationSystem.ICIS ;
+    epa-frs:ofInterestType epa-frs-data:d.EnvironmentalInterestType.Formalenforcementaction ;
+    prov:startedAtTime "1999-09-30T00:00:00"^^xsd:dateTime .
+epa-frs-data:d.Record.ICIS.45944 epa-frs:hasSupplementalRecord epa-frs-data:d.Record.ICIS.01-1999-0143,
+        epa-frs-data:d.Record.ICIS.01-1999-0151 .
+
+epa-frs-data:d.Record.ICIS.01-1999-0151 rdfs:label "ICIS FORMAL ENFORCEMENT ACTION 01-1999-0151"^^xsd:string ;
+    dcterms:description "FORMAL ENFORCEMENT ACTION 01-1999-0151"^^xsd:string ;
+    dcterms:identifier "01-1999-0151"^^xsd:string ;
+    epa-frs:fromSystem epa-frs:ICIS ;
+    epa-frs:ofInterestType epa-frs-data:d.EnvironmentalInterestType.Formalenforcementaction ;
+    prov:startedAtTime "1999-11-19T00:00:00"^^xsd:dateTime .
+
+epa-frs-data:d.Record.ME-EFIS.FN000000001212506427 rdfs:label "ME-EFIS FN000000001212506427"^^xsd:string ;
+    dcterms:identifier "FN000000001212506427"^^xsd:string ;
+    epa-frs:fromSystem epa-frs-data:d.ProgramInformationSystem.ME-EFIS ;
+    epa-frs:ofInterestType epa-frs-data:d.EnvironmentalInterestType.Statemaster .
+epa-frs-data:d.Record.ME-EFIS.FN000000001212506427 epa-frs:hasSupplementalRecord epa-frs-data:d.Record.ME-EFIS.1403 .
+
+epa-frs-data:d.Record.ME-EFIS.FN000000001212661735 rdfs:label "ME-EFIS FN000000001212661735"^^xsd:string ;
+    dcterms:identifier "FN000000001212661735"^^xsd:string ;
+    epa-frs:fromSystem epa-frs-data:d.ProgramInformationSystem.ME-EFIS ;
+    epa-frs:ofInterestType epa-frs-data:d.EnvironmentalInterestType.Statemaster .
+epa-frs-data:d.Record.ME-EFIS.FN000000001212661735 epa-frs:hasSupplementalRecord epa-frs-data:d.Record.ME-EFIS.A-000453 .
+
+epa-frs-data:d.Record.ME-EFIS.FN00000000129239950 rdfs:label "ME-EFIS FN00000000129239950"^^xsd:string ;
+    dcterms:identifier "FN00000000129239950"^^xsd:string ;
+    epa-frs:fromSystem epa-frs-data:d.ProgramInformationSystem.ME-EFIS ;
+    epa-frs:ofInterestType epa-frs-data:d.EnvironmentalInterestType.Statemaster .
+
+epa-frs-data:d.Record.ME-EFIS.FN00000000129245908 rdfs:label "ME-EFIS FN00000000129245908"^^xsd:string ;
+    dcterms:identifier "FN00000000129245908"^^xsd:string ;
+    epa-frs:fromSystem epa-frs-data:d.ProgramInformationSystem.ME-EFIS ;
+    epa-frs:ofInterestType epa-frs-data:d.EnvironmentalInterestType.Statemaster .
+epa-frs-data:d.Record.ME-EFIS.FN00000000129245908 epa-frs:hasSupplementalRecord epa-frs-data:d.Record.NPDES.ME0022861 .
+
+epa-frs-data:d.Record.NPDES.ME0022861 rdfs:label "EFFECTIVE NPDES ME0022861"^^xsd:string ;
+    dcterms:description "ORIGINAL PERMIT ISSUE DATE 2008-01-01 00:00:00"^^xsd:string ;
+    dcterms:identifier "ME0022861"^^xsd:string ;
+    epa-frs:fromSystem epa-frs-data:d.ProgramInformationSystem.NPDES ;
+    epa-frs:ofInterestType epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesnon-Major ;
+    prov:startedAtTime "2008-01-01T00:00:00"^^xsd:dateTime .
+
+epa-frs-data:d.Record.NPDES.MER05B446 rdfs:label "EXPIRED NPDES MER05B446"^^xsd:string ;
+    dcterms:identifier "MER05B446"^^xsd:string ;
+    epa-frs:fromSystem epa-frs-data:d.ProgramInformationSystem.NPDES ;
+    epa-frs:ofInterestType epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesnon-Major,
+        epa-frs-data:d.EnvironmentalInterestType.Stormwaterindustrial .
+
+epa-frs-data:d.Record.OSHA-OIS.342133618 rdfs:label "OSHA-OIS 342133618"^^xsd:string ;
+    dcterms:identifier "342133618"^^xsd:string ;
+    epa-frs:fromSystem epa-frs-data:d.ProgramInformationSystem.OSHA-OIS ;
+    epa-frs:ofInterestType epa-frs-data:d.EnvironmentalInterestType.Oshaestablishment .
+
+epa-frs-data:d.Record.RCRAINFO.MED000791681 rdfs:label "Y RCRAINFO MED000791681"^^xsd:string ;
+    dcterms:description "FIRST NOTIFICATION DATE 1980-08-18 00:00:00"^^xsd:string ;
+    dcterms:identifier "MED000791681"^^xsd:string ;
+    epa-frs:fromSystem epa-frs-data:d.ProgramInformationSystem.RCRAINFO ;
+    epa-frs:ofInterestType epa-frs-data:d.EnvironmentalInterestType.LQG ;
+    prov:startedAtTime "1980-08-18T00:00:00"^^xsd:dateTime .
+
+epa-frs-data:d.Record.TRIS.03906PRTTWROUTE rdfs:label "ACTIVE TRIS 03906PRTTWROUTE"^^xsd:string ;
+    dcterms:identifier "03906PRTTWROUTE"^^xsd:string ;
+    epa-frs:fromSystem epa-frs-data:d.ProgramInformationSystem.TRIS ;
+    epa-frs:ofInterestType epa-frs-data:d.EnvironmentalInterestType.Trireporter .
+
+### controlled vocabulary 
+
+epa-frs-data:d.EnvironmentalInterestType.AirSyntheticMinor a epa-frs:AirPrograms,
+        epa-frs:EnvironmentalInterestType ;
+    rdfs:label "AIR SYNTHETIC MINOR"^^xsd:string ;
+    dcterms:description "A FACILITY IS CLASSIFIED AS A CLEAN AIR ACT STATIONARY SOURCE SYNTHETIC MINOR DISCHARGER OF AIR POLLUTANTS IF:  (A) POTENTIAL EMISSIONS ARE BELOW ALL APPLICABLE MAJOR SOURCE THRESHOLDS IF AND ONLY IF THE SOURCE COMPLIES WITH FEDERALLY ENFORCEABLE REGULATIONS OR LIMITATIONS; OR (B) ACTUAL EMISSIONS < 100 TONS/YEAR, BUT POTENTIAL UNCONTROLLED EMISSIONS > 100 TONS/YEAR; OR (C) UNREGULATED POLLUTANT ACTUAL EMISSIONS < 100 TONS/YEAR."^^xsd:string .
+
+epa-frs:AirPrograms a owl:Class ;
+    rdfs:label "AIR PROGRAMS"^^xsd:string ;
+    dcterms:description "ENVIRONMENTAL PROGRAMS THAT REGULATE OR MONITOR AIR EMISSIONS FROM AREA, STATIONARY, AND MOBILE SOURCES, AS REQUIRED BY THE CLEAN AIR ACT"^^xsd:string ;
+    rdfs:subClassOf epa-frs:EnvironmentalInterestType .

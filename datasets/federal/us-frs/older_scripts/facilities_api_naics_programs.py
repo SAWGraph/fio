@@ -3,7 +3,7 @@ import json
 import urllib3
 import geopandas
 import pandas as pd
-import xml.etree.ElementTree as ET
+#import xml.etree.ElementTree as ET
 import math
 import datetime
 from datetime import date
@@ -27,6 +27,7 @@ root_folder =Path(__file__).resolve().parent.parent.parent
 output_dir = root_folder / "federal/us-frs/triples/"
 logname = "log"
 testing = False #only gets 15 records when set to true
+verbose = True
 
 ##namespaces
 epa_frs = Namespace(f"http://w3id.org/fio/v1/epa-frs#")
@@ -80,7 +81,8 @@ def load_data():
         if facilities_subset == []:
             # stop when there are no results left
             break
-        print(facilities_subset[0])
+        if verbose:
+            print(facilities_subset[0])
         #print(type(facilities_subset[0]))
         if 'error' in facilities_subset[0].keys():
             #stop if an error is returned from the server
@@ -126,8 +128,9 @@ def Initial_KG():
 def clean_attributes(facilities):
     # load to pandas dataframe from list of dictionaries 
     fac = pd.DataFrame(facilities)
-    print('FULL SCHEMA:')
-    print(fac.info())
+    if verbose:
+        print('FULL SCHEMA:')
+        print(fac.info())
     
     # format various columns for triplification
     fac['primary_indicator'] = fac['primary_indicator'].apply(lambda x: x.lower())
@@ -152,8 +155,10 @@ def clean_attributes(facilities):
     fs_lookup = {'F':'Federal', 'S': 'State', 'T':'Tribal', 'P':'Private'}
     fac['fed_state_desc'] = fac['fed_state_code'].apply(lambda x: fs_lookup[x] if pd.notnull(x) else pd.NA)
     
-    fac['interest_label'] = fac[['active_status', 'frs.frs_interest.pgm_sys_acrnm', 'frs.frs_interest.pgm_sys_id', "reported_sup_interest_type", 'sup_pgm_sys_id']].apply(lambda x: ' '.join(x.dropna().astype(str)), axis=1)
+    fac['interest_label'] = fac[['active_status', 'frs.frs_interest.pgm_sys_acrnm', 'frs.frs_interest.pgm_sys_id', ]].apply(lambda x: ' '.join(x.dropna().astype(str)), axis=1)
+    fac['sup_interest_label'] = fac[['active_status', 'sup_pgm_sys_acrnm', "reported_sup_interest_type", 'sup_pgm_sys_id']].apply(lambda x: ' '.join(x.dropna().astype(str)), axis=1)
     fac['interest_description'] = fac[['start_date_qualifier','start_date','end_date_qualifier','end_date']].apply(lambda x: ' '.join(x.dropna().astype(str)), axis=1) 
+    fac['sup_interest_description'] = fac[['reported_sup_interest_type', 'sup_pgm_sys_id']].apply(lambda x: ' '.join(x.dropna().astype(str)), axis=1) 
     fac['start_date'] = pd.to_datetime(fac['start_date'], format='%Y-%m-%d %H:%M:%S')
     fac['sup_start_date'] = pd.to_datetime(fac['frs.frs_supplemental_interest.start_date'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
     fac['end_date'] = pd.to_datetime(fac['end_date'], format='%Y-%m-%d %H:%M:%S')
@@ -162,16 +167,18 @@ def clean_attributes(facilities):
     fac['update_date'] = pd.to_datetime(fac['update_date'], format='%Y-%m-%d %H:%M:%S')
     fac['sup_create_date'] = pd.to_datetime(fac['frs.frs_supplemental_interest.create_date'], format='%Y-%m-%d %H:%M:%S')
     fac['sup_update_date'] = pd.to_datetime(fac['frs.frs_supplemental_interest.update_date'], format='%Y-%m-%d %H:%M:%S')
+   
     
+    fac['sup_record_class'] = fac['reported_sup_interest_type'].apply(lambda x:"".join(word.title() for word in x.split() if word.title() in ["Permit", "Permits", "License", "Compliance"]) if pd.notnull(x) else None).apply(lambda x: 'Permit' if x == 'Permits' else x)
+
     #fac['last_reported_date']
 
     # drop attributes that won't be triplified or referenced
     fac = fac.drop(axis=1, labels=['city_name', 'country_name', 'county_name', 'epa_region_code', 'legislative_dist_num', 'location_address', 'postal_code', 'supplemental_location','state_name', 'tribal_land_code', 'tribal_land_name'])
     fac = fac.drop(axis=1, labels=["code_description", "latitude83", "longitude83", "primary_name", "small_bus_ind", "state_code"])
-    print("USED SCHEMA:")
-    print(fac.info())
-    #print(fac.start_date.unique())
-    #print(fac.end_date.unique())
+    if verbose:
+        print("USED SCHEMA:")
+        print(fac.info())
 
     return fac
 
@@ -180,21 +187,27 @@ def get_iris(facility):
     #build iris for any entities
     #print(facility)
     facility_iri = epa_frs_data[f"d.FRS-Facility.{facility['registry_id']}"]
-    facility_class = epa_frs[f"{facility['pgm_sys_acrnm'].upper()}-Facility"] #can also infer this
+    program = epa_frs[f"{facility['pgm_sys_acrnm'].upper()}"] #can also infer this
 
     #geo_iri = epa_frs_data[f"d.FRS-Facility-Geometry.{facility['registry_id']}"]
     naics_iri = naics[f"NAICS-{facility['naics_code']}"]
     interest = {}
+    sup_interest = {}
     if pd.notnull(facility['sup_interest_id']):
-        interest['iri'] = epa_frs_data[f"d.EnvironmentalInterest.Supplemental.{facility['frs.frs_supplemental_interest.pgm_sys_acrnm']}.{facility['sup_pgm_sys_id']}"]
-        interest['class'] = epa_frs[facility['sup_interest_type']]
-    else: # pd.notnull(facility['pgm_sys_id']): #facility['fed_state_code'] in ['F'] and facility['pgm_sys_acrnm'] != 'NPDES':
-        interest['iri'] = epa_frs_data[f"d.EnvironmentalInterest.{facility['frs.frs_interest.pgm_sys_acrnm']}.{facility['interest_id']}"]
-        interest['class'] = epa_frs[facility['interest_type']]
+        if pd.notnull(facility['sup_pgm_sys_id']):
+            sup_interest['iri'] = epa_frs_data[f"d.{facility['sup_record_class']}Record.{facility['frs.frs_supplemental_interest.pgm_sys_acrnm']}.{facility['sup_pgm_sys_id']}"]
+        else:
+            sup_interest['iri'] = epa_frs_data[f"d.{facility['sup_record_class']}Record.{facility['frs.frs_supplemental_interest.pgm_sys_acrnm']}.{str(int(facility['sup_interest_id']))}"]
+        sup_interest['class'] = epa_frs_data[f"d.EnvironmentalInterestType.{facility['sup_interest_type']}"]
+        sup_interest['pgm'] = epa_frs[f"{facility['sup_pgm_sys_acrnm'].upper()}-Record"]
+    if pd.notnull(facility['frs.frs_interest.pgm_sys_acrnm']):
+        interest['iri'] = epa_frs_data[f"d.MonitoringRecord.{facility['frs.frs_interest.pgm_sys_acrnm']}.{facility['interest_id']}"]
+        interest['class'] = epa_frs_data[f"d.EnvironmentalInterestType.{facility['interest_type']}"]
+
     
         
 
-    return facility_iri, naics_iri, facility_class, interest
+    return facility_iri, naics_iri, program, interest, sup_interest
 
 
 def triplify(facilities):
@@ -204,49 +217,65 @@ def triplify(facilities):
 
     for idx, facility in facilities.iterrows():
         #get iris
-        facility_iri, naics_iri, facility_class, interest = get_iris(facility)
+        facility_iri, naics_iri, program, interest, sup_interest = get_iris(facility)
 
         #create facility
         kg.add((facility_iri, RDF.type, epa_frs["FRS-Facility"]))
-        kg.add((facility_iri, RDF.type, facility_class))
-        kg.add((facility_iri, epa_frs[f'ofIndustry.{facility.pgm_sys_acrnm}'], naics_iri)) #subproperty for fio:ofIndustry
-        kg.add((facility_iri, epa_frs[f'hasIdentifier.{facility.pgm_sys_acrnm}'], Literal(facility.pgm_sys_id, datatype=XSD.string))) #subproperty for dcterms:identifier
+        #kg.add((facility_iri, RDF.type, facility_class))
+        #kg.add((facility_iri, epa_frs[f'ofIndustry.{facility.pgm_sys_acrnm}'], naics_iri)) #subproperty for fio:ofIndustry
+        #kg.add((facility_iri, epa_frs[f'hasIdentifier.{facility.pgm_sys_acrnm}'], Literal(facility.pgm_sys_id, datatype=XSD.string))) #subproperty for dcterms:identifier
         
-        if facility.primary_indicator == 'primary':
-            kg.add((facility_iri, epa_frs[f'{facility.primary_indicator}Industry'], naics_iri)) #subproperty for fio:ofIndustry
+        
 
-        #environmental Interest
-        kg.add((facility_iri, epa_frs['hasEnvironmentalInterest'], interest['iri']))
-        if pd.notnull(facility.start_date):
-            kg.add((interest['iri'], PROV.startedAtTime, Literal(facility['start_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
-            if facility.start_date_qualifier == 'CLS':
-                kg.add((interest['iri'], PROV.endedAtTime, Literal(facility['start_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
-        if pd.notnull(facility.sup_start_date):
-            kg.add((interest['iri'], PROV.startedAtTime, Literal(facility['sup_start_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
-        if pd.notnull(facility.end_date):
-            kg.add((interest['iri'], PROV.endedAtTime, Literal(facility['end_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
-        if pd.notnull(facility.sup_end_date):
-            kg.add((interest['iri'], PROV.endedAtTime, Literal(facility['sup_end_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
-        if pd.notnull(facility.create_date):
-            kg.add((interest['iri'], DCTERMS.created, Literal(facility['create_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
-        if pd.notnull(facility.sup_create_date):
-                    kg.add((interest['iri'], DCTERMS.created, Literal(facility['sup_create_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
-        if pd.notnull(facility.update_date):
-            kg.add((interest['iri'], schema['dateModified'], Literal(facility['update_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
-        if pd.notnull(facility.sup_update_date):
-            kg.add((interest['iri'], schema['dateModified'], Literal(facility['sup_update_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+        #Monitoring record
+        if 'iri' in interest.keys():
+            kg.add((facility_iri, epa_frs['hasMonitoringRecord'], interest['iri']))
+            kg.add((interest['iri'], epa_frs['fromSystem'], program))
+            kg.add((interest['iri'], DCTERMS.identifier, Literal(facility.pgm_sys_id, datatype=XSD.string)))
+            if pd.notnull(facility.start_date):
+                kg.add((interest['iri'], PROV.startedAtTime, Literal(facility['start_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+                if facility.start_date_qualifier == 'CLS':
+                    kg.add((interest['iri'], PROV.endedAtTime, Literal(facility['start_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+            if pd.notnull(facility.end_date):
+                kg.add((interest['iri'], PROV.endedAtTime, Literal(facility['end_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+            if pd.notnull(facility.create_date):
+                kg.add((interest['iri'], DCTERMS.created, Literal(facility['create_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+            if pd.notnull(facility.update_date):
+                kg.add((interest['iri'], DCTERMS.modified, Literal(facility['update_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+        
+            #environmental Interest
+            kg.add((interest['iri'], epa_frs['ofInterestType'], interest['class']))
 
-
-        kg.add((interest['iri'], RDF.type, interest['class']))
-
-        if pd.notnull(facility.interest_description) and facility.interest_description != "":
-            kg.add((interest['iri'], DCTERMS.description, Literal(facility['interest_description'], datatype=XSD.string)))
-        if pd.notnull(facility.interest_label) and facility.interest_label != "":
-            kg.add((interest['iri'], RDFS.label, Literal(facility.interest_label, datatype=XSD.string)))
-        if pd.notnull(facility['sup_pgm_sys_id']):
-            kg.add((interest['iri'], DCTERMS.identifier, Literal(f"{facility['sup_pgm_sys_acrnm']}:{facility['sup_pgm_sys_id']}", datatype=XSD.string)))
-        if pd.notnull(facility.source_of_data):
-            pass
+            if pd.notnull(facility.interest_description) and facility.interest_description != "":
+                kg.add((interest['iri'], DCTERMS.description, Literal(facility['interest_description'], datatype=XSD.string)))
+            if pd.notnull(facility.interest_label) and facility.interest_label != "":
+                kg.add((interest['iri'], RDFS.label, Literal(facility.interest_label, datatype=XSD.string)))
+            
+            #industry
+            if pd.notnull(facility.primary_indicator):
+                kg.add((interest['iri'], epa_frs[f'{facility.primary_indicator}Industry'], naics_iri)) #subproperty for fio:ofIndustry
+            
+        if 'iri' in sup_interest.keys():
+            kg.add((facility_iri, epa_frs['hasSupplementalRecord'], sup_interest['iri']))
+            kg.add((interest['iri'], epa_frs['hasSupplementalRecord'], sup_interest['iri']))
+            kg.add((sup_interest['iri'], RDF.type, sup_interest['pgm']))
+            kg.add((interest['iri'], epa_frs[f'hasIdentifier.{facility.pgm_sys_acrnm}'], Literal(facility.pgm_sys_id, datatype=XSD.string)))
+            kg.add((sup_interest['iri'], epa_frs['ofInterestType'], sup_interest['class']))
+            if pd.notnull(facility.sup_start_date):
+                kg.add((sup_interest['iri'], PROV.startedAtTime, Literal(facility['sup_start_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+            if pd.notnull(facility.sup_end_date):
+                kg.add((sup_interest['iri'], PROV.endedAtTime, Literal(facility['sup_end_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+            if pd.notnull(facility.sup_create_date):
+                        kg.add((sup_interest['iri'], DCTERMS.created, Literal(facility['sup_create_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+            if pd.notnull(facility.sup_update_date):
+                kg.add((sup_interest['iri'], DCTERMS.modified, Literal(facility['sup_update_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
+            if pd.notnull(facility['sup_pgm_sys_id']):
+                kg.add((sup_interest['iri'], DCTERMS.identifier, Literal(f"{facility['sup_pgm_sys_acrnm']}:{facility['sup_pgm_sys_id']}", datatype=XSD.string)))
+            if pd.notnull(facility.sup_interest_description) and facility.sup_interest_description != "":
+                kg.add((sup_interest['iri'], DCTERMS.description, Literal(facility['sup_interest_description'], datatype=XSD.string)))
+            if pd.notnull(facility.sup_interest_label) and facility.sup_interest_label != "":
+                kg.add((sup_interest['iri'], RDFS.label, Literal(facility.sup_interest_label, datatype=XSD.string)))
+        
 
     return kg
 
@@ -263,9 +292,9 @@ def main():
     data = load_data()
     kg = triplify(data)
     if testing:
-        kg_turtle_file = output_dir/ f"us-frs-data-facility-naics-{state}-test.ttl"
+        kg_turtle_file = output_dir/ f"epa-frs-data-facility-naics-{state}-test.ttl"
     else:
-        kg_turtle_file = output_dir / f"us-frs-data-facility-naics-{state}.ttl"
+        kg_turtle_file = output_dir / f"epa-frs-data-facility-naics-{state}.ttl"
     kg.serialize(kg_turtle_file, format='turtle')
     logger = logging.getLogger(f'Finished triplifying {state} program facilities and NAICS codes.')
 

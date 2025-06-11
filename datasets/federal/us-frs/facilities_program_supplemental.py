@@ -190,7 +190,7 @@ def get_iris(facility):
         sup_iri = epa_frs_data[f"d.Record.{facility['sup_pgm_sys_acrnm']}.{facility['sup_pgm_sys_id']}"]
     else:
         sup_iri = epa_frs_data[f"d.Record.{facility['sup_pgm_sys_acrnm']}.{facility['sup_interest_id']}"]
-    program = epa_frs[f"{facility['sup_pgm_sys_acrnm']}"] 
+    program = epa_frs[f"d.ProgramInformationSystem.{facility['sup_pgm_sys_acrnm']}"] 
     
     interest = {}
 
