@@ -26,7 +26,7 @@ code_dir = Path(__file__).resolve().parent.parent
 root_folder =Path(__file__).resolve().parent.parent.parent
 output_dir = root_folder / "federal/us-frs/triples/"
 logname = "log"
-testing = False  #only gets 5 records when set to true
+testing = False  #only gets 200 records when set to true
 verbose = False
 
 ##namespaces
@@ -67,9 +67,9 @@ def load_data():
 
     #temporary limit to 5 for testing
     if testing == True:
-        facilities_count = 5
-        increment = 5
-        limit = 5
+        facilities_count = 200
+        increment = 200
+        limit = 200
 
     # query the facilities 10000 (limit) at a time, and merge into one list
     while limit < facilities_count+increment:
@@ -125,13 +125,14 @@ def get_point(registry_id):
         except:
             print(f'geometry error facility:{registry_id}')
             facility_WKT = None
-
     return facility_WKT
 
 def get_WKT(lat, long):
     try:
         wkt = Point(long, lat).wkt
     except:
+        wkt = None
+    if str(wkt) == "POINT EMPTY":
         wkt = None
     return wkt
 
@@ -152,7 +153,7 @@ def clean_attributes(facilities):
     fac['created'] = pd.to_datetime(fac['create_date'], format="%d-%b-%y") #created date to pd.datetime
     fac['refreshed'] = pd.to_datetime(fac['refresh_date'], format="%d-%b-%y") #refreshed date to pd.datetime
     fac['geo_time'] = pd.to_datetime(fac['timestamp'], format='%Y-%m-%d %H:%M:%S')
-    fac['WKT'] = fac.apply(lambda x: Point(x.latitude83, x.longitude83).wkt, axis=1)
+    fac['WKT'] = fac.apply(lambda x: get_WKT(x.latitude83, x.longitude83), axis=1)
     if verbose:
         print(fac.operating_status.unique())
     #drop attributes that won't be triplified or referenced

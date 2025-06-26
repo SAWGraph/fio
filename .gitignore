@@ -1,11 +1,5 @@
 /datasets/data/
-datasets/federal/us-frs/us-frs-industry-naics-echo-IL.ttl
-datasets/federal/us-frs/us-frs-industry-naics-echo-ME.ttl
-datasets/federal/us-frs/us-frs-industry-naics-echo-OH.ttl
-datasets/federal/us-frs/us-frs-industry-sic-echo-IL.ttl
-datasets/federal/us-frs/us-frs-industry-sic-echo-ME.ttl
-datasets/federal/us-frs/us-frs-industry-sic-echo-OH.ttl
-datasets/federal/us-frs/us-frs-data-echo-ME.ttl
 datasets/federal/us-frs/__pycache__/variable.cpython-311.pyc
 datasets/federal/naics/catalog-v001.xml
 docs/readme.md
+datasets/federal/us-frs/triples/

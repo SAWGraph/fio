@@ -50,7 +50,7 @@ logging.info("Running triplification for facilities")
 def main():
     '''main function initializes all other functions'''
     df = load_data()
-    kg = triplify(df, _PREFIX)
+    kg = triplify(df)
 
     kg_turtle_file = f"us-frs-data-pat-{state.strip()}.ttl".format(output_dir)
     kg.serialize(kg_turtle_file, format='turtle')
@@ -69,16 +69,16 @@ def load_data():
     return df
 
 
-def Initial_KG(_PREFIX: object) -> object:
-    prefixes: Dict[str, str] = _PREFIX
+def Initial_KG() -> object:
+    #prefixes: Dict[str, str] = _PREFIX
     kg = Graph()
-    for prefix in prefixes:
-        kg.bind(prefix, prefixes[prefix])
+    #for prefix in prefixes:
+    #    kg.bind(prefix, prefixes[prefix])
     kg.bind('fio', fio)
-    kg.bind('epa_frs', epa_frs)
-    kg.bind('epa_frs_data', epa_frs_data)
-    kg.bind('naics', naics)
-    kg.bind('sic', sic)
+    kg.bind('epa-frs', epa_frs)
+    kg.bind('epa-frs-data', epa_frs_data)
+    #kg.bind('naics', naics)
+    #kg.bind('sic', sic)
     return kg
 
 def clean_attributes(df):
@@ -117,8 +117,8 @@ def get_iris(facility):
     return facility_iri
 
 
-def triplify(df, _PREFIX):
-    kg = Initial_KG(_PREFIX)
+def triplify(df):
+    kg = Initial_KG()
 
     df = clean_attributes(df)
     for idx, row in df.iterrows():

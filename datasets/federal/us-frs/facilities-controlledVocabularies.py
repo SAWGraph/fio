@@ -174,6 +174,9 @@ def triplify(interests, agencies, programs):
                 kg.add((iri['program_cat'], DCTERMS.description, Literal(interest['program_category_desc'], datatype=XSD.string)))
          else:
              kg.add((iri['interest'],RDF.type, epa_frs['EnvironmentalInterestType']))
+    #add missing interest
+    kg.add((epa_frs_data['d.EnvironmentalInterestType.Potw'], RDF.type, epa_frs['EnvironmentalInterestType']))
+    kg.add((epa_frs_data['d.EnvironmentalInterestType.Potw'], RDFS.label,Literal("Publicly Owned Treatment Works", datatype=XSD.string)))
              
 
     #program category description
