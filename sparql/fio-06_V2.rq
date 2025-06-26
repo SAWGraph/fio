@@ -5,20 +5,20 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-PREFIX fio: <http://sawgraph.spatialai.org/v1/fio#>
-prefix naics: <http://sawgraph.spatialai.org/v1/fio/naics#>
-PREFIX us_frs: <http://sawgraph.spatialai.org/v1/us-frs#>
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+PREFIX naics: <http://w3id.org/fio/v1/naics#> 
+PREFIX epa-frs: <http://w3id.org/fio/v1/epa-frs#>
 
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
 
 
 SELECT * WHERE {
-    VALUES ?code {naics:NAICS-IndustryCode-562212}
+    VALUES ?code {naics:NAICS-562212}
 	?fac rdf:type fio:Facility ;
 		 fio:ofIndustry ?code ;
 		 kwg-ont:sfWithin ?fac_s2.
-    #SERVICE <repository:S2L13_AdminRegions>
+    SERVICE <repository:Spatial>
     {
         ?fac_s2 a kwg-ont:S2Cell_Level13.
     	?fac_s2 geo:hasGeometry/geo:asWKT ?fac_wkt .

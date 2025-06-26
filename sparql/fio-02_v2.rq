@@ -5,10 +5,11 @@
 # updated with new version of FIO Ontology (2024-10-03)
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX fio: <http://sawgraph.spatialai.org/v1/fio#>
-PREFIX naics: <http://sawgraph.spatialai.org/v1/fio/naics#> 
+
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+prefix naics: <http://w3id.org/fio/v1/naics#>
 
 select * where {
-    naics:NAICS-IndustryCode-562212 fio:subcodeOf ?code.
-} 
+    naics:NAICS-562212 fio:subcodeOf ?code.
+}  
 

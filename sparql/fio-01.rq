@@ -1,0 +1,18 @@
+# FIO Basics
+# CQ 1
+# Retrieve all landfills (indicated by the six-digit NAICS code 562212 )
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+prefix naics: <http://w3id.org/fio/v1/naics#>
+PREFIX epa-frs: <http://w3id.org/fio/v1/epa-frs#>
+
+select * where {
+    SERVICE <repository:FIO> {
+    	?facility rdf:type epa-frs:EPA-PFAS-Facility;
+        	rdfs:label ?facilityName.
+    	?facility fio:ofIndustry naics:NAICS-562212 .
+	}
+} 
+    

@@ -8,17 +8,17 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-PREFIX fio: <http://sawgraph.spatialai.org/v1/fio#>
-prefix naics: <http://sawgraph.spatialai.org/v1/fio/naics#>
-PREFIX us_frs: <http://sawgraph.spatialai.org/v1/us-frs#>
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+PREFIX naics: <http://w3id.org/fio/v1/naics#>
+PREFIX epa-frs: <http://w3id.org/fio/v1/epa-frs#>
 
 select * where {
 	SERVICE <repository:FIO> {
-        ?facility rdf:type us_frs:EPA-PFAS-Facility ;
+        ?facility rdf:type epa-frs:EPA-PFAS-Facility ;
     		fio:ofIndustry ?code .
         	?code fio:subcodeOf ?icode .
 			?code rdfs:label ?code_label .
-    	FILTER (?icode IN (naics:NAICS-IndustryGroup-3221, naics:NAICS-IndustryGroup-3222))
+        VALUES ?icode{naics:NAICS-3221 naics:NAICS-3222}
     		
     }
 }

@@ -3,11 +3,12 @@
 # Retrieve the NAICS Industry Code and other classifications (Sector, Subsector, Group) of a specific facility.
 # 2024-09-30 Update: Using the fio:ofIndustry property chain axiom
 
-PREFIX fio: <http://sawgraph.spatialai.org/v1/fio#>
-PREFIX naics: <http://sawgraph.spatialai.org/v1/fio/naics#> 
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+PREFIX naics: <http://w3id.org/fio/v1/naics#> 
+PREFIX epa-frs-data: <http://w3id.org/fio/v1/epa-frs-data#>
 
 select * where {
-    <http://sawgraph.spatialai.org/v1/us-frs-data#d.FRS-Facility.110000428662> fio:ofIndustry ?o .
+    epa-frs-data:d.FRS-Facility.110000428662 fio:ofIndustry ?o .
 } 
 
 
@@ -17,11 +18,11 @@ select * where {
 # Works without relying on the fio:ofIndustry property chain axiom
 
 
-PREFIX fio: <http://sawgraph.spatialai.org/v1/fio#>
-PREFIX naics: <http://sawgraph.spatialai.org/v1/fio/naics#> 
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+PREFIX naics: <http://w3id.org/fio/v1/naics#> 
 
 select * where {
     ?f fio:ofIndustry ?o .
-    ?o fio:subcodeOf naics:NAICS-IndustrySector-32 .
+    ?o fio:subcodeOf naics:NAICS-32 .
 } limit 100
 
