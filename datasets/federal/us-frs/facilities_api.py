@@ -45,9 +45,11 @@ schema = Namespace(f'http://schema.org/')
 logging.basicConfig(filename=logname,
                     filemode='a',
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
-                    datefmt='%H:%M:%S',
+                    datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.DEBUG)
-logging.info(f'****** Testing Run *********')
+if verbose:
+    logging.info(f'****** Testing Run *********')
+logging.info(f'****** START *********')
 logging.info(f"Getting facilities for {state_code} from server.")
 
 def load_data():
@@ -256,9 +258,9 @@ def main():
     kg = triplify(data)
 
     if testing:
-        kg_turtle_file = output_dir / f"epa-frs-data-facility-site-{state}-test.ttl"
+        kg_turtle_file = output_dir / f"epa-frs-data-{state}-facility-main-site--test.ttl"
     else:
-        kg_turtle_file = output_dir / f"epa-frs-data-facility-site-{state}.ttl"
+        kg_turtle_file = output_dir / f"epa-frs-data-{state}-facility-main-site-.ttl"
     kg.serialize(kg_turtle_file, format='turtle')
     logger = logging.getLogger('Finished triplifying pfas analytics tool facilities.')
 

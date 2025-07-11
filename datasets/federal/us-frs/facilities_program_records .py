@@ -15,6 +15,7 @@ from rdflib import URIRef, BNode, Literal
 from shapely.geometry import Point
 from pathlib import Path
 import urllib.parse
+import re
 
 import logging
 
@@ -45,10 +46,11 @@ schema = Namespace(f'http://schema.org/')
 logging.basicConfig(filename=logname,
                     filemode='a',
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
-                    datefmt='%H:%M:%S',
+                    datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.DEBUG)
-logging.info(f'****** Testing Run *********')
-logging.info(f"Getting facility programs and naics for {state_code} from server.")
+if testing:
+    logging.info(f'****** Testing Run *********')
+logging.info(f"Getting facility programs records for {state_code} from server.")
 
 def load_data():
     '''Get the facilities as a list of dictionaries from the EPA ECHO API '''
@@ -77,7 +79,7 @@ def load_data():
     while True: #limit < facilities_count+increment:
         facilities_url = f'https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/{state_code}/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/{start}:{limit}/json' #join/frs.frs_supplemental_interest/
         print(facilities_url)
-        resp = urllib3.request("GET", facilities_url, timeout=10)
+        resp = urllib3.request("GET", facilities_url, timeout=15)
         facilities_subset = resp.json()
         if facilities_subset == []:
             # stop when there are no results left
@@ -140,13 +142,14 @@ def clean_attributes(facilities):
                      ",":"",
                      ":":"-",
                      " ":"",
-                     "#": "-"})
+                     "#": "-",
+                     "�": ""})
     
     # format various columns for triplification
     
     fac['pgm_sys_acrnm'] = fac['pgm_sys_acrnm'].apply(lambda x: x.translate(replacements).upper()) #this is the main program for the naics code
     fac['frs.frs_interest.pgm_sys_acrnm'] = fac['frs.frs_interest.pgm_sys_acrnm'].apply(lambda x: x.translate(replacements).upper() if pd.notnull(x) else None) #program for main federal programs
-    fac['interest_id'] = fac['pgm_sys_id'].apply(lambda x: x.translate(replacements))
+    fac['interest_id'] = fac['pgm_sys_id'].apply(lambda x: x.translate(replacements).replace(" ",""))
     #fac['sup_pgm_interest_id'] = fac['frs.frs_supplemental_interest.pgm_sys_id']
     #fac['interest_type'] = fac['interest_type'].apply(lambda x:''.join(x.title().split()))
     
@@ -246,9 +249,9 @@ def main():
     data = load_data()
     kg = triplify(data)
     if testing:
-        kg_turtle_file = output_dir/ f"epa-frs-data-facility-record-{state}-test.ttl"
+        kg_turtle_file = output_dir/ f"epa-frs-data-{state}-program-record-test.ttl"
     else:
-        kg_turtle_file = output_dir / f"epa-frs-data-facility-record-{state}.ttl"
+        kg_turtle_file = output_dir / f"epa-frs-data-{state}-program-record.ttl"
     kg.serialize(kg_turtle_file, format='turtle')
     logger = logging.getLogger(f'Finished triplifying {state} program facilities and NAICS codes.')
 

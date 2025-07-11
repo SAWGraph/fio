@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 import math
 import datetime
 from datetime import date
-
+import numpy as np
 from rdflib.namespace import OWL, XMLNS, XSD, RDF, RDFS, DCTERMS, GEO, PROV
 from rdflib import Namespace
 from rdflib import Graph
@@ -27,7 +27,7 @@ root_folder =Path(__file__).resolve().parent.parent.parent
 output_dir = root_folder / "federal/us-frs/triples/"
 logname = "log"
 testing = False #only gets 15 records when set to true
-verbose = True
+verbose = False
 
 ##namespaces
 epa_frs = Namespace(f"http://w3id.org/fio/v1/epa-frs#")
@@ -45,10 +45,11 @@ schema = Namespace(f'http://schema.org/')
 logging.basicConfig(filename=logname,
                     filemode='a',
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
-                    datefmt='%H:%M:%S',
+                    datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.DEBUG)
-logging.info(f'****** Testing Run *********')
-logging.info(f"Getting facility programs and naics for {state_code} from server.")
+if testing:
+    logging.info(f'****** Testing Run *********')
+logging.info(f"***** Getting facility programs and naics for {state_code} from server.")
 
 def load_data():
     '''Get the facilities as a list of dictionaries from the EPA ECHO API '''
@@ -186,11 +187,19 @@ def get_iris(facility):
     #print(facility)
     facility_iri = epa_frs_data[f"d.FRS-Facility.{facility['registry_id']}"]
     record_iri = epa_frs_data[f"d.Record.{facility['pgm_sys_acrnm']}.{facility['interest_id']}"]
-    if pd.notnull(facility['sup_pgm_sys_id']):
+    if facility['sup_pgm_sys_id'] and facility['sup_pgm_sys_acrnm']:
         sup_iri = epa_frs_data[f"d.Record.{facility['sup_pgm_sys_acrnm']}.{facility['sup_pgm_sys_id']}"]
-    else:
+    elif facility['sup_pgm_sys_acrnm']:
         sup_iri = epa_frs_data[f"d.Record.{facility['sup_pgm_sys_acrnm']}.{facility['sup_interest_id']}"]
-    program = epa_frs[f"d.ProgramInformationSystem.{facility['sup_pgm_sys_acrnm']}"] 
+    elif facility['sup_pgm_sys_id']:
+        sup_iri = epa_frs_data[f"d.Record.{facility['pgm_sys_acrnm']}-Supplemental.{facility['sup_pgm_sys_id']}"]
+    else:
+        sup_iri = epa_frs_data[f"d.Record.{facility['pgm_sys_acrnm']}-Supplemental.{facility['sup_interest_id']}"]
+
+    if facility['sup_pgm_sys_acrnm']:
+        program = epa_frs[f"d.ProgramInformationSystem.{facility['sup_pgm_sys_acrnm']}"] 
+    else:
+        program = epa_frs[f"d.ProgramInformationSystem.{facility['pgm_sys_acrnm']}"] 
     
     interest = {}
 
@@ -220,7 +229,10 @@ def triplify(facilities):
 
         #supplemental record
         kg.add((sup_iri, epa_frs['fromSystem'], program))
-        kg.add((sup_iri, DCTERMS.identifier, Literal(facility.sup_pgm_sys_id, datatype=XSD.string)))
+        if facility.sup_pgm_sys_id:
+            kg.add((sup_iri, DCTERMS.identifier, Literal(facility.sup_pgm_sys_id, datatype=XSD.string)))
+        else:
+            kg.add((sup_iri, DCTERMS.identifier, Literal(facility.sup_interest_id, datatype=XSD.string)))
         if pd.notnull(facility.start_date):
             kg.add((sup_iri, PROV.startedAtTime, Literal(facility['start_date'].strftime('%Y-%m-%dT%H:%M:%S') , datatype=XSD.dateTime)))
             if facility.start_date_qualifier == 'CLS':
@@ -257,9 +269,9 @@ def main():
     data = load_data()
     kg = triplify(data)
     if testing:
-        kg_turtle_file = output_dir/ f"epa-frs-data-facility-sup-record-{state}-test.ttl"
+        kg_turtle_file = output_dir/ f"epa-frs-data-{state}-program-sup-record-test.ttl"
     else:
-        kg_turtle_file = output_dir / f"epa-frs-data-facility-sup-record-{state}.ttl"
+        kg_turtle_file = output_dir / f"epa-frs-data-{state}-program-sup-record.ttl"
     kg.serialize(kg_turtle_file, format='turtle')
     logger = logging.getLogger(f'Finished triplifying {state} program facilities and NAICS codes.')
 

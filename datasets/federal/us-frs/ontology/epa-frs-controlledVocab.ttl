@@ -1412,6 +1412,9 @@ epa-frs-data:d.EnvironmentalInterestType.Postclosurecaresite a epa-frs:Environme
     rdfs:label "POST CLOSURE CARE SITE"^^xsd:string ;
     dcterms:description "THE TIME PERIOD FOLLOWING THE SHUTDOWN OF A WASTE MANAGEMENT OR MANUFACTURING FACILITY; FOR MONITORING PURPOSES, OFTEN CONSIDERED TO BE 30 YEARS."^^xsd:string .
 
+epa-frs-data:d.EnvironmentalInterestType.Potw a epa-frs:EnvironmentalInterestType ;
+    rdfs:label "Publicly Owned Treatment Works"^^xsd:string .
+
 epa-frs-data:d.EnvironmentalInterestType.Radioactivematerials a epa-frs:EnvironmentalInterestType,
         epa-frs:Radiationprotectionprograms ;
     rdfs:label "RADIOACTIVE MATERIALS"^^xsd:string ;
@@ -2134,7 +2137,7 @@ epa-frs:Facility-Siteidentification a owl:Class ;
 
 epa-frs:Undergroundstoragetankprograms a owl:Class ;
     rdfs:label "UNDERGROUND STORAGE TANK PROGRAMS"^^xsd:string ;
-    dcterms:description "ENVIRONMENTAL PROGRAMS DESIGNED TO REDUCE THE CHANCE OF RELEASES FROM UNDERGROUND STORAGE TANKS (USTS), DETECT LEAKS AND SPILLS WHEN THEY DO OCCUR, AND SECURE PROMPT CLEANUP"^^xsd:string ;
+    dcterms:description "ENVIRONMENTAL PROGRAMS DESIGNED TO REDUCE THE CHANCE OF RELEASES FROM UNDERGROUND STORAGE TANKS (USTS), DETECT LEAKS AND SPILLS WHEN THEY DO OCCUR, AND SECURE PROMPT CLEANUP. "^^xsd:string ;
     rdfs:subClassOf epa-frs:EnvironmentalInterestType .
 
 epa-frs:Agency.Labor a owl:Class ;
@@ -2253,6 +2256,6 @@ epa-frs:Wastewaterprograms a owl:Class ;
 
 epa-frs:Airprograms a owl:Class ;
     rdfs:label "AIR PROGRAMS"^^xsd:string ;
-    dcterms:description "ENVIRONMENTAL PROGRAMS THAT REGULATE OR MONITOR AIR EMISSIONS FROM AREA, STATIONARY, AND MOBILE SOURCES, AS REQUIRED BY THE CLEAN AIR ACT."^^xsd:string ;
+    dcterms:description "ENVIRONMENTAL PROGRAMS THAT REGULATE OR MONITOR AIR EMISSIONS FROM AREA, STATIONARY, AND MOBILE SOURCES, AS REQUIRED BY THE CLEAN AIR ACT"^^xsd:string ;
     rdfs:subClassOf epa-frs:EnvironmentalInterestType .
 

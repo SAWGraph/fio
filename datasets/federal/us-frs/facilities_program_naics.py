@@ -27,7 +27,7 @@ root_folder =Path(__file__).resolve().parent.parent.parent
 output_dir = root_folder / "federal/us-frs/triples/"
 logname = "log"
 testing = False #only gets 15 records when set to true
-verbose = True
+verbose = False
 
 ##namespaces
 epa_frs = Namespace(f"http://w3id.org/fio/v1/epa-frs#")
@@ -45,10 +45,11 @@ schema = Namespace(f'http://schema.org/')
 logging.basicConfig(filename=logname,
                     filemode='a',
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
-                    datefmt='%H:%M:%S',
+                    datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.DEBUG)
-logging.info(f'****** Testing Run *********')
-logging.info(f"Getting facility programs and naics for {state_code} from server.")
+if testing:
+    logging.info(f'****** Testing Run *********')
+logging.info(f"***** Getting facility programs NAICS for {state_code} from server.")
 
 def load_data():
     '''Get the facilities as a list of dictionaries from the EPA ECHO API '''
@@ -192,9 +193,9 @@ def main():
     data = load_data()
     kg = triplify(data)
     if testing:
-        kg_turtle_file = output_dir/ f"epa-frs-data-facility-naics-{state}-test.ttl"
+        kg_turtle_file = output_dir/ f"epa-frs-data-{state}-facility-naics-test.ttl"
     else:
-        kg_turtle_file = output_dir / f"epa-frs-data-facility-naics-{state}.ttl"
+        kg_turtle_file = output_dir / f"epa-frs-data-{state}-facility-naics.ttl"
     kg.serialize(kg_turtle_file, format='turtle')
     logger = logging.getLogger(f'Finished triplifying {state} program facilities and NAICS codes.')
 

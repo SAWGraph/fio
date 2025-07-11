@@ -23,7 +23,8 @@ sys.path.insert(0, str(code_dir))
 
 ## declare variables
 logname = "log"
-state = ' ME'
+sa = input("state abbreviation?")
+state = f' {sa}'
 
 ## data path
 root_folder =Path(__file__).resolve().parent.parent.parent
@@ -42,23 +43,24 @@ sic = Namespace(f"http://w3id.org/fio/v1/sic#")
 logging.basicConfig(filename=logname,
                     filemode='a',
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
-                    datefmt='%H:%M:%S',
+                    datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.DEBUG)
 
-logging.info("Running triplification for facilities")
+logging.info(f"Running triplification for PAT facilities {state}")
 
 def main():
     '''main function initializes all other functions'''
     df = load_data()
     kg = triplify(df)
 
-    kg_turtle_file = f"us-frs-data-pat-{state.strip()}.ttl".format(output_dir)
+    kg_turtle_file = f"epa-frs-data-{state.strip()}-pat.ttl".format(output_dir)
     kg.serialize(kg_turtle_file, format='turtle')
     logger = logging.getLogger(f'Finished triplifying pfas analytics tool facilities - {state}.')
 
 def load_data():
     #df = pd.read_csv(data_dir / f"industrysectors_{state}.csv")
-    df = pd.read_excel(data_dir/ 'industrysectors_275aeff7-cbf1-46c2-92a9-67886bcbc0ee.xlsx')
+    #df = pd.read_excel(data_dir/ 'industrysectors_275aeff7-cbf1-46c2-92a9-67886bcbc0ee.xlsx') #older data
+    df = pd.read_excel(data_dir/ 'industrysectors_dee6b0cb-ab9e-4952-bf70-977004a9e878.xlsx')
     #filter to just one state
     df = df[df['State'] == state]
     #df = pd.read_json(data_dir / '')

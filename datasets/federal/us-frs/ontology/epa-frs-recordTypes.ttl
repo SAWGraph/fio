@@ -5,35 +5,384 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+## Interest Types 
+epa-frs:InterestRecordType rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:EnvironmentalInterestType;
+    rdfs:label "Interest Record Type";
+    dcterms:description "Interest classification based on the main subject of the record and what type of activity or entity it identifies.".
+
 # some air programs are licenses or permits. Depends on the system 
-
 epa-frs:PermitInterest rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:InterestRecordType;
     dcterms:description "Environmental Interests that create records that are permits or licenses". 
-	
 epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesnon-Major rdf:type epa-frs:PermitInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Npdesnon-Major rdf:type epa-frs:PermitInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Stormwaterconstruction rdf:type epa-frs:PermitInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Npdesstormwaterpermit rdf:type epa-frs:PermitInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Npdesgeneralpermit rdf:type epa-frs:PermitInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesmajor rdf:type epa-frs:PermitInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Phaseiims4 rdf:type epa-frs:PermitInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Npdespermit rdf:type epa-frs:PermitInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Stormwaterindustrial rdf:type epa-frs:PermitInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesminor rdf:type epa-frs:PermitInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Groundwateruse rdf:type epa-frs:PermitInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Navigablewaters rdf:type epa-frs:PermitInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Groundwaterprogram rdf:type epa-frs:PermitInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Refusedisposal rdf:type epa-frs:PermitInterest. 
 
 
-#epa-frs-data:d.EnvironmentalInterestType.401Certification 
+
+#no examples of these record types so far:
+epa-frs-data:d.EnvironmentalInterestType.Mineoperatingpermit rdf:type epa-frs:PermitInterest.  
+epa-frs-data:d.EnvironmentalInterestType.Minegeneralpermit rdf:type epa-frs:PermitInterest.
+
+
+#contaminated sites or monitoring sites
+epa-frs:SiteInterest rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:InterestRecordType. 
+epa-frs-data:d.EnvironmentalInterestType.Superfund-Non-Npl rdf:type epa-frs:SiteInterest.
+epa-frs-data:d.EnvironmentalInterestType.Superfundnpl rdf:type  epa-frs:SiteInterest.
+epa-frs-data:d.EnvironmentalInterestType.Superfund rdf:type epa-frs:SiteInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Airmonitoringsite rdf:type epa-frs:SiteInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Remediationandredevelopmentprograms-Superfundnpl rdf:type epa-frs:SiteInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Damsite rdf:type epa-frs:SiteInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Brownfieldssite rdf:type epa-frs:SiteInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Brownfieldsproperty rdf:type epa-frs:SiteInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Solidwasteprogram rdf:type epa-frs:SiteInterest. #compost site, landfill, transfer station
+
+#for solid waste facilities there is sometimes a permit involved, but the data source identifier doesn't directly reference the permit, or it varies by state
+epa-frs-data:d.EnvironmentalInterestType.Constructiondemolitionlandfill rdf:type epa-frs:SiteInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Hazardouswastelandfill rdf:type epa-frs:SiteInterest.
+epa-frs-data:d.EnvironmentalInterestType.Hazardoussolidcdwastelandfill rdf:type epa-frs:SiteInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Solidcdwastelandfill rdf:type epa-frs:SiteInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Oilandgas rdf:type epa-frs:SiteInterest. 
+
+
+#reporters
+epa-frs:ReportingInterest rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:InterestRecordType. 
+epa-frs-data:d.EnvironmentalInterestType.Complianceandemissionsreporting rdf:type epa-frs:ReportingInterest, epa-frs:EnforcementInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Greenhousegasreporter rdf:type epa-frs:ReportingInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Airemissioninventory rdf:type epa-frs:ReportingInterest. 
+
+
+# enforcement
+epa-frs:EnforcementInterest rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:InterestRecordType.
+epa-frs-data:d.EnvironmentalInterestType.Closedcriminalenforcementcase rdf:type epa-frs:EnforcementInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Enforcement-Complianceactivity rdf:type epa-frs:EnforcementInterest.
+epa-frs-data:d.EnvironmentalInterestType.Formalenforcementaction rdf:type epa-frs:EnforcementInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Correctiveaction  rdf:type epa-frs:EnforcementInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Formalenforcementaction rdf:type epa-frs:EnforcementInterest.
+
+# compliance 
+epa-frs:ComplianceInterest rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:InterestRecordType. 
+epa-frs-data:d.EnvironmentalInterestType.Complianceassistance rdf:type epa-frs:ComplianceInterest.
+epa-frs-data:d.EnvironmentalInterestType.Complianceactivity rdf:type epa-frs:ComplianceInterest. 
+
+
+#epa-frs-data:d.EnvironmentalInterestType.401Certification # possibly about permits
+#epa-frs-data:d.EnvironmentalInterestType.Laboratorycertification
 #epa-frs-data:d.EnvironmentalInterestType.Laboratory
 
-#	epa-frs-data:d.EnvironmentalInterestType.Coastalerosion
+#epa-frs-data:d.EnvironmentalInterestType.Coastalerosion
+#epa-frs-data:d.EnvironmentalInterestType.Aquiferprotectionprogram
 
-epa-frs:PermitSystem rdf:type owl:Class.
+# risk planning
+epa-frs:RiskInterest rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:InterestRecordType. 
+epa-frs:Chemicalstorageprograms rdfs:subClassOf epa-frs:RiskInterest. # all subclasses are 'plans'
+epa-frs-data:d.EnvironmentalInterestType.FRP rdf:type epa-frs:RiskInterest. #facility response plan
+epa-frs-data:d.EnvironmentalInterestType.SPCC rdf:type epa-frs:RiskInterest. #spill plan
+epa-frs-data:d.EnvironmentalInterestType.EPCRA rdf:type epa-frs:RiskInterest. #response plan
+epa-frs-data:d.EnvironmentalInterestType.Floodplainmanagement rdf:type epa-frs:RiskInterest. #flood plan
+#epa-frs-data:d.EnvironmentalInterestType.Riskandtechnologyreview rdf:type epa-frs:RiskInterest. #these are part of CEDRI normal monitoring records. 
 
+# registry interest
+epa-frs:RegistryInterest rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:InterestRecordType.
+epa-frs-data:d.EnvironmentalInterestType.Notinauniverse rdf:type epa-frs:RegistryInterest. #hazardous waste program with no specific currently tracked waste universe
+epa-frs-data:d.EnvironmentalInterestType.Gasolineanddieselproducers rdf:type epa-frs:RegistryInterest. #register products
+epa-frs-data:d.EnvironmentalInterestType.Npdesunpermitted rdf:type epa-frs:RegistryInterest.  #regulated by NPDES and discharging with no permit
+
+#epa-frs-data:d.EnvironmentalInterestType.Communitywatersystem
+#epa-frs-data:d.EnvironmentalInterestType.Drinkingwatersystem
+#epa-frs-data:d.EnvironmentalInterestType.Drinkingwaterprogram
+
+
+
+#epa-frs-data:d.EnvironmentalInterestType.Damsite
+#epa-frs-data:d.EnvironmentalInterestType.Drycleanerremediationprogram
+#epa-frs-data:d.EnvironmentalInterestType.Formerlyuseddefensesite
+
+
+# subclasses of information systems
+epa-frs:PermitSystem rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:ProgramInformationSystem.
+
+epa-frs:GrantSystem rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+
+epa-frs:EnforcementSystem rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+
+epa-frs:ComplianceSystem rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+
+epa-frs:ReportingSystem rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+
+epa-frs:RegistrySystem rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+
+epa-frs:SiteSystem rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+
+epa-frs:StationSystem rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+
+epa-frs:ProjectSystem rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+
+epa-frs:StateSystem rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+
+epa-frs:TribalSystem rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+
+# types for information systems
 epa-frs-data:d.ProgramInformationSystem.NPDES rdf:type epa-frs:PermitSystem. 
+epa-frs-data:d.ProgramInformationSystem.EPS rdf:type epa-frs:PermitSystem. 
+epa-frs-data:d.ProgramInformationSystem.AIR rdf:type epa-frs:PermitSystem. #Check this is true for all records, and non are compliance. 
+
+epa-frs-data:d.ProgramInformationSystem.LMOP rdf:type epa-frs:ProjectSystem. 
+epa-frs-data:d.ProgramInformationSystem.ACRES rdf:type epa-frs:GrantSystem, epa-frs:SiteSystem.
+epa-frs-data:d.ProgramInformationSystem.BRAC rdf:type epa-frs:SiteSystem. 
+epa-frs-data:d.ProgramInformationSystem.CERCLIS rdf:type epa-frs:SiteSystem. 
+epa-frs-data:d.ProgramInformationSystem.SEMS rdf:type epa-frs:SiteSystem. 
+epa-frs-data:d.ProgramInformationSystem.AIRS-AQS rdf:type epa-frs:SiteSystem. 
+epa-frs-data:d.ProgramInformationSystem.RBLC rdf:type epa-frs:SiteSystem. #unsure about this one
+epa-frs-data:d.ProgramInformationSystem.FFEP rdf:type epa-frs:ReportingSystem, epa-frs:SiteSystem. 
+
+epa-frs-data:d.ProgramInformationSystem.ECRM rdf:type epa-frs:EnforcementSystem. 
+
+epa-frs-data:d.ProgramInformationSystem.E-GGRT rdf:type epa-frs:ReportingSystem. 
+epa-frs-data:d.ProgramInformationSystem.EGRID rdf:type epa-frs:ReportingSystem. 
+epa-frs-data:d.ProgramInformationSystem.EIA-860 rdf:type epa-frs:ReportingSystem. 
+epa-frs-data:d.ProgramInformationSystem.LANDFILL rdf:type epa-frs:ReportingSystem.
+epa-frs-data:d.ProgramInformationSystem.LUST-ARRA rdf:type epa-frs:ReportingSystem.  
+epa-frs-data:d.ProgramInformationSystem.NCDB rdf:type epa-frs:ReportingSystem.
+epa-frs-data:d.ProgramInformationSystem.NEI rdf:type epa-frs:ReportingSystem.  
+epa-frs-data:d.ProgramInformationSystem.OTAQREG rdf:type epa-frs:ReportingSystem. 
+epa-frs-data:d.ProgramInformationSystem.RADINFO rdf:type epa-frs:ReportingSystem. 
+epa-frs-data:d.ProgramInformationSystem.RFS rdf:type epa-frs:ReportingSystem. 
+epa-frs-data:d.ProgramInformationSystem.RCRAINFO rdf:type epa-frs:ReportingSystem.
+epa-frs-data:d.ProgramInformationSystem.SSTS rdf:type epa-frs:ReportingSystem. 
+epa-frs-data:d.ProgramInformationSystem.SWIPR rdf:type epa-frs:ReportingSystem. 
+epa-frs-data:d.ProgramInformationSystem.TRIS rdf:type epa-frs:ReportingSystem. 
+epa-frs-data:d.ProgramInformationSystem.AIRS-AFS rdf:type epa-frs:ReportingSystem. #double check
+epa-frs-data:d.ProgramInformationSystem.CAMDBS rdf:type epa-frs:ReportingSystem. # this is really a derived data product, not the direct reporting database
+epa-frs-data:d.ProgramInformationSystem.BR rdf:type epa-frs:ReportingSystem.
+epa-frs-data:d.ProgramInformationSystem.TSCA rdf:type epa-frs:ReportingSystem.
+epa-frs-data:d.ProgramInformationSystem.CEDRI rdf:type epa-frs:ReportingSystem, epa-frs:ComplianceSystem. 
+
+
+
+epa-frs-data:d.ProgramInformationSystem.OSHA-OIS rdf:type epa-frs:ComplianceSystem. #inspection record 
+epa-frs-data:d.ProgramInformationSystem.FFDOCKET rdf:type epa-frs:RegistrySystem, epa-frs:ComplianceSystem.
+epa-frs-data:d.ProgramInformationSystem.SFDW rdf:type epa-frs:ReportingSystem. #also has some enforcement records (try to catch by interest type)
+
+epa-frs-data:d.ProgramInformationSystem.EIS rdf:type epa-frs:RegistrySystem. 
+epa-frs-data:d.ProgramInformationSystem.RMP rdf:type epa-frs:RegistrySystem. 
+
+#state systems
+epa-frs-data:d.ProgramInformationSystem.ACES rdf:type epa-frs:StateSystem.
+epa-frs-data:d.ProgramInformationSystem.AZURITE rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.CA-CERS rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.CA-ENVIROVIEW rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.CASWIS rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.CEDS rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.CIM rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.DEN rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.DTSC-ENVIROSTOR rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.FDM rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.FIS rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.GEIMS rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.HI-EHW rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.HWTS-DATAMART rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.IDDEQ rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.IDNR_EFD rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.IN-FRS rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.IN-TEMPO rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.ISD rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.KS-FP rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.KY-TEMPO rdf:type epa-frs:StateSystem.
+epa-frs-data:d.ProgramInformationSystem.LA-TEMPO rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.MA-EPICS rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.MD-PEMIS rdf:type epa-frs:StateSystem. #possibly permits
+epa-frs-data:d.ProgramInformationSystem.MD-RCRA rdf:type epa-frs:StateSystem.
+epa-frs-data:d.ProgramInformationSystem.MD-TEMPO rdf:type epa-frs:StateSystem. #includes permits
+epa-frs-data:d.ProgramInformationSystem.MS-ENSITE rdf:type epa-frs:StateSystem.
+epa-frs-data:d.ProgramInformationSystem.MO-DNR rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.MT-CEDARS rdf:type epa-frs:StateSystem.
+epa-frs-data:d.ProgramInformationSystem.NDEQ rdf:type epa-frs:StateSystem.
+epa-frs-data:d.ProgramInformationSystem.NV-FP rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.NH-DES rdf:type epa-frs:StateSystem.
+epa-frs-data:d.ProgramInformationSystem.NJ-NJEMS rdf:type epa-frs:StateSystem.
+epa-frs-data:d.ProgramInformationSystem.NM-TEMPO rdf:type epa-frs:StateSystem.
+epa-frs-data:d.ProgramInformationSystem.FIS rdf:type epa-frs:StateSystem.
+epa-frs-data:d.ProgramInformationSystem.NC-FITS rdf:type epa-frs:StateSystem.
+epa-frs-data:d.ProgramInformationSystem.ND-FP rdf:type epa-frs:StateSystem.
+epa-frs-data:d.ProgramInformationSystem.OH-CORE rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.OR-DEQ rdf:type epa-frs:StateSystem.
+epa-frs-data:d.ProgramInformationSystem.PA-EFACTS rdf:type epa-frs:StateSystem.
+epa-frs-data:d.ProgramInformationSystem.PDS rdf:type epa-frs:StateSystem.
+epa-frs-data:d.ProgramInformationSystem.PERMITTRACKING rdf:type epa-frs:StateSystem. #includes permits
+epa-frs-data:d.ProgramInformationSystem.RI-PLOVER rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.SC-EFIS rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.STATE rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.TX-TCEQACR rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.UST rdf:type epa-frs:StateSystem. #registry system
+epa-frs-data:d.ProgramInformationSystem.CIM rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.WA-FSIS rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.WI-ESR rdf:type epa-frs:StateSystem. 
+epa-frs-data:d.ProgramInformationSystem.STATE rdf:type epa-frs:StateSystem. #generic state entries
+
+
+epa-frs-data:d.ProgramInformationSystem.BIAINDIANSCHOOL rdf:type epa-frs:TribalSystem. 
+epa-frs-data:d.ProgramInformationSystem.CDAFLP rdf:type epa-frs:TribalSystem. 
+epa-frs-data:d.ProgramInformationSystem.CNFRS rdf:type epa-frs:TribalSystem. 
+epa-frs-data:d.ProgramInformationSystem.FARR rdf:type epa-frs:TribalSystem. 
+epa-frs-data:d.ProgramInformationSystem.NNEMS rdf:type epa-frs:TribalSystem. 
+epa-frs-data:d.ProgramInformationSystem.SRPMICEMS rdf:type epa-frs:TribalSystem. 
+
+epa-frs:LegacySystem rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+#legacy systems
+epa-frs-data:d.ProgramInformationSystem.CERCLIS rdf:type epa-frs:LegacySystem. 
+epa-frs-data:d.ProgramInformationSystem.EGRID rdf:type epa-frs:LegacySystem. 
+epa-frs-data:d.ProgramInformationSystem.AIRS-AFS rdf:type epa-frs:LegacySystem. 
+
+# source
+epa-frs-data:d.ProgramInformationSystem.CERCLIS dcterms:source <https://www.epa.gov/superfund/superfund-cercla-overview>.
+epa-frs-data:d.ProgramInformationSystem.CAMDBS dcterms:source <https://campd.epa.gov> .
+epa-frs-data:d.ProgramInformationSystem.LMOP dcterms:source <https://www.epa.gov/lmop>.
+
+#program system that have a relation to another program system 
+epa-frs-data:d.ProgramInformationSystem.BR epa-frs:partOf epa-frs-data:d.ProgramInformationSystem.RCRAINFO.
+epa-frs-data:d.ProgramInformationSystem.NPDES epa-frs:partOf epa-frs-data:d.ProgramInformationSystem.ICIS.
+epa-frs-data:d.ProgramInformationSystem.AIR epa-frs:partOf epa-frs-data:d.ProgramInformationSystem.ICIS. 
+
+
+epa-frs-data:d.ProgramInformationSystem.CERCLIS epa-frs:replacedBy epa-frs-data:d.ProgramInformationSystem.SEMS.
+epa-frs-data:d.ProgramInformationSystem.EGRID epa-frs:replacedBy epa-frs-data:d.ProgramInformationSystem.EIA. #this wasnt explicitly listed as a replacement, but uses the same code
+epa-frs-data:d.ProgramInformationSystem.AIRS-AFS epa-frs:replacedBy epa-frs-data:d.ProgramInformationSystem.AIR.
+epa-frs-data:d.ProgramInformationSystem.PCS epa-frs:replacedBy epa-frs-data:d.ProgramInformationSystem.ICIS. 
 
 
 
 
-epa-frs:PermitRecord rdfs:subClassOf epa-frs:SupplementalRecord;
+epa-frs:PermitRecord rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:SupplementalRecord;
     rdfs:label "Permit or license record";
+    dcterms:description "A record that tracks a permit or license awarded to the facility";
+    owl:unionOf([
+        rdf:type owl:Restriction;
+        owl:onProperty epa-frs:ofInterestType;
+        owl:someValuesFrom epa-frs:PermitInterest
+    ]
+    [
+        rdf:type owl:Restriction;
+        owl:onProperty epa-frs:fromSystem;
+        owl:someValuesFrom epa-frs:PermitSystem
+    ]).
+
+epa-frs:EnforcementActivity rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:SupplementalRecord;
+    rdfs:label "Enforcement or Compliance record";
+    dcterms:description "A record that tracks a specific legal, corrective or assistance action taken against a facility";
     owl:equivalentClass [
         rdf:type owl:Restriction;
         owl:onProperty epa-frs:ofInterestType;
-        owl:allValuesFrom epa-frs:PermitInterest.
-    ];
+        owl:someValuesFrom [owl:unionOf(epa-frs:EnforcementInterest epa-frs:ComplianceInterest)]
+    ].
+
+epa-frs:ComplianceRecord rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:SupplementalRecord;
     owl:equivalentClass [
         rdf:type owl:Restriction;
         owl:onProperty epa-frs:fromSystem;
-        owl:allValuesFrom epa-frs:PermitSystem. 
+        owl:someValuesFrom epa-frs:ComplianceSystem
+    ].
+
+epa-frs:RiskPlanRecord rdf:type owl:Class; #unsure if this lives in supplemental or monitoring. 
+    rdfs:subClassOf epa-frs:SupplementalRecord;
+    owl:equivalentClass [
+        rdf:type owl:Restriction;
+        owl:onProperty epa-frs:ofInterestType;
+        owl:someValuesFrom epa-frs:RiskInterest
+    ]. 
+
+epa-frs:ProjectRecord rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:SupplementalRecord;
+        owl:equivalentClass [
+        rdf:type owl:Restriction;
+        owl:onProperty epa-frs:fromSystem;
+        owl:someValuesFrom epa-frs:ProjectSystem
+    ]. 
+
+epa-frs:MonitoringRecord rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:Record;
+    rdfs:label "Monitoring Record";
+    dcterms:description "A record that monitors a facility on an ongoing basis".
+
+epa-frs:ReportingRecord rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:MonitoringRecord;
+    owl:unionOf ([
+        rdf:type owl:Restriction;
+        owl:onProperty epa-frs:fromSystem;
+        owl:someValuesFrom epa-frs:ReportingSystem]
+        [ rdf:type owl:Restriction;
+        owl:onProperty epa-frs:ofInterestType;
+        owl:someValuesFrom epa-frs:ReportingInterest])
+        .
+
+epa-frs:EnforcementTrackingRecord rdf:type owl:Class;
+    owl:equivalentClass [ rdf:type owl:Restriction;
+        owl:onProperty epa-frs:ofInterestType;
+        owl:someValuesFrom epa-frs:EnforcementInterest];
+        rdfs:subClassOf epa-frs:MonitoringRecord. 
+
+epa-frs:RegistrationRecord rdf:type owl:Class;
+    owl:unionOf ([rdf:type owl:Restriction;
+    owl:onProperty epa-frs:fromSystem;
+    owl:someValuesFrom epa-frs:RegistrySystem]
+    [ rdf:type owl:Restriction;
+        owl:onProperty epa-frs:ofInterestType;
+        owl:someValuesFrom epa-frs:RegistryInterest]);
+    rdfs:subClassOf epa-frs:MonitoringRecord. 
+
+epa-frs:StateMonitoringRecord rdf:type owl:Class;
+    owl:equivalentClass [ rdf:type owl:Restriction;
+    owl:onProperty epa-frs:ofInterestType;
+    owl:hasValue epa-frs-data:d.EnvironmentalInterestType.Statemaster];
+    rdfs:subClassOf epa-frs:MonitoringRecord. 
+
+
+epa-frs:SiteRecord rdf:type owl:Class;
+    rdfs:subClassOf epa-frs:MonitoringRecord;
+    rdfs:label "Site Record";
+    dcterms:description "A record that monitors a site, beyond specific ownership of one organization and their activities, e.g. superfund site, air monitoring site";
+    owl:unionOf ([
+        rdf:type owl:Restriction;
+        owl:onProperty epa-frs:ofInterestType;
+        owl:someValuesFrom epa-frs:SiteInterest
     ]
+    [   rdf:type owl:Restriction;
+        owl:onProperty epa-frs:fromSystem;
+        owl:someValuesFrom epa-frs:SiteSystem
+    ]).
+
+
+#rules for subproperties of epa-frs:hasRecord

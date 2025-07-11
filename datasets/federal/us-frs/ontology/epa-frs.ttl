@@ -121,11 +121,13 @@ epa-frs:hasRecord rdf:type owl:ObjectProperty ;
 		rdfs:range epa-frs:Record.
 
 epa-frs:hasMonitoringRecord rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf epa-frs:hasRecord;
 		rdfs:label "has monitoring record" ;
 		rdfs:domain epa-frs:FRS-Facility;
 		rdfs:range epa-frs:MonitoringRecord.
 
 epa-frs:hasSupplementalRecord rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf epa-frs:hasRecord;
 		rdfs:label "has supplemental record" ;
 		rdfs:range epa-frs:SupplementalRecord.
 
@@ -191,11 +193,13 @@ epa-frs:Record rdf:type owl:Class;
 
 epa-frs:MonitoringRecord rdf:type owl:Class ;
 		rdfs:label "Facility Monitoring Record";
-		dcterms:description "Monitoring Record for a facility".
+		dcterms:description "Monitoring Record for a facility";
+        rdfs:subClassOf epa-frs:Record.
 
 epa-frs:SupplementalRecord rdf:type owl:Class ;
 		rdfs:label "Facility Supplemental Record"; 
-		dcterms:description "Supplemental Record that relates to a facility but primarily identifies something other than the facility itself (e.g. permit, license, incident, enforcement action records) ".
+		dcterms:description "Supplemental Record that relates to a facility but primarily identifies something other than the facility itself (e.g. permit, license, incident, enforcement action records) ";
+        rdfs:subClassOf epa-frs:Record.
 
 epa-frs:EnvironmentalInterestType rdf:type owl:Class ;
 		rdfs:label "Environmental Interest Type";
