@@ -27,16 +27,7 @@
 #################################################################
 
 ###  http://purl.org/dc/terms/created
-dcterms:created
-    dcterms:description "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."@en ;
-    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
-    a owl:AnnotationProperty ;
-    rdfs:comment "Date of creation of the resource."@en ;
-    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
-    rdfs:label "Date Created"@en ;
-    rdfs:range rdfs:Literal ;
-    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date>, dcterms:date .
-
+dcterms:created a owl:AnnotationProperty .
 
 ###  http://purl.org/dc/terms/creator
 dcterms:creator rdf:type owl:AnnotationProperty .
@@ -45,17 +36,7 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 ###  http://purl.org/dc/terms/description
 dcterms:description rdf:type owl:AnnotationProperty .
 
-dcterms:date
-    dcterms:description "Date may be used to express temporal information at any level of granularity.  Recommended practice is to express the date, date/time, or period of time according to ISO 8601-1 [[ISO 8601-1](https://www.iso.org/iso-8601-date-and-time-format.html)] or a published profile of the ISO standard, such as the W3C Note on Date and Time Formats [[W3CDTF](https://www.w3.org/TR/NOTE-datetime)] or the Extended Date/Time Format Specification [[EDTF](http://www.loc.gov/standards/datetime/)].  If the full date is unknown, month and year (YYYY-MM) or just year (YYYY) may be used. Date ranges may be specified using ISO 8601 period of time specification in which start and end dates are separated by a '/' (slash) character.  Either the start or end date may be missing."@en ;
-    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
-    a rdf:Property ;
-    rdfs:comment "A point or period of time associated with an event in the lifecycle of the resource."@en ;
-    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
-    rdfs:label "Date"@en ;
-    rdfs:range rdfs:Literal ;
-    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
-
-
+dcterms:date a rdf:Property.
 
 ###  http://purl.org/dc/terms/issued
 dcterms:issued rdf:type owl:AnnotationProperty .
@@ -63,16 +44,6 @@ dcterms:issued rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/terms/modified
 dcterms:modified rdf:type owl:AnnotationProperty .
-dcterms:modified
-    dcterms:description "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."@en ;
-    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
-    a rdf:Property ;
-    rdfs:comment "Date on which the resource was changed."@en ;
-    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
-    rdfs:label "Date Modified"@en ;
-    rdfs:range rdfs:Literal ;
-    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date>, dcterms:date .
-
 
 ###  http://purl.org/dc/terms/publisher
 dcterms:publisher rdf:type owl:AnnotationProperty .
@@ -87,24 +58,9 @@ dcterms:title rdf:type owl:AnnotationProperty .
 
 schema:address rdf:type owl:AnnotationProperty. 
 
-dcterms:alternative
-    dcterms:description "The distinction between titles and alternative titles is application-specific."@en ;
-    a owl:AnnotationProperty ;
-    rdfs:comment "An alternative name for the resource."@en ;
-    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
-    rdfs:label "Alternative Title"@en ;
-    rdfs:range rdfs:Literal ;
-    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title>, dcterms:title .
+dcterms:alternative a owl:AnnotationProperty.
 
-dcterms:identifier
-    dcterms:description "Recommended practice is to identify the resource by means of a string conforming to an identification system. Examples include International Standard Book Number (ISBN), Digital Object Identifier (DOI), and Uniform Resource Name (URN).  Persistent identifiers should be provided as HTTP URIs."@en ;
-    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
-    a owl:AnnotationProperty ;
-    rdfs:comment "An unambiguous reference to the resource within a given context."@en ;
-    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
-    rdfs:label "Identifier"@en ;
-    rdfs:range rdfs:Literal ;
-    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/identifier> .
+dcterms:identifier a owl:AnnotationProperty. 
 
 #################################################################
 #    Object Properties
@@ -204,6 +160,12 @@ epa-frs:SupplementalRecord rdf:type owl:Class ;
 epa-frs:EnvironmentalInterestType rdf:type owl:Class ;
 		rdfs:label "Environmental Interest Type";
 		dcterms:description "The environmental permit or regulatory program type that applies to the facility site".
+
+epa-frs:EnvironmentalInterestByProgram rdf:type owl:Class ; 
+    rdfs:subClassOf epa-frs:EnvironmentalInterestType. 
+
+epa-frs:EnvironmentalInterestByRecordType rdf:type owl:Class ; 
+    rdfs:subClassOf epa-frs:EnvironmentalInterestType.
 
 epa-frs:ProgramInformationSystem rdf:type owl:Class ;
 		rdfs:label "Program Information System";

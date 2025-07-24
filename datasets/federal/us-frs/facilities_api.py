@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 import math
 import datetime
 from datetime import date
+import unicodedata
 
 from rdflib.namespace import OWL, XMLNS, XSD, RDF, RDFS, DCTERMS, GEO, PROV
 from rdflib import Namespace
@@ -146,6 +147,8 @@ def clean_attributes(facilities):
         print(fac.info())
     
     #format various columns for triplification
+    fac['primary_name'] = fac['primary_name'].apply(lambda x: x.encode('ASCII', 'ignore').decode('ASCII'))
+    fac['std_name'] = fac['primary_name'].apply(lambda x: x.encode('ASCII', 'ignore').decode('ASCII'))
     fac['federal_bool'] = fac['federal_facility_code'].map({"Y": True, "N": False}) #boolean for federal sites
     #print('tribal:', fac['tribal_land_code'].value_counts())
     fac['tribal_bool'] = fac['tribal_land_code'].map({"Y": True, "N": False}) #boolean for tribal sites

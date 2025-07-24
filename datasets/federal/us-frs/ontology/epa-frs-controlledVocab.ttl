@@ -723,969 +723,976 @@ epa-frs-data:d.Agency.X9999 a epa-frs:Agency,
         owl:NamedIndividual ;
     rdfs:label "Undetermined or Unknown Agency Affiliation" .
 
-epa-frs-data:d.EnvironmentalInterestType.401Certification a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.401Certification a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "401 CERTIFICATION"^^xsd:string ;
     dcterms:description "UNDER SECTION 401 OF THE CLEAN WATER ACT (CWA), STATES AND TRIBES HAVE THE AUTHORITY TO REVIEW AND THEN DENY, CERTIFY, OR CONDITION FEDERAL PERMITS OR LICENSES THAT MIGHT RESULT IN A DISCHARGE TO STATE OR TRIBAL WATERS, INCLUDING WETLANDS, TO ENSURE COMPLIANCE WITH STATE WATER QUALITY STANDARDS.  THE MAJOR FEDERAL LICENSES AND PERMITS SUBJECT TO SECTION 401 ARE SECTION 402 AND 404 PERMITS (IN NONDELEGATED STATES), FEDERAL ENERGY REGULATORY COMMISSION (FERC) HYDROPOWER LICENSES, AND RIVERS AND HARBORS ACT SECTION 9 AND 10 PERMITS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.AFO a epa-frs:Animaloperations,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.AFO a epa-frs:AnimalOperation,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "AFO"^^xsd:string ;
     dcterms:description "ANIMAL FEEDING OPERATION- MEANS A LOT, YARD, CORRAL, BUILDING, OR OTHER AREA IN WHICH ANIMALS ARE CONFINED AND FED AND MAINTAINED FOR 45 DAYS OR MORE IN ANY 12-MONTH PERIOD, AND ALL STRUCTURES USED FOR THE STORAGE OF MANURE FROM ANIMALS IN THE OPERATION"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Air-Notapplicable a epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Air-Notapplicable a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:EnvironmentalInterestType ;
     rdfs:label "AIR - NOT APPLICABLE"^^xsd:string ;
     dcterms:description "FACILITY WIDE AIR REPORTING REQUIREMENTS EXIST, BUT THEY ARE NOT SPECIFIC TO ANY ONE POLLUTANT."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Air-Other a epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Air-Other a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:EnvironmentalInterestType ;
     rdfs:label "AIR - OTHER"^^xsd:string ;
     dcterms:description "THE AIR EMISSIONS CLASSIFICATION STATUS FOR THE FACILITY IS NOT KNOWN."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Airemissioninventory a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Airemissioninventory a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "AIR EMISSION INVENTORY"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM THAT MAINTAINS A NATIONAL EMISSION INVENTORY WHICH CHARACTERIZES EMISSIONS OF CRITERIA AIR POLLUTANTS.  CRITERIA AIR POLLUTANTS ARE THOSE WHICH AN AMBIENT STANDARD, OBJECTIVE, OR GUIDELINE HAS BEEN ESTABLISHED TO PROTECT HUMAN HEALTH AND WELFARE.  NATIONAL AMBIENT STANDARDS ARE IN PLACE FOR OZONE, CARBON MONOXIDE, NITROGEN OXIDES, SULFUR OXIDES, LEAD, AND FINE PARTICULATE MATTER."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Airemissionsclassificationunknown a epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Airemissionsclassificationunknown a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:EnvironmentalInterestType ;
     rdfs:label "AIR EMISSIONS CLASSIFICATION UNKNOWN"^^xsd:string ;
     dcterms:description "THE AIR EMISSIONS CLASSIFICATION STATUS FOR THE FACILITY IS NOT KNOWN."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Airmajor a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Airmajor a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "AIR MAJOR"^^xsd:string ;
     dcterms:description "A CLEAN AIR ACT STATIONARY SOURCE MAJOR DISCHARGER OF AIR POLLUTANTS ACCORDING TO THE ALABAMA POWER DECISION'S DEFINITION OF A MAJOR SOURCE OR THE 1993 EPA COMPLIANCE MONITORING BRANCH CLASSIFICATION GUIDANCE.  A FACILITY IS CLASSIFIED AS A MAJOR DISCHARGER IF:  (A) ACTUAL OR POTENTIAL EMISSIONS ARE ABOVE THE APPLICABLE MAJOR SOURCE THRESHOLDS; OR (B) ACTUAL OR POTENTIAL CONTROLLED EMISSIONS > 100 TONS/YEAR AS PER ALABAMA POWER DECISION; OR (C) UNREGULATED POLLUTANT ACTUAL OR POTENTIAL CONTROLLED EMISSIONS > 100 TONS/YEAR AS PER ALABAMA POWER DECISION."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Airminor a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Airminor a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "AIR MINOR"^^xsd:string ;
     dcterms:description "A FACILITY IS CLASSIFIED AS A CLEAN AIR ACT STATIONARY SOURCE MINOR DISCHARGER OF AIR POLLUTANTS IF:  (A) POTENTIAL UNCONTROLLED EMISSIONS < 100 TONS/YEAR; OR (B) MAJOR SOURCE THRESHOLDS ARE NOT DEFINED, OR CLASSIFICATION IS UNKNOWN."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Airmonitoringsite a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Airmonitoringsite a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "AIR MONITORING SITE"^^xsd:string ;
     dcterms:description "A SITE ESTABLISHED TO MEASURE CONCENTRATIONS OF AIR POLLUTANTS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Airo3N-Amajor a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Airo3N-Amajor a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "AIR O3 N/A MAJOR"^^xsd:string ;
     dcterms:description "FACILITY IS MAJOR BASED UPON ONLY 40 CFR 70 MAJOR SOURCE DEFINITION PARAGRAPH 3 (OZONE N/A AREA LESSER TONS FOR NOX OR VOC)"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Airprogram a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Airprogram a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "AIR PROGRAM"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM THAT REGULATES OR MONITORS AIR EMISSIONS FROM AREA, STATIONARY, AND MOBILE SOURCES, AS REQUIRED BY THE CLEAN AIR ACT."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Airprogram-Reservation a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Airprogram-Reservation a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "AIR PROGRAM - RESERVATION"^^xsd:string ;
     dcterms:description "THE FEDERAL AIR RULES FOR RESERVATIONS (FARR) APPLIES TO 39 INDIAN RESERVATIONS IN IDAHO, OREGON, AND WASHINGTON. THEY COMPRISE A SET OF RULES THAT ADDRESS AIR QUALITY ISSUES INCLUDING EMISSIONS, PARTICULATE MATTER, WOOD WASTE, SULFUR DIOXIDE, FUELS, OPEN BURNING, AGRICULTURAL BURNING, FORESTRY AND SILVICULTURAL BURNING, AIR POLLUTION EPISODES, REGISTRATION OF AIR POLLUTION SOURCES, REPORTING OF EMISSIONS, AND RULES FOR NON-TITLE V OPERATING PERMITS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Airstationarypointsource a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Airstationarypointsource a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "AIR STATIONARY POINT SOURCE"^^xsd:string ;
     dcterms:description "STATIONARY POINT SOURCES OF EMISSIONS OF CRITERIA AIR POLLUTANTS OR PRECURSORS TO CRITERIA AIR POLLUTANTS.  THESE ARE TYPICALLY COMMERCIAL, INDUSTRIAL, INSTITUTIONAL, GOVERNMENT, OR LARGE MULTI UNIT RESIDENTIAL SOURCES OF EMISSIONS.  THEY ARE NOT MOBILE (VEHICLE) OR AREA SOURCES SUCH AS SINGLE UNIT OR SMALL RESIDENTIAL, CONSTRUCTION, CONSUMER USE EMISSIONS.  CRITERIA AIR POLLUTANTS ARE OZONE, CARBON MONOXIDE NITROGEN OXIDES, SULFUR DIOXIDE, LEAD AND PARTICULATE MATTER."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Airsyntheticminor a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Airsyntheticminor a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "AIR SYNTHETIC MINOR"^^xsd:string ;
     dcterms:description "A FACILITY IS CLASSIFIED AS A CLEAN AIR ACT STATIONARY SOURCE SYNTHETIC MINOR DISCHARGER OF AIR POLLUTANTS IF:  (A) POTENTIAL EMISSIONS ARE BELOW ALL APPLICABLE MAJOR SOURCE THRESHOLDS IF AND ONLY IF THE SOURCE COMPLIES WITH FEDERALLY ENFORCEABLE REGULATIONS OR LIMITATIONS; OR (B) ACTUAL EMISSIONS < 100 TONS/YEAR, BUT POTENTIAL UNCONTROLLED EMISSIONS > 100 TONS/YEAR; OR (C) UNREGULATED POLLUTANT ACTUAL EMISSIONS < 100 TONS/YEAR."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Animalfeedingoperation a epa-frs:Animaloperations,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Animalfeedingoperation a epa-frs:AnimalOperation,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ANIMAL FEEDING OPERATION"^^xsd:string ;
     dcterms:description "ANIMAL FEEDING OPERATIONS (AFOS) ARE AGRICULTURAL OPERATIONS WHERE ANIMALS ARE KEPT AND RAISED IN CONFINED SITUATIONS. AFOS CONGREGATE ANIMALS, FEED, MANURE, DEAD ANIMALS, AND PRODUCTION OPERATIONS ON A SMALL LAND AREA. FEED IS BROUGHT TO THE ANIMALS RATHER THAN THE ANIMALS GRAZING OR OTHERWISE SEEKING FEED IN PASTURES. AN OPERATION IS AN AFO IF (1) ANIMALS ARE CONFINED FOR AT LEAST 45 DAYS IN A 12-MONTH PERIOD, AND (2) THERE'S NO GRASS OR OTHER VEGETATION IN THE CONFINEMENT AREA DURING THE NORMAL GROWING SEASON."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Aquiferprotectionprogram a epa-frs:EnvironmentalInterestType,
-        epa-frs:Groundwaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Aquiferprotectionprogram a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:GroundWaterProgram ;
     rdfs:label "AQUIFER PROTECTION PROGRAM"^^xsd:string ;
     dcterms:description "THE AQUIFER PROTECTION PROGRAM REQUIRES A WATER POLLUTION ABATEMENT PLAN (WPAP) FOR ANY REGULATED ACTIVITY PROPOSED ON DESIGNATED AQUIFER RECHARGE ZONES (I.E., THE TEXAS EDWARDS AQUIFER). THE PLAN INCLUDES ANY CONSTRUCTION-RELATED ACTIVITY ON THE RECHARGE ZONE, SUCH AS THE CONSTRUCTION OF BUILDINGS, UTILITY STATIONS, ROADS, HIGHWAYS, RAILROADS; CLEARING, EXCAVATION, OR ANY OTHER ACTIVITIES THAT ALTER OR DISTURB THE TOPOGRAPHIC, GEOLOGIC, OR EXISTING RECHARGE CHARACTERISTICS OF A SITE; OR ANY OTHER ACTIVITIES WHICH MAY POSE A POTENTIAL FOR CONTAMINATING THE AQUIFER AND HYDROLOGICALLY CONNECTED SURFACE STREAMS. "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Asbestosabatementprogram a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Asbestosabatementprogram a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ASBESTOS ABATEMENT PROGRAM"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM CONCERNED WITH ASBESTOS REMOVAL AND DISPOSAL."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.BRAC a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.BRAC a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "BRAC"^^xsd:string ;
     dcterms:description "BASE REALIGNMENT AND CLOSURE"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Biosolids a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Biosolids a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "BIOSOLIDS"^^xsd:string ;
     dcterms:description "BIOSOLIDS ARE A PRIMARILY ORGANIC, SEMISOLID PRODUCT RESULTING FROM THE WASTEWATER TREATMENT PROCESS AND CAN BE BENEFICIALLY RECYCLED. BECAUSE BIOSOLIDS CONTAIN ESSENTIAL PLANT NUTRIENTS AND ORGANIC MATTER, THEY CAN BE TREATED, PROCESSED AND USED AS A SOIL AMENDMENT AND NUTRIENT SOURCE TO IMPROVE AND MAINTAIN PRODUCTIVE SOILS AND STIMULATE PLANT GROWTH. HOWEVER, THE TREATMENT PROCESS MUST MEET ALL APPLICABLE REQUIREMENTS AND REGULATORY STANDARDS UNDER STATE AND FEDERAL LAW BEFORE THE BIOSOLIDS CAN BE APPLIED TO THE LAND. AT THE NATIONAL LEVEL, BIOSOLIDS FALL UNDER THE FEDERAL CLEAN WATER ACT (CWA); STATES MAY ISSUE PERMITS THAT IMPOSE ADDITIONAL OR MORE STRINGENT REQUIREMENTS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Brownfieldsproperty a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Brownfieldsproperty a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "BROWNFIELDS PROPERTY"^^xsd:string ;
     dcterms:description "A LOCATION IDENTIFIED BY A BROWNFIELDS PILOT/GRANT."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Brownfieldssite a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Brownfieldssite a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "BROWNFIELDS SITE"^^xsd:string ;
     dcterms:description "WITH CERTAIN LEGAL EXCLUSIONS AND ADDITIONS/ THE TERM 'BROWNFIELD SITE' MEANS REAL PROPERTY/ THE EXPANSION/ REDEVELOPMENT/ OR REUSE OF WHICH MAY BE COMPLICATED BY THE PRESENCE OR POTENTIAL PRESENCE OF A HAZARDOUS SUBSTANCE/ POLLUTANT"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.CESQG a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.CESQG a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "CESQG"^^xsd:string ;
     dcterms:description "HAZARDOUS WASTE CONDITIONALLY EXEMPT SMALL QUANTITY GENERATORS GENERATE:  A) 100 KILOGRAMS OR LESS OF HAZARDOUS WASTE PER CALENDAR MONTH, AND ACCUMULATE 1000 KG OR LESS OF HAZARDOUS WASTE AT ANY TIME; OR (B) ONE KILOGRAM OR LESS OF ACUTELY HAZARDOUS WASTE PER CALENDAR MONTH, AND ACCUMULATE AT ANY TIME: 1 KG OR LESS OF ACUTELY HAZARDOUS WASTE; OR 100 KG OR LESS OF ANY RESIDUE OR CONTAMINATED SOIL, WASTE OR OTHER DEBRIS RESULTING FROM THE CLEANUP OF A SPILL, INTO OR ON ANY LAND OR WATER, OF ACUTELY HAZARDOUS WASTE; OR (C) 100 KG OR LESS OF ANY RESIDUE OR CONTAMINATED SOIL, WASTE OR OTHER DEBRIS RESULTING FROM THE CLEANUP OF A SPILL, INTO OR ON ANY LAND OR WATER, OF ACUTELY HAZARDOUS WASTE DURING ANY CALENDAR MONTH, AND ACCUMULATE AT ANY TIME:  1 KG OR LESS OF ACUTELY HAZARDOUS WASTE; OR 100 KG OR LESS OF ANY RESIDUE OR CONTAMINATED SOIL, WASTE OR OTHER DEBRIS RESULTING FROM THE CLEANUP OF A SPILL, INTO OR ON ANY LAND OR WATER, OF ACUTELY HAZARDOUS WASTE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Cathoderaytubepermit a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprogram ;
+epa-frs-data:d.EnvironmentalInterestType.Cathoderaytubepermit a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "CATHODE RAY TUBE PERMIT"^^xsd:string ;
     dcterms:description "PERMIT FOR THE COLLECTION AND/OR RECYCLING OF DISCARDED CATHODE RAY TUBE (CRT) DEVICES AND THE DISASSEMBLY AND REMOVAL OF TOXIC PARTS IN A MANNER THAT IS SAFE FOR HUMAN HEALTH AND THE ENVIRONMENT. ELECTRONIC WASTE, ALSO KNOWN AS E-WASTE, REFERS TO ELECTRONIC EQUIPMENT THAT IS NO LONGER USABLE OR WANTED. IT ENCOMPASSES A BROAD AND GROWING RANGE OF ELECTRONIC DEVICES, INCLUDING COMPUTERS, TVS, CELLULAR PHONES AND PERSONAL STEREOS, DIGITAL CAMERAS, MP3 PLAYERS, DVD PLAYERS AND ELECTRONIC GAMES. DISCARDED ELECTRONICS CONTAIN HAZARDOUS MATERIALS. IF DISPOSED IMPROPERLY, THEY POSE A POTENTIAL THREAT TO HUMAN HEALTH AND THE ENVIRONMENT. THE ACIDIC CONDITIONS OF A LANDFILL PROVIDE AN ENVIRONMENT IN WHICH LEAD AND OTHER HEAVY METALS MAY LEAK OUT AND CONTAMINATE GROUNDWATER. E-WASTE ACCOUNTS FOR 40 PERCENT OF THE LEAD AND 75 PERCENT OF THE HEAVY METALS FOUND IN LANDFILLS. MUCH OF THE FOCUS ON MANAGING E-WASTE REVOLVES AROUND CRTS, OFTEN CALLED \"PICTURE TUBES,\" WHICH CONVERT AN ELECTRONIC SIGNAL INTO A VISUAL IMAGE. COMPUTER MONITORS, TELEVISIONS, SOME CAMCORDERS, AND OTHER ELECTRONIC DEVICES CONTAIN CRTS. A TYPICAL CRT CONTAINS BETWEEN TWO AND FIVE POUNDS OF LEAD"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Cleanwatershedsneedssurvey2008 a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Cleanwatershedsneedssurvey2008 a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "CLEAN WATERSHEDS NEEDS SURVEY 2008"^^xsd:string ;
     dcterms:description "THE FACILITY WAS INCLUDED IN THE 2008 CLEAN WATERSHEDS NEEDS SURVEY (CWNS), WHICH IS A COMPREHENSIVE ASSESSMENT OF THE CAPITAL NEEDS REQUIRED TO MEET WATER QUALITY GOALS SET IN THE CLEAN WATER ACT. EVERY FOUR YEARS, THE STATES AND EPA COLLECT INFORMATION ABOUT PUBLICLY OWNED WASTEWATER COLLECTION AND TREATMENT FACILITIES, STORMWATER AND COMBINED SEWER OVERFLOWS CONTROL FACILITIES, NONPOINT SOURCE (NPS) POLLUTION CONTROL PROJECTS, DECENTRALIZED WASTEWATER MANAGEMENT, AND ESTUARY MANAGEMENT PROJECTS. INFORMATION COLLECTED INCLUDES ESTIMATED NEEDS, INCLUDING COSTS AND TECHNICAL INFORMATION, TO ADDRESS WATER QUALITY OR WATER-RELATED PUBLIC HEALTH PROBLEMS, LOCATION AND CONTACT INFORMATION, POPULATIONS SERVED, FLOW, EFFLUENT, AND UNIT PROCESS INFORMATION, AND NPS BEST MANAGEMENT PRACTICES. THIS INFORMATION IS USED BY EPA TO DOCUMENT NATIONAL NEEDS IN A REPORT TO CONGRESS, WHICH ASSISTS IN BUDGETING EFFORTS. THE DATA ARE ALSO USED TO HELP MEASURE ENVIRONMENTAL PROGRESS, CONTRIBUTE TO ACADEMIC RESEARCH, PROVIDE INFORMATION TO THE PUBLIC, AND HELP LOCAL AND STATE GOVERNMENTS IMPLEMENT WATER QUALITY PROGRAMS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Closedcriminalenforcementcase a epa-frs:EnvironmentalInterestType,
-        epa-frs:Legal-Enforcementactivities ;
+epa-frs-data:d.EnvironmentalInterestType.Closedcriminalenforcementcase a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:LegalEnforcementActivities ;
     rdfs:label "CLOSED CRIMINAL ENFORCEMENT CASE"^^xsd:string ;
     dcterms:description "CLOSED CRIMINAL CASES THAT RESULTED FROM CRIMINAL INVESTIGATIONS OF ALLEGED VIOLATIONS OF ENVIRONMENTAL STATUES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Coastalerosion a epa-frs:Coastalandoceanprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Coastalerosion a epa-frs:CoastalOceanProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "COASTAL EROSION"^^xsd:string ;
     dcterms:description "STATE PROGRAMS TO PREVENT AND REDUCE COASTAL EROSION INCLUDING PRESERVING NATURAL PROTECTIVE FEATURES SUCH AS DUNES AND BLUFFS; RESTRICTING OR PROHIBITING ACTIVITIES, DEVELOPMENT OR ACTIONS IN NATURAL PROTECTIVE FEATURE AREAS TO PREVENT OR REDUCE EROSION; PLACING NEW CONSTRUCTION OR STRUCTURES A SAFE DISTANCE FROM AREAS OF ACTIVE EROSION AND IMPACTS OF COASTAL STORMS; REGULATING THE PLACEMENT AND CONSTRUCTION OF EROSION PROTECTION STRUCTURES; AND ESTABLISHING STANDARDS FOR THE ISSUANCE OF COASTAL EROSION MANAGEMENT PERMITS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Coastalzonemanagement-CZM a epa-frs:Coastalandoceanprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Coastalzonemanagement-CZM a epa-frs:CoastalOceanProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "COASTAL ZONE MANAGEMENT (CZM)"^^xsd:string ;
     dcterms:description "THE NATION-WIDE COASTAL ZONE MANAGEMENT (CZM) PROGRAM IS A VOLUNTARY STATE-FEDERAL PARTNERSHIP WHICH ENCOURAGES STATES TO ADOPT THEIR OWN MANAGEMENT PROGRAMS IN ORDER TO MEET THE FEDERAL GOALS OF PROTECTION, RESTORATION, AND APPROPRIATE DEVELOPMENT OF COASTAL ZONE RESOURCES. THE NATIONAL CZM PROGRAM IS BASED ON THE FEDERAL COASTAL ZONE MANAGEMENT ACT OF 1972, WHICH IS IMPLEMENTED BY THE NATIONAL OCEANIC AND ATMOSPHERIC ADMINISTRATION (NOAA) THROUGH THE OFFICE OF OCEAN AND COASTAL RESOURCE MANAGEMENT. COASTAL AREAS AND WETLANDS ARE ALSO PROTECTED BY SECTION 401 OF THE CLEAN WATER ACT, WHICH REQUIRES PERMITS FOR ACTIVITIES SUCH AS: DEVELOPMENT INVOLVING FILLING OF WETLANDS; DREDGING AND OTHER IN-WATER ACTIVITIES; BRIDGE CROSSINGS; CONSTRUCTION OF DRIVES AND PARKING LOTS; ETC."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Combinedseweroverflow a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Combinedseweroverflow a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "COMBINED SEWER OVERFLOW"^^xsd:string ;
     dcterms:description "EPA''S COMBINED SEWER OVERFLOW (CSO) CONTROL POLICY IS A NATIONAL FRAMEWORK FOR CONTROL OF CSOS THROUGH THE NATIONAL POLLUTANT DISCHARGE ELIMINATION SYSTEM (NPDES) PERMITTING PROGRAM. THE POLICY RESULTED FROM NEGOTIATIONS AMONG MUNICIPAL ORGANIZATIONS, ENVIRONMENTAL GROUPS, AND STATE AGENCIES. IT PROVIDES GUIDANCE TO MUNICIPALITIES AND STATE AND FEDERAL PERMITTING AUTHORITIES ON HOW TO MEET THE CLEAN WATER ACT''S POLLUTION CONTROL GOALS AS FLEXIBLY AND COST-EFFECTIVELY AS POSSIBLE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Communitywatersystem a epa-frs:Drinkingwaterprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Communitywatersystem a epa-frs:DrinkingWaterProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "COMMUNITY WATER SYSTEM"^^xsd:string ;
     dcterms:description "A PUBLIC WATER SYSTEM THAT PIPES WATER FOR HUMAN CONSUMPTION AT LEAST 15 SERVICE CONNECTIONS USED BY YEAR-ROUND RESIDENTS OR REGULARLY SERVES AT LEAST 25 YEAR-ROUND RESIDENTS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Complianceactivity a epa-frs:EnvironmentalInterestType,
-        epa-frs:Legal-Enforcementactivities ;
+epa-frs-data:d.EnvironmentalInterestType.Complianceactivity a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:LegalEnforcementActivities ;
     rdfs:label "COMPLIANCE ACTIVITY"^^xsd:string ;
     dcterms:description "A COMPLIANCE MONITORING OR ENFORCEMENT ACTIVITY, FROM THE TIME AN INSPECTOR CONDUCTS AN INSPECTION UNTIL THE TIME THE INSPECTOR CLOSES OR THE CASE SETTLES THE ENFORCEMENT ACTION."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Complianceandemissionsreporting a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Complianceandemissionsreporting a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "COMPLIANCE AND EMISSIONS REPORTING"^^xsd:string ;
     dcterms:description "EPA REGULATIONS CODIFIED IN 40 CFR PART 60 AND 63 REQUIRE AFFECTED SOURCES TO PERFORM EMISSIONS SOURCE TESTS, CONDUCT CONTINUOUS EMISSIONS MONITORING, AND SUBMIT COMPLIANCE AND EMISSIONS REPORTS. THESE REPORTS ARE ELECTRONICALLY SUBMITTED VIA THE COMPLIANCE AND EMISSIONS DATA REPORTING INTERFACE (CEDRI) WHICH IS LOCATED ON EPA'S CENTRAL DATA EXCHANGE (CDX)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Complianceassistance a epa-frs:Assistanceandsupportprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Complianceassistance a epa-frs:AssistanceSupportProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "COMPLIANCE ASSISTANCE"^^xsd:string ;
     dcterms:description "COMPLIANCE ASSISTANCE HELPS THE REGULATED COMMUNITY UNDERSTAND AND MEET THEIR ENVIRONMENTAL OBLIGATIONS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Concentratedanimalfeedingoperation a epa-frs:Animaloperations,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Concentratedanimalfeedingoperation a epa-frs:AnimalOperation,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "CONCENTRATED ANIMAL FEEDING OPERATION"^^xsd:string ;
     dcterms:description "CONCENTRATED ANIMAL FEEDING OPERATIONS (CAFOS) ARE ANIMAL FEEDING OPERATIONS (AFOS) THAT MEET CERTAIN EPA CRITERIA. PREVIOUS EPA REGULATIONS BASED THE DEFINITION OF CAFOS ON THE NUMBER OF \"ANIMAL UNITS\" CONFINED. EPA NO LONGER USES THE TERM \"ANIMAL UNIT,\" BUT INSTEAD REFERS TO THE ACTUAL NUMBER OF ANIMALS AT THE OPERATION. CAFOS MAKE UP APPROXIMATELY 15 PERCENT OF TOTAL AFOS. AN OPERATION IS A CAFO IF (1) IT MEETS THE DEFINITION OF AN AFO, AND (2) THE OPERATION MEETS ONE OF THE REGULATORY DEFINITIONS OF LARGE CAFOS, MEDIUM CAFO, AND SMALL CAFOS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Constructiondemolitionlandfill a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Constructiondemolitionlandfill a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "CONSTRUCTION & DEMOLITION LANDFILL"^^xsd:string ;
     dcterms:description "LANDFILL THAT IS PERMITTED TO ACCEPT CONSTRUCTION AND DEMOLITION WASTE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Correctiveaction a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Correctiveaction a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "CORRECTIVE ACTION"^^xsd:string ;
     dcterms:description "SITES SUBJECT TO ENFORCEABLE RCRA CORRECTIVE ACTION (CA) OBLIGATIONS. SITES INCLUDED ARE THOSE WITH ONGOING CA, AND ALSO THOSE WHERE CA IS STATUTORILY REQUIRED TO BE ADDRESSED (I.E., TSD FACILITIES), BUT HAS NOT YET BEEN IMPOSED."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Criteriaairpollutantmajor a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Criteriaairpollutantmajor a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "CRITERIA AIR POLLUTANT MAJOR"^^xsd:string ;
     dcterms:description "FACILITY IS MAJOR BASED UPON 40 CFR 70 MAJOR SOURCE DEFINITION PARAGRAPH 2 (100 TPY ANY CAP.  ALSO MEETS PARAGRAPH 3 DEFINITION, BUT NOT PARAGRAPH 1 DEFINITION)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Criteriaandhazardousairpollutantinventory a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Criteriaandhazardousairpollutantinventory a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "CRITERIA AND HAZARDOUS AIR POLLUTANT INVENTORY"^^xsd:string ;
     dcterms:description "A NATIONAL INVENTORY OF EMISSIONS DATA OF BOTH HAZARDOUS AIR POLLUTANTS (HAPS) AND CRITERIA AIR POLLUTANTS. CRITERIA AIR POLLUTANTS INCLUDE OZONE, CARBON MONOXIDE, NITROGEN OXIDES, SULFUR OXIDES, LEAD, AND FINE PARTICULATE MATTER AND HAPS, OR AIR TOXICS, ARE DEFINED IN SECTION 112(B) OF THE 1990 CLEAN AIR ACT AMENDMENTS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Damsite a epa-frs:EnvironmentalInterestType,
-        epa-frs:Waterresourcesprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Damsite a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WaterResourcesProgram ;
     rdfs:label "DAM SITE"^^xsd:string ;
     dcterms:description "UNDER STATE LAW, THE DEPARTMENT OF ECOLOGY IS RESPONSIBLE FOR REGULATING DAMS THAT CAPTURE AND STORE AT LEAST 10 ACRE-FEET OF WATER OR WATERY MATERIALS SUCH AS MINE TAILINGS, SEWAGE AND MANURE WASTE. ECOLOGYS DAM SAFETY OFFICE CURRENTLY OVERSEES ABOUT 870 DAMS ACROSS THE STATE THROUGH PLAN REVIEWS AND CONSTRUCTION INSPECTIONS OF NEW DAMS AS WELL AS CONDUCTING INSPECTIONS OF EXISTING DAMS TO ENSURE PROPER OPERATION AND MAINTENANCE"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Dischargepreventionprogram a epa-frs:Chemicalstorageprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Dischargepreventionprogram a epa-frs:ChemicalStorageProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "DISCHARGE PREVENTION PROGRAM"^^xsd:string ;
     dcterms:description "DISCHARGE PREVENTION, CONTAINMENT AND COUNTERMEASURES (DPCC) IS A STATE PROGRAM THAT  WORKS TO FORESTALL THE RELEASE OF HAZARDOUS SUBSTANCES AND PETROLEUM PRODUCTS TO THE ENVIRONMENT, THEREBY PROTECTING NATURAL RESOURCES AND PUBLIC HEALTH BEFORE PROBLEMS OCCUR. THE PROGRAM CENTERS ON SOUND MANAGEMENT PRACTICES THAT ARE CONSIDERED ESSENTIAL WHEN WORKING WITH HAZARDOUS SUBSTANCES.  THESE PRACTICES INCLUDE TRAINING EMPLOYEES WHO HANDLE SUCH MATERIALS, PERIODICALLY INSPECTING STORAGE TANKS, AND ASSURING THAT ADEQUATE SECONDARY CONTAINMENT IS IN PLACE, AS WELL AS DEVELOPING STANDARD OPERATING PROCEDURES FOR ROUTINE OPERATIONS AND MAINTENANCE. THE PROGRAM ALSO WORKS TO ENSURE THAT RESPONSE PLANS, TRAINED PERSONNEL AND EMERGENCY EQUIPMENT ARE AT HAND SHOULD AN INCIDENT OCCUR. ALL FACILITIES AND INDIVIDUALS IN THE STATE, EVEN HOMEOWNERS, ARE SUBJECT TO THE REPORTING REQUIREMENTS SHOULD A DISCHARGE OF A HAZARDOUS SUBSTANCE OCCUR. HOWEVER, THE MAJORITY OF THE REGULATORY REQUIREMENTS APPLY ONLY TO FACILITIES THAT STORE 20,000 GALLONS OR MORE OF STATE-REGULATED HAZARDOUS SUBSTANCES, EXCLUDING PETROLEUM PRODUCTS, OR 200,000 GALLONS OF REGULATED HAZARDOUS SUBSTANCES INCLUDING PETROLEUM PRODUCTS. "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Drinkingwaterprogram a epa-frs:Drinkingwaterprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Drinkingwaterprogram a epa-frs:DrinkingWaterProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "DRINKING WATER PROGRAM"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM THAT PROTECTS THE QUALITY OF DRINKING WATER IN THE UNITED STATES, AS REQUIRED BY THE SAFE DRINKING WATER ACT."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Drinkingwatersystem a epa-frs:Drinkingwaterprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Drinkingwatersystem a epa-frs:DrinkingWaterProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "DRINKING WATER SYSTEM"^^xsd:string ;
     dcterms:description "A PUBLIC DRINKING WATER SYSTEM HAS AT LEAST 15 SERVICE CONNECTIONS OR REGULARLY SERVES AN AVERAGE OR AT LEAST 25 INDIVIDUALS DAILY AT LEAST 60 DAYS OUT OF THE YEAR."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Drycleanerremediationprogram a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Drycleanerremediationprogram a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "DRY CLEANER REMEDIATION PROGRAM"^^xsd:string ;
     dcterms:description "THE DRY CLEANER REMEDIATION PROGRAM (DCRP) WAS ESTABLISHED AT THE STATE LEVEL TO CLEAN UP LEAD AT DRY CLEANER RELATED CONTAMINATED SITES. IT ALSO ESTABLISHED DRY CLEANER FACILITY REGISTRATION REQUIREMENTS, FEES, PERFORMANCE STANDARDS, DISTRIBUTOR REGISTRATION, AND REVENUE DISBURSEMENT."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.E-Waste a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.E-Waste a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "E-WASTE"^^xsd:string ;
     dcterms:description "FACILITIES THAT COLLECTS, BROKERS, STORES, RESELLS, DISMANTLES OR DEMANUFACTURES E-WASTE. "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.EPCRA a epa-frs:Chemicalstorageprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.EPCRA a epa-frs:ChemicalStorageProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "EPCRA"^^xsd:string ;
     dcterms:description "THE EMERGENCY PLANNING & COMMUNITY RIGHT-TO-KNOW ACT (EPCRA) IS INCLUDED AS TITLE III OF THE SUPERFUND AMENDMENTS AND REAUTHORIZATION ACT (SARA) OF 1986 AND IS SOMETIMES REFERRED TO AS SARA TITLE III.  THE EPCRA PROGRAM PROVIDES THE PUBLIC WITH KNOWLEDGE OF AND ACCESS TO INFORMATION REGARDING THE USE, STORAGE, PRODUCTION, AND RELEASE OF HAZARDOUS CHEMICALS TO THE ENVIRONMENT, AND ENCOURAGES AND SUPPORTS RESPONSE PLANNING FOR ENVIRONMENTAL EMERGENCIES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Electricgenerator a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Electricgenerator a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ELECTRIC GENERATOR"^^xsd:string ;
     dcterms:description "A FACILITY THAT PRODUCES ELECTRICITY, COMMONLY EXPRESSED IN KILOWATT-HOURS (KWH) OR MEGAWATT HOURS (MWH), INCLUDING ELECTRIC UTILITIES AND INDEPENDENT POWER PRODUCERS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Electricpowergeneration a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Electricpowergeneration a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ELECTRIC POWER GENERATION"^^xsd:string ;
     dcterms:description "AN ELECTRICITY GENERATING PLANT THAT PROVIDES POWER TO THE ELECTRIC GRID. "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Biomassbased a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Biomassbased a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ELECTRIC POWER GENERATOR (BIOMASS BASED)"^^xsd:string ;
     dcterms:description "AN ELECTRICITY GENERATING PLANT THAT PROVIDES POWER TO THE ELECTRIC GRID, USING BIOMASS AS THE PLANT¿S PRIMARY FUEL, BASED ON MAXIMUM HEAT INPUT. BIOMASS IS A FUEL DERIVED FROM ORGANIC MATTER SUCH AS WOOD AND PAPER PRODUCTS, AGRICULTURAL WASTE, OR METHANE (E.G., FROM LANDFILLS). "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Coalbased a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Coalbased a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ELECTRIC POWER GENERATOR (COAL BASED)"^^xsd:string ;
     dcterms:description "AN ELECTRICITY GENERATING PLANT THAT PROVIDES POWER TO THE ELECTRIC GRID, USING COAL AS THE PLANT¿S PRIMARY FUEL, BASED ON MAXIMUM HEAT INPUT."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Gasbased a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Gasbased a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ELECTRIC POWER GENERATOR (GAS BASED)"^^xsd:string ;
     dcterms:description "AN ELECTRICITY GENERATING PLANT THAT PROVIDES POWER TO THE ELECTRIC GRID, USING GAS THE PLANT¿S PRIMARY FUEL, BASED ON MAXIMUM HEAT INPUT."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Geothermalbased a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Geothermalbased a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ELECTRIC POWER GENERATOR (GEOTHERMAL BASED)"^^xsd:string ;
     dcterms:description "AN ELECTRICITY GENERATING PLANT THAT PROVIDES POWER TO THE ELECTRIC GRID, WITH THE MAXIMUM GENERATION BASED ON GEOTHERMAL POWER. "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Nuclearbased a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Nuclearbased a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ELECTRIC POWER GENERATOR (NUCLEAR BASED)"^^xsd:string ;
     dcterms:description "AN ELECTRICITY GENERATING PLANT THAT PROVIDES POWER TO THE ELECTRIC GRID, WITH THE MAXIMUM GENERATION BASED ON NUCLEAR POWER."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Oilbased a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Oilbased a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ELECTRIC POWER GENERATOR (OIL BASED)"^^xsd:string ;
     dcterms:description "AN ELECTRICITY GENERATING PLANT THAT PROVIDES POWER TO THE ELECTRIC GRID, USING OIL AS THE PLANT¿S PRIMARY FUEL, BASED ON MAXIMUM HEAT INPUT."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Otherfossilfuelbased a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Otherfossilfuelbased a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ELECTRIC POWER GENERATOR (OTHER FOSSIL FUEL BASED)"^^xsd:string ;
     dcterms:description "AN ELECTRICITY GENERATING PLANT THAT PROVIDES POWER TO THE ELECTRIC GRID, USING FOSSIL FUEL AS THE PLANT¿S PRIMARY FUEL, BASED ON MAXIMUM HEAT INPUT. FOSSIL FUEL IS ANY NATURALLY OCCURRING ORGANIC FUEL, SUCH AS PETROLEUM, COAL, AND NATURAL GAS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Solarbased a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Solarbased a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ELECTRIC POWER GENERATOR (SOLAR BASED)"^^xsd:string ;
     dcterms:description "AN ELECTRICITY GENERATING PLANT THAT PROVIDES POWER TO THE ELECTRIC GRID, WITH THE MAXIMUM GENERATION BASED ON SOLAR POWER."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Unknown-Othersource a epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Unknown-Othersource a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:EnvironmentalInterestType ;
     rdfs:label "ELECTRIC POWER GENERATOR (UNKNOWN/OTHER SOURCE)"^^xsd:string ;
     dcterms:description "None"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Unknownsource a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Unknownsource a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ELECTRIC POWER GENERATOR (UNKNOWN SOURCE)"^^xsd:string ;
     dcterms:description "AN ELECTRICITY GENERATING PLANT THAT PROVIDES POWER TO THE ELECTRIC GRID, WITH THE MAXIMUM GENERATION BASED ON AN UNKNOWN SOURCE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Waterbased a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Waterbased a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ELECTRIC POWER GENERATOR (WATER BASED)"^^xsd:string ;
     dcterms:description "AN ELECTRICITY GENERATING PLANT THAT PROVIDES POWER TO THE ELECTRIC GRID, WITH THE MAXIMUM GENERATION BASED ON WATER POWER."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Windbased a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Electricpowergenerator-Windbased a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ELECTRIC POWER GENERATOR (WIND BASED)"^^xsd:string ;
     dcterms:description "AN ELECTRICITY GENERATING PLANT THAT PROVIDES POWER TO THE ELECTRIC GRID, WITH THE MAXIMUM GENERATION BASED ON WIND POWER."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Enforcement-Complianceactivity a epa-frs:EnvironmentalInterestType,
-        epa-frs:Legal-Enforcementactivities ;
+epa-frs-data:d.EnvironmentalInterestType.Enforcement-Complianceactivity a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:LegalEnforcementActivities ;
     rdfs:label "ENFORCEMENT/COMPLIANCE ACTIVITY"^^xsd:string ;
     dcterms:description "ENFORCEMENT/COMPLIANCE ACTIVITY"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Environmentalassistance a epa-frs:Assistanceandsupportprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Environmentalassistance a epa-frs:AssistanceSupportProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ENVIRONMENTAL ASSISTANCE"^^xsd:string ;
     dcterms:description "ASSISTANCE AND OUTREACH ACTIVITIES RELATED TO ENVIRONMENTAL ISSUES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Environmentalcleanupstudyarea a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Environmentalcleanupstudyarea a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "ENVIRONMENTAL CLEANUP STUDY AREA"^^xsd:string ;
     dcterms:description "A GROUP OF INDIVIDUAL SITES THAT MAY BE CONTRIBUTING TO A LARGER, AREA-WIDE PROBLEM, WHICH IS STUDIED TO DETERMINE POTENTIAL SOURCES OF CONTAMINATION."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Erosioncontrol a epa-frs:EnvironmentalInterestType,
-        epa-frs:Waterresourcesprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Erosioncontrol a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WaterResourcesProgram ;
     rdfs:label "EROSION CONTROL"^^xsd:string ;
     dcterms:description "A STATE REGULATORY PROGRAM ENACTED TO REDUCE THE ADVERSE EFFECTS OF STORMWATER RUNOFF AND SEDIMENT.  UNDER THIS PROGRAM, NO PERSON, UNLESS EXEMPTED, MAY ENGAGE IN A LAND DISTURBING ACTIVITY WITHOUT FIRST SUBMITTING A STORMWATER MANAGEMENT AND SEDIMENT CONTROL PLAN TO THE APPROPRIATE IMPLEMENTING AGENCY AND OBTAINING A PERMIT.  A LAND DISTURBING ACTIVITY IS DEFINED AS ANY USE OF THE LAND THAT RESULTS IN A CHANGE IN THE NATURAL COVER OR TOPOGRAPHY THAT MAY CAUSE EROSION AND CONTRIBUTE TO SEDIMENTATION AND ALTER THE QUALITY AND QUANTITY OF STORMWATER RUNOFF."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Ethanolfacility a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Ethanolfacility a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ETHANOL FACILITY"^^xsd:string ;
     dcterms:description "AN ETHANOL PRODUCER REGISTERED WITH THE RENEWABLE FUEL STANDARD (RFS) PROGRAM, INCLUDING REFINERS, IMPORTERS, AND BLENDERS. THE ENERGY POLICY ACT OF 2005 AMENDED THE CLEAN AIR ACT TO ESTABLISH THE RFS PROGRAM, WHICH IS DESIGNED TO ENCOURAGE BLENDING RENEWABLE FUELS INTO OUR NATION'S MOTOR VEHICLE FUEL. A RENEWABLE FUEL IS DEFINED IN THE ENERGY POLICY ACT AS A MOTOR VEHICLE FUEL THAT IS PRODUCED FROM PLANT OR ANIMAL PRODUCTS OR WASTES AND INCLUDES ETHANOL, BIODIESEL, AND OTHER MOTOR VEHICLE FUELS MADE FROM RENEWABLE SOURCES. "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Ethanolfacility-Gasolineanddieselproducers a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Ethanolfacility-Gasolineanddieselproducers a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "ETHANOL FACILITY/GASOLINE AND DIESEL PRODUCERS"^^xsd:string ;
     dcterms:description "EPA REGULATIONS REQUIRE THAT EACH MANUFACTURER OR IMPORTER OF GASOLINE DIESEL FUEL OR A FUEL ADDITIVE HAVE ITS PRODUCT REGISTERED PRIOR TO ITS INTRODUCTION INTO COMMERCE AND IN SOME CASES TESTED FOR POSSIBLE HEALTH EFFECTS. EPA ESTABLISHES FUEL QUALITY STANDARDS TO HELP PROTECT PUBLIC HEALTH AND THE ENVIRONMENT FROM HARMFUL GAS AND PARTICULATE MATTER EMISSIONS FROM MOTOR VEHICLES AND ENGINES IN ACCORDANCE WITH THE FEDERAL CLEAN AIR ACT (CAA). OVER THE YEARS THESE REGULATIONS HAVE INCLUDED THE REQUIREMENT FOR GASOLINE TO CONTAIN A CERTIFIED DETERGENT TO REDUCE EMISSIONS THE REMOVAL OF LEAD IN MOTOR VEHICLE GASOLINE VOLATILITY STANDARDS THE REFORMULATED GASOLINE (RFG) PROGRAM TO REDUCE EMISSIONS OF SMOG-FORMING AND TOXIC POLLUTANTS AND STANDARDS FOR TOXICS AND FOR LOW SULFUR GASOLINE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.FRP a epa-frs:Chemicalstorageprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.FRP a epa-frs:ChemicalStorageProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "FRP"^^xsd:string ;
     dcterms:description "THE OIL POLLUTION ACT AMENDED THE CLEAN WATER ACT TO REQUIRE A ¿SUBSTANTIAL HARM¿ FACILITY TO DEVELOP AND IMPLEMENT A FACILITY RESPONSE PLAN (FRP). A ¿SUBSTANTIAL HARM¿ FACILITY IS A FACILITY THAT, BECAUSE OF ITS LOCATION, COULD REASONABLY BE EXPECTED TO CAUSE SUBSTANTIAL HARM TO THE ENVIRONMENT BY DISCHARGING OIL INTO OR ON NAVIGABLE WATERS OR ADJOINING SHORELINES. A FRP DEMONSTRATES A FACILITY'S PREPAREDNESS TO RESPOND TO A WORST CASE OIL DISCHARGE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Facility a epa-frs:EnvironmentalInterestType,
-        epa-frs:Facility-Siteidentification ;
+epa-frs-data:d.EnvironmentalInterestType.Facility a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:FacilitySiteIdentification ;
     rdfs:label "FACILITY"^^xsd:string ;
     dcterms:description "A FEDERAL REGISTRY SYSTEM THAT MAINTAINS BASIC IDENTIFICATION INFORMATION FOR A FACILITY SITE, INCLUDING THE FACILITY REGISTRY IDENTIFIER, GEOGRAPHIC ADDRESS, AFFILIATED ORGANIZATIONS AND CONTACTS, INDUSTRIAL CLASSIFICATIONS, AND LINKAGES TO ENVIRONMENTAL PERMITS AND PROGRAMS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Federalfacilityhazardouswastedocket a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Federalfacilityhazardouswastedocket a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "FEDERAL FACILITY HAZARDOUS WASTE DOCKET"^^xsd:string ;
     dcterms:description "THE FACILITY IS ON THE FEDERAL FACILITY HAZARDOUS WASTE COMPLIANCE DOCKET, WHICH IS A LISTING OF FEDERAL FACILITIES THAT ARE MANAGING OR HAVE MANAGED HAZARDOUS WASTE; OR HAVE HAD A RELEASE OF HAZARDOUS WASTE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Floodplainmanagement a epa-frs:EnvironmentalInterestType,
-        epa-frs:Waterresourcesprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Floodplainmanagement a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WaterResourcesProgram ;
     rdfs:label "FLOODPLAIN MANAGEMENT"^^xsd:string ;
     dcterms:description "FLOODPLAIN MANAGEMENT IS THE CORRECTIVE AND PREVENTATIVE MEASURES FOR REDUCING FLOOD DAMAGE. THESE MEASURES ARE ADOPTED BY STATE AND LOCAL GOVERNMENTS SO THAT THE CITIZENS IN THE COMMUNITY WILL BE ELIGIBLE TO PURCHASE FLOOD INSURANCE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Formalenforcementaction a epa-frs:EnvironmentalInterestType,
-        epa-frs:Legal-Enforcementactivities ;
+epa-frs-data:d.EnvironmentalInterestType.Formalenforcementaction a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:LegalEnforcementActivities ;
     rdfs:label "FORMAL ENFORCEMENT ACTION"^^xsd:string ;
     dcterms:description "A CIVIL JUDICIAL OR ADMINISTRATIVE ENFORCEMENT CASE UNDER AN ENVIRONMENTAL STATUTE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Formerlyuseddefensesite a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Formerlyuseddefensesite a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "FORMERLY USED DEFENSE SITE"^^xsd:string ;
     dcterms:description "THE DEPARTMENT OF DEFENSE (DOD) IS RESPONSIBLE FOR CLEANING UP PROPERTIES THAT WERE FORMERLY OWNED, LEASED POSSESSED, OR OPERATED BY DOD. THESE PROPERTIES ARE KNOWN AS FORMERLY USED DEFENSE SITES (FUDS). THE ARMY IS THE EXECUTIVE AGENT FOR THE PROGRAM AND THE U.S. ARMY CORPS OF ENGINEERS IS THE ORGANIZATION THAT MANAGES AND EXECUTES THE PROGRAM. INFORMATION ABOUT THE ORIGIN AND EXTENT OF CONTAMINATION, LAND TRANSFER ISSUES, PAST AND PRESENT PROPERTY OWNERSHIP, AND PROGRAM POLICIES MUST BE EVALUATED BEFORE DOD CONSIDERS A PROPERTY ELIGIBLE FOR DEFENSE ENVIRONMENT RESTORATION ACCOUNT (DERA) FUNDING UNDER THE FUDS PROGRAM.  "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Gasolineanddieselproducers a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Gasolineanddieselproducers a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "GASOLINE AND DIESEL PRODUCERS"^^xsd:string ;
     dcterms:description "EPA REGULATIONS REQUIRE THAT EACH MANUFACTURER OR IMPORTER OF GASOLINE DIESEL FUEL OR A FUEL ADDITIVE HAVE ITS PRODUCT REGISTERED PRIOR TO ITS INTRODUCTION INTO COMMERCE AND IN SOME CASES TESTED FOR POSSIBLE HEALTH EFFECTS. EPA ESTABLISHES FUEL QUALITY STANDARDS TO HELP PROTECT PUBLIC HEALTH AND THE ENVIRONMENT FROM HARMFUL GAS AND PARTICULATE MATTER EMISSIONS FROM MOTOR VEHICLES AND ENGINES IN ACCORDANCE WITH THE FEDERAL CLEAN AIR ACT (CAA). OVER THE YEARS THESE REGULATIONS HAVE INCLUDED THE REQUIREMENT FOR GASOLINE TO CONTAIN A CERTIFIED DETERGENT TO REDUCE EMISSIONS THE REMOVAL OF LEAD IN MOTOR VEHICLE GASOLINE VOLATILITY STANDARDS THE REFORMULATED GASOLINE (RFG) PROGRAM TO REDUCE EMISSIONS OF SMOG-FORMING AND TOXIC POLLUTANTS AND STANDARDS FOR TOXICS AND FOR LOW SULFUR GASOLINE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Grantsandplanning a epa-frs:Assistanceandsupportprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Grantsandplanning a epa-frs:AssistanceSupportProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "GRANTS AND PLANNING"^^xsd:string ;
     dcterms:description "GRANTS FOR ENVIRONMENTAL PROGRAMS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Greenhousegasreporter a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Greenhousegasreporter a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "GREENHOUSE GAS REPORTER"^^xsd:string ;
     dcterms:description "GREENHOUSE GAS REPORTERS ARE REQUIRED TO ANNUALLY REPORT GREENHOUSE GASES (GHGS) FROM LARGE GHG EMISSION SOURCES IN THE UNITED STATES. IMPLEMENTATION OF 40 CFR PART 98 IS REFERRED TO AS THE GREENHOUSE GAS REPORTING PROGRAM (GHGRP) AND APPLIES TO DIRECT GHG EMITTERS, FOSSIL FUEL SUPPLIERS, INDUSTRIAL GAS SUPPLIERS, AND FACILITIES THAT INJECT CO2 UNDERGROUND FOR SEQUESTRATION OR OTHER REASONS. IN GENERAL, THE THRESHOLD FOR REPORTING IS 25,000 METRIC TONS OR MORE OF CARBON DIOXIDE (CO2) EQUIVALENT PER YEAR. REPORTING IS AT THE FACILITY LEVEL, EXCEPT FOR CERTAIN SUPPLIERS OF FOSSIL FUELS AND INDUSTRIAL GREENHOUSE GASES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Groundwaterprogram a epa-frs:EnvironmentalInterestType,
-        epa-frs:Groundwaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Groundwaterprogram a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:GroundWaterProgram ;
     rdfs:label "GROUND WATER PROGRAM"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM/PERMIT DESIGNED TO PROTECT GROUND WATER.  A GROUND WATER DISCHARGE PERMIT CONTAINS THE LIMITATIONS AND REQUIREMENTS DEEMED NECESSARY TO PROTECT PUBLIC HEALTH AND MINIMIZE GROUND WATER POLLUTION.  GROUND WATER PERMITS MAY APPLY TO VARIOUS ACTIVITIES, SUCH AS:(A) THE DISPOSAL OF TREATED MUNICIPAL OR INDUSTRIAL WASTEWATER INTO GROUNDWATER VIA SPRAY IRRIGATION OR OTHER LAND-TREATMENT APPLICATIONS. (B) THE DISCHARGE OF POLLUTANTS GENERATED AS A RESULT OF RAIN WATER OR GROUND WATER PASSING THROUGH THE RUBBLE WASTE IN AN UNLINED DISPOSAL CELL AND SEEPING INTO GROUND WATER BENEATH THE LANDFILL. (C) THE DISPOSAL OF TREATED INDUSTRIAL WASTEWATER FROM OIL TERMINALS INTO GROUND WATER VIA INFILTRATION/PERCOLATION OR OTHER LAND-TREATMENT APPLICATIONS. (D) THE REMEDIATION OF GROUNDWATER FROM PETROLEUM CONTAMINATED GROUNDWATER SOURCES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Groundwateruse a epa-frs:EnvironmentalInterestType,
-        epa-frs:Groundwaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Groundwateruse a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:GroundWaterProgram ;
     rdfs:label "GROUNDWATER USE"^^xsd:string ;
     dcterms:description "A STATE ENVIRONMENTAL PERMIT FOR GROUNDWATER WITHDRAWALS OR PROPOSED GROUNDWATER WITHDRAWALS IN EXCESS OF THREE (3) MILLION GALLONS IN ANY MONTH WITHIN DESIGNATED CAPACITY USE AREAS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Hapareasource a epa-frs:Electronicpermitsystem,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Hapareasource a epa-frs:ElectronicPermitSystem,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "HAP AREA SOURCE"^^xsd:string ;
     dcterms:description "EPS"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Hapmajorsource a epa-frs:Electronicpermitsystem,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Hapmajorsource a epa-frs:ElectronicPermitSystem,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "HAP MAJOR SOURCE"^^xsd:string ;
     dcterms:description "EPS"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Hazardousairpollutantmajor a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Hazardousairpollutantmajor a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "HAZARDOUS AIR POLLUTANT MAJOR"^^xsd:string ;
     dcterms:description "FACILITY IS MAJOR BASED UPON ONLY 40 CFR 70 MAJOR SOURCE DEFINITION PARAGRAPH 1 (10/25 TPY HAPS)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Hazardousandcriteriaairpollutantmajor a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Hazardousandcriteriaairpollutantmajor a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "HAZARDOUS AND CRITERIA AIR POLLUTANT MAJOR"^^xsd:string ;
     dcterms:description "FACILITY MEETS BOTH PARAGRAPH 1 AND 2 OF 40 CFR 70 MAJOR SOURCE DEFINITIONS (10/25 TPY HAPS AND 100 TPY ANY CAP)"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Hazardousando3N-Aairmajor a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Hazardousando3N-Aairmajor a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "HAZARDOUS AND O3 N/A AIR MAJOR"^^xsd:string ;
     dcterms:description "FACILITY MEETS BOTH PARAGRAPH 1 AND 3 OF 40 CFR 70 MAJOR SOURCE DEFINITIONS (10/25 TPY HAPS AND OZONE N/A AREA LESSER TONS FOR NOX OR VOC)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Hazardoussolidcdwastelandfill a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Hazardoussolidcdwastelandfill a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "HAZARDOUS, SOLID & C&D WASTE LANDFILL"^^xsd:string ;
     dcterms:description "LANDFILL THAT IS PERMITTED TO ACCEPT ALL THREE TYPES OF WASTE: HAZARDOUS, SOLID & C&D WASTE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Hazardouswastebiennialreporter a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Hazardouswastebiennialreporter a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "HAZARDOUS WASTE BIENNIAL REPORTER"^^xsd:string ;
     dcterms:description "UNDER THE AUTHORITY OF SECTIONS 3002 AND 3004 OF THE RESOURCE CONSERVATION AND RECOVERY ACT OF 1976 (RCRA), AS AMENDED BY THE HAZARDOUS AND SOLID WASTE AMENDMENTS OF 1984 (HSWA), HAZARDOUS WASTE GENERATORS AND TREATMENT, STORAGE, AND DISPOSAL FACILITIES ARE REQUIRED TO REPORT TO THE EPA OR THE AUTHORIZED STATES, AT LEAST EVERY TWO YEARS, THE QUANTITIES, NATURE, AND DISPOSITION OF HAZARDOUS WASTE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Hazardouswastelandfill a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Hazardouswastelandfill a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "HAZARDOUS WASTE LANDFILL"^^xsd:string ;
     dcterms:description "LANDFILL THAT IS PERMITTED TO ACCEPT HAZARDOUS WASTE (RCRA SUBTITLE C)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Hazardouswasteprogram a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Hazardouswasteprogram a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "HAZARDOUS WASTE PROGRAM"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM THAT REGULATES HAZARDOUS WASTE, INCLUDING THE GENERATION, TRANSPORTATION, TREATMENT, STORAGE, AND DISPOSAL OF HAZARDOUS WASTE, AS REQUIRED BY THE RESOURCE CONSERVATION AND RECOVERY ACT (RCRA)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Historicpreservation a epa-frs:Ecologyoperations,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Historicpreservation a epa-frs:EcologyOperation,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "HISTORIC PRESERVATION"^^xsd:string ;
     dcterms:description "PROGRAMS THAT SUPPORT IDENTIFYING, PRESERVING, PROTECTING AND SUSTAINING HISTORIC AND ARCHAEOLOGICAL RESOURCES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesmajor a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesmajor a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "ICIS-NPDES MAJOR"^^xsd:string ;
     dcterms:description "FOR PUBLICLY OWNED TREATMENT WORKS (POTWS), MAJOR DISCHARGERS INCLUDE ALL FACILITIES WITH DESIGN FLOWS EQUAL TO OR GREATER THAN ONE MILLION GALLONS PER DAY, OR SERVE A POPULATION OF 10,000 OR MORE, OR CAUSE SIGNIFICANT WATER QUALITY IMPACTS. NON-POTW DISCHARGES ARE CLASSIFIED AS MAJOR FACILITIES ON THE BASIS OF THE NUMBER OF POINTS ACCUMULATED USING A RATING WORKSHEET, WHICH EVALUATES THE SIGNIFICANCE OF A FACILITY USING SEVERAL CRITERIA, INCLUDING TOXIC POLLUTANT POTENTIAL, FLOW VOLUME, AND WATER QUALITY FACTORS SUCH AS IMPAIRMENT OF THE RECEIVING WATER OR PROXIMITY OF THE DISCHARGE TO COASTAL WATERS. "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesminor a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesminor a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "ICIS-NPDES MINOR"^^xsd:string ;
     dcterms:description "A CLEAN WATER ACT (CWA) NATIONAL POLLUTANT DISCHARGE ELIMINATION SYSTEM (NPDES) MINOR DISCHARGER OF POLLUTANTS WITH A ¿PENDING¿ PERMIT."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesnon-Major a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesnon-Major a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "ICIS-NPDES NON-MAJOR"^^xsd:string ;
     dcterms:description "A CLEAN WATER ACT (CWA) NATIONAL POLLUTANT DISCHARGE ELIMINATION SYSTEM (NPDES) DISCHARGER OF POLLUTANTS INTO WATERS OF THE UNITED STATES THAT IS NOT DESIGNATED AS A MAJOR IS CONSIDERED A NON-MAJOR.  "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesunpermitted a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesunpermitted a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "ICIS-NPDES UNPERMITTED"^^xsd:string ;
     dcterms:description "A FACILITY THAT IS UNPERMITTED, BUT DISCHARGING POLLUTANTS INTO WATERS OF THE UNITED STATES AND REGULATED UNDER THE CLEAN WATER ACT (CWA) NATIONAL POLLUTANT DISCHARGE ELIMINATION SYSTEM (NPDES). "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Ihwcorrectiveaction a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Ihwcorrectiveaction a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "IHW CORRECTIVE ACTION"^^xsd:string ;
     dcterms:description "SITES SUBJECT TO ENFORCEABLE RCRA CORRECTIVE ACTION (CA) OBLIGATIONS. SITES INCLUDED ARE THOSE WITH ONGOING CA, AND ALSO THOSE WHERE CA IS STATUTORILY REQUIRED TO BE ADDRESSED (I.E., TSD FACILITIES), BUT HAS NOT YET BEEN IMPOSED."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Incinerator a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Incinerator a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "INCINERATOR"^^xsd:string ;
     dcterms:description "A FURNACE FOR BURNING WASTE UNDER CONTROLLED CONDITIONS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Independentcleanup a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Independentcleanup a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "INDEPENDENT CLEANUP"^^xsd:string ;
     dcterms:description "ANY REMEDIAL ACTION WITHOUT DEPARTMENT OVERSIGHT OR APPROVAL AND NOT UNDER AN ORDER OR DECREE. "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Industrialsites a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Industrialsites a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "INDUSTRIAL SITES"^^xsd:string ;
     dcterms:description "STATE ENVIRONMENTAL PROGRAMS RESPONSIBLE FOR PERMITTING, SITE INSPECTIONS, AND COMPLIANCE ISSUES THAT FOCUS ON THE COMPLEXITIES OF INDUSTRIAL SITES, WHICH COVER MULTI-MEDIA INTERESTS REGULATING AIR, WATER, HAZARDOUS WASTE, AND CLEANUP MANAGEMENT ACTIVITIES. INDUSTRIAL SITES INCLUDE ALUMINUM SMELTERS, OIL REFINERIES AND PULP AND PAPER MILLS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Infectiouswaste a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Infectiouswaste a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "INFECTIOUS WASTE"^^xsd:string ;
     dcterms:description "A COMPREHENSIVE STATE PROGRAM THAT MONITORS COMPLIANCE WITH INFECTIOUS WASTE MANAGEMENT REGULATIONS.  THE PROGRAM IS ACTIVELY INVOLVED IN THE REGISTRATION OF GENERATORS AND TRANSPORTERS OF INFECTIOUS WASTE.  INFECTIOUS WASTE GENERATORS ARE RESPONSIBLE FOR THE STORAGE, COLLECTION AND DISPOSAL OF THEIR INFECTIOUS WASTE, AND FOR ENSURING THAT THE WASTE IS TRANSPORTED OFF SITE FOR TREATMENT BY A REGISTERED TRANSPORTER AND DISPOSED OF AT A SITE OR FACILITY WHICH HAS ALL APPLICABLE PERMITS REQUIRED TO RECEIVE WASTE.  INFECTIOUS WASTE INCLUDES ANY WASTE ITEM FROM RESEARCH OR THE HEALTH CARE COMMUNITY IN THESE CATEGORIES:  SHARPS, MICROBIOLOGICALS, BLOOD AND BLOOD PRODUCTS, PATHOLOGICAL WASTE, ISOLATION WASTE AND CONTAMINATED ANIMAL WASTE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Innocentowner-Operatorprogram a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Innocentowner-Operatorprogram a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "INNOCENT OWNER/OPERATOR PROGRAM"^^xsd:string ;
     dcterms:description "THE INNOCENT OWNER/OPERATOR PROGRAM (IOP) IS A STATE PROGRAM WHICH PROVIDES A CERTIFICATE TO AN INNOCENT OWNER OR OPERATOR IF THEIR PROPERTY IS CONTAMINATED AS A RESULT OF A RELEASE OR MIGRATION OF CONTAMINANTS FROM A SOURCE OR SOURCES NOT LOCATED ON THE PROPERTY, AND THEY DID NOT CAUSE OR CONTRIBUTE TO THE SOURCE OR SOURCES OF CONTAMINATION. SIMILAR TO A VOLUNTARY CLEANUP PROGRAM, THE IOP CAN BE USED AS A REDEVELOPMENT TOOL OR AS A TOOL TO ADD VALUE TO A CONTAMINATED PROPERTY."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.LQG a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.LQG a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "LQG"^^xsd:string ;
     dcterms:description "HAZARDOUS WASTE LARGE QUANTITY GENERATORS GENERATE:  (A) 1,000 KG OR MORE OF HAZARDOUS WASTE DURING ANY CALENDAR MONTH; OR (B) MORE THAN 1 KG OF ACUTELY HAZARDOUS WASTE DURING ANY CALENDAR MONTH; OR (C) MORE THAN 100 KG OF ANY RESIDUE OR CONTAMINATED SOIL, WASTE OR OTHER DEBRIS RESULTING FROM THE CLEANUP OF A SPILL, INTO OR ON ANY LAND OR WATER, OF ACUTELY HAZARDOUS WASTE DURING ANY CALENDAR MONTH; OR (D) 1 KG OR LESS OF ACUTELY HAZARDOUS WASTE DURING ANY CALENDAR MONTH, AND ACCUMULATE MORE THAN 1 KG OF ACUTELY HAZARDOUS WASTE AT ANY TIME; OR (E) 100 KG OR LESS OF ANY RESIDUE OR CONTAMINATED SOIL, WASTE OR OTHER DEBRIS RESULTING FROM THE CLEANUP OF A SPILL, INTO OR ON ANY LAND OR WATER, OF ACUTELY HAZARDOUS WASTE DURING ANY CALENDAR MONTH, AND ACCUMULATED MORE THAN 100 KG OF THAT MATERIAL AT ANY TIME."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Laboratory a epa-frs:Assistanceandsupportprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Laboratory a epa-frs:AssistanceSupportProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "LABORATORY"^^xsd:string ;
     dcterms:description "A CERTIFICATION OFFERED TO LABORATORIES WISHING TO ANALYZE ENVIRONMENTAL SAMPLES.  THE SCOPE OF ACCREDITATION MAY COVER THE SAFE DRINKING WATER ACT, CLEAN WATER ACT, AND SOLID AND HAZARDOUS WASTES INCLUDING RCRA AND CERCLA REQUIREMENTS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Laboratorycertification a epa-frs:Assistanceandsupportprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Laboratorycertification a epa-frs:AssistanceSupportProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "LABORATORY CERTIFICATION"^^xsd:string ;
     dcterms:description "A CERTIFICATION OFFERED TO LABORATORIES WISHING TO ANALYZE ENVIRONMENTAL SAMPLES.  THE SCOPE OF ACCREDITATION MAY COVER THE SAFE DRINKING WATER ACT, CLEAN WATER ACT, AND SOLID AND HAZARDOUS WASTES INCLUDING RCRA AND CERCLA REQUIREMENTS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Landfillgas-Lfgrecovery a epa-frs:Airprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Landfillgas-Lfgrecovery a epa-frs:AirProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "LANDFILL GAS (LFG) RECOVERY"^^xsd:string ;
     dcterms:description "BECAUSE MUNICIPAL SOLID WASTE (MSW) LANDFILLS ARE THE THIRD-LARGEST SOURCE OF METHANE EMISSIONS IN THE UNITED STATES GENERATED BY HUMAN ACTIVITY AND BECAUSE THESE METHANE EMISSIONS REPRESENT A LOST OPPORTUNITY TO CAPTURE AND USE A SIGNIFICANT ENERGY RESOURCE, EPA LAUNCHED THE LANDFILL METHANE OUTREACH PROGRAM (LMOP) TO ENCOURAGE PRODUCTIVE REUSE. CREATIVE USE OF LANDFILL GAS (LFG) INCLUDES HEATING GREENHOUSES, PRODUCING ELECTRICITY AND HEAT IN COGENERATION APPLICATIONS, FIRING BRICK KILNS, SUPPLYING HIGH–BTU PIPELINE–QUALITY GAS, FUELING GARBAGE TRUCKS, AND PROVIDING FUEL TO CHEMICAL AND AUTOMOBILE MANUFACTURING. PROJECTS RANGE FROM SMALL–SCALE COMMUNITY–DRIVEN INITIATIVES TO MULTI–MILLION–DOLLAR PRIVATE INVESTMENTS. FOR MORE DETAILS ON SPECIFIC PROJECTS, SEE THE LMOP WEBSITE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Leakingstoragetank a epa-frs:EnvironmentalInterestType,
-        epa-frs:Undergroundstoragetankprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Leakingstoragetank a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:UndergroundStorageTankProgram ;
     rdfs:label "LEAKING STORAGE TANK"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM THAT ADDRESSES LEAKING STORAGE TANKS OF PETROLEUM SUBSTANCES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Leakingundergroundstoragetank-Arra a epa-frs:EnvironmentalInterestType,
-        epa-frs:Undergroundstoragetankprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Leakingundergroundstoragetank-Arra a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:UndergroundStorageTankProgram ;
     rdfs:label "LEAKING UNDERGROUND STORAGE TANK - ARRA"^^xsd:string ;
     dcterms:description "LEAKING UNDERGROUND STORAGE TANK RELEASES THAT ARE BEING TRACKED BY THE PERFORMANCE MEASURES ASSOCIATED WITH THE AMERICAN RECOVERY AND REINVESTMENT ACT (ARRA) OR FOR WHICH ARRA FUNDS ARE BEING SPENT"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Legalservices a epa-frs:EnvironmentalInterestType,
-        epa-frs:Legal-Enforcementactivities ;
+epa-frs-data:d.EnvironmentalInterestType.Legalservices a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:LegalEnforcementActivities ;
     rdfs:label "LEGAL SERVICES"^^xsd:string ;
     dcterms:description "LEGAL SERVICES IN SUPPORT OF AN ENVIRONMENTAL PROGRAM. "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Livestockwastecontrol a epa-frs:Animaloperations,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Livestockwastecontrol a epa-frs:AnimalOperation,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "LIVESTOCK WASTE CONTROL"^^xsd:string ;
     dcterms:description "A COMBINATION OF BMPS DESIGNED TO ADDRESS WATER QUALITY OR PUBLIC HEALTH PROBLEMS CAUSED BY AGRICULTURAL ACTIVITIES RELATED TO GRAZING AND ANIMAL PRODUCTION SUCH AS ANIMAL FEEDING OPERATIONS THAT ARE NOT SUBJECT TO THE CONCENTRATED ANIMAL FEEDING OPERATION (CAFO) REGULATIONS. ANIMAL WASTE INCLUDES THE FECAL AND URINARY WASTES OF LIVESTOCK AND POULTRY; PROCESS WATER (SUCH AS THAT FROM A MILKING PARLOR); AND THE FEED, BEDDING, LITTER, AND SOIL WITH WHICH THEY BECOME INTERMIXED. POLLUTANTS SUCH AS ORGANIC SOLIDS, SALTS, BACTERIA, VIRUSES, AND OTHER MICROORGANISMS, AND SEDIMENTS MIGHT BE CONTAINED IN ANIMAL WASTE TRANSPORTED BY RUNOFF WATER AND PROCESS WASTEWATER."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Lowlevelradioactivewaste a epa-frs:EnvironmentalInterestType,
-        epa-frs:Radiationprotectionprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Lowlevelradioactivewaste a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RadiationProtectionProgram ;
     rdfs:label "LOW LEVEL RADIOACTIVE WASTE"^^xsd:string ;
     dcterms:description "A FACILITY THAT ACCEPTS LOW-LEVEL RADIOACTIVE WASTE FOR DISPOSAL."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Materialrecycling a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Materialrecycling a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "MATERIAL RECYCLING"^^xsd:string ;
     dcterms:description "A FACILITY THAT RECOVERS MATERIALS FOR RECYCLING OR OTHER USE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Minegeneralpermit a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Minegeneralpermit a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "MINE GENERAL PERMIT"^^xsd:string ;
     dcterms:description "A GENERAL MINE OPERATING PERMIT ISSUED FOR A SITE FIVE ACRES OR LESS AND LIMITED TO THE REMOVAL OF SAND/CLAY OR TOPSOIL."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Mineoperatingpermit a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Mineoperatingpermit a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "MINE OPERATING PERMIT"^^xsd:string ;
     dcterms:description "AN INDIVIDUAL MINE OPERATING PERMIT USED FOR OPERATIONS OF ANY SIZE OR MINERAL RESOURCE.  MINING IS DEFINED AS THE REMOVAL OF ORES FROM THE GROUND FOR SALE (I.E. GRANITE QUARRIES) OR FOR USE IN A BUSINESS (I.E. BRICK MANUFACTURING)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Mineralexploration a epa-frs:EnvironmentalInterestType,
-        epa-frs:Groundwaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Mineralexploration a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:GroundWaterProgram ;
     rdfs:label "MINERAL EXPLORATION"^^xsd:string ;
     dcterms:description "PERMITS TO CONDUCT DRILLING, DRIVING, BORING OR DIGGING OF ANY MINERAL EXPLORATION HOLE(S)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Miningprogram a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Miningprogram a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "MINING PROGRAM"^^xsd:string ;
     dcterms:description "A PROGRAM THAT REGULATES THE MINING OF ORE, ROCK, OR OTHER SUBSTANCES AND ENSURES THE RECLAMATION OF LAND AFFECTED BY SURFACE AND UNDERGROUND MINING ACTIVITY AND REGULATION OF THE DEVELOPMENT OF THE MINES IN ORDER TO MAINTAIN THE INTEGRITY OF THE STATE¿S NATURAL RESOURCES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Multi-Permittedsite a epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Multi-Permittedsite a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:EnvironmentalInterestType ;
     rdfs:label "MULTI-PERMITTED SITE"^^xsd:string ;
     dcterms:description "A SITE THAT HAS BEEN ISSUED PERMITS BY MORE THAN ONE STATE ENVIRONMENTAL PROGRAM."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Navigablewaters a epa-frs:EnvironmentalInterestType,
-        epa-frs:Waterresourcesprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Navigablewaters a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WaterResourcesProgram ;
     rdfs:label "NAVIGABLE WATERS"^^xsd:string ;
     dcterms:description "A STATE PERMIT, ACONSTRUCTION IN NAVIGABLE WATERS@, MUST BE OBTAINED BEFORE COMMENCING ANY ACTIVITY, SUCH AS CONSTRUCTION, DREDGING, FILLING OR OTHER ALTERATIONS, BELOW THE MEAN HIGH WATER LINE (TIDAL WATERS) OR THE ORDINARY HIGH WATER MARK (NON-TIDAL WATERS) WITHIN A NAVIGABLE WATERWAY."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Non-Communitywatersystem a epa-frs:Drinkingwaterprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Non-Communitywatersystem a epa-frs:DrinkingWaterProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "NON-COMMUNITY WATER SYSTEM"^^xsd:string ;
     dcterms:description "A PUBLIC WATER SYSTEM THAT PIPES WATER FOR HUMAN CONSUMPTION TO AT LEAST 15 SERVICE CONNECTIONS USED BY INDIVIDUALS OTHER THAN YEAR-ROUND RESIDENTS OR AT LEAST 60 DAYS A YEAR, OR THAT SERVE 25 OR MORE PEOPLE AT LEAST 60 DAYS A YEAR (E.G., SCHOOLS, FACTORIES, REST AREAS)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Non-Titlevsource a epa-frs:Electronicpermitsystem,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Non-Titlevsource a epa-frs:ElectronicPermitSystem,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "NON-TITLE V SOURCE"^^xsd:string ;
     dcterms:description "EPS"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Notinauniverse a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Notinauniverse a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "NOT IN A UNIVERSE"^^xsd:string ;
     dcterms:description "THE HANDLER IS NOT CURRENTLY IN ANY HAZARDOUS WASTE UNIVERSE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Npdesgeneralpermit a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Npdesgeneralpermit a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "NPDES GENERAL PERMIT"^^xsd:string ;
     dcterms:description "A NPDES GENERAL PERMIT COVERS MULTIPLE FACILITIES WITHIN A SPECIFIC CATEGORY AND WITHIN A SPECIFIC GEOGRAPHICAL OR GEOPOLITICAL AREA SUCH AS A CITY, COUNTY, DESIGNATED PLANNING AREA, SEWER DISTRICT, STATE HIGHWAY SYSTEM, STANDARD METROPOLITAN STATISTICAL AREA, OR URBANIZED AREA.  GENERAL PERMITS MAY BE WRITTEN TO COVER CATEGORIES OF POINT SOURCES HAVING COMMON ELEMENTS, SUCH AS STORM WATER POINT SOURCES, FACILITIES THAT DISCHARGE THE SAME TYPES OF WASTES OR ENGAGE IN THE SAME TYPES OF SLUDGE USE OR DISPOSAL PRACTICES, FACILITIES THAT INVOLVE THE SAME OR SUBSTANTIALLY SIMILAR TYPES OF OPERATIONS, FACILITIES THAT REQUIRE THE SAME EFFLUENT LIMITS, OPERATING CONDITIONS, OR STANDARDS FOR SEWAGE SLUDGE USE OR DISPOSAL, AND FACILITIES THAT REQUIRE THE SAME OR SIMILAR MONITORING."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Npdesmajor a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Npdesmajor a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "NPDES MAJOR"^^xsd:string ;
     dcterms:description "A CLEAN WATER ACT (CWA) NATIONAL POLLUTANT DISCHARGE ELIMINATION SYSTEM (NPDES) MAJOR DISCHARGER OF POLLUTANTS INTO WATERS OF THE UNITED STATES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Npdesnoexposurecertification a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Npdesnoexposurecertification a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "NPDES NO EXPOSURE CERTIFICATION"^^xsd:string ;
     dcterms:description "PROVIDES LIGHT INDUSTRIAL FACILITIES CONDITIONAL EXCLUSIONS FROM OBTAINING STORM WATER PERMITS BASED ON NO EXPOSURE OF INDUSTRIAL ACTIVITIES TO STORM WATER.  NO EXPOSURE MEANS ALL INDUSTRIAL MATERIALS AND ACTIVITIES ARE PROTECTED BY A STORM RESISTANT SHELTER TO PREVENT EXPOSURE TO RAIN, SNOW, SNOWMELT AND/OR RUNOFF."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Npdesnon-Major a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Npdesnon-Major a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "NPDES NON-MAJOR"^^xsd:string ;
     dcterms:description "A CLEAN WATER ACT (CWA) NATIONAL POLLUTANT DISCHARGE ELIMINATION SYSTEM (NPDES) NON-MAJOR DISCHARGER OF POLLUTANTS INTO WATERS OF THE UNITED STATES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Npdespermit a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Npdespermit a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "NPDES PERMIT"^^xsd:string ;
     dcterms:description "A CLEAN WATER ACT (CWA) NATIONAL POLLUTANT DISCHARGE ELIMINATION SYSTEM (NPDES) PERMIT, WHICH ESTABLISHES POLLUTION LIMITS, AND SPECIFIES MONITORING AND REPORTING REQUIREMENTS FOR DISCHARGERS OF POLLUTANTS INTO WATERS OF THE UNITED STATES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Npdespretreatmentprogram a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Npdespretreatmentprogram a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "NPDES PRETREATMENT PROGRAM"^^xsd:string ;
     dcterms:description "THE PRETREATMENT PROGRAM, A COMPONENT OF THE CLEAN WATER ACT (CWA) NATIONAL POLLUTANT DISCHARGE ELIMINATION SYSTEM (NPDES), REQUIRES INDUSTRIAL AND COMMERCIAL DISCHARGERS TO TREAT OR CONTROL POLLUTANTS IN THEIR WASTEWATER PRIOR TO DISCHARGE TO PUBLICLY OWNED TREATMENT WORKS (POTWS)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Npdesstormwaterpermit a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Npdesstormwaterpermit a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "NPDES STORMWATER PERMIT"^^xsd:string ;
     dcterms:description "THE STORM WATER PROGRAM, A COMPONENT OF THE CLEAN WATER ACT (CWA) NATIONAL POLLUTANT DISCHARGE ELIMINATION SYSTEM (NPDES), REQUIRES NPDES PERMITS FOR STORM WATER DISCHARGES FROM MUNICIPAL SEPARATE STORM SEWER SYSTEMS (MS4S), INDUSTRIES, AND CONSTRUCTIONS SITES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Npdesunpermitted a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Npdesunpermitted a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "NPDES UNPERMITTED"^^xsd:string ;
     dcterms:description "A FACILITY THAT IS UNPERMITTED, BUT DISCHARGING POLLUTANTS INTO WATERS OF THE UNITED STATES AND REGULATED UNDER THE CLEAN WATER ACT (CWA) NATIONAL POLLUTANT DISCHARGE ELIMINATION SYSTEM (NPDES). "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Nsrmajorsource a epa-frs:Electronicpermitsystem,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Nsrmajorsource a epa-frs:ElectronicPermitSystem,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "NSR MAJOR SOURCE"^^xsd:string ;
     dcterms:description "EPS"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Nsrsyntheticminorsource a epa-frs:Electronicpermitsystem,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Nsrsyntheticminorsource a epa-frs:ElectronicPermitSystem,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "NSR SYNTHETIC MINOR SOURCE"^^xsd:string ;
     dcterms:description "EPS"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Nsrtrueminorsource a epa-frs:Electronicpermitsystem,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Nsrtrueminorsource a epa-frs:ElectronicPermitSystem,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "NSR TRUE MINOR SOURCE"^^xsd:string ;
     dcterms:description "EPS"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Oilandgas a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Oilandgas a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "OIL AND GAS"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM THAT ADDRESSES GAS AND OIL DRILLING MUDS, OIL PRODUCTION BRINES, AND OTHER WASTE ASSOCIATED WITH EXPLORATION FOR, DEVELOPMENT AND PRODUCTION OF CRUDE OIL OR NATURAL GAS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Oilcontrol a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Oilcontrol a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "OIL CONTROL"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM/PERMIT WHICH REGULATES THE STORAGE AND TRANSPORTATION OF OIL AND THE STORAGE AND TREATMENT OF OIL CONTAMINATED SOIL.  "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Onsitewastewatertreatment a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Onsitewastewatertreatment a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "ONSITE WASTEWATER TREATMENT"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM CONCERNED WITH THE DESIGN, OPERATION, AND MAINTENANCE OF SEPTIC TANK SYSTEMS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Operatorcertification a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Operatorcertification a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "OPERATOR CERTIFICATION"^^xsd:string ;
     dcterms:description "REGULATIONS RELATED TO THE CERTIFICATION OF WASTEWATER TREATMENT FACILITY OPERATORS. "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Oshaestablishment a epa-frs:EnvironmentalInterestType,
-        epa-frs:Healthandsafetyprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Oshaestablishment a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HealthSafetyProgram ;
     rdfs:label "OSHA ESTABLISHMENT"^^xsd:string ;
     dcterms:description "THE ESTABLISHMENT HAS UNDERGONE AN INSPECTION BY A COMPLIANCE SAFETY AND HEALTH OFFICER WHOSE GOAL IS TO ASSURE COMPLIANCE WITH OCCUPATIONAL SAFETY AND HEALTH ADMINISTRATION (OSHA) REQUIREMENTS AND HELP EMPLOYERS AND WORKERS REDUCE ON-THE-JOB HAZARDS AND PREVENT INJURIES, ILLNESSES AND DEATHS IN THE WORKPLACE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Otherhazardouswasteactivities a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Otherhazardouswasteactivities a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "OTHER HAZARDOUS WASTE ACTIVITIES"^^xsd:string ;
     dcterms:description "THE HANDLER IS IN A HAZARDOUS WASTE UNIVERSE OTHER THAN TSD, GENERATOR (LQG, SQG, CESQG), TRANSPORTER, OR TRANSFER FACILITY. OTHER HAZARDOUS WASTE ACTIVITIES INCLUDE IMPORTERS OF HAZARDOUS WASTE, MIXED HAZARDOUS/ RADIOACTIVE WASTE GENERATORS, SMALL QUANTITY ON-SITE BURNER EXEMPTION SITES, SMELTING, MELTING, AND REFINING FURNACE EXEMPTION SITES, SHORT-TERM GENERATORS, UNDERGROUND INJECTION CONTROL SITES, OFF-SITE RECEIVER OF HAZARDOUS WASTE, RECYCLER, OR UNIVERSAL WASTE HANDLER."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Parksandforestry a epa-frs:Ecologyoperations,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Parksandforestry a epa-frs:EcologyOperation,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "PARKS AND FORESTRY"^^xsd:string ;
     dcterms:description "PROGRAMS THAT MONITOR INDIVIDUALS LICENSED IN THE FIELDS OF PARKS AND FORESTRY"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Pesticideproducer a epa-frs:EnvironmentalInterestType,
-        epa-frs:Pesticidesprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Pesticideproducer a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:PesticidesProgram ;
     rdfs:label "PESTICIDE PRODUCER"^^xsd:string ;
     dcterms:description "AN ESTABLISHMENT THAT PRODUCES PESTICIDES, ACTIVE INGREDIENTS OR DEVICES, INCLUDING IMPORTERS, MUST REGISTER AND FILE PRODUCTION REPORTS WITH EPA, AS REQUIRED UNDER SECTION 7 OF THE FEDERAL INSECTICIDE, FUNGICIDE, AND RODENTICIDE ACT (FIFRA)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Pesticides-Application a epa-frs:EnvironmentalInterestType,
-        epa-frs:Pesticidesprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Pesticides-Application a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:PesticidesProgram ;
     rdfs:label "PESTICIDES - APPLICATION"^^xsd:string ;
     dcterms:description "ANY PERSON OR ENTITY WHO APPLIES PESTICIDES FOR ANY PURPOSE. ANY PERSON WHO USES, OR SUPERVISES THE USE, OF PESTICIDES ON A \"FOR HIRE\" BASIS*, NO MATTER WHAT FOR. ALSO, ANY PERSON WHO APPLIES PESTICIDES AS PART OF HIS JOB WITH ANY GOVERNMENTAL AGENCY. EXAMPLES OF COMMERCIAL APPLICATORS ARE THOSE WHO WORK FOR EXTERMINATORS; LANDSCAPERS; TREE SERVICES; AERIAL APPLICATORS; WEED CONTROL FIRMS; PET GROOMERS, APARTMENTS, MOTELS, NURSING HOMES, RESTAURANTS, ETC. WHO DO THEIR OWN PEST CONTROL WORK; AND GOVERNMENTAL AGENCIES SUCH AS MOSQUITO EXTERMINATION COMMISSIONS, PUBLIC SCHOOLS, DEPARTMENTS OF PUBLIC WORKS, DEPARTMENTS OF HEALTH, THE DOT, ETC."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Pesticides-Distribution a epa-frs:EnvironmentalInterestType,
-        epa-frs:Pesticidesprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Pesticides-Distribution a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:PesticidesProgram ;
     rdfs:label "PESTICIDES - DISTRIBUTION"^^xsd:string ;
     dcterms:description "A PESTICIDE DEALER BUSINESS IS DEFINED AS ANY PERSON OR ORGANIZATION WHICH ULTIMATELY CONTROLS THE TRANSACTIONS CONDUCTED AT, AND THE OPERATIONS OF, APESTICIDE DEALER OUTLET."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Pesticides-General a epa-frs:EnvironmentalInterestType,
-        epa-frs:Pesticidesprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Pesticides-General a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:PesticidesProgram ;
     rdfs:label "PESTICIDES - GENERAL"^^xsd:string ;
     dcterms:description "A PROGRAM THAT MONITORS AN ASPECT OF PESITICIDES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Pesticides-Manufacture a epa-frs:EnvironmentalInterestType,
-        epa-frs:Pesticidesprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Pesticides-Manufacture a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:PesticidesProgram ;
     rdfs:label "PESTICIDES - MANUFACTURE"^^xsd:string ;
     dcterms:description "A PESTICIDE PRODUCER IS A BUSINESS THAT CREATES OR PROCESSES PESTICIDES TO BE SOLD TO PESTICIDE APPLICATION ENTITIES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Phaseiims4 a epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Phaseiims4 a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:EnvironmentalInterestType ;
     rdfs:label "PHASE II MS4"^^xsd:string ;
     dcterms:description "A COMBINATION OF UNIT PROCESSES OR BMPS DESIGNED TO COLLECT, TREAT, AND TRANSPORT STORMWATER FOR ENTITIES REGULATED UNDER THE NPDES PHASE II PERMIT PROCESS. PHASE II PERMITS WERE REQUIRED FOR SMALL MS4S (POPULATION 99,999 OR LESS) LOCATED IN \"URBANIZED AREAS\" (UAS) AS DEFINED BY THE BUREAU OF THE CENSUS, AND THOSE SMALL MS4S LOCATED OUTSIDE OF A UA THAT ARE DESIGNATED BY NPDES PERMITTING AUTHORITIES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Postclosurecaresite a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Postclosurecaresite a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "POST CLOSURE CARE SITE"^^xsd:string ;
     dcterms:description "THE TIME PERIOD FOLLOWING THE SHUTDOWN OF A WASTE MANAGEMENT OR MANUFACTURING FACILITY; FOR MONITORING PURPOSES, OFTEN CONSIDERED TO BE 30 YEARS."^^xsd:string .
 
 epa-frs-data:d.EnvironmentalInterestType.Potw a epa-frs:EnvironmentalInterestType ;
     rdfs:label "Publicly Owned Treatment Works"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Radioactivematerials a epa-frs:EnvironmentalInterestType,
-        epa-frs:Radiationprotectionprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Radioactivematerials a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RadiationProtectionProgram ;
     rdfs:label "RADIOACTIVE MATERIALS"^^xsd:string ;
     dcterms:description "A STATE DELEGATED PROGRAM, IN PARTNERSHIP WITH THE U.S. NUCLEAR REGULATORY COMMISSION, RESPONSIBLE FOR LICENSING AND INSPECTING FACILITIES THAT POSSESS AND USE RADIOACTIVE MATERIAL, FROM MEDICAL INSTITUTIONS WHERE HEALTH PROFESSIONS USE RADIOACTIVE MATERIALS FOR BOTH DIAGNOSTIC AND THERAPEUTIC PURPOSES TO INDUSTRIAL GAUGES WHERE USES RANGE FROM PRODUCT STERILIZATION TO THE LEVEL AND DENSITY MEASUREMENTS OF VARIOUS CONSTRUCTION MATERIALS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Radioactivewaste a epa-frs:EnvironmentalInterestType,
-        epa-frs:Radiationprotectionprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Radioactivewaste a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RadiationProtectionProgram ;
     rdfs:label "RADIOACTIVE WASTE"^^xsd:string ;
     dcterms:description "A STATE DELEGATED RADIOACTIVE WASTE MANAGEMENT PROGRAM.  STATES RECEIVE DELEGATED RESPONSIBILITIES FROM THE U.S. NUCLEAR REGULATORY COMMISSION FOR THE REGULATORY OVERSIGHT AND LICENSING OF THE PROCESSING, TRANSPORTATION, MANAGEMENT, AND DISPOSAL OF LOW LEVEL RADIOACTIVE WASTE AND RADIOACTIVE MATERIAL PRODUCTION; THE INSPECTION OF HIGH LEVEL, TRANSURANIC, AND SPENT FUEL SHIPMENTS; RELATED ENFORCEMENT ACTIVITIES; AND RADIOLOGICAL TECHNICAL ASSISTANCE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Radneshaps a epa-frs:EnvironmentalInterestType,
-        epa-frs:Radiationprotectionprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Radneshaps a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RadiationProtectionProgram ;
     rdfs:label "RAD NESHAPS"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM, THE NATIONAL EMISSIONS STANDARDS FOR HAZARDOUS AIR POLLUTANTS (NESHAPS) THAT INCLUDES STANDARDS FOR LIMITING THE RADIONUCLIDE EMISSIONS TO AIR. THESE STANDARDS ARE PUBLISHED IN THE CODE OF FEDERAL REGULATIONS (CFR) AT 40 CFR PART 61. STANDARDS FOR SPECIFIC SOURCES OF RADIONUCLIDE EMISSIONS ARE CONTAINED IN THE FOLLOWING SUBPARTS OF PART 61:  SUBPART B UNDERGROUND URANIUM MINES; SUBPART H DEPARTMENT OF ENERGY FACILITIES; SUBPART I CERTAIN NON-DOE FEDERAL FACILITIES; SUBPART K ELEMENTAL PHOSPHATE PLANTS; SUBPART Q DOE FACILITIES RADON EMISSIONS; SUBPART R RADON FROM PHOSPHOGYPSUM STACKS; SUBPART T NON-OPERATIONAL URANIUM MILL TAILING PILES; SUBPART W OPERATING URANIUM MILL TAILING PILES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Radnpl a epa-frs:EnvironmentalInterestType,
-        epa-frs:Radiationprotectionprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Radnpl a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RadiationProtectionProgram ;
     rdfs:label "RAD NPL"^^xsd:string ;
     dcterms:description "A CERCLA NATIONAL PRIORITY LIST (NPL) SITE WITH RADIOACTIVE CONTAMINATION.  THE REGULATIONS ARE PUBLISHED IN THE CODE OF FEDERAL REGULATIONS (CFR) AT 40 CFR PART 300. "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Radwipp a epa-frs:EnvironmentalInterestType,
-        epa-frs:Radiationprotectionprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Radwipp a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RadiationProtectionProgram ;
     rdfs:label "RAD WIPP"^^xsd:string ;
     dcterms:description "AN EPA PROGRAM THAT OVERSEES THE U.S. DEPARTMENT OF ENERGY¿S (DOE) ACTIVITIES AT THE WASTE ISOLATION PILOT PLANT (WIPP). THE REGULATIONS FOR RADIOACTIVE WASTE DISPOSAL ARE PUBLISHED IN THE CODE OF FEDERAL REGULATIONS (CFR) AT 40 CFR PART 191. THE CRITERIA DEVELOPED BY THE EPA THAT DESCRIBE THE INFORMATION DOE MUST SUBMIT IN A CERTIFICATION APPLICATION ARE PUBLISHED AT 40 CFR 194. "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Refusedisposal a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Refusedisposal a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "REFUSE DISPOSAL"^^xsd:string ;
     dcterms:description "A PERMIT/PROGRAM TO ENSURE THE PROPER DISPOSAL OF SOLID WASTE IN AN ENVIRONMENTALLY ACCEPTABLE MANNER WHILE PROTECTING PUBLIC HEALTH AND THE ENVIRONMENT. REFUSE DISPOSAL SYSTEMS INCLUDE:MUNICIPAL LANDFILLS, LAND CLEARING LANDFILLS, INDUSTRIAL LANDFILLS, RUBBLE LANDFILLS, MUNICIPAL AND SPECIAL MEDICAL WASTES INCINERATORS, WASTE TRANSFER STATIONS, AND WASTE PROCESSING FACILITIES.  "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Releaseassessment a epa-frs:Chemicalreleaseprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Releaseassessment a epa-frs:ChemicalReleaseProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "RELEASE ASSESSMENT"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM THAT RECEIVES NOTIFICATION OF SPILLS, LEAKS, AND OTHER ENVIRONMENTAL EMERGENCIES, AND PROVIDES TECHNICAL ASSISTANCE AND REGULATORY OVERSIGHT TO THOSE THAT POSE AN IMMEDIATE HAZARD TO EITHER THE ENVIRONMENT OR PUBLIC HEALTH."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Remedialactionplanmonitoring a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Remedialactionplanmonitoring a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "REMEDIAL ACTION PLAN MONITORING"^^xsd:string ;
     dcterms:description "THE REMEDIAL ACTION PLAN MONITORING ACT (RAPMA) PROVIDES BUSINESSES (I.E., PROPERTY OWNERS OR OTHER PARTIES RESPONSIBLE FOR CONTAMINATION) WITH A MECHANISM FOR DEVELOPING VOLUNTARY ENVIRONMENTAL CLEANUP PLANS WHICH ARE REVIEWED/APPROVED BY THE STATE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Remediationandredevelopmentprograms-Superfundnpl a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Remediationandredevelopmentprograms-Superfundnpl a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "REMEDIATION AND REDEVELOPMENT PROGRAMS: SUPERFUND NPL"^^xsd:string ;
     dcterms:description "A SUPERFUND SITE WHICH IS LISTED, PROPOSED, OR PREVIOUSLY LISTED ON THE NATIONAL PRIORITIES LIST (NPL).  THE NPL LISTS NATIONAL PRIORITIES AMONG THE KNOWN RELEASES OR THREATENED RELEASES OF HAZARDOUS SUBSTANCES, POLLUTANTS, OR CONTAMINANTS THROUGHOUT THE UNITED STATES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Remediationfundingsource a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Remediationfundingsource a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "REMEDIATION FUNDING SOURCE"^^xsd:string ;
     dcterms:description "REGULATIONS WHICH REQUIRE THE ESTABLISHMENT OF A REMEDIATION FUNDING SOURCE (RFS) BY CERTAIN OBLIGATED PARTIES REMEDIATING SITES UNDER A STATE SITE REMEDIATION PROGRAM TO ENSURE THE AVAILABILITY OF FUNDS AND TO ENSURE PUBLIC FUNDS ARE NOT SPENT IN REMEDIATING THESE SITES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Residualwaste a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Residualwaste a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "RESIDUAL WASTE"^^xsd:string ;
     dcterms:description "THE AMOUNT OF A POLLUTANT REMAINING IN THE ENVIRONMENT AFTER A NATURAL OR TECHNOLOGICAL PROCESS HAS TAKEN PLACE (E.G., THE SLUDGE REMAINING AFTER INITIAL WASTEWATER TREATMENT)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Rmpreporter a epa-frs:Chemicalstorageprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Rmpreporter a epa-frs:ChemicalStorageProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "RMP REPORTER"^^xsd:string ;
     dcterms:description "UNDER SECTION 112(R) OF THE CLEAN AIR ACT, A FACILITY THAT USES CERTAIN FLAMMABLE AND TOXIC SUBSTANCES MUST DEVELOP A RISK MANAGEMENT PLAN, WHICH INCLUDES INFORMATION ABOUT THE RISK MANAGEMENT PROGRAMS THAT MUST BE IMPLEMENTED TO PREVENT AND PREPARE FOR CHEMICAL ACCIDENTS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.SPCC a epa-frs:Chemicalstorageprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.SPCC a epa-frs:ChemicalStorageProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "SPCC"^^xsd:string ;
     dcterms:description "ORIGINALLY PUBLISHED IN 1973 UNDER THE AUTHORITY OF THE CLEAN WATER ACT, THE OIL POLLUTION PREVENTION REGULATION SETS FORTH REQUIREMENTS FOR PREVENTION OF, PREPAREDNESS FOR, AND RESPONSE TO OIL DISCHARGES AT SPECIFIC NON-TRANSPORTATION-RELATED FACILITIES. TO PREVENT OIL FROM REACHING NAVIGABLE WATERS AND ADJOINING SHORELINES, AND TO CONTAIN DISCHARGES OF OIL, THE REGULATION REQUIRES THESE FACILITIES TO DEVELOP AND IMPLEMENT SPILL PREVENTION, CONTROL, AND COUNTERMEASURE (SPCC) PLANS AND ESTABLISHES PROCEDURES, METHODS, AND EQUIPMENT REQUIREMENTS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.SQG a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.SQG a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "SQG"^^xsd:string ;
     dcterms:description "HAZARDOUS WASTE SMALL QUANTITY GENERATORS GENERATE:  (A)  MORE THAN 100 AND LESS THAN 1000 KILOGRAMS OF HAZARDOUS WASTE DURING ANY CALENDAR MONTH AND ACCUMULATE LESS THAN 6000 KG OF HAZARDOUS WASTE AT ANY TIME; OR (B)  100 KG OR LESS OF HAZARDOUS WASTE DURING ANY CALENDAR MONTH, AND ACCUMULATE MORE THAN 1000 KG OF HAZARDOUS WASTE AT ANY TIME."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.SW a epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.SW a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:EnvironmentalInterestType ;
     rdfs:label "SW"^^xsd:string ;
     dcterms:description "None"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Sanitarylandfills a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Sanitarylandfills a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "SANITARY LANDFILLS"^^xsd:string ;
     dcterms:description "A COMBINATION OF BEST MANAGEMENT PRACTICES (BMPS) DESIGNED TO ADDRESS WATER QUALITY OR PUBLIC HEALTH PROBLEMS AT SANITARY LANDFILLS. SANITARY LANDFILLS ARE LANDFILLS DESIGNED AS DISPOSAL SITES FOR NONHAZARDOUS SOLID WASTES RATHER THAN HAZARDOUS SOLID WASTE OR BIOSOLIDS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Scraptiremanagement a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Scraptiremanagement a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "SCRAP TIRE MANAGEMENT"^^xsd:string ;
     dcterms:description "A SCRAP TIRE MANAGEMENT PROGRAM RELATED TO THE TRANSPORTATION, COLLECTION, PROCESSING, RECYCLING, DISPOSAL, INCINERATION OR UTILIZATION OF SCRAP TIRES AS TIRE DERIVED FUEL (TDF).  LICENSES OR APPROVALS MAY BE REQUIRED FOR:(A) SCRAP TIRE HAULERS -  COMMERCIAL BUSINESSES WHICH TRANSPORT SCRAP TIRES. (B) SCRAP TIRE COLLECTION FACILITIES - FACILITIES WHICH COLLECT OR ACCUMULATE SCRAP TIRES TEMPORARILY AND TRANSFER THE TIRES TO OTHER LICENSED OR APPROVED SCRAP TIRE FACILITIES. (C) SCRAP TIRE RECYCLERS -  FACILITIES THAT RECYCLE OR PROCESS SCRAP TIRES INTO RAW MATERIALS OR MARKETABLE PRODUCTS. (D) TIRE DERIVED FUEL OR SUBSTITUTE FUEL FACILITIES - FACILITIES WHICH UTILIZE SCRAP TIRES (WHOLE OR CHIPPED) AS A FUEL OR SUPPLEMENTAL FUEL. (E) SOLID WASTE ACCEPTANCE FACILITIES - PERMITTED SOLID WASTE ACCEPTANCE FACILITIES THAT ACCEPT, STORE, USE IN A PROCESS, OR TRANSFER SCRAP TIRES TO OTHER LICENSED APPROVED TIRE FACILITIES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Section404Permitting a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Section404Permitting a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "SECTION 404 PERMITTING"^^xsd:string ;
     dcterms:description "SECTION 404 OF THE CLEAN WATER ACT (CWA) ESTABLISHES A PROGRAM TO REGULATE THE DISCHARGE OF DREDGED OR FILL MATERIAL INTO WATERS OF THE UNITED STATES, INCLUDING WETLANDS. ACTIVITIES IN WATERS OF THE UNITED STATES REGULATED UNDER THIS PROGRAM INCLUDE FILL FOR DEVELOPMENT, WATER RESOURCE PROJECTS (SUCH AS DAMS AND LEVEES), INFRASTRUCTURE DEVELOPMENT (SUCH AS HIGHWAYS AND AIRPORTS) AND MINING PROJECTS. SECTION 404 REQUIRES A PERMIT BEFORE DREDGED OR FILL MATERIAL MAY BE DISCHARGED INTO WATERS OF THE UNITED STATES, UNLESS THE ACTIVITY IS EXEMPT FROM SECTION 404 REGULATION (E.G. CERTAIN FARMING AND FORESTRY ACTIVITIES)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Sediments a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Sediments a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "SEDIMENTS"^^xsd:string ;
     dcterms:description "A SEDIMENT SITE IS A LOCATION OF INTEREST AT WHICH SEDIMENT CHEMICAL AND/OR BIOLOGICAL DATA HAS BEEN OBTAINED AND EVALUATED FOR POTENTIAL IMPACTS TO HUMAN HEALTH OR THE ENVIRONMENT.   SEDIMENT SITES MAY EXIST BENEATH OR BE ASSOCIATED WITH FRESHWATER, MARINE AND ESTUARINE BODIES OF WATER.   SEDIMENT SITES MAY OR MAY NOT BE LINKED TO A KNOWN LAND-BASED FACILITY."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Sewagesludgeutilization a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Sewagesludgeutilization a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "SEWAGE SLUDGE UTILIZATION"^^xsd:string ;
     dcterms:description "A SEWAGE SLUDGE UTILIZATION PERMIT IS REQUIRED FOR THE COLLECTION, INCINERATION, STORAGE, TREATMENT, APPLICATION TO LAND, TRANSPORTATION OR DISPOSAL OF SEWAGE SLUDGE.  SEWAGE SLUDGE IS ONE OF THE FINAL PRODUCTS OF THE TREATMENT OF SEWAGE AT A SEWAGE (WASTEWATER) TREATMENT PLANT. AFTER TREATMENT TO BREAK DOWN THE ORGANIC MATTER AND DESTROY DISEASE ORGANISMS, THE REMAINING FINE PARTICLES ULTIMATELY BECOME SLUDGE. THE APPLICATION OF SEWAGE SLUDGE TO LAND RETURNS ESSENTIAL NUTRIENTS TO THE SOIL, ADDS ORGANIC MATTER, AND CAN IMPROVE THE TILLABILTY AND MOISTURE RETENTION CAPABILITY OF THE SOIL."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Silviculture a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Silviculture a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "SILVICULTURE"^^xsd:string ;
     dcterms:description "A COMBINATION OF BEST MANAGEMENT PRACTICES (BMPS) DESIGNED TO ADDRESS WATER QUALITY OR PUBLIC HEALTH PROBLEMS CAUSED BY FORESTRY ACTIVITIES SUCH AS REMOVAL OF STREAMSIDE VEGETATION, ROAD CONSTRUCTION AND USE, TIMBER HARVESTING, AND SITE PREPARATION FOR THE PLANTING OF TREES. SEDIMENT FROM EROSION DUE TO TREE HARVESTING ACTIVITIES AND ACCESS ROAD CONSTRUCTION, TEMPERATURE INCREASES DUE TO RIPARIAN SHADE REMOVAL, AND PESTICIDES AND FERTILIZER USED DURING TIMBER OPERATIONS ARE SOME OF THE MAJOR POLLUTANTS FROM TIMBER HARVESTING SITES. SILVICULTURE BMPS INCLUDE MEASURES THAT CONTROL EROSION FROM ACCESS ROADS, MAINTAIN THE STABILITY OF STREAM BANKS, ENSURE THE REVEGETATION OF HARVESTED AREAS, AND CONTROL THE INTRODUCTION OF PESTICIDES AND FERTILIZERS INTO WATERWAYS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Solidcdwastelandfill a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Solidcdwastelandfill a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "SOLID & C&D WASTE LANDFILL"^^xsd:string ;
     dcterms:description "LANDFILL THAT ACCEPTS BOTH SOLID WASTE AND C&D WASTE (NOT EVERY STATE PERMITS SEPARATELY FOR C&D)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Solidwastelandfill a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Solidwastelandfill a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "SOLID WASTE LANDFILL"^^xsd:string ;
     dcterms:description "LANDFILL THAT IS PERMITTED TO ACCEPT SOLID WASTE (RCRA SUBTITLE D)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Solidwasteprogram a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Solidwasteprogram a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "SOLID WASTE PROGRAM"^^xsd:string ;
     dcterms:description "ENVIRONMENTAL PROGRAMS THAT REGULATE SOLID WASTES (E.G., COMPOST SITES, LANDFILLS, TRANSFER STATIONS)"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Statecleanupsite a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Statecleanupsite a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "STATE CLEANUP SITE"^^xsd:string ;
     dcterms:description "A CONTAMINATED SITE THAT IS BEING CLEANED UP UNDER STATE REGULATIONS. LAND-BASED CONTAMINATION IS THE PRIMARY BUT NOT EXCLUSIVE FOCUS. CONTAMINATED SITES RANGE FROM COMPLEX, HIGHLY INDUSTRIALIZED AREAS SUCH AS SMELTER PLUMES COVERING HUNDREDS OF SQUARE MILES, SEA PORTS, AND ABANDONED MINES, TO CORNER GAS STATIONS WHERE A LEAK FROM AN UNDERGROUND STORAGE TANK HAS OCCURRED. THE CONTAMINATION MAY BE IN THE SOIL, SEDIMENTS, UNDERGROUND WATER, AIR, DRINKING WATER, AND/OR SURFACE WATER. CLEANUP SITES ARE IDENTIFIED, EVALUATED, AND PRIORITIZED WITH THE GOAL OF HABITAT RESTORATION, REPLACEMENT, OR ENHANCEMENT BASED ON COMMUNITY SUSTAINABILITY PRINCIPALS. "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Statemaster a epa-frs:EnvironmentalInterestType,
-        epa-frs:Facility-Siteidentification ;
+epa-frs-data:d.EnvironmentalInterestType.Statemaster a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:FacilitySiteIdentification ;
     rdfs:label "STATE MASTER"^^xsd:string ;
     dcterms:description "A STATE REGISTRY SYSTEM THAT MAINTAINS BASIC IDENTIFICATION INFORMATION FOR A FACILITY SITE, INCLUDING THE STATE MASTER IDENTIFIER, GEOGRAPHIC ADDRESS, AFFILIATED ORGANIZATIONS AND CONTACTS, INDUSTRIAL CLASSIFICATIONS, AND LINKAGES TO ENVIRONMENTAL PERMITS AND PROGRAMS. "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Stateregulatedtsd a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Stateregulatedtsd a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "STATE REGULATED TSD"^^xsd:string ;
     dcterms:description "STATE REGULATED TREATMENT, STORAGE, OR DISPOSAL ACTIVITIES (TSDS) ARE STATE-PERMITTED TSD ACTIVITIES NOT SUBJECT TO FEDERAL RCRA PERMIT REQUIREMENTS. SUCH ACTIVITIES ARE REGULATED UNDER STATE STANDARDS (I.E., STATE REQUIREMENTS THAT ARE NOT CONSIDERED PART OF THE STATE AUTHORIZED HAZARDOUS PROGRAM)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Stormwaterconstruction a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Stormwaterconstruction a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "STORM WATER CONSTRUCTION"^^xsd:string ;
     dcterms:description "THE STORM WATER PROGRAM, A COMPONENT OF THE CLEAN WATER ACT (CWA) NATIONAL POLLUTANT DISCHARGE ELIMINATION SYSTEM (NPDES), REQUIRES NPDES PERMITS FOR STORM WATER DISCHARGES FROM CONSTRUCTIONS SITES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Stormwaterindustrial a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Stormwaterindustrial a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "STORM WATER INDUSTRIAL"^^xsd:string ;
     dcterms:description "THE STORM WATER PROGRAM, A COMPONENT OF THE CLEAN WATER ACT (CWA) NATIONAL POLLUTANT DISCHARGE ELIMINATION SYSTEM (NPDES), REQUIRES NPDES PERMITS FOR STORM WATER DISCHARGES FROM INDUSTRIES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Superfund a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Superfund a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "SUPERFUND"^^xsd:string ;
     dcterms:description "AN UNCONTROLLED OR ABANDONED PLACE WHERE HAZARDOUS WASTE IS LOCATED, POSSIBLY AFFECTING LOCAL ECOSYSTEMS OR PEOPLE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Superfund-Non-Npl a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Superfund-Non-Npl a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "SUPERFUND (NON-NPL)"^^xsd:string ;
     dcterms:description "AN UNCONTROLLED OR ABANDONED PLACE WHERE HAZARDOUS WASTE IS LOCATED, POSSIBLY AFFECTING LOCAL ECOSYSTEMS OR PEOPLE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Superfundnpl a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Superfundnpl a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "SUPERFUND NPL"^^xsd:string ;
     dcterms:description "A SUPERFUND SITE WHICH IS LISTED, PROPOSED, OR PREVIOUSLY LISTED ON THE NATIONAL PRIORITIES LIST (NPL).  THE NPL LISTS NATIONAL PRIORITIES AMONG THE KNOWN RELEASES OR THREATENED RELEASES OF HAZARDOUS SUBSTANCES, POLLUTANTS, OR CONTAMINANTS THROUGHOUT THE UNITED STATES."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Surfacewatersite a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Surfacewatersite a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "SURFACE WATER SITE"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM THAT IMPROVES THE QUALITY OF AND PROTECTS NON-COASTAL AND AQUATIC ECOSYSTEMS FROM POLLUTION."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.TSD a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.TSD a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "TSD"^^xsd:string ;
     dcterms:description "A HAZARDOUS WASTE TREATMENT, STORAGE, AND DISPOSAL (TSD) FACILITY PERFORMS ONE OR MORE OF THE FOLLOWING FUNCTIONS:  (1) TREATMENT: ANY METHOD, TECHNIQUE, OR PROCESS, INCLUDING NEUTRALIZATION, DESIGNED TO CHANGE THE PHYSICAL, CHEMICAL OR BIOLOGICAL CHARACTER OR COMPOSITION OF ANY HAZARDOUS WASTE SO AS TO NEUTRALIZE SUCH WASTE, OR SO AS TO RECOVER ENERGY OR MATERIAL RESOURCES FROM THE WASTE, OR SO AS TO RENDER SUCH WASTE NON-HAZARDOUS, OR LESS HAZARDOUS; SAFER TO TRANSPORT, STORE OR DISPOSE OF; OR AMENABLE FOR RECOVERY, AMENABLE FOR STORAGE, OR REDUCED IN VOLUME.  (2) STORAGE: THE HOLDING OF HAZARDOUS WASTE FOR A TEMPORARY PERIOD, AT THE END OF WHICH THE HAZARDOUS WASTE IS TREATED, DISPOSED OF, OR STORED ELSEWHERE.  (3) DISPOSAL: THE DISCHARGE, DEPOSIT, INJECTION, DUMPING, SPILLING, LEAKING, OR PLACING OF ANY SOLID WASTE OR HAZARDOUS WASTE INTO OR ON ANY LAND OR WATER SO THAT SUCH SOLID WASTE OR HAZARDOUS WASTE OR ANY CONSTITUENT THEREOF MAY ENTER THE ENVIRONMENT OR BE EMITTED INTO THE AIR OR DISCHARGED INTO ANY WATERS, INCLUDING GROUNDWATERS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Title200Reimbursementfund a epa-frs:Assistanceandsupportprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Title200Reimbursementfund a epa-frs:AssistanceSupportProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "TITLE 200 REIMBURSEMENT FUND"^^xsd:string ;
     dcterms:description "THE TITLE 200 PETROLEUM RELEASE REMEDIAL ACTION REIMBURSEMENT FUND REIMBURSES CERTAIN COSTS FOR THE CLEANUP OF LEAKING PETROLEUM TANKS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Titlevareasource a epa-frs:Electronicpermitsystem,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Titlevareasource a epa-frs:ElectronicPermitSystem,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "TITLE V AREA SOURCE"^^xsd:string ;
     dcterms:description "EPS"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Titlevmajorsource a epa-frs:Electronicpermitsystem,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Titlevmajorsource a epa-frs:ElectronicPermitSystem,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "TITLE V MAJOR SOURCE"^^xsd:string ;
     dcterms:description "EPS"^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Transferfacility a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Transferfacility a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "TRANSFER FACILITY"^^xsd:string ;
     dcterms:description "A HAZARDOUS WASTE TRANSFER FACILITY HOLDS MANIFESTED HAZARDOUS WASTE(S) FOR A PERIOD OF TEN DAYS OR LESS WHILE THE WASTE IS IN TRANSIT."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Transporter a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Transporter a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "TRANSPORTER"^^xsd:string ;
     dcterms:description "HAZARDOUS WASTE HANDLERS ENGAGED IN THE TRANSPORTATION OF HAZARDOUS WASTE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Tribalmaster a epa-frs:EnvironmentalInterestType,
-        epa-frs:Facility-Siteidentification ;
+epa-frs-data:d.EnvironmentalInterestType.Tribalmaster a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:FacilitySiteIdentification ;
     rdfs:label "TRIBAL MASTER"^^xsd:string ;
     dcterms:description "A TRIBAL REGISTRY SYSTEM THAT MAINTAINS BASIC IDENTIFICATION INFORMATION FOR A FACILITY SITE ON TRIBAL LAND, INCLUDING THE TRIBAL MASTER IDENTIFIER, GEOGRAPHIC ADDRESS, AFFILIATED ORGANIZATIONS AND CONTACTS, INDUSTRIAL CLASSIFICATIONS, AND LINKAGES TO ENVIRONMENTAL PERMITS AND PROGRAMS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Trireporter a epa-frs:Chemicalreleaseprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Trireporter a epa-frs:ChemicalReleaseProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "TRI REPORTER"^^xsd:string ;
     dcterms:description "A TOXIC RELEASE INVENTORY REPORTER IS A FACILITY WHICH:  EMPLOYS THE EQUIVALENT OF 10 OR MORE FULL-TIME EMPLOYEES; AND IS INCLUDED IN STANDARD INDUSTRIAL CLASSIFICATION (SIC) CODES 10XX, 12XX, 20XX-39XX, 4911, 4931, 4939, 4953, 5169, 5171, OR 7389; AND MANUFACTURES (DEFINED TO INCLUDE IMPORTING), PROCESSES, OR OTHERWISE USES ANY EMERGENCY PLANNING AND COMMUNITY RIGHT-TO-KNOW ACT (EPCRA) SECTION 313 CHEMICAL IN QUANTITIES GREATER THAN THE ESTABLISHED THRESHOLD IN THE COURSE OF A CALENDAR YEAR  (I.E., MANUFACTURES OR PROCESSES OVER 25,000 POUNDS OF THE APPROXIMATELY 600 DESIGNATED CHEMICALS OR 28 CHEMICAL CATEGORIES SPECIFIED IN THE REGULATIONS, OR USES MORE THAN 10,000 POUNDS OF ANY DESIGNATED CHEMICAL OR CATEGORY)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Tscasubmitter a epa-frs:Chemicalreleaseprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Tscasubmitter a epa-frs:ChemicalReleaseProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "TSCA SUBMITTER"^^xsd:string ;
     dcterms:description "THE TOXIC SUBSTANCES CONTROL ACT (TSCA) OF 1976 PROVIDES EPA WITH AUTHORITY TO REQUIRE REPORTING, RECORD-KEEPING AND TESTING REQUIREMENTS, AND RESTRICTIONS RELATING TO CHEMICAL SUBSTANCES AND/OR MIXTURES. CERTAIN SUBSTANCES ARE GENERALLY EXCLUDED FROM TSCA, INCLUDING, AMONG OTHERS, FOOD, DRUGS, COSMETICS AND PESTICIDES. TSCA ADDRESSES THE PRODUCTION, IMPORTATION, USE, AND DISPOSAL OF SPECIFIC CHEMICALS INCLUDING POLYCHLORINATED BIPHENYLS (PCBS), ASBESTOS, RADON AND LEAD-BASED PAINT."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.UIC a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.UIC a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "UIC"^^xsd:string ;
     dcterms:description "UNDERGROUND INJECTION CONTROL (UIC) IS THE SUBSURFACE EMPLACEMENT OF FLUIDS THROUGH A BORED, DRILLED OR DRIVEN WELL; OR THROUGH A DUG WELL, WHERE THE DEPTH OF THE DUG WELL IS GREATER THAN THE LARGEST SURFACE DIMENSION. UNDERGROUND INJECTION WELLS ARE REGULATED UNDER BOTH THE SAFE DRINKING WATER ACT AND THE RESOURCE CONSERVATION AND RECOVERY ACT (SEE 40 CFR PART 148)."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Undergroundstoragetankprogram a epa-frs:EnvironmentalInterestType,
-        epa-frs:Undergroundstoragetankprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Undergroundstoragetankprogram a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:UndergroundStorageTankProgram ;
     rdfs:label "UNDERGROUND STORAGE TANK PROGRAM"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM DESIGNED TO REDUCE THE CHANCE OF RELEASES FROM UNDERGROUND STORAGE TANKS (USTS), DETECT LEAKS AND SPILLS WHEN THEY DO OCCUR, AND SECURE PROMPT CLEANUP.  AN UST IS A TANK SYSTEM, INCLUDING PIPING CONNECTED TO THE TANK, THAT HAS AT LEAST 10 PERCENT OF ITS VOLUME UNDERGROUND."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Unspecifieduniverse a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Unspecifieduniverse a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "UNSPECIFIED UNIVERSE"^^xsd:string ;
     dcterms:description "THE HANDLER IS NOT CURRENTLY CLASSIFIED IN ANY HAZARDOUS WASTE UNIVERSE."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Usedoilprogram a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Usedoilprogram a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "USED OIL PROGRAM"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM THAT PROMOTES THE PROPER MANAGEMENT OF USED OIL, INCLUDING STANDARDS AND REGULATIONS THAT APPLY TO IDENTIFYING, STORING, RECYCLING, TRANSPORTING, AND BURNING USED OIL."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.VSQG a epa-frs:EnvironmentalInterestType,
-        epa-frs:Hazardouswasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.VSQG a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:HazardousWasteProgram ;
     rdfs:label "VSQG"^^xsd:string ;
     dcterms:description "VERY SMALL QUANTITY GENERATORS (VSQGS) GENERATE 100 KILOGRAMS OR LESS PER MONTH OF HAZARDOUS WASTE OR ONE KILOGRAM OR LESS PER MONTH OF ACUTELY HAZARDOUS WASTE. VSQGS MAY NOT ACCUMULATE MORE THAN 1,000 KILOGRAMS OF HAZARDOUS WASTE AT ANY TIME."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Voluntarycleanupprogram a epa-frs:EnvironmentalInterestType,
-        epa-frs:Remediationandredevelopmentprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Voluntarycleanupprogram a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RemediationRedevelopmentProgram ;
     rdfs:label "VOLUNTARY CLEAN UP PROGRAM"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM TO ENCOURAGE THE VOLUNTARY CLEANUP OF SITES WHERE THERE HAS BEEN A CONTAMINANT RELEASE THREATENING PUBLIC HEALTH AND THE ENVIRONMENT, THEREBY REMOVING THE STIGMA ATTACHED TO THESE SITES WHICH BLOCKS ECONOMIC REDEVELOPMENT."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Wastedischargerequirements a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Wastedischargerequirements a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "WASTE DISCHARGE REQUIREMENTS"^^xsd:string ;
     dcterms:description "SITES THAT DISCHARGE WASTEWATER TO LAND OR NON-FEDERAL WATERS WHICH ARE EXEMPT FROM TITLE 27 REGULATIONS AND NPDES REGULATIONS. CONTAINS PRIMARILY GROUNDWATER SITES ISSUED UNDER STATE AUTHORITY, THOUGH IT ALSO INCLUDES NON-FEDERAL SURFACE WATERS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Wastewaterfacility a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Wastewaterfacility a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "WASTEWATER FACILITY"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM CONCERNED WITH THE DESIGN, OPERATION, AND MAINTENANCE OF WASTEWATER TREATMENT FACILITIES.  A WASTEWATER TREATMENT FACILITY RECEIVES WASTE WATERS ( AND SOMETIMES RUNOFF) FROM DOMESTIC AND/OR INDUSTRIAL SOURCES, AND BY A COMBINATION OF PHYSICAL, CHEMICAL, AND BIOLOGICAL PROCESSES REDUCES (TREATS) THE WASTE WATERS TO LESS HARMFUL BYPRODUCTS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Wastewaterprogram a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Wastewaterprogram a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "WASTEWATER PROGRAM"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM THAT REGULATES DISCHARGES OF POLLUTANTS TO WATERS OF THE UNITED STATES, AS REQUIRED BY THE CLEAN WATER ACT."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Waterqualityprogram a epa-frs:EnvironmentalInterestType,
-        epa-frs:Wastewaterprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Waterqualityprogram a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:WasteWaterProgram ;
     rdfs:label "WATER QUALITY PROGRAM"^^xsd:string ;
     dcterms:description "PROGRAMS AND PROJECTS DESIGNED TO REDUCE SOURCE WATER POLLUTION SUCH AS STORMWATER MANAGEMENT, STORMWATER PERMITTING, LAND USE REGULATION, WATER QUALITY MANAGEMENT PLANNING, WATER CONSERVATION, WATER SUPPLY ADMINISTRATION AND OTHER STATE AND LOCAL PROGRAMS. "^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Watertreatmentplant a epa-frs:Drinkingwaterprograms,
-        epa-frs:EnvironmentalInterestType ;
+epa-frs-data:d.EnvironmentalInterestType.Watertreatmentplant a epa-frs:DrinkingWaterProgram,
+        epa-frs:EnvironmentalInterestByProgram ;
     rdfs:label "WATER TREATMENT PLANT"^^xsd:string ;
     dcterms:description "A WATER TREATMENT FACILITY WHICH IS PART OF A PUBLIC DRINKING WATER SYSTEM."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.Woodwasterecycling a epa-frs:EnvironmentalInterestType,
-        epa-frs:Solidwasteprograms ;
+epa-frs-data:d.EnvironmentalInterestType.Woodwasterecycling a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:SolidWasteProgram ;
     rdfs:label "WOOD WASTE RECYCLING"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM WHICH ASSURES THE PROPER MANAGEMENT AND RECYCLING OF NATURAL WOOD WASTES SUCH AS TREE LIMBS, BRUSH, TREE STUMPS, ROOT MATS, LOGS, LEAVES, GRASS CLIPPINGS AND OTHER NATURAL MATERIALS THAT ARE GENERATED WHEN LAND IS CLEARED FOR CONSTRUCTION PURPOSES.  NATURAL WOOD WASTE RECYCLING FACILITIES MAY PRODUCE A VARIETY OF PRODUCTS INCLUDING COMPOST AND MULCH WHICH MAY BE SOLD TO CONSUMERS."^^xsd:string .
 
-epa-frs-data:d.EnvironmentalInterestType.X-Rayequipment a epa-frs:EnvironmentalInterestType,
-        epa-frs:Radiationprotectionprograms ;
+epa-frs-data:d.EnvironmentalInterestType.X-Rayequipment a epa-frs:EnvironmentalInterestByProgram,
+        epa-frs:RadiationProtectionProgram ;
     rdfs:label "X-RAY EQUIPMENT"^^xsd:string ;
     dcterms:description "AN ENVIRONMENTAL PROGRAM REQUIRING REGULAR REGISTRATION AND INSPECTION OF X-RAY UNITS AND LICENSING OF OPERATORS. "^^xsd:string .
 
@@ -2089,29 +2096,24 @@ epa-frs:Agency.Judicial a owl:Class ;
     rdfs:label "Judicial" ;
     rdfs:subClassOf epa-frs:Agency .
 
-epa-frs:Hazardouswasteprogram a owl:Class ;
-    rdfs:label "HAZARDOUS WASTE PROGRAM"^^xsd:string ;
-    dcterms:description "ENVIRONMENTAL PROGRAMS THAT REGULATE HAZARDOUS WASTE, INCLUDING THE GENERATION, TRANSPORTATION, TREATMENT, STORAGE, AND DISPOSAL OF HAZARDOUS WASTE, AS REQUIRED BY THE RESOURCE CONSERVATION AND RECOVERY ACT (RCRA)."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
-
-epa-frs:Healthandsafetyprograms a owl:Class ;
+epa-frs:HealthSafetyProgram a owl:Class ;
     rdfs:label "HEALTH AND SAFETY PROGRAMS"^^xsd:string ;
     dcterms:description "PROGRAMS DESIGNED TO REDUCE HAZARDS AND PREVENT INJURIES, ILLNESSES AND DEATHS IN THE WORKPLACE."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
 epa-frs:Agency.HousingandUrbanDevelopment a owl:Class ;
     rdfs:label "Housing and Urban Development" ;
     rdfs:subClassOf epa-frs:Agency .
 
-epa-frs:Coastalandoceanprograms a owl:Class ;
+epa-frs:CoastalOceanProgram a owl:Class ;
     rdfs:label "COASTAL AND OCEAN PROGRAMS"^^xsd:string ;
     dcterms:description "ENVIRONMENTAL PROGRAMS THAT IMPROVE THE QUALITY OF COASTAL AND MARINE ECOSYSTEMS AND PROTECT BEACHES, COAST, AND OCEAN RESOURCES FROM POLLUTION."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
-epa-frs:Ecologyoperations a owl:Class ;
+epa-frs:EcologyOperation a owl:Class ;
     rdfs:label "ECOLOGY OPERATIONS"^^xsd:string ;
     dcterms:description "PROGRAMS THAT CONCENTRATE ON ECOLOGICAL SYSTEMS SUCH AS FOREST AND TREE EXPERTISE"^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
 epa-frs:Agency.Congress a owl:Class ;
     rdfs:label "Congress" ;
@@ -2125,20 +2127,20 @@ epa-frs:Agency.VeteransAffairs a owl:Class ;
     rdfs:label "Veterans Affairs" ;
     rdfs:subClassOf epa-frs:Agency .
 
-epa-frs:Chemicalreleaseprograms a owl:Class ;
+epa-frs:ChemicalReleaseProgram a owl:Class ;
     rdfs:label "CHEMICAL RELEASE PROGRAMS"^^xsd:string ;
     dcterms:description "ENVIRONMENTAL PROGRAMS THAT REGULATE OR MONITOR CHEMICALS RELEASED TO THE ENVIRONMENT (E.G., TOXIC RELEASE INVENTORY, RELEASE ASSESSMENTS)."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
-epa-frs:Facility-Siteidentification a owl:Class ;
+epa-frs:FacilitySiteIdentification a owl:Class ;
     rdfs:label "FACILITY/SITE IDENTIFICATION"^^xsd:string ;
     dcterms:description "INCLUDES SYSTEMS THAT MAINTAIN BASIC IDENTIFICATION INFORMATION ABOUT FACILITIES/SITES AND LINKAGES TO ENVIRONMENTAL PERMITS AND PROGRAMS AT THE STATE, TRIBAL AND NATIONAL LEVEL."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
-epa-frs:Undergroundstoragetankprograms a owl:Class ;
+epa-frs:UndergroundStorageTankProgram a owl:Class ;
     rdfs:label "UNDERGROUND STORAGE TANK PROGRAMS"^^xsd:string ;
-    dcterms:description "ENVIRONMENTAL PROGRAMS DESIGNED TO REDUCE THE CHANCE OF RELEASES FROM UNDERGROUND STORAGE TANKS (USTS), DETECT LEAKS AND SPILLS WHEN THEY DO OCCUR, AND SECURE PROMPT CLEANUP. "^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    dcterms:description "ENVIRONMENTAL PROGRAMS DESIGNED TO REDUCE THE CHANCE OF RELEASES FROM UNDERGROUND STORAGE TANKS (USTS), DETECT LEAKS AND SPILLS WHEN THEY DO OCCUR, AND SECURE PROMPT CLEANUP"^^xsd:string ;
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
 epa-frs:Agency.Labor a owl:Class ;
     rdfs:label "Labor" ;
@@ -2148,40 +2150,40 @@ epa-frs:Agency.Treasury a owl:Class ;
     rdfs:label "Treasury" ;
     rdfs:subClassOf epa-frs:Agency .
 
-epa-frs:Animaloperations a owl:Class ;
+epa-frs:AnimalOperation a owl:Class ;
     rdfs:label "ANIMAL OPERATIONS"^^xsd:string ;
-    dcterms:description "ENVIRONMENTAL PROGRAMS RELATED TO ANIMAL OPERATIONS (E.G., LIVESTOCK WASTE CONTROL)."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    dcterms:description "ENVIRONMENTAL PROGRAMS RELATED TO ANIMAL OPERATIONS E.G LIVESTOCK WASTE CONTROL"^^xsd:string ;
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
-epa-frs:Groundwaterprograms a owl:Class ;
+epa-frs:GroundWaterProgram a owl:Class ;
     rdfs:label "GROUND WATER PROGRAMS"^^xsd:string ;
     dcterms:description "ENVIRONMENTAL PROGRAMS DESIGNED TO PROTECT GROUND WATER (E.G., UNDERGROUND INJECTION CONTROL (UIC),  MINERAL EXPLORATION)."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
-epa-frs:Waterresourcesprograms a owl:Class ;
+epa-frs:WaterResourcesProgram a owl:Class ;
     rdfs:label "WATER RESOURCES PROGRAMS"^^xsd:string ;
     dcterms:description "ENVIRONMENTAL PROGRAMS THAT MANAGE WATER RESOURCES TO MEET THE NEEDS OF THE NATURAL ENVIRONMENT AND HUMAN COMMUNITIES, INCLUDING WATERSHED MANAGEMENT, STREAM FLOWS, WATER RIGHTS, WELL DRILLING, USE OF WATER SUPPLIES, AND DAM SAFETY."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
-epa-frs:Chemicalstorageprograms a owl:Class ;
+epa-frs:ChemicalStorageProgram a owl:Class ;
     rdfs:label "CHEMICAL STORAGE PROGRAMS"^^xsd:string ;
     dcterms:description "ENVIRONMENTAL PROGRAMS THAT REGULATE OR MONITOR THE STORAGE OF CHEMICALS (E.G., RISK MANAGEMENT PROGRAM, SUPERFUND AMENDMENTS AND REAUTHORIZATION ACT (SARA) TITLE III PROGRAM)."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
-epa-frs:Drinkingwaterprograms a owl:Class ;
+epa-frs:DrinkingWaterProgram a owl:Class ;
     rdfs:label "DRINKING WATER PROGRAMS"^^xsd:string ;
     dcterms:description "ENVIRONMENTAL PROGRAMS THAT PROTECT THE QUALITY OF DRINKING WATER IN THE UNITED STATES, AS REQUIRED BY THE SAFE DRINKING WATER ACT."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
-epa-frs:Legal-Enforcementactivities a owl:Class ;
+epa-frs:LegalEnforcementActivities a owl:Class ;
     rdfs:label "LEGAL/ENFORCEMENT ACTIVITIES"^^xsd:string ;
     dcterms:description "LEGAL OR ENFORCEMENT ACTIVITIES IN SUPPORT OF OTHER ENVIRONMENTAL PROGRAMS."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
-epa-frs:Pesticidesprograms a owl:Class ;
+epa-frs:PesticidesProgram a owl:Class ;
     rdfs:label "PESTICIDES PROGRAMS"^^xsd:string ;
     dcterms:description "ENVIRONMENTAL PROGRAMS THAT MONITOR BUSINESSES, GOVERNMENT AGENCIES, AND INDIVIDUALS THAT HANDLE, STORE, SELL, AND/OR APPLY PESITICIDES."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
 epa-frs:Agency.Commerce a owl:Class ;
     rdfs:label "Commerce" ;
@@ -2195,20 +2197,20 @@ epa-frs:Agency.Justice a owl:Class ;
     rdfs:label "Justice" ;
     rdfs:subClassOf epa-frs:Agency .
 
-epa-frs:Assistanceandsupportprograms a owl:Class ;
+epa-frs:AssistanceSupportProgram a owl:Class ;
     rdfs:label "ASSISTANCE AND SUPPORT PROGRAMS"^^xsd:string ;
     dcterms:description "ENVIRONMENTAL PROGRAMS THAT PROVIDE ASSISTANCE TO THE REGULATED COMMUNITY AND THE GENERAL PUBLIC (E.G., ENVIRONMENTAL GRANTS, OUTREACH ACTIVITIES) OR ACTIVITIES THAT PROVIDE SUPPORT ACROSS ENVIRONMENTAL PROGRAMS."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
-epa-frs:Radiationprotectionprograms a owl:Class ;
+epa-frs:RadiationProtectionProgram a owl:Class ;
     rdfs:label "RADIATION PROTECTION PROGRAMS"^^xsd:string ;
     dcterms:description "ENVIRONMENTAL PROGRAMS DESIGNED TO PROTECT PEOPLE AND THE ENVIRONMENT FROM HARMFUL EXPOSURE TO RADIATION"^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
-epa-frs:Electronicpermitsystem a owl:Class ;
+epa-frs:ElectronicPermitSystem a owl:Class ;
     rdfs:label "ELECTRONIC PERMIT SYSTEM"^^xsd:string ;
     dcterms:description "ELECTRONIC PERMIT SYSTEM"^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
 epa-frs:Agency.Agriculture a owl:Class ;
     rdfs:label "Agriculture" ;
@@ -2226,36 +2228,37 @@ epa-frs:Agency.HomelandSecurity a owl:Class ;
     rdfs:label "Homeland Security" ;
     rdfs:subClassOf epa-frs:Agency .
 
-epa-frs:Remediationandredevelopmentprograms a owl:Class ;
+epa-frs:RemediationRedevelopmentProgram a owl:Class ;
     rdfs:label "REMEDIATION AND REDEVELOPMENT PROGRAMS"^^xsd:string ;
     dcterms:description "ENVIRONMENTAL PROGRAMS AIMED AT CLEANING UP AND/OR REDEVELOPING UNCONTROLLED OR ABANDONED PLACES WHERE HAZARDOUS WASTE MAY BE LOCATED POSSIBLY AFFECTING LOCAL ECOSYSTEMS OR PEOPLE."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
-epa-frs:Solidwasteprograms a owl:Class ;
+epa-frs:SolidWasteProgram a owl:Class ;
     rdfs:label "SOLID WASTE PROGRAMS"^^xsd:string ;
     dcterms:description "ENVIRONMENTAL PROGRAMS THAT REGULATE SOLID WASTES (E.G., COMPOST SITES, LANDFILLS, TRANSFER STATIONS)."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
 epa-frs:Agency.Defense a owl:Class ;
     rdfs:label "Defense" ;
     rdfs:subClassOf epa-frs:Agency .
 
-epa-frs:Hazardouswasteprograms a owl:Class ;
-    rdfs:label "HAZARDOUS WASTE PROGRAMS"^^xsd:string ;
+epa-frs:HazardousWasteProgram a owl:Class ;
+    rdfs:label "HAZARDOUS WASTE PROGRAM"^^xsd:string,
+        "HAZARDOUS WASTE PROGRAMS"^^xsd:string ;
     dcterms:description "ENVIRONMENTAL PROGRAMS THAT REGULATE HAZARDOUS WASTE, INCLUDING THE GENERATION, TRANSPORTATION, TREATMENT, STORAGE, AND DISPOSAL OF HAZARDOUS WASTE, AS REQUIRED BY THE RESOURCE CONSERVATION AND RECOVERY ACT (RCRA)."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
 epa-frs:Agency.Energy a owl:Class ;
     rdfs:label "Energy" ;
     rdfs:subClassOf epa-frs:Agency .
 
-epa-frs:Wastewaterprograms a owl:Class ;
+epa-frs:WasteWaterProgram a owl:Class ;
     rdfs:label "WASTE WATER PROGRAMS"^^xsd:string ;
     dcterms:description "ENVIRONMENTAL PROGRAMS THAT REGULATE DISCHARGES OF POLLUTANTS TO WATERS OF THE UNITED STATES, AS REQUIRED BY THE CLEAN WATER ACT."^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 
-epa-frs:Airprograms a owl:Class ;
+epa-frs:AirProgram a owl:Class ;
     rdfs:label "AIR PROGRAMS"^^xsd:string ;
     dcterms:description "ENVIRONMENTAL PROGRAMS THAT REGULATE OR MONITOR AIR EMISSIONS FROM AREA, STATIONARY, AND MOBILE SOURCES, AS REQUIRED BY THE CLEAN AIR ACT"^^xsd:string ;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType .
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByProgram .
 

@@ -149,7 +149,7 @@ def clean_attributes(facilities):
     
     fac['sup_pgm_sys_acrnm'] = fac['sup_pgm_sys_acrnm'].apply(lambda x: x.translate(replacements).upper() if pd.notnull(x) else None) #program for main federal programs
     # if interest type is npdes, override system and set to npdes to match other iris
-    mask = fac['sup_interest_type'].apply(lambda x: True if 'NPDES' in x else False)
+    mask = fac['sup_interest_type'].apply(lambda x: False if x==None else (True if 'NPDES' in x else False))
     fac.loc[mask, 'sup_pgm_sys_acrnm'] = 'NPDES'
 
     fac['interest_id'] = fac['pgm_sys_id'].apply(lambda x: x.translate(replacements))

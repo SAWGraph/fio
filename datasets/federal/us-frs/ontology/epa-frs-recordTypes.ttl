@@ -3,17 +3,18 @@
 @prefix epa-frs-data: <http://w3id.org/fio/v1/epa-frs-data#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ## Interest Types 
-epa-frs:InterestRecordType rdf:type owl:Class;
+epa-frs:EnvironmentalInterestByRecordType rdf:type owl:Class;
     rdfs:subClassOf epa-frs:EnvironmentalInterestType;
-    rdfs:label "Interest Record Type";
+    rdfs:label "Environmental Interest By Record Type";
     dcterms:description "Interest classification based on the main subject of the record and what type of activity or entity it identifies.".
 
 # some air programs are licenses or permits. Depends on the system 
 epa-frs:PermitInterest rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:InterestRecordType;
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType;
     dcterms:description "Environmental Interests that create records that are permits or licenses". 
 epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesnon-Major rdf:type epa-frs:PermitInterest. 
 epa-frs-data:d.EnvironmentalInterestType.Npdesnon-Major rdf:type epa-frs:PermitInterest. 
@@ -39,7 +40,7 @@ epa-frs-data:d.EnvironmentalInterestType.Minegeneralpermit rdf:type epa-frs:Perm
 
 #contaminated sites or monitoring sites
 epa-frs:SiteInterest rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:InterestRecordType. 
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType. 
 epa-frs-data:d.EnvironmentalInterestType.Superfund-Non-Npl rdf:type epa-frs:SiteInterest.
 epa-frs-data:d.EnvironmentalInterestType.Superfundnpl rdf:type  epa-frs:SiteInterest.
 epa-frs-data:d.EnvironmentalInterestType.Superfund rdf:type epa-frs:SiteInterest. 
@@ -56,19 +57,24 @@ epa-frs-data:d.EnvironmentalInterestType.Hazardouswastelandfill rdf:type epa-frs
 epa-frs-data:d.EnvironmentalInterestType.Hazardoussolidcdwastelandfill rdf:type epa-frs:SiteInterest. 
 epa-frs-data:d.EnvironmentalInterestType.Solidcdwastelandfill rdf:type epa-frs:SiteInterest. 
 epa-frs-data:d.EnvironmentalInterestType.Oilandgas rdf:type epa-frs:SiteInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Landfill rdf:type epa-frs:SiteInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Solidwastelandfill rdf:type epa-frs:SiteInterest. 
 
 
 #reporters
 epa-frs:ReportingInterest rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:InterestRecordType. 
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType. 
 epa-frs-data:d.EnvironmentalInterestType.Complianceandemissionsreporting rdf:type epa-frs:ReportingInterest, epa-frs:EnforcementInterest. 
 epa-frs-data:d.EnvironmentalInterestType.Greenhousegasreporter rdf:type epa-frs:ReportingInterest. 
 epa-frs-data:d.EnvironmentalInterestType.Airemissioninventory rdf:type epa-frs:ReportingInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Drinkingwaterprogram rdf:type epa-frs:ReportingInterest. #assume all drinking water programs involve some water test reporting
+epa-frs-data:d.EnvironmentalInterestType.Communitywatersystem rdf:type epa-frs:ReportingInterest. 
+epa-frs-data:d.EnvironmentalInterestType.Drinkingwatersystem rdf:type epa-frs:ReportingInterest. 
 
 
 # enforcement
 epa-frs:EnforcementInterest rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:InterestRecordType.
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType.
 epa-frs-data:d.EnvironmentalInterestType.Closedcriminalenforcementcase rdf:type epa-frs:EnforcementInterest. 
 epa-frs-data:d.EnvironmentalInterestType.Enforcement-Complianceactivity rdf:type epa-frs:EnforcementInterest.
 epa-frs-data:d.EnvironmentalInterestType.Formalenforcementaction rdf:type epa-frs:EnforcementInterest. 
@@ -77,7 +83,7 @@ epa-frs-data:d.EnvironmentalInterestType.Formalenforcementaction rdf:type epa-fr
 
 # compliance 
 epa-frs:ComplianceInterest rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:InterestRecordType. 
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType. 
 epa-frs-data:d.EnvironmentalInterestType.Complianceassistance rdf:type epa-frs:ComplianceInterest.
 epa-frs-data:d.EnvironmentalInterestType.Complianceactivity rdf:type epa-frs:ComplianceInterest. 
 
@@ -91,7 +97,7 @@ epa-frs-data:d.EnvironmentalInterestType.Complianceactivity rdf:type epa-frs:Com
 
 # risk planning
 epa-frs:RiskInterest rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:InterestRecordType. 
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType. 
 epa-frs:Chemicalstorageprograms rdfs:subClassOf epa-frs:RiskInterest. # all subclasses are 'plans'
 epa-frs-data:d.EnvironmentalInterestType.FRP rdf:type epa-frs:RiskInterest. #facility response plan
 epa-frs-data:d.EnvironmentalInterestType.SPCC rdf:type epa-frs:RiskInterest. #spill plan
@@ -101,16 +107,11 @@ epa-frs-data:d.EnvironmentalInterestType.Floodplainmanagement rdf:type epa-frs:R
 
 # registry interest
 epa-frs:RegistryInterest rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:InterestRecordType.
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType.
 epa-frs-data:d.EnvironmentalInterestType.Notinauniverse rdf:type epa-frs:RegistryInterest. #hazardous waste program with no specific currently tracked waste universe
 epa-frs-data:d.EnvironmentalInterestType.Gasolineanddieselproducers rdf:type epa-frs:RegistryInterest. #register products
 epa-frs-data:d.EnvironmentalInterestType.Npdesunpermitted rdf:type epa-frs:RegistryInterest.  #regulated by NPDES and discharging with no permit
-
-#epa-frs-data:d.EnvironmentalInterestType.Communitywatersystem
-#epa-frs-data:d.EnvironmentalInterestType.Drinkingwatersystem
-#epa-frs-data:d.EnvironmentalInterestType.Drinkingwaterprogram
-
-
+epa-frs-data:d.EnvironmentalInterestType.Transporter rdf:type epa-frs:RegistryInterest. 
 
 #epa-frs-data:d.EnvironmentalInterestType.Damsite
 #epa-frs-data:d.EnvironmentalInterestType.Drycleanerremediationprogram
@@ -363,12 +364,17 @@ epa-frs:RegistrationRecord rdf:type owl:Class;
         owl:someValuesFrom epa-frs:RegistryInterest]);
     rdfs:subClassOf epa-frs:MonitoringRecord. 
 
-epa-frs:StateMonitoringRecord rdf:type owl:Class;
+epa-frs:StateTrackingRecord rdf:type owl:Class;
     owl:equivalentClass [ rdf:type owl:Restriction;
     owl:onProperty epa-frs:ofInterestType;
     owl:hasValue epa-frs-data:d.EnvironmentalInterestType.Statemaster];
     rdfs:subClassOf epa-frs:MonitoringRecord. 
 
+epa-frs:TribalTrackingRecord rdf:type owl:Class;
+    owl:equivalentClass [rdf:type owl:Restriction;
+    owl:onProperty epa-frs:ofInterestType;
+    owl:hasValue epa-frs-data:d.EnvironmentalInterestType.Tribalmaster];
+    rdfs:subClassOf epa-frs:MonitoringRecord.
 
 epa-frs:SiteRecord rdf:type owl:Class;
     rdfs:subClassOf epa-frs:MonitoringRecord;

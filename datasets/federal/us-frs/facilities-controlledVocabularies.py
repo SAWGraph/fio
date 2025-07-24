@@ -6,6 +6,7 @@ import pandas as pd
 import xml.etree.ElementTree as ET
 import math
 import datetime
+import csv
 from datetime import date
 
 from rdflib.namespace import OWL, XMLNS, XSD, RDF, RDFS, DCTERMS, GEO
@@ -93,13 +94,19 @@ def Initial_KG():
 
 def clean_attributes(interests):
      interests = pd.DataFrame(interests)
+     with open(metadata_dir/ 'environmentalInterest.txt', mode='r') as infile:
+         reader = csv.reader(infile)
+         program_category_lookup = {rows[0]:rows[1] for rows in reader}
+         print(program_category_lookup)
+         
      if robust:
          print(interests.info())
 
 
      #interests['interest_short'] = interests['interest_type'].apply(lambda x: (''.join(((f'{word.replace("-", "")}-' if word in ['NSR', 'NPDES', 'ICIS', 'OSHA', 'ICIS-'] else f'{word.title()}') if word in ['NSR', 'NPDES', 'ICIS', 'ICIS-','OSHA', 'MAJOR', 'MINOR', 'GAS', 'AIR', 'GEOTHERMAL', 'PESTICIDES', 'WATER', 'WIND', 'ACTIVITY', 'ASSISTANCE', 'ACTION', 'SURFACE', 'RESIDUAL','RADIOACTIVE'] else word[0]) for word in x.replace("(", "- ").replace("&", "").replace("-", "- ").replace("/", " ").split())) if len(x.split()) > 1 else x)
      interests['interest_short'] = interests['interest_type'].apply(lambda x: (''.join(((word if word in ['NSR', 'NPDES', 'ICIS', 'OSHA', 'ICIS-', 'CESQG', 'SQG', 'AFO','SW', 'BRAC', 'CZM', 'EPCRA', 'FRP', 'LQG', "II", "WIPP", 'NPL', 'TRI', 'TSCA', 'TSD', "UIC", 'VSQG', 'NESHAPS', 'SPCC'] else word.title()) for word in x.translate(replacements).split()))))
-     interests['program_short'] = interests['program_category'].apply(lambda x: ''.join((word) for word in str(x).translate(replacements).title().split()))
+     interests['program_short'] = interests['program_category'].apply(lambda x: None if x==None else program_category_lookup[x]) #''.join((word) for word in str(x).translate(replacements).title().split()))
+
      #print(interests.interest_short.unique())
      #print(interests.program_short.unique())
      return interests
@@ -130,8 +137,8 @@ def get_iris(data):
      if 'program_category' in data.keys():
         iri['interest'] = epa_frs_data[f"d.EnvironmentalInterestType.{data['interest_short']}"]
         iri['program_cat'] = epa_frs[data['program_short']]
-        if data['program_short'] == 'HazardousWasteProgram': #clean up duplicate sub-class
-            iri['program_cat'] = epa_frs['HazardousWastePrograms']
+        #if data['program_short'] == 'HazardousWasteProgram': #clean up duplicate sub-class
+        #    iri['program_cat'] = epa_frs['HazardousWastePrograms']
      if 'federal_agency_code' in data.keys():
         iri['agency'] = epa_frs_data[f"d.Agency.{data['federal_agency_code']}"]
         iri['class']= epa_frs[f"Agency.{''.join(data[0].split(' '))}"]
@@ -155,22 +162,22 @@ def triplify(interests, agencies, programs):
     for idx, interest in interests.iterrows():
          iri = get_iris(interest)
          # interest
-         kg.add((iri['interest'], RDF.type, epa_frs['EnvironmentalInterestType'] ))
+         kg.add((iri['interest'], RDF.type, epa_frs['EnvironmentalInterestByProgram'] ))
          kg.add((iri['interest'], RDFS.label, Literal(interest['interest_type'], datatype=XSD.string)))
          # description (interest_desc)
          kg.add((iri['interest'], DCTERMS.description, Literal(interest['interest_desc'], datatype=XSD.string)))
          # program category
-         if interest['program_short'] != 'None':
+         if interest['program_short'] != None:
             kg.add((iri['interest'], RDF.type, iri['program_cat']))
             #kg.add((iri['program_cat'], RDFS.subClassOf, epa_frs['ProgramCategory']))
-            if interest['program_category'] != 'None':
+            if interest['program_category'] != None:
                 kg.add((iri['program_cat'], RDFS.label, Literal(interest['program_category'], datatype=XSD.string)))
-                kg.add((iri['program_cat'], RDFS.subClassOf, epa_frs['EnvironmentalInterestType']))
+                kg.add((iri['program_cat'], RDFS.subClassOf, epa_frs['EnvironmentalInterestByProgram']))
                 kg.add((iri['program_cat'], RDF.type, OWL.Class))
-            else:
-                kg.add((iri['interest'], RDF.type, epa_frs['ProgramCategory']))
+           # else:
+            #    kg.add((iri['interest'], RDF.type, epa_frs['ProgramCategory']))
             #print(list(kg.triples((iri['program'], DCTERMS.description, None))))
-            if interest['program_category_desc'] != 'None' and list(kg.triples((iri['program_cat'], DCTERMS.description, None))) == []: #only program add desc first time
+            if interest['program_category_desc'] != None and list(kg.triples((iri['program_cat'], DCTERMS.description, None))) == []: #only program add desc first time
                 kg.add((iri['program_cat'], DCTERMS.description, Literal(interest['program_category_desc'], datatype=XSD.string)))
          else:
              kg.add((iri['interest'],RDF.type, epa_frs['EnvironmentalInterestType']))
