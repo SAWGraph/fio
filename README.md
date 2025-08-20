@@ -11,7 +11,7 @@ The Facilities and Industries Ontology provides a representation of facilities a
  ## FIO Ontology
  The ontology is implemented at [/ontology/FIO.ttl](/ontology/FIO.ttl) 
  
- and the documentation is hosted at: [https://theskailab.github.io/fio/index-en.html](https://theskailab.github.io/fio/index-en.html)
+ and the documentation is hosted at: [https://theskailab.github.io/fio/index-en.html](https://theskailab.github.io/fio/index-en.html) also redirected from [http://w3id.org/fio/](http://w3id.org/fio/)
 
  ## Datasets
  The ontology is instantiated by the datasets for NAICS and EPA FRS in [/datasets](/datasets)
