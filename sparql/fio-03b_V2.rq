@@ -5,6 +5,7 @@
 #https://www.naics.com/naics-code-description/?v=2022&code=3221
 #https://www.naics.com/naics-code-description/?v=2022&code=3222
 
+### GraphDB Version
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
@@ -21,6 +22,21 @@ select * where {
         VALUES ?icode{naics:NAICS-3221 naics:NAICS-3222}
     		
     }
+}
+
+### FRINK Version
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+PREFIX naics: <http://w3id.org/fio/v1/naics#>
+PREFIX epa-frs: <http://w3id.org/fio/v1/epa-frs#>
+
+select * where {
+        ?facility rdf:type epa-frs:EPA-PFAS-Facility ;
+    		fio:ofIndustry ?code .
+        	?code fio:subcodeOf ?icode .
+			?code rdfs:label ?code_label .
+        VALUES ?icode{naics:NAICS-3221 naics:NAICS-3222}
 }
 
 
