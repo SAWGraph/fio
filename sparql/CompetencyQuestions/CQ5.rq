@@ -1,3 +1,4 @@
+### GraphDB version
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX fio: <http://w3id.org/fio/v1/fio#>
 PREFIX naics: <http://w3id.org/fio/v1/naics#>
@@ -8,8 +9,6 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
 # What subsectors of the “Manufacturing” sector (sectors 31-33) are associated with facilities
 # suspected of handling PFAS, and which facilities of those subsectors are located in Maine?
-
-### GraphDB version
 SELECT * WHERE {
     #Find subsectors of manufacturing likely to use PFAS
     {SELECT DISTINCT ?industry ?industryLabel WHERE{
