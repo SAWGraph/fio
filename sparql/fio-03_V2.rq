@@ -3,6 +3,7 @@
 # Retrieve all facilities in the NAICS Industry Group 5622 and their specific NAICS Industry Code.
 # updated with new version of FIO Ontology (2024-10-03)
 
+### GraphDB version
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
@@ -17,4 +18,19 @@ select * where {
 			?icode fio:subcodeOf naics:NAICS-5622 ;
     		rdfs:label ?code_label .
     }
+}
+
+
+### FRINK Version
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+PREFIX naics: <http://w3id.org/fio/v1/naics#>
+PREFIX epa-frs: <http://w3id.org/fio/v1/epa-frs#>
+
+select * where {
+  ?facility rdf:type epa-frs:EPA-PFAS-Facility ;
+            fio:ofIndustry ?icode.
+  ?icode fio:subcodeOf naics:NAICS-5622 ;
+         rdfs:label ?code_label .
 }
