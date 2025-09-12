@@ -1,3 +1,4 @@
+### GraphDB version
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX fio: <http://w3id.org/fio/v1/fio#>
 PREFIX naics: <http://w3id.org/fio/v1/naics#>
@@ -9,7 +10,6 @@ PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
 # (Pulp, Paper, and Paperboard Mills) and 3222 (Converted Paper Product Manufacturing) 
 # and their specific NAICS Industry Codes and the county they are located in.
 
-### GraphDB version
 SELECT DISTINCT ?facility (GROUP_CONCAT(DISTINCT(?industryName); separator=",") as ?industryName) (GROUP_CONCAT(DISTINCT(?countyName)) as ?county) WHERE {
     VALUES ?industryGroup{naics:NAICS-3221 naics:NAICS-3222}
     ?facility a fio:Facility;
