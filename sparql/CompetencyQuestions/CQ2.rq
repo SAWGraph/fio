@@ -4,6 +4,8 @@ PREFIX naics: <http://w3id.org/fio/v1/naics#>
 PREFIX epa-frs: <http://w3id.org/fio/v1/epa-frs#>
 PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
 PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
+PREFIX epa-frs-data: <http://w3id.org/fio/v1/epa-frs-data#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 
 # What NAICS industry subsector is facility X associated with?
 SELECT * WHERE {
