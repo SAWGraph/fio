@@ -4,9 +4,12 @@ PREFIX naics: <http://w3id.org/fio/v1/naics#>
 PREFIX epa-frs: <http://w3id.org/fio/v1/epa-frs#>
 PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
 PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
 # What subsectors of the “Manufacturing” sector (sectors 31-33) are associated with facilities
 # suspected of handling PFAS, and which facilities of those subsectors are located in Maine?
+
+### GraphDB version
 SELECT * WHERE {
     #Find subsectors of manufacturing likely to use PFAS
     {SELECT DISTINCT ?industry ?industryLabel WHERE{
@@ -25,3 +28,33 @@ SELECT * WHERE {
    SERVICE <repository:Spatial>{
     ?region kwg-ont:administrativePartOf+ kwgr:administrativeRegion.USA.23. # in Maine
 	}}
+
+
+### FRINK version
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+PREFIX naics: <http://w3id.org/fio/v1/naics#>
+PREFIX epa-frs: <http://w3id.org/fio/v1/epa-frs#>
+PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
+PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+# What subsectors of the “Manufacturing” sector (sectors 31-33) are associated with facilities
+# suspected of handling PFAS, and which facilities of those subsectors are located in Maine?
+SELECT * WHERE {
+  #Find subsectors of manufacturing likely to use PFAS
+  {SELECT DISTINCT ?industry ?industryLabel WHERE{
+      ?facility a epa-frs:EPA-PFAS-Facility; # all PFAS suspected Facilities
+  fio:ofIndustry ?industry.
+      ?industry a naics:NAICS-IndustrySubsector; # by subsector
+  rdfs:label ?industryLabel;
+  fio:subcodeOf|fio:subcodeOf/owl:sameAs naics:NAICS-31.  } } #in Manufacturing     	
+
+  #Find all facilities in Maine in those subsectors
+  ?MaineFacility a fio:Facility;  # find facilities
+  rdfs:label ?facilityName;
+  fio:ofIndustry ?industry; # in industry returned from nested query above
+  kwg-ont:sfWithin ?region. 
+  ?region a kwg-ont:AdministrativeRegion_3.
+  ?region kwg-ont:administrativePartOf+ kwgr:administrativeRegion.USA.23. # in Maine
+}
