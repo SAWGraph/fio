@@ -28,11 +28,11 @@ PREFIX fio: <http://w3id.org/fio/v1/fio#>
 PREFIX naics: <http://w3id.org/fio/v1/naics#>
 PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
 
-select ?facility (concat('[',group_concat(DISTINCT ?industry;separator='; '),']') as ?industries) where  {{
+select ?facility (concat('[',group_concat(DISTINCT ?industry;separator='; '),']') as ?industries) where  {
     ?facility a fio:Facility .
     ?facility fio:ofIndustry ?industry.
     ?industry fio:subcodeOf naics:NAICS-3222. #Converted Paper Manufacturing
     ?facility kwg-ont:sfWithin ?s2.
         # Basic classification of spatial entities (e.g. S2 cells, admin regions) should be added to the FIO repository to allow querying without federation
         ?s2 a kwg-ont:S2Cell_Level13.
-  }} GROUP BY ?facility
+  } GROUP BY ?facility
