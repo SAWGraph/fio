@@ -7,7 +7,8 @@ PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
 
 # Find all facilities located in a given set of S2 cells.
 SELECT * WHERE {
-    ?facility kwg-ont:sfWithin ?s2.   # Facilities by region
+    ?facility kwg-ont:sfWithin ?s2;  # Facilities by region
+  			  a fio:Facility .
     ?s2 a kwg-ont:S2Cell_Level13.     # Where region is an s2 cell
     VALUES ?s2{kwgr:s2.level13.5523882010617053184 kwgr:s2.level13.9935713923632201728}. 
-    }                                            # Specific s2 cells to search
+}                                      # Specific s2 cells to search
