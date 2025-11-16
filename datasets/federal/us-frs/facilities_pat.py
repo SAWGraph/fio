@@ -30,7 +30,7 @@ state = f' {sa}'
 root_folder =Path(__file__).resolve().parent.parent.parent
 data_dir = root_folder / "data/epa_pfas_analytic_tool/"
 metadata_dir = None
-output_dir = root_folder / "federal/us-frs"
+output_dir = root_folder / "federal/us-frs/triples/"
 
 
 epa_frs = Namespace(f"http://w3id.org/fio/v1/epa-frs#")
@@ -51,18 +51,31 @@ logging.info(f"Running triplification for PAT facilities {state}")
 def main():
     '''main function initializes all other functions'''
     df = load_data()
-    kg = triplify(df)
 
-    kg_turtle_file = f"epa-frs-data-{state.strip()}-pat.ttl".format(output_dir)
-    kg.serialize(kg_turtle_file, format='turtle')
-    logger = logging.getLogger(f'Finished triplifying pfas analytics tool facilities - {state}.')
+    if sa:
+        #filter to just one state
+        df = df[df['State'] == state]
+        kg = triplify(df)
+
+        kg_turtle_file = output_dir / f"epa-frs-data-{state.strip()}-pat.ttl".format(output_dir)
+        kg.serialize(kg_turtle_file, format='turtle')
+        logger = logging.getLogger(f'Finished triplifying pfas analytics tool facilities - {state}.')
+        
+    else:
+        #loop through all states
+        for state1 in df['State'].unique():
+            df_state = df[df['State']==state1]
+            kg = triplify(df_state)
+
+            kg_turtle_file = output_dir / f"epa-frs-data-{state.strip()}-pat.ttl".format(output_dir)
+            kg.serialize(kg_turtle_file, format='turtle')
+            logger = logging.getLogger(f'Finished triplifying pfas analytics tool facilities - {state}.')
+            print(f'Finished triplifying pfas analytics tool facilities - {state1}.')
 
 def load_data():
     #df = pd.read_csv(data_dir / f"industrysectors_{state}.csv")
     #df = pd.read_excel(data_dir/ 'industrysectors_275aeff7-cbf1-46c2-92a9-67886bcbc0ee.xlsx') #older data
     df = pd.read_excel(data_dir/ 'industrysectors_dee6b0cb-ab9e-4952-bf70-977004a9e878.xlsx')
-    #filter to just one state
-    df = df[df['State'] == state]
     #df = pd.read_json(data_dir / '')
     #replace - with nan
     df.replace(to_replace='-', value=pd.NA, inplace=True)
@@ -84,7 +97,8 @@ def Initial_KG() -> object:
     return kg
 
 def clean_attributes(df):
-    print(df.info())
+    #print(df.info())
+    pass
 
     return df
 
@@ -103,7 +117,7 @@ def get_attributes(row):
     facility = {
         'facility_name': row['Facility'],
         'status': row['Status'],
-        'facility_id': fac_id,
+        'facility_id': ''.join(fac_id.split()),
         'latitude': row['Latitude'],
         'longitude': row['Longitude'],
     }

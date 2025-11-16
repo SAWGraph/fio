@@ -77,7 +77,7 @@ def load_data():
     # query the facilities 10000 (limit) at a time, and merge into one list
     while limit < facilities_count+increment:
         facilities_url = f'https://data.epa.gov/efservice/frs.frs_facility_site/std_state_code/equals/{state_code}/left/frs.geo_facility_point/{start}:{limit}/JSON'
-        resp = urllib3.request("GET", facilities_url, timeout=10)
+        resp = urllib3.request("GET", facilities_url, timeout=100)
         facilities_subset = resp.json()
         print(facilities_url)
         for facility in facilities_subset:
@@ -147,8 +147,8 @@ def clean_attributes(facilities):
         print(fac.info())
     
     #format various columns for triplification
-    fac['primary_name'] = fac['primary_name'].apply(lambda x: x.encode('ASCII', 'ignore').decode('ASCII'))
-    fac['std_name'] = fac['primary_name'].apply(lambda x: x.encode('ASCII', 'ignore').decode('ASCII'))
+    fac['primary_name'] = fac['primary_name'].apply(lambda x: x.encode('ASCII', 'ignore').decode('ASCII') if pd.notnull(x) else None)
+    fac['std_name'] = fac['primary_name'].apply(lambda x: x.encode('ASCII', 'ignore').decode('ASCII') if pd.notnull(x) else None)
     fac['federal_bool'] = fac['federal_facility_code'].map({"Y": True, "N": False}) #boolean for federal sites
     #print('tribal:', fac['tribal_land_code'].value_counts())
     fac['tribal_bool'] = fac['tribal_land_code'].map({"Y": True, "N": False}) #boolean for tribal sites
@@ -225,18 +225,18 @@ def triplify(facilities):
                 kg.add((geo_iri, schema['dateModified'],  Literal(facility['geo_time'].strftime('%Y-%m-%d'), datatype=XSD.date)))
         
         #tribal
-        if facility['tribal_bool']:
+        if facility['tribal_bool'] ==True:
             kg.add((facility_iri, epa_frs['ofFacilityType'], epa_frs_data['d.Tribal-Facility'])) #TODO needs a label
             #kg.add((facility_iri, coso['locatedIn'], ))
 
         #federal
-        if facility['federal_bool']:
+        if facility['federal_bool'] == True:
             kg.add((facility_iri, epa_frs['ofFacilityType'], epa_frs_data['d.Federal-Facility'])) #TODO needs a label
             if 'agency' in extra_iris.keys():
-                kg.add((facility_iri, fio['ownedBy'], extra_iris['agency']))
+                kg.add((extra_iris['agency'], fio['hasFacility'], facility_iri ))
 
         #smallbusiness
-        if facility['small_business_bool']:
+        if facility['small_business_bool'] == True:
             kg.add((facility_iri, epa_frs['ofFacilityType'], epa_frs_data['d.SmallBusiness-Facility'])) #TODO needs a label
 
         #siteType
@@ -263,10 +263,10 @@ def main():
     if testing:
         kg_turtle_file = output_dir / f"epa-frs-data-{state}-facility-main-site--test.ttl"
     else:
-        kg_turtle_file = output_dir / f"epa-frs-data-{state}-facility-main-site-.ttl"
+        kg_turtle_file = output_dir / f"epa-frs-data-{state}-facility-main-site.ttl"
     kg.serialize(kg_turtle_file, format='turtle')
-    logger = logging.getLogger('Finished triplifying pfas analytics tool facilities.')
-
+    logger = logging.getLogger(f'Finished triplifying main site facilities {state}.')
+    print(f'finished {state}')
 
 if __name__ == "__main__":
     main()

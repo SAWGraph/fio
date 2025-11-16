@@ -135,7 +135,7 @@ def clean_attributes(facilities):
     #    print('FULL SCHEMA:')
     #    print(fac.info())
     
-    replacements = str.maketrans({"(":"- ",
+    replacements = str.maketrans({"(":"-",
                      ")":"",
                      "&":"",
                      "/":"-",
@@ -143,7 +143,11 @@ def clean_attributes(facilities):
                      ":":"-",
                      " ":"",
                      "#": "-",
-                     "�": ""})
+                     "�": "",
+                     "`":"",
+                     "\\":"_", 
+                     "{":"",
+                     "`":""})
     
     # format various columns for triplification
     

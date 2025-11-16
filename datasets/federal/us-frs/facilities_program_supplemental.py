@@ -56,7 +56,7 @@ def load_data():
 
     facilities = []
     limit = 10000
-    increment= 1000
+    increment= 10000
     start = 0
 
     #count_req = f'https://data.epa.gov/efservice/FRS_SUPPLEMENTAL_INTEREST/STATE_CODE/=/{state_code}/COUNT'
@@ -93,9 +93,9 @@ def load_data():
         for facility in facilities_subset:
             facilities.append(facility)
         
-        start += limit
+        start += increment
         print(f'retrieved {limit}')
-        limit += limit
+        limit +=  increment
 
         #stop after one loop if testing
         if testing == True:
@@ -134,14 +134,16 @@ def clean_attributes(facilities):
         print('FULL SCHEMA:')
         print(fac.info())
     
-    replacements = str.maketrans({"(":"- ",
+    replacements = str.maketrans({"(":"-",
                      ")":"",
                      "&":"",
                      "/":"-",
                      ",":"",
                      ":":"-",
                      " ":"",
-                     "#": "-"})
+                     "#": "-",
+                     "�": "",
+                     "`":""})
     
     # format various columns for triplification
     
@@ -188,7 +190,10 @@ def get_iris(facility):
     facility_iri = epa_frs_data[f"d.FRS-Facility.{facility['registry_id']}"]
     record_iri = epa_frs_data[f"d.Record.{facility['pgm_sys_acrnm']}.{facility['interest_id']}"]
     if facility['sup_pgm_sys_id'] and facility['sup_pgm_sys_acrnm']:
-        sup_iri = epa_frs_data[f"d.Record.{facility['sup_pgm_sys_acrnm']}.{facility['sup_pgm_sys_id']}"]
+        if len(facility['sup_pgm_sys_id']) >5 and facility['sup_pgm_sys_acrnm'] != 'UST' and any(char.isdigit() for char in facility['sup_pgm_sys_id']) == True: #UST ids and some others are not unique across facilities
+            sup_iri = epa_frs_data[f"d.Record.{facility['sup_pgm_sys_acrnm']}.{facility['sup_pgm_sys_id']}"]
+        else:
+            sup_iri = epa_frs_data[f"d.Record.{facility['sup_pgm_sys_acrnm']}.{facility['sup_interest_id']}.{facility['sup_pgm_sys_id']}"]
     elif facility['sup_pgm_sys_acrnm']:
         sup_iri = epa_frs_data[f"d.Record.{facility['sup_pgm_sys_acrnm']}.{facility['sup_interest_id']}"]
     elif facility['sup_pgm_sys_id']:
@@ -274,7 +279,7 @@ def main():
         kg_turtle_file = output_dir / f"epa-frs-data-{state}-program-sup-record.ttl"
     kg.serialize(kg_turtle_file, format='turtle')
     logger = logging.getLogger(f'Finished triplifying {state} program facilities and NAICS codes.')
-
+    print(f'Finished triplifying {state} supplemental records.')
 
 if __name__ == "__main__":
     main()
