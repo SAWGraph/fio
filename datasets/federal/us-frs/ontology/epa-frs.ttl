@@ -72,8 +72,8 @@ epa-frs:ofFacilityType rdf:type owl:ObjectProperty ;
 		rdfs:range epa-frs:FacilityType. 
 
 epa-frs:hasRecord rdf:type owl:ObjectProperty ;
-		rdfs:label "has  record" ;
-		rdfs:domain epa-frs:FRS-Facility;
+		rdfs:label "has record" ;
+		#rdfs:domain epa-frs:FRS-Facility;   #domain is union of FRS-Facility and Record. 
 		rdfs:range epa-frs:Record.
 
 epa-frs:hasMonitoringRecord rdf:type owl:ObjectProperty ;
@@ -86,6 +86,7 @@ epa-frs:hasSupplementalRecord rdf:type owl:ObjectProperty ;
         rdfs:subPropertyOf epa-frs:hasRecord;
 		rdfs:label "has supplemental record" ;
 		rdfs:range epa-frs:SupplementalRecord.
+		#domain is union of FRS-Facility and Record.
 
 epa-frs:ofInterestType rdf:type owl:ObjectProperty ;
 		rdfs:label "of program category";

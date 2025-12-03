@@ -108,8 +108,14 @@ fio:sameCode rdf:type owl:ObjectProperty ;
         rdfs:domain fio:Industry;
         rdfs:range fio:Industry.
 
+###  http://w3id.org/fio/v1/fio#hasMember
+fio:hasMember rdf:type owl:ObjectProperty ;
+                dcterms:description "A relation between a collection a member of the collection." ;
+                rdfs:label "has member" .
+
 ###  http://www.w3.org/ns/prov#wasAttributedTo
 prov-o:wasAttributedTo rdf:type owl:ObjectProperty .
+
 
 
 #################################################################
@@ -151,6 +157,9 @@ fio:Industry rdf:type owl:Class ;
              dcterms:description "A distinct group of productive or profit-making enterprises." ;
              rdfs:label "Industry" .
 
+fio:IndustryCollection rdf:type owl:Class ;
+                       dcterms:description "A collection of industries grouped by a common characteristic." ;
+                       rdfs:label "Industry Collection" .
 
 ###  http://w3id.org/fio/v1/fio#Organization
 fio:Organization rdf:type owl:Class ;

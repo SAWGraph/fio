@@ -1,0 +1,11 @@
+2025-12-03 10:00:54,289 root INFO Start getting industries from ecos
+2025-12-03 10:00:54,361 root INFO Finished writing output to C:\Users\kschw\Documents\SAWGraph\fio\datasets\federal\pfas-industries\ecos\pfashandlingindustrysectors_ecos.ttl
+2025-12-03 10:09:48,730 root INFO Start getting industries from EPA PFAS Analytic Tools
+2025-12-03 10:10:43,110 root INFO Start getting industries from ecos
+2025-12-03 10:10:43,124 root INFO Finished writing output to C:\Users\kschw\Documents\SAWGraph\fio\datasets\federal\pfas-industries\ecos\pfashandlingindustrysectors_ecos.ttl
+2025-12-03 10:10:50,502 root INFO Start getting industries from ecos
+2025-12-03 10:10:50,515 root INFO Finished writing output to C:\Users\kschw\Documents\SAWGraph\fio\datasets\federal\pfas-industries\ecos\pfashandlingindustrysectors_ecos.ttl
+2025-12-03 10:11:43,194 root INFO Start getting industries from EPA PFAS Analytic Tools
+2025-12-03 10:11:43,427 root INFO Finished writing output to C:\Users\kschw\Documents\SAWGraph\fio\datasets\federal\pfas-industries\epa-pfas-analytic-tools\pfashandlingindustrysectors-epa.ttl
+2025-12-03 10:11:48,694 root INFO Start getting industries from ecos
+2025-12-03 10:11:48,708 root INFO Finished writing output to C:\Users\kschw\Documents\SAWGraph\fio\datasets\federal\pfas-industries\ecos\pfashandlingindustrysectors_ecos.ttl

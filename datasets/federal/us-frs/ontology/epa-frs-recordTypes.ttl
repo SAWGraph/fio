@@ -333,11 +333,6 @@ epa-frs:ProjectRecord rdf:type owl:Class;
         owl:someValuesFrom epa-frs:ProjectSystem
     ]. 
 
-epa-frs:MonitoringRecord rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:Record;
-    rdfs:label "Monitoring Record";
-    dcterms:description "A record that monitors a facility on an ongoing basis".
-
 epa-frs:ReportingRecord rdf:type owl:Class;
     rdfs:subClassOf epa-frs:MonitoringRecord;
     owl:unionOf ([
