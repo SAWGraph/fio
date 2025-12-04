@@ -1,10 +1,10 @@
 @prefix fio: <http://w3id.org/fio/v1/fio#> .
+@prefix fio-pfas: <http://w3id.org/sawgraph/v1/pfas-industries#> .
 @prefix naics: <http://w3id.org/fio/v1/naics#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pfas-industries: <http://w3id.org/sawgraph/v1/pfas-industries#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-pfas-industries:MN-PFAS-IndustryCollection rdfs:label "Industries identified by Minnesota Pollution Control Agency as potential PFAS users" ;
+fio-pfas:MN-PFAS-IndustryCollection rdfs:label "Industries identified by Minnesota Pollution Control Agency as potential PFAS users" ;
     fio:hasMember naics:NAICS-212291,
         naics:NAICS-313210,
         naics:NAICS-313310,
@@ -34,9 +34,9 @@ pfas-industries:MN-PFAS-IndustryCollection rdfs:label "Industries identified by 
         naics:NAICS-561740,
         naics:NAICS-562212,
         naics:NAICS-928110 ;
-    rdfs:subClassOf pfas-industries:IndustryCollectionByPFASContaminationConcern .
+    rdfs:subClassOf fio-pfas:IndustryCollectionByPFASContaminationConcern .
 
-pfas-industries:OAR-PFAS-IndustryCollection rdfs:label "Industries identified by EPA Office of Air and Radiation (OAR) as potential PFAS users" ;
+fio-pfas:OAR-PFAS-IndustryCollection rdfs:label "Industries identified by EPA Office of Air and Radiation (OAR) as potential PFAS users" ;
     fio:hasMember naics:NAICS-313210,
         naics:NAICS-313230,
         naics:NAICS-313310,
@@ -66,9 +66,9 @@ pfas-industries:OAR-PFAS-IndustryCollection rdfs:label "Industries identified by
         naics:NAICS-424690,
         naics:NAICS-442291,
         naics:NAICS-561740 ;
-    rdfs:subClassOf pfas-industries:IndustryCollectionByPFASContaminationConcern .
+    rdfs:subClassOf fio-pfas:IndustryCollectionByPFASContaminationConcern .
 
-pfas-industries:OECA-PFAS-IndustryCollection rdfs:label "Industries identified by EPA Office of Enforcement and Compliance Assurance (OECA) research as potential PFAS users" ;
+fio-pfas:OECA-PFAS-IndustryCollection rdfs:label "Industries identified by EPA Office of Enforcement and Compliance Assurance (OECA) research as potential PFAS users" ;
     fio:hasMember naics:NAICS-211120,
         naics:NAICS-211130,
         naics:NAICS-212221,
@@ -106,9 +106,9 @@ pfas-industries:OECA-PFAS-IndustryCollection rdfs:label "Industries identified b
         naics:NAICS-811420,
         naics:NAICS-928110,
         naics:NAICS-nan ;
-    rdfs:subClassOf pfas-industries:IndustryCollectionByPFASContaminationConcern .
+    rdfs:subClassOf fio-pfas:IndustryCollectionByPFASContaminationConcern .
 
-pfas-industries:OLEM-PFAS-IndustryCollection rdfs:label "Industries identified by EPA Office of Land and Emergency Management (OLEM) as potential PFAS users" ;
+fio-pfas:OLEM-PFAS-IndustryCollection rdfs:label "Industries identified by EPA Office of Land and Emergency Management (OLEM) as potential PFAS users" ;
     fio:hasMember naics:NAICS-313110,
         naics:NAICS-313210,
         naics:NAICS-313230,
@@ -140,9 +140,9 @@ pfas-industries:OLEM-PFAS-IndustryCollection rdfs:label "Industries identified b
         naics:NAICS-424690,
         naics:NAICS-442291,
         naics:NAICS-561740 ;
-    rdfs:subClassOf pfas-industries:IndustryCollectionByPFASContaminationConcern .
+    rdfs:subClassOf fio-pfas:IndustryCollectionByPFASContaminationConcern .
 
-pfas-industries:Salvatore-PFAS-IndustryCollection rdfs:label "Industries identified by Salvatore et al. (2022) as potential PFAS users" ;
+fio-pfas:Salvatore-PFAS-IndustryCollection rdfs:label "Industries identified by Salvatore et al. (2022) as potential PFAS users" ;
     fio:hasMember naics:NAICS-313110,
         naics:NAICS-313210,
         naics:NAICS-313220,
@@ -182,8 +182,8 @@ pfas-industries:Salvatore-PFAS-IndustryCollection rdfs:label "Industries identif
         naics:NAICS-562212,
         naics:NAICS-562213,
         naics:NAICS-562219 ;
-    rdfs:subClassOf pfas-industries:IndustryCollectionByPFASContaminationConcern .
+    rdfs:subClassOf fio-pfas:IndustryCollectionByPFASContaminationConcern .
 
-pfas-industries:IndustryCollectionByPFASContaminationConcern a owl:Class ;
+fio-pfas:IndustryCollectionByPFASContaminationConcern a owl:Class ;
     rdfs:subClassOf fio:IndustryCollection .
 

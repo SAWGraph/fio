@@ -1,9 +1,9 @@
 @prefix fio: <http://w3id.org/fio/v1/fio#> .
+@prefix fio-pfas: <http://w3id.org/sawgraph/v1/pfas-industries#> .
 @prefix naics: <http://w3id.org/fio/v1/naics#> .
-@prefix pfas-industries: <http://w3id.org/sawgraph/v1/pfas-industries#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-pfas-industries:ECOS-PFAS-IndustryCollection rdfs:label "Industries identified by ECOS as potential PFAS users" ;
+fio-pfas:ECOS-PFAS-IndustryCollection rdfs:label "Industries identified by ECOS as potential PFAS users" ;
     fio:hasMember naics:NAICS-211130,
         naics:NAICS-221320,
         naics:NAICS-311611,
@@ -49,5 +49,5 @@ pfas-industries:ECOS-PFAS-IndustryCollection rdfs:label "Industries identified b
         naics:NAICS-811192,
         naics:NAICS-922160,
         naics:NAICS-928110 ;
-    rdfs:subClassOf pfas-industries:IndustryCollectionByPFASContaminationConcern .
+    rdfs:subClassOf fio-pfas:IndustryCollectionByPFASContaminationConcern .
 

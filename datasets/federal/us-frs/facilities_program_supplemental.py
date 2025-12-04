@@ -140,9 +140,12 @@ def clean_attributes(facilities):
                      "/":"-",
                      ",":"",
                      ":":"-",
+                     ";":"-",
                      " ":"",
                      "#": "-",
                      "�": "",
+                     "+":"p",
+                     "]":"",
                      "`":""})
     
     # format various columns for triplification

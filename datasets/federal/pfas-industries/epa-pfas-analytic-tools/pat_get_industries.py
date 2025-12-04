@@ -28,7 +28,7 @@ output_dir = root_folder / "federal/pfas-industries/epa-pfas-analytic-tools/"
 ##namespaces
 prefixes = {}
 prefixes['naics'] = Namespace("http://w3id.org/fio/v1/naics#")
-prefixes['pfas-industries'] = Namespace(f'http://w3id.org/sawgraph/v1/pfas-industries#')
+prefixes['fio-pfas'] = Namespace(f'http://w3id.org/sawgraph/v1/pfas-industries#')
 prefixes['fio'] = Namespace("http://w3id.org/fio/v1/fio#")
 
 ## initiate log file
@@ -61,32 +61,32 @@ def main():
         naics_uri = prefixes['naics'][f"NAICS-{naics_code}"]
 
         if row['OLEM list'] == 'Y':
-            g.add((prefixes['pfas-industries']['OLEM-PFAS-IndustryCollection'], prefixes['fio']['hasMember'], naics_uri))
+            g.add((prefixes['fio-pfas']['OLEM-PFAS-IndustryCollection'], prefixes['fio']['hasMember'], naics_uri))
 
         if row['OAR list'] == 'Y':
-            g.add((prefixes['pfas-industries']['OAR-PFAS-IndustryCollection'], prefixes['fio']['hasMember'], naics_uri))
+            g.add((prefixes['fio-pfas']['OAR-PFAS-IndustryCollection'], prefixes['fio']['hasMember'], naics_uri))
 
         if row['OECA Research'] == 'Y':
-            g.add((prefixes['pfas-industries']['OECA-PFAS-IndustryCollection'], prefixes['fio']['hasMember'], naics_uri))
+            g.add((prefixes['fio-pfas']['OECA-PFAS-IndustryCollection'], prefixes['fio']['hasMember'], naics_uri))
 
         if row['MN List'] == 'Y':
-            g.add((prefixes['pfas-industries']['MN-PFAS-IndustryCollection'], prefixes['fio']['hasMember'], naics_uri))
+            g.add((prefixes['fio-pfas']['MN-PFAS-IndustryCollection'], prefixes['fio']['hasMember'], naics_uri))
 
         if row['Salvatore et al. (2022)'] == 'Y':
-            g.add((prefixes['pfas-industries']['Salvatore-PFAS-IndustryCollection'], prefixes['fio']['hasMember'], naics_uri))
+            g.add((prefixes['fio-pfas']['Salvatore-PFAS-IndustryCollection'], prefixes['fio']['hasMember'], naics_uri))
 
-    g.add((prefixes['pfas-industries']['OLEM-PFAS-IndustryCollection'], RDFS.subClassOf, prefixes['pfas-industries']['IndustryCollectionByPFASContaminationConcern']))
-    g.add((prefixes['pfas-industries']['OLEM-PFAS-IndustryCollection'], RDFS.label, Literal("Industries identified by EPA Office of Land and Emergency Management (OLEM) as potential PFAS users")))
-    g.add((prefixes['pfas-industries']['OAR-PFAS-IndustryCollection'], RDFS.subClassOf, prefixes['pfas-industries']['IndustryCollectionByPFASContaminationConcern']))
-    g.add((prefixes['pfas-industries']['OAR-PFAS-IndustryCollection'], RDFS.label, Literal("Industries identified by EPA Office of Air and Radiation (OAR) as potential PFAS users")))
-    g.add((prefixes['pfas-industries']['OECA-PFAS-IndustryCollection'], RDFS.subClassOf, prefixes['pfas-industries']['IndustryCollectionByPFASContaminationConcern']))
-    g.add((prefixes['pfas-industries']['OECA-PFAS-IndustryCollection'], RDFS.label, Literal("Industries identified by EPA Office of Enforcement and Compliance Assurance (OECA) research as potential PFAS users")))
-    g.add((prefixes['pfas-industries']['MN-PFAS-IndustryCollection'], RDFS.subClassOf, prefixes['pfas-industries']['IndustryCollectionByPFASContaminationConcern']))
-    g.add((prefixes['pfas-industries']['MN-PFAS-IndustryCollection'], RDFS.label, Literal("Industries identified by Minnesota Pollution Control Agency as potential PFAS users")))
-    g.add((prefixes['pfas-industries']['Salvatore-PFAS-IndustryCollection'], RDFS.subClassOf, prefixes['pfas-industries']['IndustryCollectionByPFASContaminationConcern']))
-    g.add((prefixes['pfas-industries']['Salvatore-PFAS-IndustryCollection'], RDFS.label, Literal("Industries identified by Salvatore et al. (2022) as potential PFAS users")))
-    g.add((prefixes['pfas-industries']['IndustryCollectionByPFASContaminationConcern'], RDF.type, OWL.Class))
-    g.add((prefixes['pfas-industries']['IndustryCollectionByPFASContaminationConcern'], RDFS.subClassOf, prefixes['fio']['IndustryCollection']))
+    g.add((prefixes['fio-pfas']['OLEM-PFAS-IndustryCollection'], RDFS.subClassOf, prefixes['fio-pfas']['IndustryCollectionByPFASContaminationConcern']))
+    g.add((prefixes['fio-pfas']['OLEM-PFAS-IndustryCollection'], RDFS.label, Literal("Industries identified by EPA Office of Land and Emergency Management (OLEM) as potential PFAS users")))
+    g.add((prefixes['fio-pfas']['OAR-PFAS-IndustryCollection'], RDFS.subClassOf, prefixes['fio-pfas']['IndustryCollectionByPFASContaminationConcern']))
+    g.add((prefixes['fio-pfas']['OAR-PFAS-IndustryCollection'], RDFS.label, Literal("Industries identified by EPA Office of Air and Radiation (OAR) as potential PFAS users")))
+    g.add((prefixes['fio-pfas']['OECA-PFAS-IndustryCollection'], RDFS.subClassOf, prefixes['fio-pfas']['IndustryCollectionByPFASContaminationConcern']))
+    g.add((prefixes['fio-pfas']['OECA-PFAS-IndustryCollection'], RDFS.label, Literal("Industries identified by EPA Office of Enforcement and Compliance Assurance (OECA) research as potential PFAS users")))
+    g.add((prefixes['fio-pfas']['MN-PFAS-IndustryCollection'], RDFS.subClassOf, prefixes['fio-pfas']['IndustryCollectionByPFASContaminationConcern']))
+    g.add((prefixes['fio-pfas']['MN-PFAS-IndustryCollection'], RDFS.label, Literal("Industries identified by Minnesota Pollution Control Agency as potential PFAS users")))
+    g.add((prefixes['fio-pfas']['Salvatore-PFAS-IndustryCollection'], RDFS.subClassOf, prefixes['fio-pfas']['IndustryCollectionByPFASContaminationConcern']))
+    g.add((prefixes['fio-pfas']['Salvatore-PFAS-IndustryCollection'], RDFS.label, Literal("Industries identified by Salvatore et al. (2022) as potential PFAS users")))
+    g.add((prefixes['fio-pfas']['IndustryCollectionByPFASContaminationConcern'], RDF.type, OWL.Class))
+    g.add((prefixes['fio-pfas']['IndustryCollectionByPFASContaminationConcern'], RDFS.subClassOf, prefixes['fio']['IndustryCollection']))
 
     ## serialize output graph
     output_file = output_dir / "pfashandlingindustrysectors-epa.ttl"
