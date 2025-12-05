@@ -2189,10 +2189,6 @@ naics:NAICS-325314 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-3253,
         naics:NAICS-32531 .
 
-naics:NAICS-325314-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-325315 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Compost Manufacturing"^^xsd:string ;
@@ -4881,10 +4877,6 @@ naics:NAICS-424990 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4249 ;
     owl:sameAs naics:NAICS-42499 .
 
-naics:NAICS-42512-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-425120 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Wholesale Trade Agents and Brokers "^^xsd:string ;
@@ -4892,10 +4884,6 @@ naics:NAICS-425120 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4251 ;
     owl:sameAs naics:NAICS-42512 .
-
-naics:NAICS-425120-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-441110 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -4940,10 +4928,6 @@ naics:NAICS-441227 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4412,
         naics:NAICS-44122 .
-
-naics:NAICS-4413-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-441330 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -4994,10 +4978,6 @@ naics:NAICS-444180 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4441 ;
     owl:sameAs naics:NAICS-44418 .
-
-naics:NAICS-4442-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-444230 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5090,10 +5070,6 @@ naics:NAICS-445298 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4452,
         naics:NAICS-44529 .
-
-naics:NAICS-4453-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-445320 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -6115,10 +6091,6 @@ naics:NAICS-518210 a naics:NAICS-IndustryCode,
         "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-5182 ;
     owl:sameAs naics:NAICS-51821 .
-
-naics:NAICS-519-2017 a naics:NAICS-IndustrySubsector ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-519210 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;

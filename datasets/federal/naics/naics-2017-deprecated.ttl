@@ -1,0 +1,58 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fio: <http://w3id.org/fio/v1/fio#> .
+@prefix naics: <http://w3id.org/fio/v1/naics#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+naics:NAICS-325314-2017 a naics:NAICS-IndustryCode ;
+    rdfs:label "Fertilizer (Mixing Only) Manufacturing "^^xsd:string ;
+    dcterms:identifier "325314"^^xsd:string ;
+    fio:ofYear "2017"^^xsd:gYear ;
+    fio:subcodeOf naics:NAICS-3253,
+        naics:NAICS-32531 ;
+    fio:yearDeprecated "2017"^^xsd:gYear .
+
+naics:NAICS-42512-2017 a naics:NAICS-IndustryCode ;
+    rdfs:label "Wholesale Trade Agents and Brokers "^^xsd:string ;
+    dcterms:identifier "42512"^^xsd:string ;
+    fio:ofYear "2017"^^xsd:gYear ;
+    fio:subcodeOf naics:NAICS-4251 ;
+    fio:yearDeprecated "2017"^^xsd:gYear .
+
+naics:NAICS-425120-2017 a naics:NAICS-IndustryCode ;
+    rdfs:label "Wholesale Trade Agents and Brokers "^^xsd:string ;
+    dcterms:identifier "425120"^^xsd:string ;
+    fio:ofYear "2017"^^xsd:gYear ;
+    fio:subcodeOf naics:NAICS-4251 ;
+    fio:yearDeprecated "2017"^^xsd:gYear ;
+    owl:sameAs naics:NAICS-42512 .
+
+naics:NAICS-4413-2017 a naics:NAICS-IndustryGroup ;
+    rdfs:label "Automotive Parts, Accessories, and Tire Stores "^^xsd:string ;
+    dcterms:identifier "4413"^^xsd:string ;
+    fio:ofYear "2017"^^xsd:gYear ;
+    fio:subcodeOf naics:NAICS-441 ;
+    fio:yearDeprecated "2017"^^xsd:gYear .
+
+naics:NAICS-4442-2017 a naics:NAICS-IndustryGroup ;
+    rdfs:label "Lawn and Garden Equipment and Supplies Stores "^^xsd:string ;
+    dcterms:identifier "4442"^^xsd:string ;
+    fio:ofYear "2017"^^xsd:gYear ;
+    fio:subcodeOf naics:NAICS-444 ;
+    fio:yearDeprecated "2017"^^xsd:gYear .
+
+naics:NAICS-4453-2017 a naics:NAICS-IndustryGroup ;
+    rdfs:label "Beer, Wine, and Liquor Stores "^^xsd:string ;
+    dcterms:identifier "4453"^^xsd:string ;
+    fio:ofYear "2017"^^xsd:gYear ;
+    fio:subcodeOf naics:NAICS-445 ;
+    fio:yearDeprecated "2017"^^xsd:gYear .
+
+naics:NAICS-519-2017 a naics:NAICS-IndustrySubsector ;
+    rdfs:label "Other Information ServicesT "^^xsd:string ;
+    dcterms:identifier "519"^^xsd:string ;
+    fio:ofYear "2017"^^xsd:gYear ;
+    fio:subcodeOf naics:NAICS-51 ;
+    fio:yearDeprecated "2017"^^xsd:gYear .
+

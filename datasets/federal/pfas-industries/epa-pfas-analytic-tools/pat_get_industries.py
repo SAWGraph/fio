@@ -28,7 +28,7 @@ output_dir = root_folder / "federal/pfas-industries/epa-pfas-analytic-tools/"
 ##namespaces
 prefixes = {}
 prefixes['naics'] = Namespace("http://w3id.org/fio/v1/naics#")
-prefixes['fio-pfas'] = Namespace(f'http://w3id.org/sawgraph/v1/pfas-industries#')
+prefixes['fio-pfas'] = Namespace(f'http://w3id.org/fio/v1/pfas#')
 prefixes['fio'] = Namespace("http://w3id.org/fio/v1/fio#")
 
 ## initiate log file

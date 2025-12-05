@@ -1,5 +1,5 @@
 @prefix fio: <http://w3id.org/fio/v1/fio#> .
-@prefix fio-pfas: <http://w3id.org/sawgraph/v1/pfas-industries#> .
+@prefix fio-pfas: <http://w3id.org/fio/v1/pfas#> .
 @prefix naics: <http://w3id.org/fio/v1/naics#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 

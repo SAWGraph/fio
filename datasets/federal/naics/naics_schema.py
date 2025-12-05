@@ -54,10 +54,12 @@ logging.info("Running triplification for naics")
 def main():
     '''main function initializes all other functions'''
     df = load_data()
-    kg = triplify(df)
+    kg, kg2 = triplify(df)
 
     kg_turtle_file = "naics-2022.ttl".format(output_dir)
     kg.serialize(kg_turtle_file, format='turtle')
+    file2= "naics-2017-deprecated.ttl".format(output_dir)
+    kg2.serialize(file2, format='turtle')
     logger = logging.getLogger('Finished triplifying naics schema.')
 
 
@@ -65,10 +67,13 @@ def load_data():
     # df = pd.read_csv(data_dir / "industrysectors_ME.csv")
     df = pd.read_excel(data_dir / 'NAICS_2-6 digit_2022_Codes.xlsx')
     df2 = pd.read_excel(data_dir / '2022_NAICS_Structure.xlsx')
+    df3 = pd.read_excel(data_dir / '2017_NAICS_Descriptions.xlsx')
     df2.index = df2['2022 NAICS Code']
+    df3.index = df3['Code']
     print(df.info())
     print(df2.info())
     df = df.join(df2, on='2022 NAICS US   Code', how='left')
+    df = df.join(df3, on='2022 NAICS US   Code', how='left', rsuffix='_2017')
     print(df.info())
     logger = logging.getLogger('Data loaded to dataframe.')
     # print(df)
@@ -97,6 +102,7 @@ def get_attributes(row):
     industry = {
         'code': row['2022 NAICS US   Code'],
         'name': row['2022 NAICS US Title'],
+        'name2017': row['Title'],
         'length': len(str(row['2022 NAICS US   Code'])),
         'year': 2022,
         'change': row['Change Indicator']
@@ -142,6 +148,7 @@ def get_iris(industry):
 
 def triplify(df):
     kg = Initial_KG()
+    kg2= Initial_KG()
     for idx, row in df.iterrows():
         # get attributes
         industry = get_attributes(row)
@@ -171,10 +178,30 @@ def triplify(df):
             kg.add((industry_iri, fio['ofYear'], Literal('2017', datatype=XSD.gYear)))
         if industry['change'] in ['***']:
             #print(industry_iri+'-2017', 'changed')
-            kg.add((industry_iri+'-2017', RDF.type, extra_iris['class']))
-            kg.add((industry_iri, DCTERMS.identifier, Literal(industry['code'], datatype=XSD.string)))
-            kg.add((industry_iri+'-2017', fio['ofYear'], Literal('2017', datatype=XSD.gYear)))#year of code
-            kg.add((industry_iri+'-2017', fio['yearDeprecated'], Literal('2017', datatype=XSD.gYear)))#year of code
+            kg2.add((industry_iri+'-2017', RDF.type, extra_iris['class']))
+            kg2.add((industry_iri+'-2017', DCTERMS.identifier, Literal(industry['code'], datatype=XSD.string)))
+            kg2.add((industry_iri+'-2017', fio['ofYear'], Literal('2017', datatype=XSD.gYear)))#year of code
+            kg2.add((industry_iri+'-2017', RDFS.label, Literal(industry['name2017'], datatype=XSD.string)))
+            kg2.add((industry_iri+'-2017', fio['yearDeprecated'], Literal('2017', datatype=XSD.gYear)))#year of code
+
+            #link deprecated code to parent
+            if industry['class']== 'NAICS-IndustryCode' and len(str(industry['code'])) == 6:
+                if str(industry['code'])[5:6] == '0':
+                    #print(industry_iri, 'sameAs', str(industry['code'])[0:5])
+                    kg2.add((industry_iri+'-2017', OWL.sameAs, naics['NAICS-'+str(industry['code'])[0:5]]))
+                else:
+                    #add an extra link between 5 and 6 digit codes
+                    #print(industry_iri,str(industry['code'])[0:5])
+                    kg2.add((industry_iri+'-2017', fio['subcodeOf'], naics['NAICS-'+str(industry['code'])[0:5]]))
+
+            if 'sector' in extra_iris.keys():
+                kg2.add((industry_iri+'-2017', fio['subcodeOf'], extra_iris['sector']))
+
+            elif 'subsector' in extra_iris.keys():
+                kg2.add((industry_iri+'-2017', fio['subcodeOf'], extra_iris['subsector']))
+           
+            elif 'group' in extra_iris.keys():
+                kg2.add((industry_iri+'-2017', fio['subcodeOf'], extra_iris['group']))
         
         #same as 5 digit code if last digit is 0
         if industry['class']== 'NAICS-IndustryCode' and len(str(industry['code'])) == 6:
@@ -219,7 +246,7 @@ def triplify(df):
     kg.add((naics['NAICS-49'], OWL.sameAs, naics['NAICS-48']))
 
 
-    return kg
+    return kg, kg2
 
 
 ## utility functions

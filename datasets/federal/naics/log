@@ -8,3 +8,14 @@
 00:07:11,680 root INFO Running triplification for naics
 00:33:57,21 root INFO Running triplification for naics
 00:35:09,399 root INFO Running triplification for naics
+00:37:28,58 root INFO Running triplification for naics
+2025-12-05 11:17:34,547 root INFO Start getting industries from ecos
+2025-12-05 11:17:34,630 root INFO Finished writing output to C:\Users\kschw\Documents\SAWGraph\fio\datasets\federal\pfas-industries\ecos\pfashandlingindustrysectors_ecos.ttl
+2025-12-05 11:17:35,417 root INFO Start getting industries from EPA PFAS Analytic Tools
+2025-12-05 11:17:40,602 root INFO Finished writing output to C:\Users\kschw\Documents\SAWGraph\fio\datasets\federal\pfas-industries\epa-pfas-analytic-tools\pfashandlingindustrysectors-epa.ttl
+11:25:21,255 root INFO Running triplification for naics
+11:27:04,351 root INFO Running triplification for naics
+11:27:12,753 root INFO Running triplification for naics
+11:27:35,394 root INFO Running triplification for naics
+11:28:16,267 root INFO Running triplification for naics
+11:33:40,652 root INFO Running triplification for naics
