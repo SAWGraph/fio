@@ -17,7 +17,7 @@ The Facilities and Industries Ontology provides a representation of facilities a
  The ontology is instantiated by the datasets for NAICS and EPA FRS in [/datasets](/datasets)
  
  The dataset folders contains:
-* Dataset ontology that serves that aligns dataset terms to FIO
+* Dataset ontology that serves to aligns dataset terms to FIO
 * instances or a sample of instances (for epa-frs) 
 * python scripts used to triplify the dataset
 
