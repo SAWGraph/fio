@@ -28,7 +28,7 @@ logname = "log"
 
 ## data path
 root_folder =Path(__file__).resolve().parent.parent.parent
-print('root folder: ', root_folder)
+#print('root folder: ', root_folder)
 data_dir =  root_folder / "data/naics/"
 metadata_dir = None
 output_dir = root_folder / "datasets/federal/naics/"
@@ -64,6 +64,11 @@ def main():
 def load_data():
     # df = pd.read_csv(data_dir / "industrysectors_ME.csv")
     df = pd.read_excel(data_dir / 'NAICS_2-6 digit_2022_Codes.xlsx')
+    df2 = pd.read_excel(data_dir / '2022_NAICS_Structure.xlsx')
+    df2.index = df2['2022 NAICS Code']
+    print(df.info())
+    print(df2.info())
+    df = df.join(df2, on='2022 NAICS US   Code', how='left')
     print(df.info())
     logger = logging.getLogger('Data loaded to dataframe.')
     # print(df)
@@ -93,7 +98,8 @@ def get_attributes(row):
         'code': row['2022 NAICS US   Code'],
         'name': row['2022 NAICS US Title'],
         'length': len(str(row['2022 NAICS US   Code'])),
-        'year': 2022
+        'year': 2022,
+        'change': row['Change Indicator']
     }
     #determine which class and parent class based on length
     if industry['length']<=2:
@@ -140,8 +146,9 @@ def triplify(df):
         # get attributes
         industry = get_attributes(row)
         if pd.isna(industry['code']):
-            print(idx) #skip and report any blank rows
-            continue
+            #print(idx, row) #skip and report any blank rows
+            #continue
+            pass
         # get iris
         industry_iri, extra_iris = get_iris(industry)
 
@@ -151,6 +158,23 @@ def triplify(df):
         kg.add((industry_iri, DCTERMS.identifier, Literal(industry['code'], datatype=XSD.string)))
         kg.add((industry_iri, RDFS.label, Literal(industry['name'], datatype=XSD.string)))
         kg.add((industry_iri, fio['ofYear'], Literal(industry['year'], datatype=XSD.gYear)))#year of code
+
+        #determine deprication and 2017 mapping
+        '''Note for Indicator field:     * = title change, no content change
+                                    ** = new code for 2022 NAICS
+                                  *** = re-used code, content change (with or without title change)
+                                **** = re-used code, content change at lower level with insignificant
+                                           impact at this level (with or without title change)
+        '''
+        if industry['change'] in ['','*',"****"] or pd.isna(industry['change']):
+            #print(industry_iri, 'no change')
+            kg.add((industry_iri, fio['ofYear'], Literal('2017', datatype=XSD.gYear)))
+        if industry['change'] in ['**']:
+            #print(industry_iri+'-2017', 'changed')
+            kg.add((industry_iri+'-2017', RDF.type, extra_iris['class']))
+            kg.add((industry_iri, DCTERMS.identifier, Literal(industry['code'], datatype=XSD.string)))
+            kg.add((industry_iri+'-2017', fio['ofYear'], Literal('2017', datatype=XSD.gYear)))#year of code
+            kg.add((industry_iri+'-2017', fio['yearDeprecated'], Literal('2017', datatype=XSD.gYear)))#year of code
         
         #same as 5 digit code if last digit is 0
         if industry['class']== 'NAICS-IndustryCode' and len(str(industry['code'])) == 6:
