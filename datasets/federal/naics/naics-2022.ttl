@@ -607,10 +607,6 @@ naics:NAICS-212114 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-2121,
         naics:NAICS-21211 .
 
-naics:NAICS-212114-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-212115 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Underground Coal Mining "^^xsd:string ;
@@ -618,10 +614,6 @@ naics:NAICS-212115 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-2121,
         naics:NAICS-21211 .
-
-naics:NAICS-212115-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-212210 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -640,10 +632,6 @@ naics:NAICS-212220 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-2122 ;
     owl:sameAs naics:NAICS-21222 .
 
-naics:NAICS-212220-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-212230 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Copper, Nickel, Lead, and Zinc Mining "^^xsd:string ;
@@ -660,10 +648,6 @@ naics:NAICS-212290 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-2122 ;
     owl:sameAs naics:NAICS-21229 .
-
-naics:NAICS-212290-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-212311 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -727,10 +711,6 @@ naics:NAICS-212323 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-2123,
         naics:NAICS-21232 .
 
-naics:NAICS-212323-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-212390 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Other Nonmetallic Mineral Mining and Quarrying "^^xsd:string ;
@@ -738,10 +718,6 @@ naics:NAICS-212390 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-2123 ;
     owl:sameAs naics:NAICS-21239 .
-
-naics:NAICS-212390-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-213111 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -1751,10 +1727,6 @@ naics:NAICS-314999 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-3149,
         naics:NAICS-31499 .
 
-naics:NAICS-31512-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-315120 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Apparel Knitting Mills"^^xsd:string ;
@@ -1762,10 +1734,6 @@ naics:NAICS-315120 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-3151 ;
     owl:sameAs naics:NAICS-31512 .
-
-naics:NAICS-315120-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-315210 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -1776,10 +1744,6 @@ naics:NAICS-315210 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-3152 ;
     owl:sameAs naics:NAICS-31521 .
 
-naics:NAICS-31525-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-315250 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Cut and Sew Apparel Manufacturing (except Contractors) "^^xsd:string ;
@@ -1787,10 +1751,6 @@ naics:NAICS-315250 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-3152 ;
     owl:sameAs naics:NAICS-31525 .
-
-naics:NAICS-315250-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-315990 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -1826,10 +1786,6 @@ naics:NAICS-316990 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-3169 ;
     owl:sameAs naics:NAICS-31699 .
-
-naics:NAICS-316990-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-321113 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -1874,10 +1830,6 @@ naics:NAICS-321215 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-3212,
         naics:NAICS-32121 .
-
-naics:NAICS-321215-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-321219 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -1967,10 +1919,6 @@ naics:NAICS-322120 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-3221 ;
     owl:sameAs naics:NAICS-32212 .
-
-naics:NAICS-322120-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-322130 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -2241,6 +2189,10 @@ naics:NAICS-325314 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-3253,
         naics:NAICS-32531 .
 
+naics:NAICS-325314-2017 a naics:NAICS-IndustryCode ;
+    fio:ofYear "2017"^^xsd:gYear ;
+    fio:yearDeprecated "2017"^^xsd:gYear .
+
 naics:NAICS-325315 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Compost Manufacturing"^^xsd:string ;
@@ -2248,10 +2200,6 @@ naics:NAICS-325315 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-3253,
         naics:NAICS-32531 .
-
-naics:NAICS-325315-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-325320 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -3269,10 +3217,6 @@ naics:NAICS-333248 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-3332,
         naics:NAICS-33324 .
 
-naics:NAICS-333248-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-333310 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Commercial and Service Industry Machinery Manufacturing "^^xsd:string ;
@@ -3280,10 +3224,6 @@ naics:NAICS-333310 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-3333 ;
     owl:sameAs naics:NAICS-33331 .
-
-naics:NAICS-333310-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-333413 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -3509,10 +3449,6 @@ naics:NAICS-333998 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-3339,
         naics:NAICS-33399 .
 
-naics:NAICS-333998-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-334111 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Electronic Computer Manufacturing "^^xsd:string ;
@@ -3719,14 +3655,6 @@ naics:NAICS-334610 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-3346 ;
     owl:sameAs naics:NAICS-33461 .
 
-naics:NAICS-334610-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-33513-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-335131 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Residential Electric Lighting Fixture Manufacturing "^^xsd:string ;
@@ -3734,10 +3662,6 @@ naics:NAICS-335131 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-3351,
         naics:NAICS-33513 .
-
-naics:NAICS-335131-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-335132 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -3747,10 +3671,6 @@ naics:NAICS-335132 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-3351,
         naics:NAICS-33513 .
 
-naics:NAICS-335132-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-335139 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Electric Lamp Bulb and Other Lighting Equipment Manufacturing "^^xsd:string ;
@@ -3758,10 +3678,6 @@ naics:NAICS-335139 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-3351,
         naics:NAICS-33513 .
-
-naics:NAICS-335139-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-335210 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -3825,10 +3741,6 @@ naics:NAICS-335910 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-3359 ;
     owl:sameAs naics:NAICS-33591 .
 
-naics:NAICS-335910-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-335921 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Fiber Optic Cable Manufacturing "^^xsd:string ;
@@ -3890,10 +3802,6 @@ naics:NAICS-336110 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-3361 ;
     owl:sameAs naics:NAICS-33611 .
-
-naics:NAICS-336110-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-336120 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -4154,10 +4062,6 @@ naics:NAICS-337126 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-3371,
         naics:NAICS-33712 .
-
-naics:NAICS-337126-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-337127 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -4753,10 +4657,6 @@ naics:NAICS-424340 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4243 ;
     owl:sameAs naics:NAICS-42434 .
 
-naics:NAICS-42435-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-424350 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Clothing and Clothing Accessories Merchant Wholesalers"^^xsd:string ;
@@ -4764,10 +4664,6 @@ naics:NAICS-424350 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4243 ;
     owl:sameAs naics:NAICS-42435 .
-
-naics:NAICS-424350-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-424410 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -4985,6 +4881,10 @@ naics:NAICS-424990 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4249 ;
     owl:sameAs naics:NAICS-42499 .
 
+naics:NAICS-42512-2017 a naics:NAICS-IndustryCode ;
+    fio:ofYear "2017"^^xsd:gYear ;
+    fio:yearDeprecated "2017"^^xsd:gYear .
+
 naics:NAICS-425120 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Wholesale Trade Agents and Brokers "^^xsd:string ;
@@ -4992,6 +4892,10 @@ naics:NAICS-425120 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4251 ;
     owl:sameAs naics:NAICS-42512 .
+
+naics:NAICS-425120-2017 a naics:NAICS-IndustryCode ;
+    fio:ofYear "2017"^^xsd:gYear ;
+    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-441110 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5037,11 +4941,7 @@ naics:NAICS-441227 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4412,
         naics:NAICS-44122 .
 
-naics:NAICS-441227-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-44133-2017 a naics:NAICS-IndustryCode ;
+naics:NAICS-4413-2017 a naics:NAICS-IndustryGroup ;
     fio:ofYear "2017"^^xsd:gYear ;
     fio:yearDeprecated "2017"^^xsd:gYear .
 
@@ -5053,14 +4953,6 @@ naics:NAICS-441330 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4413 ;
     owl:sameAs naics:NAICS-44133 .
 
-naics:NAICS-441330-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-44134-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-441340 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Tire Dealers "^^xsd:string ;
@@ -5068,10 +4960,6 @@ naics:NAICS-441340 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4413 ;
     owl:sameAs naics:NAICS-44134 .
-
-naics:NAICS-441340-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-444110 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5091,10 +4979,6 @@ naics:NAICS-444120 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4441 ;
     owl:sameAs naics:NAICS-44412 .
 
-naics:NAICS-44414-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-444140 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Hardware Retailers "^^xsd:string ;
@@ -5102,14 +4986,6 @@ naics:NAICS-444140 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4441 ;
     owl:sameAs naics:NAICS-44414 .
-
-naics:NAICS-444140-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-44418-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-444180 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5119,11 +4995,7 @@ naics:NAICS-444180 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4441 ;
     owl:sameAs naics:NAICS-44418 .
 
-naics:NAICS-444180-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-44423-2017 a naics:NAICS-IndustryCode ;
+naics:NAICS-4442-2017 a naics:NAICS-IndustryGroup ;
     fio:ofYear "2017"^^xsd:gYear ;
     fio:yearDeprecated "2017"^^xsd:gYear .
 
@@ -5135,14 +5007,6 @@ naics:NAICS-444230 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4442 ;
     owl:sameAs naics:NAICS-44423 .
 
-naics:NAICS-444230-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-44424-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-444240 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Nursery, Garden Center, and Farm Supply Retailers "^^xsd:string ;
@@ -5150,10 +5014,6 @@ naics:NAICS-444240 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4442 ;
     owl:sameAs naics:NAICS-44424 .
-
-naics:NAICS-444240-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-445110 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5164,10 +5024,6 @@ naics:NAICS-445110 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4451 ;
     owl:sameAs naics:NAICS-44511 .
 
-naics:NAICS-44513-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-445131 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Convenience Retailers "^^xsd:string ;
@@ -5176,10 +5032,6 @@ naics:NAICS-445131 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4451,
         naics:NAICS-44513 .
 
-naics:NAICS-445131-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-445132 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Vending Machine Operators "^^xsd:string ;
@@ -5187,10 +5039,6 @@ naics:NAICS-445132 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4451,
         naics:NAICS-44513 .
-
-naics:NAICS-445132-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-445230 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5201,10 +5049,6 @@ naics:NAICS-445230 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4452 ;
     owl:sameAs naics:NAICS-44523 .
 
-naics:NAICS-44524-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-445240 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Meat Retailers "^^xsd:string ;
@@ -5213,14 +5057,6 @@ naics:NAICS-445240 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4452 ;
     owl:sameAs naics:NAICS-44524 .
 
-naics:NAICS-445240-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-44525-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-445250 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Fish and Seafood Retailers "^^xsd:string ;
@@ -5228,10 +5064,6 @@ naics:NAICS-445250 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4452 ;
     owl:sameAs naics:NAICS-44525 .
-
-naics:NAICS-445250-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-445291 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5259,11 +5091,7 @@ naics:NAICS-445298 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4452,
         naics:NAICS-44529 .
 
-naics:NAICS-445298-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-44532-2017 a naics:NAICS-IndustryCode ;
+naics:NAICS-4453-2017 a naics:NAICS-IndustryGroup ;
     fio:ofYear "2017"^^xsd:gYear ;
     fio:yearDeprecated "2017"^^xsd:gYear .
 
@@ -5275,22 +5103,6 @@ naics:NAICS-445320 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4453 ;
     owl:sameAs naics:NAICS-44532 .
 
-naics:NAICS-445320-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-449-2017 a naics:NAICS-IndustrySubsector ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4491-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-44911-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-449110 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Furniture Retailers "^^xsd:string ;
@@ -5298,14 +5110,6 @@ naics:NAICS-449110 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4491 ;
     owl:sameAs naics:NAICS-44911 .
-
-naics:NAICS-449110-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-44912-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-449121 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5315,10 +5119,6 @@ naics:NAICS-449121 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4491,
         naics:NAICS-44912 .
 
-naics:NAICS-449121-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-449122 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Window Treatment Retailers "^^xsd:string ;
@@ -5326,10 +5126,6 @@ naics:NAICS-449122 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4491,
         naics:NAICS-44912 .
-
-naics:NAICS-449122-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-449129 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5339,18 +5135,6 @@ naics:NAICS-449129 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4491,
         naics:NAICS-44912 .
 
-naics:NAICS-449129-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4492-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-44921-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-449210 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Electronics and Appliance Retailers "^^xsd:string ;
@@ -5358,22 +5142,6 @@ naics:NAICS-449210 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4492 ;
     owl:sameAs naics:NAICS-44921 .
-
-naics:NAICS-449210-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-455-2017 a naics:NAICS-IndustrySubsector ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4551-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45511-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-455110 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5383,18 +5151,6 @@ naics:NAICS-455110 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4551 ;
     owl:sameAs naics:NAICS-45511 .
 
-naics:NAICS-455110-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4552-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45521-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-455211 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Warehouse Clubs and Supercenters "^^xsd:string ;
@@ -5402,10 +5158,6 @@ naics:NAICS-455211 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4552,
         naics:NAICS-45521 .
-
-naics:NAICS-455211-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-455219 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5415,22 +5167,6 @@ naics:NAICS-455219 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4552,
         naics:NAICS-45521 .
 
-naics:NAICS-455219-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-456-2017 a naics:NAICS-IndustrySubsector ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4561-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45611-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-456110 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Pharmacies and Drug Retailers "^^xsd:string ;
@@ -5438,14 +5174,6 @@ naics:NAICS-456110 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4561 ;
     owl:sameAs naics:NAICS-45611 .
-
-naics:NAICS-456110-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45612-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-456120 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5455,14 +5183,6 @@ naics:NAICS-456120 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4561 ;
     owl:sameAs naics:NAICS-45612 .
 
-naics:NAICS-456120-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45613-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-456130 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Optical Goods Retailers "^^xsd:string ;
@@ -5470,14 +5190,6 @@ naics:NAICS-456130 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4561 ;
     owl:sameAs naics:NAICS-45613 .
-
-naics:NAICS-456130-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45619-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-456191 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5487,10 +5199,6 @@ naics:NAICS-456191 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4561,
         naics:NAICS-45619 .
 
-naics:NAICS-456191-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-456199 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "All Other Health and Personal Care Retailers "^^xsd:string ;
@@ -5498,22 +5206,6 @@ naics:NAICS-456199 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4561,
         naics:NAICS-45619 .
-
-naics:NAICS-456199-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-457-2017 a naics:NAICS-IndustrySubsector ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4571-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45711-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-457110 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5523,14 +5215,6 @@ naics:NAICS-457110 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4571 ;
     owl:sameAs naics:NAICS-45711 .
 
-naics:NAICS-457110-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45712-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-457120 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Other Gasoline Stations "^^xsd:string ;
@@ -5538,18 +5222,6 @@ naics:NAICS-457120 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4571 ;
     owl:sameAs naics:NAICS-45712 .
-
-naics:NAICS-457120-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4572-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45721-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-457210 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5559,22 +5231,6 @@ naics:NAICS-457210 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4572 ;
     owl:sameAs naics:NAICS-45721 .
 
-naics:NAICS-457210-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-458-2017 a naics:NAICS-IndustrySubsector ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4581-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45811-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-458110 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Clothing and Clothing Accessories Retailers "^^xsd:string ;
@@ -5582,18 +5238,6 @@ naics:NAICS-458110 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4581 ;
     owl:sameAs naics:NAICS-45811 .
-
-naics:NAICS-458110-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4582-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45821-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-458210 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5603,18 +5247,6 @@ naics:NAICS-458210 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4582 ;
     owl:sameAs naics:NAICS-45821 .
 
-naics:NAICS-458210-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4583-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45831-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-458310 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Jewelry Retailers "^^xsd:string ;
@@ -5622,14 +5254,6 @@ naics:NAICS-458310 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4583 ;
     owl:sameAs naics:NAICS-45831 .
-
-naics:NAICS-458310-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45832-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-458320 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5639,22 +5263,6 @@ naics:NAICS-458320 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4583 ;
     owl:sameAs naics:NAICS-45832 .
 
-naics:NAICS-458320-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-459-2017 a naics:NAICS-IndustrySubsector ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4591-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45911-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-459110 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Sporting Goods Retailers "^^xsd:string ;
@@ -5662,14 +5270,6 @@ naics:NAICS-459110 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4591 ;
     owl:sameAs naics:NAICS-45911 .
-
-naics:NAICS-459110-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45912-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-459120 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5679,14 +5279,6 @@ naics:NAICS-459120 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4591 ;
     owl:sameAs naics:NAICS-45912 .
 
-naics:NAICS-459120-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45913-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-459130 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Sewing, Needlework, and Piece Goods Retailers "^^xsd:string ;
@@ -5694,14 +5286,6 @@ naics:NAICS-459130 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4591 ;
     owl:sameAs naics:NAICS-45913 .
-
-naics:NAICS-459130-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45914-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-459140 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5711,18 +5295,6 @@ naics:NAICS-459140 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4591 ;
     owl:sameAs naics:NAICS-45914 .
 
-naics:NAICS-459140-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4592-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45921-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-459210 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Book Retailers and News Dealers "^^xsd:string ;
@@ -5730,18 +5302,6 @@ naics:NAICS-459210 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4592 ;
     owl:sameAs naics:NAICS-45921 .
-
-naics:NAICS-459210-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4593-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45931-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-459310 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5751,18 +5311,6 @@ naics:NAICS-459310 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4593 ;
     owl:sameAs naics:NAICS-45931 .
 
-naics:NAICS-459310-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4594-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45941-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-459410 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Office Supplies and Stationery Retailers "^^xsd:string ;
@@ -5770,14 +5318,6 @@ naics:NAICS-459410 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4594 ;
     owl:sameAs naics:NAICS-45941 .
-
-naics:NAICS-459410-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45942-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-459420 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5787,18 +5327,6 @@ naics:NAICS-459420 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4594 ;
     owl:sameAs naics:NAICS-45942 .
 
-naics:NAICS-459420-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4595-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45951-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-459510 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Used Merchandise Retailers "^^xsd:string ;
@@ -5806,18 +5334,6 @@ naics:NAICS-459510 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4595 ;
     owl:sameAs naics:NAICS-45951 .
-
-naics:NAICS-459510-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-4599-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45991-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-459910 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5827,14 +5343,6 @@ naics:NAICS-459910 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4599 ;
     owl:sameAs naics:NAICS-45991 .
 
-naics:NAICS-459910-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45992-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-459920 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Art Dealers "^^xsd:string ;
@@ -5842,14 +5350,6 @@ naics:NAICS-459920 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4599 ;
     owl:sameAs naics:NAICS-45992 .
-
-naics:NAICS-459920-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45993-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-459930 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -5859,14 +5359,6 @@ naics:NAICS-459930 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4599 ;
     owl:sameAs naics:NAICS-45993 .
 
-naics:NAICS-459930-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-45999-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-459991 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Tobacco, Electronic Cigarette, and Other Smoking Supplies Retailers "^^xsd:string ;
@@ -5875,10 +5367,6 @@ naics:NAICS-459991 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-4599,
         naics:NAICS-45999 .
 
-naics:NAICS-459991-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-459999 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "All Other Miscellaneous Retailers "^^xsd:string ;
@@ -5886,10 +5374,6 @@ naics:NAICS-459999 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-4599,
         naics:NAICS-45999 .
-
-naics:NAICS-459999-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-481111 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -6494,18 +5978,6 @@ naics:NAICS-512290 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5122 ;
     owl:sameAs naics:NAICS-51229 .
 
-naics:NAICS-513-2017 a naics:NAICS-IndustrySubsector ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-5131-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-51311-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-513110 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Newspaper Publishers "^^xsd:string ;
@@ -6513,14 +5985,6 @@ naics:NAICS-513110 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-5131 ;
     owl:sameAs naics:NAICS-51311 .
-
-naics:NAICS-513110-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-51312-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-513120 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -6530,14 +5994,6 @@ naics:NAICS-513120 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5131 ;
     owl:sameAs naics:NAICS-51312 .
 
-naics:NAICS-513120-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-51313-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-513130 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Book Publishers "^^xsd:string ;
@@ -6545,14 +6001,6 @@ naics:NAICS-513130 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-5131 ;
     owl:sameAs naics:NAICS-51313 .
-
-naics:NAICS-513130-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-51314-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-513140 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -6562,14 +6010,6 @@ naics:NAICS-513140 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5131 ;
     owl:sameAs naics:NAICS-51314 .
 
-naics:NAICS-513140-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-51319-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-513191 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Greeting Card Publishers "^^xsd:string ;
@@ -6577,10 +6017,6 @@ naics:NAICS-513191 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-5131,
         naics:NAICS-51319 .
-
-naics:NAICS-513191-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-513199 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -6590,18 +6026,6 @@ naics:NAICS-513199 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5131,
         naics:NAICS-51319 .
 
-naics:NAICS-513199-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-5132-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-51321-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-513210 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Software Publishers"^^xsd:string ;
@@ -6609,22 +6033,6 @@ naics:NAICS-513210 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-5132 ;
     owl:sameAs naics:NAICS-51321 .
-
-naics:NAICS-513210-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-516-2017 a naics:NAICS-IndustrySubsector ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-5161-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-51611-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-516110 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -6634,14 +6042,6 @@ naics:NAICS-516110 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5161 ;
     owl:sameAs naics:NAICS-51611 .
 
-naics:NAICS-516110-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-51612-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-516120 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Television Broadcasting Stations"^^xsd:string ;
@@ -6649,18 +6049,6 @@ naics:NAICS-516120 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-5161 ;
     owl:sameAs naics:NAICS-51612 .
-
-naics:NAICS-516120-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-5162-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-51621-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-516210 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -6670,18 +6058,6 @@ naics:NAICS-516210 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5162 ;
     owl:sameAs naics:NAICS-51621 .
 
-naics:NAICS-516210-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-5171-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-51711-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-517111 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Wired Telecommunications Carriers "^^xsd:string ;
@@ -6689,10 +6065,6 @@ naics:NAICS-517111 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-5171,
         naics:NAICS-51711 .
-
-naics:NAICS-517111-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-517112 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -6702,14 +6074,6 @@ naics:NAICS-517112 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5171,
         naics:NAICS-51711 .
 
-naics:NAICS-517112-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-51712-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-517121 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Telecommunications Resellers"^^xsd:string ;
@@ -6718,10 +6082,6 @@ naics:NAICS-517121 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5171,
         naics:NAICS-51712 .
 
-naics:NAICS-517121-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-517122 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Agents for Wireless Telecommunications Services"^^xsd:string ;
@@ -6729,10 +6089,6 @@ naics:NAICS-517122 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-5171,
         naics:NAICS-51712 .
-
-naics:NAICS-517122-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-517410 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -6743,14 +6099,6 @@ naics:NAICS-517410 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5174 ;
     owl:sameAs naics:NAICS-51741 .
 
-naics:NAICS-5178-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-51781-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-517810 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "All Other Telecommunications "^^xsd:string ;
@@ -6758,10 +6106,6 @@ naics:NAICS-517810 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-5178 ;
     owl:sameAs naics:NAICS-51781 .
-
-naics:NAICS-517810-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-518210 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -6772,11 +6116,7 @@ naics:NAICS-518210 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5182 ;
     owl:sameAs naics:NAICS-51821 .
 
-naics:NAICS-5192-2017 a naics:NAICS-IndustryGroup ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-51921-2017 a naics:NAICS-IndustryCode ;
+naics:NAICS-519-2017 a naics:NAICS-IndustrySubsector ;
     fio:ofYear "2017"^^xsd:gYear ;
     fio:yearDeprecated "2017"^^xsd:gYear .
 
@@ -6788,14 +6128,6 @@ naics:NAICS-519210 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5192 ;
     owl:sameAs naics:NAICS-51921 .
 
-naics:NAICS-519210-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-51929-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-519290 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Web Search Portals and All Other Information Services"^^xsd:string ;
@@ -6803,10 +6135,6 @@ naics:NAICS-519290 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-5192 ;
     owl:sameAs naics:NAICS-51929 .
-
-naics:NAICS-519290-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-521110 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -6835,10 +6163,6 @@ naics:NAICS-522130 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5221 ;
     owl:sameAs naics:NAICS-52213 .
 
-naics:NAICS-52218-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-522180 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Savings Institutions and Other Depository Credit Intermediation "^^xsd:string ;
@@ -6846,10 +6170,6 @@ naics:NAICS-522180 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-5221 ;
     owl:sameAs naics:NAICS-52218 .
-
-naics:NAICS-522180-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-522210 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -6895,10 +6215,6 @@ naics:NAICS-522299 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5222,
         naics:NAICS-52229 .
 
-naics:NAICS-522299-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-522310 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Mortgage and Nonmortgage Loan Brokers "^^xsd:string ;
@@ -6926,10 +6242,6 @@ naics:NAICS-522390 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5223 ;
     owl:sameAs naics:NAICS-52239 .
 
-naics:NAICS-52315-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-523150 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Investment Banking and Securities Intermediation "^^xsd:string ;
@@ -6938,14 +6250,6 @@ naics:NAICS-523150 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5231 ;
     owl:sameAs naics:NAICS-52315 .
 
-naics:NAICS-523150-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
-naics:NAICS-52316-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-523160 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Commodity Contracts Intermediation "^^xsd:string ;
@@ -6953,10 +6257,6 @@ naics:NAICS-523160 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-5231 ;
     owl:sameAs naics:NAICS-52316 .
-
-naics:NAICS-523160-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-523210 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -6976,10 +6276,6 @@ naics:NAICS-523910 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-5239 ;
     owl:sameAs naics:NAICS-52391 .
 
-naics:NAICS-52394-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-523940 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Portfolio Management and Investment Advice "^^xsd:string ;
@@ -6987,10 +6283,6 @@ naics:NAICS-523940 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-5239 ;
     owl:sameAs naics:NAICS-52394 .
-
-naics:NAICS-523940-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-523991 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
@@ -9115,10 +8407,6 @@ naics:NAICS-811114 a naics:NAICS-IndustryCode,
     fio:subcodeOf naics:NAICS-8111,
         naics:NAICS-81111 .
 
-naics:NAICS-811114-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
-
 naics:NAICS-811121 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;
     rdfs:label "Automotive Body, Paint, and Interior Repair and Maintenance "^^xsd:string ;
@@ -9171,10 +8459,6 @@ naics:NAICS-811210 a naics:NAICS-IndustryCode,
     fio:ofYear "2022"^^xsd:gYear ;
     fio:subcodeOf naics:NAICS-8112 ;
     owl:sameAs naics:NAICS-81121 .
-
-naics:NAICS-811210-2017 a naics:NAICS-IndustryCode ;
-    fio:ofYear "2017"^^xsd:gYear ;
-    fio:yearDeprecated "2017"^^xsd:gYear .
 
 naics:NAICS-811310 a naics:NAICS-IndustryCode,
         owl:NamedIndividual ;

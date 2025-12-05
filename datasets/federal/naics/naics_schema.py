@@ -169,7 +169,7 @@ def triplify(df):
         if industry['change'] in ['','*',"****"] or pd.isna(industry['change']):
             #print(industry_iri, 'no change')
             kg.add((industry_iri, fio['ofYear'], Literal('2017', datatype=XSD.gYear)))
-        if industry['change'] in ['**']:
+        if industry['change'] in ['***']:
             #print(industry_iri+'-2017', 'changed')
             kg.add((industry_iri+'-2017', RDF.type, extra_iris['class']))
             kg.add((industry_iri, DCTERMS.identifier, Literal(industry['code'], datatype=XSD.string)))
