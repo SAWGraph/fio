@@ -491,3 +491,4 @@
 2025-11-14 19:17:45,859 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/FL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/70000:80000/json HTTP/1.1" 200 None
 2025-11-14 19:17:46,975 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/FL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/150000:160000/json HTTP/1.1" 200 None
 2025-11-14 19:17:46,977 root INFO finished fetching facilities.
+2025-12-03 09:59:33,935 root INFO Start getting industries from ecos

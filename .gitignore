@@ -3,3 +3,17 @@ datasets/federal/us-frs/__pycache__/variable.cpython-311.pyc
 datasets/federal/naics/catalog-v001.xml
 docs/readme.md
 datasets/federal/us-frs/triples/
+fio_implicit_1_incomplete.ttl
+FIO_implicit_1.ttl
+FIO_implicit_1.ttl.gz
+FIO_implicit_2_incomplete.ttl
+FIO_implicit_2.ttl
+FIO_implicit_2.ttl.gz
+fio_implicit_incomplete.ttl
+fio_implicit.ttl
+fio_implicit_xaa.ttl
+fio_implicit_xaa.ttl.gz
+fio_implicit_xab.ttl
+fio_implicit_xab.ttl.gz
+fio_implicit.ttl.gz
+split.sh
