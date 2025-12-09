@@ -71,22 +71,29 @@
 # 
 # http://w3id.org/fio/v1/fio#hasFacility
 <http://w3id.org/fio/v1/fio#hasFacility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/fio/v1/fio#hasFacility> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/ns/prov#wasAttributedTo> .
 <http://w3id.org/fio/v1/fio#hasFacility> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/fio/v1/fio#Organization> .
 <http://w3id.org/fio/v1/fio#hasFacility> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/fio/v1/fio#Facility> .
-<http://w3id.org/fio/v1/fio#hasFacility> <http://purl.org/dc/terms/decscription> "A relation between an organization and a facility it has ownership, management or other affiliation with." .
+<http://w3id.org/fio/v1/fio#hasFacility> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between an organization and a facility it has ownership, management or other affiliation with." .
 <http://w3id.org/fio/v1/fio#hasFacility> <http://www.w3.org/2000/01/rdf-schema#label> "has Facility" .
+# 
+# http://w3id.org/fio/v1/fio#hasMember
+<http://w3id.org/fio/v1/fio#hasMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/fio/v1/fio#hasMember> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between a collection a member of the collection." .
+<http://w3id.org/fio/v1/fio#hasMember> <http://www.w3.org/2000/01/rdf-schema#label> "has member" .
 # 
 # http://w3id.org/fio/v1/fio#ofIndustry
 <http://w3id.org/fio/v1/fio#ofIndustry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://w3id.org/fio/v1/fio#ofIndustry> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/fio/v1/fio#Industry> .
-<http://w3id.org/fio/v1/fio#ofIndustry> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid2 .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid1 .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/fio/v1/fio#subcodeOf> .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/fio/v1/fio#ofIndustry> .
+<http://w3id.org/fio/v1/fio#ofIndustry> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/fio/v1/fio#subcodeOf> .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-<http://w3id.org/fio/v1/fio#ofIndustry> <http://purl.org/dc/terms/description> "A relation between an entity and the industry it is classified under" .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/fio/v1/fio#ofIndustry> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://w3id.org/fio/v1/fio#ofIndustry> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between an entity and the industry it is classified under" .
 <http://w3id.org/fio/v1/fio#ofIndustry> <http://www.w3.org/2000/01/rdf-schema#label> "of industry" .
 # 
 # http://w3id.org/fio/v1/fio#sameCode
@@ -101,7 +108,7 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 <http://w3id.org/fio/v1/fio#subcodeOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
 <http://w3id.org/fio/v1/fio#subcodeOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/fio/v1/fio#Industry> .
 <http://w3id.org/fio/v1/fio#subcodeOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/fio/v1/fio#Industry> .
-<http://w3id.org/fio/v1/fio#subcodeOf> <http://purl.org/dc/terms/description> "A hierarchical relation between an industry and its parent industry" .
+<http://w3id.org/fio/v1/fio#subcodeOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A hierarchical relation between an industry and its parent industry" .
 <http://w3id.org/fio/v1/fio#subcodeOf> <http://www.w3.org/2000/01/rdf-schema#label> "subcode of" .
 # 
 # http://www.w3.org/ns/prov#wasAttributedTo
@@ -120,14 +127,14 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 <http://w3id.org/fio/v1/fio#ofYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://w3id.org/fio/v1/fio#ofYear> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/fio/v1/fio#Industry> .
 <http://w3id.org/fio/v1/fio#ofYear> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
-<http://w3id.org/fio/v1/fio#ofYear> <http://purl.org/dc/terms/description> "A relation between an industry code and the schema year it belongs to." .
+<http://w3id.org/fio/v1/fio#ofYear> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between an industry code and the schema year it belongs to." .
 <http://w3id.org/fio/v1/fio#ofYear> <http://www.w3.org/2000/01/rdf-schema#label> "of Year" .
 # 
 # http://w3id.org/fio/v1/fio#yearDeprecated
 <http://w3id.org/fio/v1/fio#yearDeprecated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://w3id.org/fio/v1/fio#yearDeprecated> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/fio/v1/fio#Industry> .
 <http://w3id.org/fio/v1/fio#yearDeprecated> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
-<http://w3id.org/fio/v1/fio#yearDeprecated> <http://purl.org/dc/terms/description> "A relation between an industry code and the schema year it was deprecated and removed as a industry code with the same meaning." .
+<http://w3id.org/fio/v1/fio#yearDeprecated> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between an industry code and the schema year it was deprecated and removed as a industry code with the same meaning." .
 <http://w3id.org/fio/v1/fio#yearDeprecated> <http://www.w3.org/2000/01/rdf-schema#label> "year deprecated" .
 # 
 # 
@@ -141,28 +148,30 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 # 
 # http://w3id.org/fio/v1/fio#Facility
 <http://w3id.org/fio/v1/fio#Facility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://w3id.org/fio/v1/fio#Facility> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
-_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://w3id.org/fio/v1/fio#Industry> .
-_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/fio/v1/fio#ofIndustry> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://w3id.org/fio/v1/fio#Facility> <http://purl.org/dc/terms/description> "Any physical building, building complex or site (e.g. an airstrip, a mine, or superfund site) at which a commercial or institutional activity occurs." .
+<http://w3id.org/fio/v1/fio#Facility> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://w3id.org/fio/v1/fio#Industry> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/fio/v1/fio#ofIndustry> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/fio/v1/fio#Facility> <http://www.w3.org/2000/01/rdf-schema#comment> "Any physical building, building complex or site (e.g. an airstrip, a mine, or superfund site) at which a commercial or institutional activity occurs." .
 <http://w3id.org/fio/v1/fio#Facility> <http://www.w3.org/2000/01/rdf-schema#label> "Facility" .
 # 
 # http://w3id.org/fio/v1/fio#Industry
 <http://w3id.org/fio/v1/fio#Industry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://w3id.org/fio/v1/fio#Industry> <http://purl.org/dc/terms/description> "A distinct group of productive or profit-making enterprises." .
+<http://w3id.org/fio/v1/fio#Industry> <http://www.w3.org/2000/01/rdf-schema#comment> "A distinct group of productive or profit-making enterprises." .
 <http://w3id.org/fio/v1/fio#Industry> <http://www.w3.org/2000/01/rdf-schema#label> "Industry" .
+# 
+# http://w3id.org/fio/v1/fio#IndustryCollection
+<http://w3id.org/fio/v1/fio#IndustryCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/fio/v1/fio#IndustryCollection> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of industries grouped by a common characteristic." .
+<http://w3id.org/fio/v1/fio#IndustryCollection> <http://www.w3.org/2000/01/rdf-schema#label> "Industry Collection" .
 # 
 # http://w3id.org/fio/v1/fio#Organization
 <http://w3id.org/fio/v1/fio#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/fio/v1/fio#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Agent> .
-<http://w3id.org/fio/v1/fio#Organization> <http://purl.org/dc/terms/description> "" .
+<http://w3id.org/fio/v1/fio#Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
 <http://w3id.org/fio/v1/fio#Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organization" .
 # 
 # http://www.w3.org/ns/prov#Agent
 <http://www.w3.org/ns/prov#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/ns/prov#Organization
-<http://www.w3.org/ns/prov#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

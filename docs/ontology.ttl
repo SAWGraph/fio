@@ -76,10 +76,18 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://w3id.org/fio/v1/fio#hasFacility
 <http://w3id.org/fio/v1/fio#hasFacility> rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf [ owl:inverseOf <http://www.w3.org/ns/prov#wasAttributedTo>
+                                                            ] ;
                                          rdfs:domain <http://w3id.org/fio/v1/fio#Organization> ;
                                          rdfs:range <http://w3id.org/fio/v1/fio#Facility> ;
-                                         <http://purl.org/dc/terms/decscription> "A relation between an organization and a facility it has ownership, management or other affiliation with." ;
+                                         rdfs:comment "A relation between an organization and a facility it has ownership, management or other affiliation with." ;
                                          rdfs:label "has Facility" .
+
+
+###  http://w3id.org/fio/v1/fio#hasMember
+<http://w3id.org/fio/v1/fio#hasMember> rdf:type owl:ObjectProperty ;
+                                       rdfs:comment "A relation between a collection a member of the collection." ;
+                                       rdfs:label "has member" .
 
 
 ###  http://w3id.org/fio/v1/fio#ofIndustry
@@ -88,7 +96,7 @@ xsd:date rdf:type rdfs:Datatype .
                                         owl:propertyChainAxiom ( <http://w3id.org/fio/v1/fio#ofIndustry>
                                                                  <http://w3id.org/fio/v1/fio#subcodeOf>
                                                                ) ;
-                                        <http://purl.org/dc/terms/description> "A relation between an entity and the industry it is classified under" ;
+                                        rdfs:comment "A relation between an entity and the industry it is classified under" ;
                                         rdfs:label "of industry" .
 
 
@@ -105,7 +113,7 @@ xsd:date rdf:type rdfs:Datatype .
                                                 owl:TransitiveProperty ;
                                        rdfs:domain <http://w3id.org/fio/v1/fio#Industry> ;
                                        rdfs:range <http://w3id.org/fio/v1/fio#Industry> ;
-                                       <http://purl.org/dc/terms/description> "A hierarchical relation between an industry and its parent industry" ;
+                                       rdfs:comment "A hierarchical relation between an industry and its parent industry" ;
                                        rdfs:label "subcode of" .
 
 
@@ -121,7 +129,7 @@ xsd:date rdf:type rdfs:Datatype .
 <http://w3id.org/fio/v1/fio#ofYear> rdf:type owl:DatatypeProperty ;
                                     rdfs:domain <http://w3id.org/fio/v1/fio#Industry> ;
                                     rdfs:range xsd:date ;
-                                    <http://purl.org/dc/terms/description> "A relation between an industry code and the schema year it belongs to." ;
+                                    rdfs:comment "A relation between an industry code and the schema year it belongs to." ;
                                     rdfs:label "of Year" .
 
 
@@ -129,7 +137,7 @@ xsd:date rdf:type rdfs:Datatype .
 <http://w3id.org/fio/v1/fio#yearDeprecated> rdf:type owl:DatatypeProperty ;
                                             rdfs:domain <http://w3id.org/fio/v1/fio#Industry> ;
                                             rdfs:range xsd:date ;
-                                            <http://purl.org/dc/terms/description> "A relation between an industry code and the schema year it was deprecated and removed as a industry code with the same meaning." ;
+                                            rdfs:comment "A relation between an industry code and the schema year it was deprecated and removed as a industry code with the same meaning." ;
                                             rdfs:label "year deprecated" .
 
 
@@ -143,29 +151,31 @@ xsd:date rdf:type rdfs:Datatype .
                                                         owl:onProperty <http://w3id.org/fio/v1/fio#ofIndustry> ;
                                                         owl:someValuesFrom <http://w3id.org/fio/v1/fio#Industry>
                                                       ] ;
-                                      <http://purl.org/dc/terms/description> "Any physical building, building complex or site (e.g. an airstrip, a mine, or superfund site) at which a commercial or institutional activity occurs." ;
+                                      rdfs:comment "Any physical building, building complex or site (e.g. an airstrip, a mine, or superfund site) at which a commercial or institutional activity occurs." ;
                                       rdfs:label "Facility" .
 
 
 ###  http://w3id.org/fio/v1/fio#Industry
 <http://w3id.org/fio/v1/fio#Industry> rdf:type owl:Class ;
-                                      <http://purl.org/dc/terms/description> "A distinct group of productive or profit-making enterprises." ;
+                                      rdfs:comment "A distinct group of productive or profit-making enterprises." ;
                                       rdfs:label "Industry" .
+
+
+###  http://w3id.org/fio/v1/fio#IndustryCollection
+<http://w3id.org/fio/v1/fio#IndustryCollection> rdf:type owl:Class ;
+                                                rdfs:comment "A collection of industries grouped by a common characteristic." ;
+                                                rdfs:label "Industry Collection" .
 
 
 ###  http://w3id.org/fio/v1/fio#Organization
 <http://w3id.org/fio/v1/fio#Organization> rdf:type owl:Class ;
                                           rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
-                                          <http://purl.org/dc/terms/description> "" ;
+                                          rdfs:comment "" ;
                                           rdfs:label "Organization" .
 
 
 ###  http://www.w3.org/ns/prov#Agent
 <http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
-
-
-###  http://www.w3.org/ns/prov#Organization
-<http://www.w3.org/ns/prov#Organization> rdf:type owl:Class .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
