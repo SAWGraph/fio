@@ -1,0 +1,25 @@
+# What facilities have a NPDES permit for waste water discharge?
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+PREFIX epa-frs: <http://w3id.org/fio/v1/epa-frs#>
+PREFIX epa-frs-data: <http://w3id.org/fio/v1/epa-frs-data#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+select ?facility ?record ?startTime ?endTime
+where {
+    ?facility rdf:type epa-frs:FRS-Facility;
+    	epa-frs:hasRecord ?record. 
+    ?record rdf:type epa-frs:PermitRecord;
+    		epa-frs:fromSystem epa-frs-data:d.ProgramInformationSystem.NPDES;
+    		epa-frs:ofInterestType ?interest.
+    ?interest rdf:type epa-frs:WasteWaterProgram.
+    OPTIONAL{
+        ?record prov:startedAtTime ?startTime
+    }
+    OPTIONAL{
+        ?record prov:endedAtTime ?endTime
+    }
+ 
+} LIMIT 100

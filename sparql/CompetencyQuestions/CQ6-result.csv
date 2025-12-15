@@ -1,0 +1,17 @@
+subsector,subsectorName,MaineFacilityCount
+http://w3id.org/fio/v1/naics#NAICS-311,Food Manufacturing,9
+http://w3id.org/fio/v1/naics#NAICS-313,Textile Mills,78
+http://w3id.org/fio/v1/naics#NAICS-314,Textile Product Mills,27
+http://w3id.org/fio/v1/naics#NAICS-316,Leather and Allied Product Manufacturing,30
+http://w3id.org/fio/v1/naics#NAICS-323,Printing and Related Support Activities,50
+http://w3id.org/fio/v1/naics#NAICS-324,Petroleum and Coal Products Manufacturing,4
+http://w3id.org/fio/v1/naics#NAICS-322,Paper Manufacturing,64
+http://w3id.org/fio/v1/naics#NAICS-326,Plastics and Rubber Products Manufacturing,13
+http://w3id.org/fio/v1/naics#NAICS-325,Chemical Manufacturing,141
+http://w3id.org/fio/v1/naics#NAICS-327,Nonmetallic Mineral Product Manufacturing,6
+http://w3id.org/fio/v1/naics#NAICS-331,Primary Metal Manufacturing,0
+http://w3id.org/fio/v1/naics#NAICS-332,Fabricated Metal Product Manufacturing,171
+http://w3id.org/fio/v1/naics#NAICS-334,Computer and Electronic Product Manufacturing,50
+http://w3id.org/fio/v1/naics#NAICS-336,Transportation Equipment Manufacturing,8
+http://w3id.org/fio/v1/naics#NAICS-337,Furniture and Related Product Manufacturing,1
+http://w3id.org/fio/v1/naics#NAICS-335,"Electrical Equipment, Appliance, and Component Manufacturing",19

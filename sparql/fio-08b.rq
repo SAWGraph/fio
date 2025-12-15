@@ -1,0 +1,75 @@
+# Query on GraphDB
+#Which facilities that (i) have wastewater-related monitoring records and (ii) belong to industries suspected of PFAS usage are located upstream of fish tissue samples with PFAS concentrations above 15 nanograms per gram (ng/g)?
+PREFIX epa-frs: <http://w3id.org/fio/v1/epa-frs#>
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+PREFIX hyf: <https://www.opengis.net/def/schema/hy_features/hyf/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
+PREFIX spatial: <http://purl.org/spatialai/spatial/spatial-full#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX unit: <http://qudt.org/vocab/unit/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX epa-frs-data: <http://w3id.org/fio/v1/epa-frs-data#>
+PREFIX pfas-industries: <http://w3id.org/sawgraph/v1/pfas-industries#>
+PREFIX naics: <http://w3id.org/fio/v1/naics#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX fio-pfas: <http://w3id.org/fio/v1/pfas#>
+
+
+SELECT DISTINCT ?facility ?facilityName ?interestLabel ?fac_wkt ?industryName ?pfaslist ?industrySectorName
+WHERE {
+    {select DISTINCT ?s2water ?upstreamFlow
+          Where {
+            {select DISTINCT ?s2n     # get s2 cells containing samples of interest and their neighbors
+            where {
+    	SERVICE <repository:PFAS>{
+                ?sample rdf:type coso:MaterialSample, coso:AnimalTissueSample;
+                    coso:fromSamplePoint ?samplepoint;  						# get sample point for mapping
+                    ^coso:analyzedSample ?observation;   						# get observation to check concentration.
+                    coso:sampleOfMaterialType/rdf:type obo:FOODON_03411021.                 #aquatic animal
+                ?observation coso:hasResult/coso:measurementValue ?conc;        # check concentration, unit and substance
+                            coso:hasResult/coso:measurementUnit/qudt:symbol ?unit;
+                            coso:ofDSSToxSubstance/dcterms:alternative ?substance.
+                FILTER(?conc > 15)
+                ?samplepoint spatial:connectedTo ?s2                            # get s2 cells containing samples
+                }
+        SERVICE <repository:Spatial>{
+                ?s2 rdf:type kwg-ont:S2Cell_Level13;                            # get s2 neighborhood of samples
+                	kwg-ont:sfTouches | owl:sameAs ?s2n.
+            }
+
+
+                  } GROUP BY ?s2n 
+              }
+             SERVICE <repository:Hydrology>{                                # get water flowpaths and their upstream parts for cells in the neighborhood
+                  ?flowlines rdf:type hyf:HY_FlowPath;
+                      spatial:connectedTo ?s2n.
+                  ?upstreamFlow hyf:downstreamWaterBodyTC | owl:sameAs ?flowlines.
+                ?s2water rdf:type kwg-ont:S2Cell_Level13;
+                          spatial:connectedTo ?upstreamFlow.
+              }
+          }}
+    SERVICE <repository:FIO>{                                               # get facilities 
+     ?facility rdf:type fio:Facility;
+        	spatial:connectedTo ?s2water;
+        	epa-frs:hasRecord ?discharge;
+        	fio:ofIndustry ?industry;
+        	rdfs:label ?facilityName;
+          geo:hasGeometry/geo:asWKT ?fac_wkt.
+      ?discharge epa-frs:ofInterestType ?interest.
+      ?interest rdf:type epa-frs:WasteWaterProgram;                         # facilities with a waster water environmental interest
+              rdfs:label ?interestLabel.
+      ?industry rdfs:label ?industryName;                                    # and their industry
+            #rdf:type naics:NAICS-IndustryCode;
+            fio:subcodeOf ?industryGroup .
+      ?industryGroup rdf:type naics:NAICS-IndustrySubsector;
+            rdfs:label ?industrySectorName.
+    OPTIONAL{?pfaslistcollection rdfs:subClassOf fio-pfas:IndustryCollectionByPFASContaminationConcern; # mark facilities if industry is in a pfas concern list
+            rdfs:label ?pfaslist;
+    	      fio:hasMember ?industry.}
+    }
+}

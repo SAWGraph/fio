@@ -1,0 +1,32 @@
+# What subsectors of the “Manufacturing” sector (NAICS codes 31-33) are associated with facilities suspected of handling PFAS, and which of them have facilities located in Maine?
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX spatial: <http://purl.org/spatialai/spatial/spatial-full#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+PREFIX naics: <http://w3id.org/fio/v1/naics#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX fio-pfas: <http://w3id.org/fio/v1/pfas#>
+PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
+PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
+
+select ?subsector ?subsectorName (COUNT(?facility) as ?MaineFacilityCount) #?industry ?industryName 
+where {
+    ?subsector rdf:type naics:NAICS-IndustrySubsector;                  # Get subsectorsW
+    	rdfs:label ?subsectorName;
+    	fio:subcodeOf ?manufacturing.                                    # filtered to only
+    VALUES ?manufacturing{naics:NAICS-31 naics:NAICS-32 naics:NAICS-33}  # manufacturing subsectors
+    ?pfasList rdfs:subClassOf fio-pfas:IndustryCollectionByPFASContaminationConcern;  # Get industry codes in a pfas concern list
+    			rdfs:label ?pfasListName;
+    	      fio:hasMember ?industry.
+    ?industry fio:subcodeOf ?subsector;                                             # that are in manufacturing subsector    
+    			rdfs:label ?industryName. 
+    OPTIONAL {                                                                      # and optionally 
+    ?facility fio:ofIndustry ?industry;                                             # get all facilities with those industry codes
+    		kwg-ont:sfWithin ?county.                                               # that are located in Maine (fips code 23)
+    SERVICE <repository:Spatial>{
+        ?county rdf:type kwg-ont:AdministrativeRegion_2;                            
+        		spatial:connectedTo kwgr:administrativeRegion.USA.23.
+    }  		
+    }
+} GROUP BY ?subsector ?subsectorName #?industry ?industryName                       # Group by subsector
