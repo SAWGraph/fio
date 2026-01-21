@@ -1,11 +1,7 @@
 @prefix fio: <http://w3id.org/fio/v1/fio#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix prov-o: <http://www.w3.org/ns/prov#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix naics: <http://w3id.org/fio/v1/naics#> .
 
 <http://w3id.org/fio/naics#> rdf:type owl:Ontology ;

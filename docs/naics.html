@@ -1,0 +1,9 @@
+<html>
+
+<script>
+  const m = location.hash.match(/^#NAICS-(\d+)$/);
+  if (m) location.href = "https://www.census.gov/naics/?input=" + m[1];
+</script>
+
+
+</html>
