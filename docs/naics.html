@@ -18,7 +18,7 @@
 
       if (m) {
         const code = m[1];
-        const target = "https://www.census.gov/naics/?input=" + encodeURIComponent(code);
+        const target = "https://www.census.gov/naics/?input=" + encodeURIComponent(code) + "&year=2022";
         window.location.replace(target); // replace avoids leaving this page in history
         return;
       }
