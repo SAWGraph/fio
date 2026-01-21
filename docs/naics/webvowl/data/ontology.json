@@ -1,0 +1,131 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "baseIris" : [ "http://w3id.org/fio/v1/fio", "http://www.w3.org/2000/01/rdf-schema", "http://w3id.org/fio/v1/naics" ],
+    "iri" : "http://w3id.org/fio/naics#"
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://w3id.org/fio/v1/naics#NAICS-Industry",
+    "baseIri" : "http://w3id.org/fio/v1/naics",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NAICS-Industry"
+    },
+    "subClasses" : [ "1", "4", "5", "6" ],
+    "attributes" : [ "external" ],
+    "id" : "2",
+    "superClasses" : [ "3" ]
+  }, {
+    "iri" : "http://w3id.org/fio/v1/naics#NAICS-IndustrySector",
+    "baseIri" : "http://w3id.org/fio/v1/naics",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NAICS-IndustrySector"
+    },
+    "attributes" : [ "external" ],
+    "id" : "1",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://w3id.org/fio/v1/naics#NAICS-IndustryGroup",
+    "baseIri" : "http://w3id.org/fio/v1/naics",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NAICS-IndustryGroup"
+    },
+    "attributes" : [ "external" ],
+    "id" : "4",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://w3id.org/fio/v1/fio#Industry",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Industry"
+    },
+    "subClasses" : [ "2" ],
+    "attributes" : [ "external" ],
+    "id" : "3"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/naics#NAICS-IndustryCode",
+    "baseIri" : "http://w3id.org/fio/v1/naics",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NAICS-IndustryCode"
+    },
+    "attributes" : [ "external" ],
+    "id" : "5",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://w3id.org/fio/v1/naics#NAICS-IndustrySubsector",
+    "baseIri" : "http://w3id.org/fio/v1/naics",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NAICS-IndustrySubsector"
+    },
+    "attributes" : [ "external" ],
+    "id" : "6",
+    "superClasses" : [ "2" ]
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "7",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "8",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "10",
+    "type" : "rdfs:SubClassOf"
+  } ],
+  "propertyAttribute" : [ {
+    "range" : "2",
+    "domain" : "1",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "0"
+  }, {
+    "range" : "2",
+    "domain" : "4",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "7"
+  }, {
+    "range" : "2",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "8"
+  }, {
+    "range" : "2",
+    "domain" : "6",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "9"
+  }, {
+    "range" : "3",
+    "domain" : "2",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "10"
+  } ]
+}

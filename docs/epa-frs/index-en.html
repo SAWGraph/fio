@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>Ontology for Facility Registry Service</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://w3id.org/fio/epa-frs#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://w3id.org/fio/epa-frs#","name":"Ontology for Facility Registry Service", "headline":"Document describing the ontology http://w3id.org/fio/epa-frs#", "dateReleased":"2024-03-06", "dateModified":"2024-03-06", "version":"1", "author":[{"@type":"Person","name":"http://orcid.org/0000-0002-5331-5052","url":"http://orcid.org/0000-0002-5331-5052"},{"@type":"Person","name":"http://orcid.org/0000-0003-3547-8058","url":"http://orcid.org/0000-0003-3547-8058"},{"@type":"Person","name":"https://orcid.org/0000-0003-3271-6700","url":"https://orcid.org/0000-0003-3271-6700"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Ontology for Facility Registry Service</h1>
+<h2>Release: 2024-03-06</h2>
+
+
+<dl>
+<dt>Modified on: 2024-03-06</dt>
+<dt>This version:</dt>
+<dd><a href="http://w3id.org/fio/v1/epa-frs#">http://w3id.org/fio/v1/epa-frs#</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="http://w3id.org/fio/epa-frs#">http://w3id.org/fio/epa-frs#</a></dd>
+<dt>Revision:</dt>
+<dd>1</dd>
+<dt>Issued on:</dt>
+<dd>2024-03-06</dd>
+<dt>Authors:</dt>
+<dd><a href="http://orcid.org/0000-0002-5331-5052">http://orcid.org/0000-0002-5331-5052</a></dd><dd><a href="http://orcid.org/0000-0003-3547-8058">http://orcid.org/0000-0003-3547-8058</a></dd><dd><a href="https://orcid.org/0000-0003-3271-6700">https://orcid.org/0000-0003-3271-6700</a></dd>
+
+<dt>Publisher:</dt>
+<dd><a href="http://spatialai.org">http://spatialai.org</a></dd>
+<dt>Download serialization:</dt>
+<dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span>
+   <span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span>
+   <span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span>
+   <span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span>
+</dd>
+<dt>License:</dt><dd><a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank"><img src="https://img.shields.io/badge/License-GPL%203.0-blue.svg" alt="https://www.gnu.org/licenses/gpl-3.0.html" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>http://orcid.org/0000-0002-5331-5052, http://orcid.org/0000-0003-3547-8058, https://orcid.org/0000-0003-3271-6700. Ontology for Facility Registry Service. Revision: 1. Retrieved from: http://w3id.org/fio/v1/epa-frs#</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The Facility Registry Service Ontology is a dataset ontology for the EPA facility registry service. It aligns to and extends the Facilities and Industries Ontology (FIO) and provides a standardized way to represent and query information about facilities of environmental interest.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+The Facility Registry Service Ontology covers facilities of environmental interest as documented in the US Environmental Protection Agency's Facility Registry Service (FRS).</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;http://w3id.org/fio/epa-frs&gt;</td></tr>
+<tr><td><b>dcterms</b></td><td>&lt;http://purl.org/dc/terms/&gt;</td></tr>
+<tr><td><b>epa-frs</b></td><td>&lt;http://w3id.org/fio/v1/epa-frs#&gt;</td></tr>
+<tr><td><b>fio</b></td><td>&lt;http://w3id.org/fio/v1/fio#&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>schema</b></td><td>&lt;https://schema.org/&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Ontology for Facility Registry Service: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#Agency" title="http://w3id.org/fio/v1/epa-frs#Agency">Agency</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByProgram"
+         title="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByProgram">
+         <span>Environmental Interest By Program</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByRecordType"
+         title="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByRecordType">
+         <span>Environmental Interest By Record Type</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType"
+         title="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType">Environmental Interest Type</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#EPA-PFAS-Facility" title="http://w3id.org/fio/v1/epa-frs#EPA-PFAS-Facility">EPA PFAS Facility</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#MonitoringRecord" title="http://w3id.org/fio/v1/epa-frs#MonitoringRecord">Facility Monitoring Record</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#Record" title="http://w3id.org/fio/v1/epa-frs#Record">Facility Record</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#SupplementalRecord"
+         title="http://w3id.org/fio/v1/epa-frs#SupplementalRecord">Facility Supplemental Record</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#FacilityType" title="http://w3id.org/fio/v1/epa-frs#FacilityType">Facility Type</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#FRS-Facility" title="http://w3id.org/fio/v1/epa-frs#FRS-Facility">FRS Facility</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#ProgramInformationSystem"
+         title="http://w3id.org/fio/v1/epa-frs#ProgramInformationSystem">Program Information System</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord"
+         title="http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord">has monitoring record</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#hasRecord" title="http://w3id.org/fio/v1/epa-frs#hasRecord">has record</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#hasSupplementalRecord"
+         title="http://w3id.org/fio/v1/epa-frs#hasSupplementalRecord">has supplemental record</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#hasEnvironmentalInterest"
+         title="http://w3id.org/fio/v1/epa-frs#hasEnvironmentalInterest">in program type</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#ofFacilityType" title="http://w3id.org/fio/v1/epa-frs#ofFacilityType">of facility type</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/fio#ofIndustry" title="http://w3id.org/fio/v1/fio#ofIndustry">
+         <span>of Industry</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry" title="http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry">of Primary Industry</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#ofInterestType" title="http://w3id.org/fio/v1/epa-frs#ofInterestType">of program category</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry"
+         title="http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry">of Secondary Industry</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://w3id.org/fio/v1/epa-frs#hasFRSId" title="http://w3id.org/fio/v1/epa-frs#hasFRSId">
+         <span>has FRS Id</span>
+      </a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">Ontology for Facility Registry Service: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">The facility registry service ontology developed as part of the AIKnowsPFAS and SAWGraph projects.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Ontology for Facility Registry Service classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Ontology for Facility Registry Service.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#Agency" title="http://w3id.org/fio/v1/epa-frs#Agency">Agency</a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByProgram" title="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByProgram"> <span>Environmental Interest By Program</span> </a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByRecordType" title="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByRecordType"> <span>Environmental Interest By Record Type</span> </a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType" title="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType">Environmental Interest Type</a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#EPA-PFAS-Facility" title="http://w3id.org/fio/v1/epa-frs#EPA-PFAS-Facility">EPA PFAS Facility</a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#MonitoringRecord" title="http://w3id.org/fio/v1/epa-frs#MonitoringRecord">Facility Monitoring Record</a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#Record" title="http://w3id.org/fio/v1/epa-frs#Record">Facility Record</a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#SupplementalRecord" title="http://w3id.org/fio/v1/epa-frs#SupplementalRecord">Facility Supplemental Record</a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#FacilityType" title="http://w3id.org/fio/v1/epa-frs#FacilityType">Facility Type</a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#FRS-Facility" title="http://w3id.org/fio/v1/epa-frs#FRS-Facility">FRS Facility</a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#ProgramInformationSystem" title="http://w3id.org/fio/v1/epa-frs#ProgramInformationSystem">Program Information System</a></li>
+ </ul>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#Agency">
+  <h3>Agency<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#Agency</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://w3id.org/fio/v1/fio#Organization" target="_blank" title="http://w3id.org/fio/v1/fio#Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByProgram">
+  <h3>Environmental Interest By Program<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByProgram</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType" title="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType">Environmental Interest Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByRecordType">
+  <h3>Environmental Interest By Record Type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByRecordType</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType" title="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType">Environmental Interest Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType">
+  <h3>Environmental Interest Type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType</p>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByProgram" title="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByProgram">Environmental Interest By Program</a> <sup class="type-c" title="class">c</sup>, <a href="#http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByRecordType" title="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByRecordType">Environmental Interest By Record Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://w3id.org/fio/v1/epa-frs#hasEnvironmentalInterest" title="http://w3id.org/fio/v1/epa-frs#hasEnvironmentalInterest">in program type</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/fio/v1/epa-frs#ofInterestType" title="http://w3id.org/fio/v1/epa-frs#ofInterestType">of program category</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#EPA-PFAS-Facility">
+  <h3>EPA PFAS Facility<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#EPA-PFAS-Facility</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://w3id.org/fio/v1/epa-frs#FRS-Facility" title="http://w3id.org/fio/v1/epa-frs#FRS-Facility">FRS Facility</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#MonitoringRecord">
+  <h3>Facility Monitoring Record<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#MonitoringRecord</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://w3id.org/fio/v1/epa-frs#Record" title="http://w3id.org/fio/v1/epa-frs#Record">Facility Record</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord" title="http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord">has monitoring record</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#Record">
+  <h3>Facility Record<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#Record</p>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://w3id.org/fio/v1/epa-frs#MonitoringRecord" title="http://w3id.org/fio/v1/epa-frs#MonitoringRecord">Facility Monitoring Record</a> <sup class="type-c" title="class">c</sup>, <a href="#http://w3id.org/fio/v1/epa-frs#SupplementalRecord" title="http://w3id.org/fio/v1/epa-frs#SupplementalRecord">Facility Supplemental Record</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://w3id.org/fio/v1/epa-frs#hasRecord" title="http://w3id.org/fio/v1/epa-frs#hasRecord">has record</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#SupplementalRecord">
+  <h3>Facility Supplemental Record<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#SupplementalRecord</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://w3id.org/fio/v1/epa-frs#Record" title="http://w3id.org/fio/v1/epa-frs#Record">Facility Record</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://w3id.org/fio/v1/epa-frs#hasSupplementalRecord" title="http://w3id.org/fio/v1/epa-frs#hasSupplementalRecord">has supplemental record</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#FacilityType">
+  <h3>Facility Type<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#FacilityType</p>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://w3id.org/fio/v1/epa-frs#ofFacilityType" title="http://w3id.org/fio/v1/epa-frs#ofFacilityType">of facility type</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#FRS-Facility">
+  <h3>FRS Facility<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#FRS-Facility</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://w3id.org/fio/v1/fio#Facility" target="_blank" title="http://w3id.org/fio/v1/fio#Facility">Facility</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://w3id.org/fio/v1/epa-frs#EPA-PFAS-Facility" title="http://w3id.org/fio/v1/epa-frs#EPA-PFAS-Facility">EPA PFAS Facility</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://w3id.org/fio/v1/epa-frs#hasFRSId" title="http://w3id.org/fio/v1/epa-frs#hasFRSId">has FRS Id</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord" title="http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord">has monitoring record</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/fio/v1/epa-frs#ofFacilityType" title="http://w3id.org/fio/v1/epa-frs#ofFacilityType">of facility type</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#ProgramInformationSystem">
+  <h3>Program Information System<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#ProgramInformationSystem</p>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord" title="http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord">has monitoring record</a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#hasRecord" title="http://w3id.org/fio/v1/epa-frs#hasRecord">has record</a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#hasSupplementalRecord" title="http://w3id.org/fio/v1/epa-frs#hasSupplementalRecord">has supplemental record</a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#hasEnvironmentalInterest" title="http://w3id.org/fio/v1/epa-frs#hasEnvironmentalInterest">in program type</a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#ofFacilityType" title="http://w3id.org/fio/v1/epa-frs#ofFacilityType">of facility type</a></li>
+  <li><a href="#http://w3id.org/fio/v1/fio#ofIndustry" title="http://w3id.org/fio/v1/fio#ofIndustry"> <span>of Industry</span> </a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry" title="http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry">of Primary Industry</a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#ofInterestType" title="http://w3id.org/fio/v1/epa-frs#ofInterestType">of program category</a></li>
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry" title="http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry">of Secondary Industry</a></li>
+ </ul>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord">
+  <h3>has monitoring record<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#hasRecord" title="http://w3id.org/fio/v1/epa-frs#hasRecord">has record</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#FRS-Facility" title="http://w3id.org/fio/v1/epa-frs#FRS-Facility">FRS Facility</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#MonitoringRecord" title="http://w3id.org/fio/v1/epa-frs#MonitoringRecord">Facility Monitoring Record</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#hasRecord">
+  <h3>has record<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#hasRecord</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord" title="http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord">has monitoring record</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/fio/v1/epa-frs#hasSupplementalRecord" title="http://w3id.org/fio/v1/epa-frs#hasSupplementalRecord">has supplemental record</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#Record" title="http://w3id.org/fio/v1/epa-frs#Record">Facility Record</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#hasSupplementalRecord">
+  <h3>has supplemental record<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#hasSupplementalRecord</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#hasRecord" title="http://w3id.org/fio/v1/epa-frs#hasRecord">has record</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#SupplementalRecord" title="http://w3id.org/fio/v1/epa-frs#SupplementalRecord">Facility Supplemental Record</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#hasEnvironmentalInterest">
+  <h3>in program type<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#hasEnvironmentalInterest</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType" title="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType">Environmental Interest Type</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has sub-property chains
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#hasRecord" title="http://w3id.org/fio/v1/epa-frs#hasRecord">has record</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#http://w3id.org/fio/v1/epa-frs#ofInterestType" title="http://w3id.org/fio/v1/epa-frs#ofInterestType">of program category</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#ofFacilityType">
+  <h3>of facility type<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#ofFacilityType</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#FRS-Facility" title="http://w3id.org/fio/v1/epa-frs#FRS-Facility">FRS Facility</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#FacilityType" title="http://w3id.org/fio/v1/epa-frs#FacilityType">Facility Type</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/fio#ofIndustry">
+  <h3>of Industry<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/fio#ofIndustry</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry" title="http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry">of Primary Industry</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry" title="http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry">of Secondary Industry</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has sub-property chains
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#hasRecord" title="http://w3id.org/fio/v1/epa-frs#hasRecord">has record</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry" title="http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry">of Primary Industry</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#hasRecord" title="http://w3id.org/fio/v1/epa-frs#hasRecord">has record</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry" title="http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry">of Secondary Industry</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry">
+  <h3>of Primary Industry<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/fio#ofIndustry" title="http://w3id.org/fio/v1/fio#ofIndustry">of Industry</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#ofInterestType">
+  <h3>of program category<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#ofInterestType</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType" title="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType">Environmental Interest Type</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry">
+  <h3>of Secondary Industry<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/fio#ofIndustry" title="http://w3id.org/fio/v1/fio#ofIndustry">of Industry</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://w3id.org/fio/v1/epa-frs#hasFRSId" title="http://w3id.org/fio/v1/epa-frs#hasFRSId"> <span>has FRS Id</span> </a></li>
+ </ul>
+ <div class="entity" id="http://w3id.org/fio/v1/epa-frs#hasFRSId">
+  <h3>has FRS Id<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://w3id.org/fio/v1/epa-frs#hasFRSId</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#FRS-Facility" title="http://w3id.org/fio/v1/epa-frs#FRS-Facility">FRS Facility</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is also defined as
+    </dt>
+    <dd>
+     <a href="#http://w3id.org/fio/v1/epa-frs#hasFRSId">annotation property</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

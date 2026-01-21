@@ -1,0 +1,530 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en-us", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://w3id.org/fio/v1/fio", "http://w3id.org/fio/v1/epa-frs", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "en-us" : "Ontology for Facility Registry Service"
+    },
+    "iri" : "http://w3id.org/fio/epa-frs#",
+    "version" : "1",
+    "author" : [ "https://orcid.org/0000-0003-3271-6700", "http://orcid.org/0000-0003-3547-8058", "http://orcid.org/0000-0002-5331-5052" ],
+    "description" : {
+      "en-us" : "The facility registry service ontology developed as part of the AIKnowsPFAS and SAWGraph projects."
+    },
+    "other" : {
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "https://orcid.org/0000-0003-3271-6700",
+        "type" : "iri"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "http://orcid.org/0000-0003-3547-8058",
+        "type" : "iri"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "http://orcid.org/0000-0002-5331-5052",
+        "type" : "iri"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "en-us",
+        "value" : "2024-03-06",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "http://spatialai.org",
+        "type" : "iri"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2024-03-06",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "en-us",
+        "value" : "1",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en-us",
+        "value" : "Ontology for Facility Registry Service",
+        "type" : "label"
+      } ],
+      "issued" : [ {
+        "identifier" : "issued",
+        "language" : "undefined",
+        "value" : "2024-03-06",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "5",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "29",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#FacilityType",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "instances" : 0,
+    "description" : {
+      "undefined" : "Type of Facility as defined by EPA FRS facility type controlled vocabulary"
+    },
+    "label" : {
+      "IRI-based" : "FacilityType",
+      "undefined" : "Facility Type"
+    },
+    "attributes" : [ "external" ],
+    "id" : "7"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "8",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "5",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "instances" : 0,
+    "description" : {
+      "undefined" : "The environmental permit or regulatory program type that applies to the facility site"
+    },
+    "label" : {
+      "IRI-based" : "EnvironmentalInterestType",
+      "undefined" : "Environmental Interest Type"
+    },
+    "subClasses" : [ "9", "10" ],
+    "attributes" : [ "external" ],
+    "id" : "6"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "11",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#EPA-PFAS-Facility",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "instances" : 0,
+    "description" : {
+      "undefined" : "Facility identified as potentially handling PFAS in EPA PFAS Analytic tools based on industry. "
+    },
+    "label" : {
+      "IRI-based" : "EPA-PFAS-Facility",
+      "undefined" : "EPA PFAS Facility"
+    },
+    "attributes" : [ "external" ],
+    "id" : "18",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "1",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://w3id.org/fio/v1/fio#Organization",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Organization"
+    },
+    "subClasses" : [ "15" ],
+    "attributes" : [ "external" ],
+    "id" : "16"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "21",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#Agency",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "instances" : 0,
+    "description" : {
+      "undefined" : "Federal Agency as identified in EPA Facility Registry Service"
+    },
+    "label" : {
+      "IRI-based" : "Agency",
+      "undefined" : "Agency"
+    },
+    "attributes" : [ "external" ],
+    "id" : "15",
+    "superClasses" : [ "16" ]
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#FRS-Facility",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "instances" : 0,
+    "description" : {
+      "undefined" : "Facility from EPA Facility Registry Service"
+    },
+    "label" : {
+      "IRI-based" : "FRS-Facility",
+      "undefined" : "FRS Facility"
+    },
+    "subClasses" : [ "18" ],
+    "attributes" : [ "external" ],
+    "id" : "19",
+    "superClasses" : [ "29" ]
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#ProgramInformationSystem",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "instances" : 0,
+    "description" : {
+      "undefined" : "An Information System maintained for an environmental program"
+    },
+    "label" : {
+      "IRI-based" : "ProgramInformationSystem",
+      "undefined" : "Program Information System"
+    },
+    "attributes" : [ "external" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#SupplementalRecord",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "instances" : 0,
+    "description" : {
+      "undefined" : "Supplemental Record that relates to a facility but primarily identifies something other than the facility itself (e.g. permit, license, incident, enforcement action records) "
+    },
+    "label" : {
+      "IRI-based" : "SupplementalRecord",
+      "undefined" : "Facility Supplemental Record"
+    },
+    "attributes" : [ "external" ],
+    "id" : "2",
+    "superClasses" : [ "25" ]
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByProgram",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EnvironmentalInterestByProgram"
+    },
+    "attributes" : [ "external" ],
+    "id" : "9",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByRecordType",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EnvironmentalInterestByRecordType"
+    },
+    "attributes" : [ "external" ],
+    "id" : "10",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#MonitoringRecord",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "instances" : 0,
+    "description" : {
+      "undefined" : "Monitoring Record for a facility"
+    },
+    "label" : {
+      "IRI-based" : "MonitoringRecord",
+      "undefined" : "Facility Monitoring Record"
+    },
+    "attributes" : [ "external" ],
+    "id" : "24",
+    "superClasses" : [ "25" ]
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#Record",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Record",
+      "undefined" : "Facility Record"
+    },
+    "subClasses" : [ "24", "2" ],
+    "attributes" : [ "external" ],
+    "id" : "25"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/fio#Facility",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Facility"
+    },
+    "subClasses" : [ "19" ],
+    "attributes" : [ "external" ],
+    "id" : "29"
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "4",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "12",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "13",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "14",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "17",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "20",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "3",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "22",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "27",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:SubClassOf"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#hasSupplementalRecord",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "hasSupplementalRecord",
+      "undefined" : "has supplemental record"
+    },
+    "superproperty" : [ "3" ],
+    "domain" : "1",
+    "attributes" : [ "object", "external" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#ofInterestType",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "ofInterestType",
+      "undefined" : "of program category"
+    },
+    "domain" : "5",
+    "attributes" : [ "object", "external" ],
+    "id" : "4"
+  }, {
+    "range" : "6",
+    "domain" : "9",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "12"
+  }, {
+    "range" : "6",
+    "domain" : "10",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "13"
+  }, {
+    "range" : "16",
+    "domain" : "15",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "14"
+  }, {
+    "range" : "19",
+    "domain" : "18",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "17"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "ofPrimaryIndustry",
+      "undefined" : "of Primary Industry"
+    },
+    "superproperty" : [ "22" ],
+    "domain" : "21",
+    "attributes" : [ "object", "external" ],
+    "id" : "20"
+  }, {
+    "range" : "25",
+    "domain" : "24",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "23"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#hasRecord",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "hasRecord",
+      "undefined" : "has record"
+    },
+    "domain" : "11",
+    "subproperty" : [ "0", "26" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "3"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/fio#ofIndustry",
+    "baseIri" : "http://w3id.org/fio/v1/fio",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "ofIndustry"
+    },
+    "domain" : "21",
+    "subproperty" : [ "27", "20" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "22"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#ofFacilityType",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "ofFacilityType",
+      "undefined" : "of facility type"
+    },
+    "domain" : "19",
+    "attributes" : [ "object", "external" ],
+    "id" : "28"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "ofSecondaryIndustry",
+      "undefined" : "of Secondary Industry"
+    },
+    "superproperty" : [ "22" ],
+    "domain" : "21",
+    "attributes" : [ "object", "external" ],
+    "id" : "27"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#hasEnvironmentalInterest",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "hasEnvironmentalInterest",
+      "undefined" : "in program type"
+    },
+    "domain" : "5",
+    "attributes" : [ "object", "external" ],
+    "id" : "31"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "hasMonitoringRecord",
+      "undefined" : "has monitoring record"
+    },
+    "superproperty" : [ "3" ],
+    "domain" : "19",
+    "attributes" : [ "object", "external" ],
+    "id" : "26"
+  }, {
+    "iri" : "http://w3id.org/fio/v1/epa-frs#hasFRSId",
+    "baseIri" : "http://w3id.org/fio/v1/epa-frs",
+    "range" : "8",
+    "description" : {
+      "undefined" : "has Identifier in EPA Facility Registry Service"
+    },
+    "label" : {
+      "IRI-based" : "hasFRSId",
+      "undefined" : "has FRS Id"
+    },
+    "domain" : "19",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "32"
+  }, {
+    "range" : "25",
+    "domain" : "2",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "33"
+  }, {
+    "range" : "29",
+    "domain" : "19",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "34"
+  } ]
+}

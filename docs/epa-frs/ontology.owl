@@ -1,0 +1,440 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://w3id.org/fio/epa-frs#"
+     xml:base="http://w3id.org/fio/epa-frs"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/"
+     xmlns:epa-frs="http://w3id.org/fio/v1/epa-frs#">
+    <owl:Ontology rdf:about="http://w3id.org/fio/epa-frs#">
+        <owl:versionIRI rdf:resource="http://w3id.org/fio/v1/epa-frs#"/>
+        <owl:imports rdf:resource="http://w3id.org/fio/v1/epa-frs#controlledVocab"/>
+        <terms:created xml:lang="en-us">2024-03-06</terms:created>
+        <terms:creator rdf:resource="http://orcid.org/0000-0002-5331-5052"/>
+        <terms:creator rdf:resource="http://orcid.org/0000-0003-3547-8058"/>
+        <terms:creator rdf:resource="https://orcid.org/0000-0003-3271-6700"/>
+        <terms:description xml:lang="en-us">The facility registry service ontology developed as part of the AIKnowsPFAS and SAWGraph projects.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-03-06</terms:issued>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-03-06</terms:modified>
+        <terms:publisher rdf:resource="http://spatialai.org"/>
+        <terms:title xml:lang="en-us">Ontology for Facility Registry Service</terms:title>
+        <owl:versionInfo xml:lang="en-us">1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/alternative -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/alternative"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/identifier -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/identifier"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/source -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/source"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#hasFRSId -->
+
+
+    <owl:AnnotationProperty rdf:about="http://w3id.org/fio/v1/epa-frs#hasFRSId">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/identifier"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://schema.org/address -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/address"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#hasEnvironmentalInterest -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/fio/v1/epa-frs#hasEnvironmentalInterest">
+        <rdfs:range rdf:resource="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/fio/v1/epa-frs#hasRecord"/>
+            <rdf:Description rdf:about="http://w3id.org/fio/v1/epa-frs#ofInterestType"/>
+        </owl:propertyChainAxiom>
+        <rdfs:label>in program type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/fio/v1/epa-frs#hasRecord"/>
+        <rdfs:domain rdf:resource="http://w3id.org/fio/v1/epa-frs#FRS-Facility"/>
+        <rdfs:range rdf:resource="http://w3id.org/fio/v1/epa-frs#MonitoringRecord"/>
+        <rdfs:label>has monitoring record</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#hasRecord -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/fio/v1/epa-frs#hasRecord">
+        <rdfs:range rdf:resource="http://w3id.org/fio/v1/epa-frs#Record"/>
+        <rdfs:label>has record</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#hasSupplementalRecord -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/fio/v1/epa-frs#hasSupplementalRecord">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/fio/v1/epa-frs#hasRecord"/>
+        <rdfs:range rdf:resource="http://w3id.org/fio/v1/epa-frs#SupplementalRecord"/>
+        <rdfs:label>has supplemental record</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#ofFacilityType -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/fio/v1/epa-frs#ofFacilityType">
+        <rdfs:domain rdf:resource="http://w3id.org/fio/v1/epa-frs#FRS-Facility"/>
+        <rdfs:range rdf:resource="http://w3id.org/fio/v1/epa-frs#FacilityType"/>
+        <rdfs:label>of facility type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#ofInterestType -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/fio/v1/epa-frs#ofInterestType">
+        <rdfs:range rdf:resource="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType"/>
+        <rdfs:label>of program category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/fio/v1/fio#ofIndustry"/>
+        <rdfs:label>of Primary Industry</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/fio/v1/fio#ofIndustry"/>
+        <rdfs:label>of Secondary Industry</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/fio/v1/fio#ofIndustry -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/fio/v1/fio#ofIndustry">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/fio/v1/epa-frs#hasRecord"/>
+            <rdf:Description rdf:about="http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/fio/v1/epa-frs#hasRecord"/>
+            <rdf:Description rdf:about="http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#hasFRSId -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/fio/v1/epa-frs#hasFRSId">
+        <rdfs:domain rdf:resource="http://w3id.org/fio/v1/epa-frs#FRS-Facility"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#Agency -->
+
+
+    <owl:Class rdf:about="http://w3id.org/fio/v1/epa-frs#Agency">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/fio/v1/fio#Organization"/>
+        <terms:description>Federal Agency as identified in EPA Facility Registry Service</terms:description>
+        <rdfs:label>Agency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#EPA-PFAS-Facility -->
+
+
+    <owl:Class rdf:about="http://w3id.org/fio/v1/epa-frs#EPA-PFAS-Facility">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/fio/v1/epa-frs#FRS-Facility"/>
+        <terms:description>Facility identified as potentially handling PFAS in EPA PFAS Analytic tools based on industry. </terms:description>
+        <rdfs:label>EPA PFAS Facility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByProgram -->
+
+
+    <owl:Class rdf:about="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByProgram">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByRecordType -->
+
+
+    <owl:Class rdf:about="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByRecordType">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType -->
+
+
+    <owl:Class rdf:about="http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType">
+        <terms:description>The environmental permit or regulatory program type that applies to the facility site</terms:description>
+        <rdfs:label>Environmental Interest Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#FRS-Facility -->
+
+
+    <owl:Class rdf:about="http://w3id.org/fio/v1/epa-frs#FRS-Facility">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/fio/v1/fio#Facility"/>
+        <terms:description>Facility from EPA Facility Registry Service</terms:description>
+        <rdfs:label>FRS Facility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#FacilityType -->
+
+
+    <owl:Class rdf:about="http://w3id.org/fio/v1/epa-frs#FacilityType">
+        <terms:description>Type of Facility as defined by EPA FRS facility type controlled vocabulary</terms:description>
+        <rdfs:label>Facility Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#MonitoringRecord -->
+
+
+    <owl:Class rdf:about="http://w3id.org/fio/v1/epa-frs#MonitoringRecord">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/fio/v1/epa-frs#Record"/>
+        <terms:description>Monitoring Record for a facility</terms:description>
+        <rdfs:label>Facility Monitoring Record</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#ProgramInformationSystem -->
+
+
+    <owl:Class rdf:about="http://w3id.org/fio/v1/epa-frs#ProgramInformationSystem">
+        <terms:description>An Information System maintained for an environmental program</terms:description>
+        <rdfs:label>Program Information System</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#Record -->
+
+
+    <owl:Class rdf:about="http://w3id.org/fio/v1/epa-frs#Record">
+        <rdfs:label>Facility Record</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/fio/v1/epa-frs#SupplementalRecord -->
+
+
+    <owl:Class rdf:about="http://w3id.org/fio/v1/epa-frs#SupplementalRecord">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/fio/v1/epa-frs#Record"/>
+        <terms:description>Supplemental Record that relates to a facility but primarily identifies something other than the facility itself (e.g. permit, license, incident, enforcement action records) </terms:description>
+        <rdfs:label>Facility Supplemental Record</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/fio/v1/fio#Facility -->
+
+
+    <owl:Class rdf:about="http://w3id.org/fio/v1/fio#Facility"/>
+    
+
+
+    <!-- http://w3id.org/fio/v1/fio#Organization -->
+
+
+    <owl:Class rdf:about="http://w3id.org/fio/v1/fio#Organization"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://w3id.org/fio/v1/epa-frs#hasFRSId">
+        <terms:description>has Identifier in EPA Facility Registry Service</terms:description>
+        <rdfs:label>has FRS Id</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

@@ -1,0 +1,313 @@
+[ {
+  "@id" : "http://purl.org/dc/terms/alternative",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/identifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/issued",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/publisher",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/source",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://w3id.org/fio/epa-frs#",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@language" : "en-us",
+    "@value" : "2024-03-06"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@id" : "http://orcid.org/0000-0002-5331-5052"
+  }, {
+    "@id" : "http://orcid.org/0000-0003-3547-8058"
+  }, {
+    "@id" : "https://orcid.org/0000-0003-3271-6700"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en-us",
+    "@value" : "The facility registry service ontology developed as part of the AIKnowsPFAS and SAWGraph projects."
+  } ],
+  "http://purl.org/dc/terms/issued" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2024-03-06"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2024-03-06"
+  } ],
+  "http://purl.org/dc/terms/publisher" : [ {
+    "@id" : "http://spatialai.org"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "en-us",
+    "@value" : "Ontology for Facility Registry Service"
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#controlledVocab"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@language" : "en-us",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#Agency",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "Federal Agency as identified in EPA Facility Registry Service"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Agency"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/fio#Organization"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#EPA-PFAS-Facility",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "Facility identified as potentially handling PFAS in EPA PFAS Analytic tools based on industry. "
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "EPA PFAS Facility"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#FRS-Facility"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByProgram",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByRecordType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "The environmental permit or regulatory program type that applies to the facility site"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Environmental Interest Type"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#FRS-Facility",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "Facility from EPA Facility Registry Service"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "FRS Facility"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/fio#Facility"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#FacilityType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "Type of Facility as defined by EPA FRS facility type controlled vocabulary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Facility Type"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#MonitoringRecord",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "Monitoring Record for a facility"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Facility Monitoring Record"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#Record"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#ProgramInformationSystem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "An Information System maintained for an environmental program"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Program Information System"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#Record",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Facility Record"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#SupplementalRecord",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "Supplemental Record that relates to a facility but primarily identifies something other than the facility itself (e.g. permit, license, incident, enforcement action records) "
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Facility Supplemental Record"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#Record"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#hasEnvironmentalInterest",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "in program type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "http://w3id.org/fio/v1/epa-frs#hasRecord"
+    }, {
+      "@id" : "http://w3id.org/fio/v1/epa-frs#ofInterestType"
+    } ]
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#hasFRSId",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "has Identifier in EPA Facility Registry Service"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#FRS-Facility"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has FRS Id"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/dc/terms/identifier"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#hasMonitoringRecord",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#FRS-Facility"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has monitoring record"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#MonitoringRecord"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#hasRecord"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#hasRecord",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has record"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#Record"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#hasSupplementalRecord",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has supplemental record"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#SupplementalRecord"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#hasRecord"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#ofFacilityType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#FRS-Facility"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "of facility type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#FacilityType"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#ofInterestType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "of program category"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestType"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "of Primary Industry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/fio#ofIndustry"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "of Secondary Industry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/fio#ofIndustry"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/fio#Facility",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/fio#Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/fio#ofIndustry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "http://w3id.org/fio/v1/epa-frs#hasRecord"
+    }, {
+      "@id" : "http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry"
+    } ]
+  }, {
+    "@list" : [ {
+      "@id" : "http://w3id.org/fio/v1/epa-frs#hasRecord"
+    }, {
+      "@id" : "http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry"
+    } ]
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2001/XMLSchema#date",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
+}, {
+  "@id" : "https://schema.org/address",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+} ]
