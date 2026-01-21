@@ -1,6 +1,7 @@
 <http://w3id.org/fio/epa-frs#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <http://w3id.org/fio/epa-frs#> <http://www.w3.org/2002/07/owl#versionIRI> <http://w3id.org/fio/v1/epa-frs#> .
 <http://w3id.org/fio/epa-frs#> <http://www.w3.org/2002/07/owl#imports> <http://w3id.org/fio/v1/epa-frs#controlledVocab> .
+<http://w3id.org/fio/epa-frs#> <http://www.w3.org/2002/07/owl#imports> <http://w3id.org/fio/v1/epa-frs#recordTypes> .
 <http://w3id.org/fio/epa-frs#> <http://purl.org/dc/terms/created> "2024-03-06"@en-us .
 <http://w3id.org/fio/epa-frs#> <http://purl.org/dc/terms/creator> <http://orcid.org/0000-0002-5331-5052> .
 <http://w3id.org/fio/epa-frs#> <http://purl.org/dc/terms/creator> <http://orcid.org/0000-0003-3547-8058> .

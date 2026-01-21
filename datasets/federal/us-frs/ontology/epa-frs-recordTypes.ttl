@@ -6,6 +6,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+epa-frs:recordTypes a owl:Ontology .
+
 ## Interest Types 
 epa-frs:EnvironmentalInterestByRecordType rdf:type owl:Class;
     rdfs:subClassOf epa-frs:EnvironmentalInterestType;

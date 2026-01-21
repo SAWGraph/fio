@@ -63,6 +63,8 @@
   } ],
   "http://www.w3.org/2002/07/owl#imports" : [ {
     "@id" : "http://w3id.org/fio/v1/epa-frs#controlledVocab"
+  }, {
+    "@id" : "http://w3id.org/fio/v1/epa-frs#recordTypes"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
     "@id" : "http://w3id.org/fio/v1/epa-frs#"

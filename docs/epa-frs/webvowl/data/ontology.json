@@ -8,12 +8,17 @@
     },
     "iri" : "http://w3id.org/fio/epa-frs#",
     "version" : "1",
-    "author" : [ "https://orcid.org/0000-0003-3271-6700", "http://orcid.org/0000-0003-3547-8058", "http://orcid.org/0000-0002-5331-5052" ],
+    "author" : [ "https://orcid.org/0000-0003-3271-6700", "http://orcid.org/0000-0002-5331-5052", "http://orcid.org/0000-0003-3547-8058" ],
     "description" : {
       "en-us" : "The facility registry service ontology developed as part of the AIKnowsPFAS and SAWGraph projects."
     },
     "other" : {
       "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "http://orcid.org/0000-0002-5331-5052",
+        "type" : "iri"
+      }, {
         "identifier" : "creator",
         "language" : "undefined",
         "value" : "https://orcid.org/0000-0003-3271-6700",
@@ -23,15 +28,16 @@
         "language" : "undefined",
         "value" : "http://orcid.org/0000-0003-3547-8058",
         "type" : "iri"
-      }, {
-        "identifier" : "creator",
-        "language" : "undefined",
-        "value" : "http://orcid.org/0000-0002-5331-5052",
-        "type" : "iri"
       } ],
       "created" : [ {
         "identifier" : "created",
         "language" : "en-us",
+        "value" : "2024-03-06",
+        "type" : "label"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
         "value" : "2024-03-06",
         "type" : "label"
       } ],
@@ -41,28 +47,22 @@
         "value" : "http://spatialai.org",
         "type" : "iri"
       } ],
-      "modified" : [ {
-        "identifier" : "modified",
-        "language" : "undefined",
-        "value" : "2024-03-06",
-        "type" : "label"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "en-us",
         "value" : "1",
         "type" : "label"
       } ],
-      "title" : [ {
-        "identifier" : "title",
-        "language" : "en-us",
-        "value" : "Ontology for Facility Registry Service",
-        "type" : "label"
-      } ],
       "issued" : [ {
         "identifier" : "issued",
         "language" : "undefined",
         "value" : "2024-03-06",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en-us",
+        "value" : "Ontology for Facility Registry Service",
         "type" : "label"
       } ]
     }
@@ -75,13 +75,13 @@
     "id" : "8",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "5",
+    "id" : "9",
     "type" : "owl:Thing"
   }, {
     "id" : "6",
     "type" : "owl:Class"
   }, {
-    "id" : "11",
+    "id" : "5",
     "type" : "owl:Thing"
   }, {
     "id" : "18",
@@ -108,10 +108,10 @@
     "id" : "2",
     "type" : "owl:Class"
   }, {
-    "id" : "9",
+    "id" : "10",
     "type" : "owl:Class"
   }, {
-    "id" : "10",
+    "id" : "11",
     "type" : "owl:Class"
   }, {
     "id" : "24",
@@ -146,7 +146,7 @@
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "5",
+    "id" : "9",
     "label" : {
       "undefined" : "Thing"
     }
@@ -161,13 +161,13 @@
       "IRI-based" : "EnvironmentalInterestType",
       "undefined" : "Environmental Interest Type"
     },
-    "subClasses" : [ "9", "10" ],
+    "subClasses" : [ "10", "11" ],
     "attributes" : [ "external" ],
     "id" : "6"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "11",
+    "id" : "5",
     "label" : {
       "undefined" : "Thing"
     }
@@ -273,7 +273,7 @@
       "IRI-based" : "EnvironmentalInterestByProgram"
     },
     "attributes" : [ "external" ],
-    "id" : "9",
+    "id" : "10",
     "superClasses" : [ "6" ]
   }, {
     "iri" : "http://w3id.org/fio/v1/epa-frs#EnvironmentalInterestByRecordType",
@@ -283,7 +283,7 @@
       "IRI-based" : "EnvironmentalInterestByRecordType"
     },
     "attributes" : [ "external" ],
-    "id" : "10",
+    "id" : "11",
     "superClasses" : [ "6" ]
   }, {
     "iri" : "http://w3id.org/fio/v1/epa-frs#MonitoringRecord",
@@ -398,23 +398,23 @@
     "id" : "4"
   }, {
     "range" : "6",
-    "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "10",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "12"
   }, {
     "range" : "6",
-    "domain" : "10",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "11",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "13"
   }, {
     "range" : "16",
     "domain" : "15",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "14"
   }, {
     "range" : "19",
     "domain" : "18",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "17"
   }, {
     "iri" : "http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry",
@@ -431,7 +431,7 @@
   }, {
     "range" : "25",
     "domain" : "24",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "23"
   }, {
     "iri" : "http://w3id.org/fio/v1/epa-frs#hasRecord",
@@ -441,7 +441,7 @@
       "IRI-based" : "hasRecord",
       "undefined" : "has record"
     },
-    "domain" : "11",
+    "domain" : "9",
     "subproperty" : [ "0", "26" ],
     "attributes" : [ "object", "external" ],
     "id" : "3"
@@ -519,12 +519,12 @@
   }, {
     "range" : "25",
     "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "33"
   }, {
     "range" : "29",
     "domain" : "19",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "34"
   } ]
 }

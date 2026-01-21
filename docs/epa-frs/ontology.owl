@@ -12,6 +12,7 @@
     <owl:Ontology rdf:about="http://w3id.org/fio/epa-frs#">
         <owl:versionIRI rdf:resource="http://w3id.org/fio/v1/epa-frs#"/>
         <owl:imports rdf:resource="http://w3id.org/fio/v1/epa-frs#controlledVocab"/>
+        <owl:imports rdf:resource="http://w3id.org/fio/v1/epa-frs#recordTypes"/>
         <terms:created xml:lang="en-us">2024-03-06</terms:created>
         <terms:creator rdf:resource="http://orcid.org/0000-0002-5331-5052"/>
         <terms:creator rdf:resource="http://orcid.org/0000-0003-3547-8058"/>
