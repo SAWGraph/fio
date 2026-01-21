@@ -1,9 +1,39 @@
-<html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NAICS Redirect</title>
 
-<script>
-  const m = location.hash.match(/^#NAICS-(\d+)$/);
-  if (m) location.href = "https://www.census.gov/naics/?input=" + m[1];
-</script>
+  <!-- optional: avoids search engines indexing this page -->
+  <meta name="robots" content="noindex, nofollow" />
 
+  <script>
+    (function () {
+      // Example hash: "#NAICS-31"
+      const hash = window.location.hash || "";
 
+      // Allow: #NAICS-31, #NAICS-311, #NAICS-3113, etc.
+      const m = hash.match(/^#NAICS-([0-9]+)$/i);
+
+      if (m) {
+        const code = m[1];
+        const target = "https://www.census.gov/naics/?input=" + encodeURIComponent(code);
+        window.location.replace(target); // replace avoids leaving this page in history
+        return;
+      }
+
+      // If no recognizable fragment, send user to the general NAICS page
+      window.location.replace("https://www.census.gov/naics/");
+    })();
+  </script>
+
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=https://www.census.gov/naics/" />
+  </noscript>
+</head>
+
+<body>
+  <p>Redirecting to NAICS…</p>
+</body>
 </html>
