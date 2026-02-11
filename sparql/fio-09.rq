@@ -1,0 +1,35 @@
+# find facilities of a certain industry (here NAICS group 2213) within a certain administrative region (here Kennebec County, Maine: kwgr:administrativeRegion.USA.23011)
+
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX naics: <http://w3id.org/fio/v1/naics#>
+PREFIX spatial: <http://purl.org/spatialai/spatial/spatial-full#>
+PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
+PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
+PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+
+select DISTINCT ?facility ?facWKT ?facilityName ?industryCode ?industryName where {
+    #SERVICE <repository:Spatial>{
+    #    #determine near distance
+    #    ?s2 kwg-ont:sfTouches|owl:sameAs ?s2neighbor.
+    #    ?s2neighbor rdf:type kwg-ont:S2Cell_Level13.
+    #}
+    #SERVICE <repository:FIO>{
+        #find facilities
+        #?s2neighbor kwg-ont:sfContains ?facility.
+            ?facility fio:ofIndustry ?industryGroup;
+            fio:ofIndustry ?industryCode ;
+            spatial:connectedTo ?county ;
+        		geo:hasGeometry/geo:asWKT ?facWKT;
+        		rdfs:label ?facilityName.
+        ?county rdf:type kwg-ont:AdministrativeRegion_3 ;
+                   kwg-ont:administrativePartOf kwgr:administrativeRegion.USA.23011 . 
+        ?industryCode a naics:NAICS-IndustryCode;  # only NAICS specific industry codes
+            fio:subcodeOf ?industryGroup ;
+            rdfs:label ?industryName.
+        VALUES ?industryGroup {naics:NAICS-2213}.
+    #}
+
+}
