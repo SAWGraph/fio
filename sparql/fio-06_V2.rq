@@ -22,7 +22,7 @@ SELECT * WHERE {
     SERVICE <repository:Spatial>
     {
         ?fac_s2 a kwg-ont:S2Cell_Level13.
-    	?fac_s2 geo:hasGeometry/geo:asWKT ?fac_wkt .
+    	?fac_s2 geo:hasGeometry/geo:asWKT ?s2_wkt .
         }
 	
 	# also retrieve any labels associated with the facility and industry 
@@ -52,3 +52,4 @@ SELECT * WHERE {
   OPTIONAL { ?fac rdfs:label ?faclabel . }
   OPTIONAL { ?code rdfs:label ?ind . }
 }
+
