@@ -1,6 +1,6 @@
 # FIO Basics
 # CQ 6
-# Retrieve all facilities with NAICS Industry Code 562212 and return their location as S2 cell (approximate location) and the specified point geometry for them. 
+# Retrieve all facilities with NAICS Industry Code 562212 (solid waste landfills) and return their location as S2 cell (approximate location) and the specified point geometry for them. 
 
 ### GraphDB version
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
