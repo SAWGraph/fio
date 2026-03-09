@@ -1,6 +1,6 @@
 # FIO Basics
 # CQ 5
-# Retrieve the NAICS Industry Code and other classifications (Sector, Subsector, Group) of a specific facility.
+# Retrieve the NAICS Industry Code and other classifications (Sector, Subsector, Group) of a specific facility (here: facilities with FRS ID 110000428662).
 # 2024-09-30 Update: Using the fio:ofIndustry property chain axiom
 # 2026-03-09 Update: Retrieve label of the NAICS codes as well
 
