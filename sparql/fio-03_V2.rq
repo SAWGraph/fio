@@ -1,6 +1,6 @@
 # FIO Basics
 # CQ 3
-# Retrieve all facilities in the NAICS Industry Group 5622 and their specific NAICS Industry Code.
+# Retrieve all facilities in the NAICS Industry Group 5622 ("Waste Treatment and Disposal") and their specific NAICS Industry Code.
 # updated with new version of FIO Ontology (2024-10-03)
 
 ### GraphDB version
