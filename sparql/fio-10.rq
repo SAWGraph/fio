@@ -17,7 +17,7 @@ SELECT * WHERE {
   VALUES ?code {naics:NAICS-562212}
   ?fac rdf:type fio:Facility ;
        fio:ofIndustry ?code ;
-       spatial:connectedTo ?county ;
+       spatial:connectedTo ?town ;
        geo:hasGeometry/geo:asWKT ?facWKT;
        rdfs:label ?facilityName.
 
