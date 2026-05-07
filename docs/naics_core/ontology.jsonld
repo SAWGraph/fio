@@ -1,0 +1,40 @@
+[ {
+  "@id" : "http://w3id.org/fio/naics#",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "http://w3id.org/fio/v1/naics#"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/fio#Industry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/naics#NAICS-Industry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/fio#Industry"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/naics#NAICS-IndustryCode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/naics#NAICS-Industry"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/naics#NAICS-IndustryGroup",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/naics#NAICS-Industry"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/naics#NAICS-IndustrySector",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/naics#NAICS-Industry"
+  } ]
+}, {
+  "@id" : "http://w3id.org/fio/v1/naics#NAICS-IndustrySubsector",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/fio/v1/naics#NAICS-Industry"
+  } ]
+} ]
