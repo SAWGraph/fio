@@ -14,6 +14,7 @@ from rdflib import Graph
 from rdflib import URIRef, BNode, Literal
 from shapely.geometry import Point
 from pathlib import Path
+from frs_http import get_json
 import urllib.parse
 
 import logging
@@ -47,6 +48,7 @@ logging.basicConfig(filename=logname,
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.DEBUG)
+logging.getLogger("urllib3").setLevel(logging.WARNING)  # hide connection debug chatter, keep retries/failures
 if testing:
     logging.info(f'****** Testing Run *********')
 logging.info(f"***** Getting facility programs NAICS for {state_code} from server.")
@@ -56,8 +58,8 @@ def load_data():
 
     facilities = []
     limit = 10000
-    increment= 1000
-    start = 0
+    increment= 10000
+    start = 1  # the API's row range is 1-based and inclusive at both ends, so 0 would repeat the boundary rows
 
     #temporary limit to 5 for testing
     if testing == True:
@@ -69,8 +71,7 @@ def load_data():
     while True: #limit < facilities_count+increment:
         facilities_url = f'https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/{state_code}/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/{start}:{limit}/json' #join/frs.frs_supplemental_interest/
         print(facilities_url)
-        resp = urllib3.request("GET", facilities_url, timeout=30)
-        facilities_subset = resp.json()
+        facilities_subset = get_json(facilities_url, timeout=30)
         if facilities_subset == []:
             # stop when there are no results left
             break
@@ -79,15 +80,15 @@ def load_data():
         #print(type(facilities_subset[0]))
         if 'error' in facilities_subset[0].keys():
             #stop if an error is returned from the server
-            print(facilities_subset['error'])
+            print(facilities_subset[0]['error'])
             break
         #print(facilities_subset)
         for facility in facilities_subset:
             facilities.append(facility)
         
-        start += limit
+        start += increment
         print(f'retrieved {limit}')
-        limit += limit
+        limit += increment
 
         #stop after one loop if testing
         if testing == True:

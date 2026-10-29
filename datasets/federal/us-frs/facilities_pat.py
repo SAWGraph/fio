@@ -4,6 +4,7 @@ from rdflib.namespace import OWL, XMLNS, XSD, RDF, RDFS
 from rdflib import Namespace
 from rdflib import Graph
 from rdflib import URIRef, BNode, Literal
+import rdflib
 import pandas as pd
 import encodings
 import logging
@@ -45,6 +46,7 @@ logging.basicConfig(filename=logname,
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.DEBUG)
+logging.getLogger("urllib3").setLevel(logging.WARNING)  # hide connection debug chatter, keep retries/failures
 
 logging.info(f"Running triplification for PAT facilities {state}")
 
@@ -63,19 +65,27 @@ def main():
         
     else:
         #loop through all states
-        for state1 in df['State'].unique():
+        for state1 in df['State'].dropna().unique():
             df_state = df[df['State']==state1]
             kg = triplify(df_state)
 
-            kg_turtle_file = output_dir / f"epa-frs-data-{state.strip()}-pat.ttl".format(output_dir)
+            kg_turtle_file = output_dir / f"epa-frs-data-{state1.strip()}-pat.ttl"
             kg.serialize(kg_turtle_file, format='turtle')
-            logger = logging.getLogger(f'Finished triplifying pfas analytics tool facilities - {state}.')
-            print(f'Finished triplifying pfas analytics tool facilities - {state1}.')
+            logging.info(f'Finished triplifying pfas analytics tool facilities - {state1.strip()}.')
+            print(f'Finished triplifying pfas analytics tool facilities - {state1.strip()}.')
+
+        #records with no state at all go to one generic file so they are not silently dropped
+        df_nostate = df[df['State'].isna()]
+        if len(df_nostate) > 0:
+            kg = triplify(df_nostate)
+            kg.serialize(output_dir / "epa-frs-data-unknown-pat.ttl", format='turtle')
+            logging.info(f'Triplified {len(df_nostate)} PAT facilities with no state.')
+            print(f'Finished triplifying pfas analytics tool facilities with no state ({len(df_nostate)} records).')
 
 def load_data():
     #df = pd.read_csv(data_dir / f"industrysectors_{state}.csv")
-    #df = pd.read_excel(data_dir/ 'industrysectors_275aeff7-cbf1-46c2-92a9-67886bcbc0ee.xlsx') #older data
-    df = pd.read_excel(data_dir/ 'industrysectors_dee6b0cb-ab9e-4952-bf70-977004a9e878.xlsx')
+    #df = pd.read_excel(data_dir/ 'industrysectors_9315b09b-eb10-456e-8f66-45d6f2586b50.xlsx')
+    df = pd.read_excel(data_dir/ 'industrysectors_f3cfa581-fda9-497c-bdda-b05ac08d2b01.xlsx')
     #df = pd.read_json(data_dir / '')
     #replace - with nan
     df.replace(to_replace='-', value=pd.NA, inplace=True)
@@ -84,7 +94,7 @@ def load_data():
     return df
 
 
-def Initial_KG() -> object:
+def Initial_KG() -> Graph:
     #prefixes: Dict[str, str] = _PREFIX
     kg = Graph()
     #for prefix in prefixes:
@@ -133,7 +143,7 @@ def get_iris(facility):
     return facility_iri
 
 
-def triplify(df):
+def triplify(df) -> Graph:
     kg = Initial_KG()
 
     df = clean_attributes(df)

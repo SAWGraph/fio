@@ -6,7 +6,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-epa-frs:recordTypes a owl:Ontology .
+epa-frs:recordTypes a owl:Ontology ;
+        dcterms:modified "2026-08-13"^^xsd:date .
 
 ## Interest Types 
 epa-frs:EnvironmentalInterestByRecordType rdf:type owl:Class;
@@ -17,7 +18,8 @@ epa-frs:EnvironmentalInterestByRecordType rdf:type owl:Class;
 # some air programs are licenses or permits. Depends on the system 
 epa-frs:PermitInterest rdf:type owl:Class;
     rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType;
-    dcterms:description "Environmental Interests that create records that are permits or licenses". 
+    dcterms:description "Environmental Interests that create records that are permits or licenses";
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 epa-frs-data:d.EnvironmentalInterestType.Icis-Npdesnon-Major rdf:type epa-frs:PermitInterest. 
 epa-frs-data:d.EnvironmentalInterestType.Npdesnon-Major rdf:type epa-frs:PermitInterest. 
 epa-frs-data:d.EnvironmentalInterestType.Stormwaterconstruction rdf:type epa-frs:PermitInterest. 
@@ -42,7 +44,8 @@ epa-frs-data:d.EnvironmentalInterestType.Minegeneralpermit rdf:type epa-frs:Perm
 
 #contaminated sites or monitoring sites
 epa-frs:SiteInterest rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType. 
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 epa-frs-data:d.EnvironmentalInterestType.Superfund-Non-Npl rdf:type epa-frs:SiteInterest.
 epa-frs-data:d.EnvironmentalInterestType.Superfundnpl rdf:type  epa-frs:SiteInterest.
 epa-frs-data:d.EnvironmentalInterestType.Superfund rdf:type epa-frs:SiteInterest. 
@@ -65,7 +68,8 @@ epa-frs-data:d.EnvironmentalInterestType.Solidwastelandfill rdf:type epa-frs:Sit
 
 #reporters
 epa-frs:ReportingInterest rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType. 
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 epa-frs-data:d.EnvironmentalInterestType.Complianceandemissionsreporting rdf:type epa-frs:ReportingInterest, epa-frs:EnforcementInterest. 
 epa-frs-data:d.EnvironmentalInterestType.Greenhousegasreporter rdf:type epa-frs:ReportingInterest. 
 epa-frs-data:d.EnvironmentalInterestType.Airemissioninventory rdf:type epa-frs:ReportingInterest. 
@@ -76,7 +80,8 @@ epa-frs-data:d.EnvironmentalInterestType.Drinkingwatersystem rdf:type epa-frs:Re
 
 # enforcement
 epa-frs:EnforcementInterest rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType.
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 epa-frs-data:d.EnvironmentalInterestType.Closedcriminalenforcementcase rdf:type epa-frs:EnforcementInterest. 
 epa-frs-data:d.EnvironmentalInterestType.Enforcement-Complianceactivity rdf:type epa-frs:EnforcementInterest.
 epa-frs-data:d.EnvironmentalInterestType.Formalenforcementaction rdf:type epa-frs:EnforcementInterest. 
@@ -85,7 +90,8 @@ epa-frs-data:d.EnvironmentalInterestType.Formalenforcementaction rdf:type epa-fr
 
 # compliance 
 epa-frs:ComplianceInterest rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType. 
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 epa-frs-data:d.EnvironmentalInterestType.Complianceassistance rdf:type epa-frs:ComplianceInterest.
 epa-frs-data:d.EnvironmentalInterestType.Complianceactivity rdf:type epa-frs:ComplianceInterest. 
 
@@ -99,7 +105,8 @@ epa-frs-data:d.EnvironmentalInterestType.Complianceactivity rdf:type epa-frs:Com
 
 # risk planning
 epa-frs:RiskInterest rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType. 
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 epa-frs:Chemicalstorageprograms rdfs:subClassOf epa-frs:RiskInterest. # all subclasses are 'plans'
 epa-frs-data:d.EnvironmentalInterestType.FRP rdf:type epa-frs:RiskInterest. #facility response plan
 epa-frs-data:d.EnvironmentalInterestType.SPCC rdf:type epa-frs:RiskInterest. #spill plan
@@ -109,7 +116,8 @@ epa-frs-data:d.EnvironmentalInterestType.Floodplainmanagement rdf:type epa-frs:R
 
 # registry interest
 epa-frs:RegistryInterest rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType.
+    rdfs:subClassOf epa-frs:EnvironmentalInterestByRecordType;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 epa-frs-data:d.EnvironmentalInterestType.Notinauniverse rdf:type epa-frs:RegistryInterest. #hazardous waste program with no specific currently tracked waste universe
 epa-frs-data:d.EnvironmentalInterestType.Gasolineanddieselproducers rdf:type epa-frs:RegistryInterest. #register products
 epa-frs-data:d.EnvironmentalInterestType.Npdesunpermitted rdf:type epa-frs:RegistryInterest.  #regulated by NPDES and discharging with no permit
@@ -122,37 +130,48 @@ epa-frs-data:d.EnvironmentalInterestType.Transporter rdf:type epa-frs:RegistryIn
 
 # subclasses of information systems
 epa-frs:PermitSystem rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:ProgramInformationSystem.
+    rdfs:subClassOf epa-frs:ProgramInformationSystem;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 
 epa-frs:GrantSystem rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+    rdfs:subClassOf epa-frs:ProgramInformationSystem;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:EnforcementSystem rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+    rdfs:subClassOf epa-frs:ProgramInformationSystem;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:ComplianceSystem rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+    rdfs:subClassOf epa-frs:ProgramInformationSystem;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:ReportingSystem rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+    rdfs:subClassOf epa-frs:ProgramInformationSystem;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:RegistrySystem rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+    rdfs:subClassOf epa-frs:ProgramInformationSystem;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:SiteSystem rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+    rdfs:subClassOf epa-frs:ProgramInformationSystem;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:StationSystem rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+    rdfs:subClassOf epa-frs:ProgramInformationSystem;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:ProjectSystem rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+    rdfs:subClassOf epa-frs:ProgramInformationSystem;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:StateSystem rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+    rdfs:subClassOf epa-frs:ProgramInformationSystem;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:TribalSystem rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+    rdfs:subClassOf epa-frs:ProgramInformationSystem;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 # types for information systems
 epa-frs-data:d.ProgramInformationSystem.NPDES rdf:type epa-frs:PermitSystem. 
@@ -261,7 +280,8 @@ epa-frs-data:d.ProgramInformationSystem.NNEMS rdf:type epa-frs:TribalSystem.
 epa-frs-data:d.ProgramInformationSystem.SRPMICEMS rdf:type epa-frs:TribalSystem. 
 
 epa-frs:LegacySystem rdf:type owl:Class;
-    rdfs:subClassOf epa-frs:ProgramInformationSystem. 
+    rdfs:subClassOf epa-frs:ProgramInformationSystem;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 #legacy systems
 epa-frs-data:d.ProgramInformationSystem.CERCLIS rdf:type epa-frs:LegacySystem. 
 epa-frs-data:d.ProgramInformationSystem.EGRID rdf:type epa-frs:LegacySystem. 
@@ -299,7 +319,8 @@ epa-frs:PermitRecord rdf:type owl:Class;
         rdf:type owl:Restriction;
         owl:onProperty epa-frs:fromSystem;
         owl:someValuesFrom epa-frs:PermitSystem
-    ]).
+    ]);
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 
 epa-frs:EnforcementActivity rdf:type owl:Class;
     rdfs:subClassOf epa-frs:SupplementalRecord;
@@ -309,7 +330,8 @@ epa-frs:EnforcementActivity rdf:type owl:Class;
         rdf:type owl:Restriction;
         owl:onProperty epa-frs:ofInterestType;
         owl:someValuesFrom [owl:unionOf(epa-frs:EnforcementInterest epa-frs:ComplianceInterest)]
-    ].
+    ];
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 
 epa-frs:ComplianceRecord rdf:type owl:Class;
     rdfs:subClassOf epa-frs:SupplementalRecord;
@@ -317,7 +339,8 @@ epa-frs:ComplianceRecord rdf:type owl:Class;
         rdf:type owl:Restriction;
         owl:onProperty epa-frs:fromSystem;
         owl:someValuesFrom epa-frs:ComplianceSystem
-    ].
+    ];
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 
 epa-frs:RiskPlanRecord rdf:type owl:Class; #unsure if this lives in supplemental or monitoring. 
     rdfs:subClassOf epa-frs:SupplementalRecord;
@@ -325,7 +348,8 @@ epa-frs:RiskPlanRecord rdf:type owl:Class; #unsure if this lives in supplemental
         rdf:type owl:Restriction;
         owl:onProperty epa-frs:ofInterestType;
         owl:someValuesFrom epa-frs:RiskInterest
-    ]. 
+    ];
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:ProjectRecord rdf:type owl:Class;
     rdfs:subClassOf epa-frs:SupplementalRecord;
@@ -333,7 +357,8 @@ epa-frs:ProjectRecord rdf:type owl:Class;
         rdf:type owl:Restriction;
         owl:onProperty epa-frs:fromSystem;
         owl:someValuesFrom epa-frs:ProjectSystem
-    ]. 
+    ];
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:ReportingRecord rdf:type owl:Class;
     rdfs:subClassOf epa-frs:MonitoringRecord;
@@ -343,14 +368,15 @@ epa-frs:ReportingRecord rdf:type owl:Class;
         owl:someValuesFrom epa-frs:ReportingSystem]
         [ rdf:type owl:Restriction;
         owl:onProperty epa-frs:ofInterestType;
-        owl:someValuesFrom epa-frs:ReportingInterest])
-        .
+        owl:someValuesFrom epa-frs:ReportingInterest]);
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs> .
 
 epa-frs:EnforcementTrackingRecord rdf:type owl:Class;
     owl:equivalentClass [ rdf:type owl:Restriction;
         owl:onProperty epa-frs:ofInterestType;
         owl:someValuesFrom epa-frs:EnforcementInterest];
-        rdfs:subClassOf epa-frs:MonitoringRecord. 
+    rdfs:subClassOf epa-frs:MonitoringRecord;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:RegistrationRecord rdf:type owl:Class;
     owl:unionOf ([rdf:type owl:Restriction;
@@ -359,19 +385,22 @@ epa-frs:RegistrationRecord rdf:type owl:Class;
     [ rdf:type owl:Restriction;
         owl:onProperty epa-frs:ofInterestType;
         owl:someValuesFrom epa-frs:RegistryInterest]);
-    rdfs:subClassOf epa-frs:MonitoringRecord. 
+    rdfs:subClassOf epa-frs:MonitoringRecord;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:StateTrackingRecord rdf:type owl:Class;
     owl:equivalentClass [ rdf:type owl:Restriction;
     owl:onProperty epa-frs:ofInterestType;
     owl:hasValue epa-frs-data:d.EnvironmentalInterestType.Statemaster];
-    rdfs:subClassOf epa-frs:MonitoringRecord. 
+    rdfs:subClassOf epa-frs:MonitoringRecord;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:TribalTrackingRecord rdf:type owl:Class;
     owl:equivalentClass [rdf:type owl:Restriction;
     owl:onProperty epa-frs:ofInterestType;
     owl:hasValue epa-frs-data:d.EnvironmentalInterestType.Tribalmaster];
-    rdfs:subClassOf epa-frs:MonitoringRecord.
+    rdfs:subClassOf epa-frs:MonitoringRecord;
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 
 epa-frs:SiteRecord rdf:type owl:Class;
     rdfs:subClassOf epa-frs:MonitoringRecord;
@@ -385,7 +414,8 @@ epa-frs:SiteRecord rdf:type owl:Class;
     [   rdf:type owl:Restriction;
         owl:onProperty epa-frs:fromSystem;
         owl:someValuesFrom epa-frs:SiteSystem
-    ]).
+    ]);
+    rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 
 
 #rules for subproperties of epa-frs:hasRecord

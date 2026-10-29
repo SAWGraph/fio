@@ -14,6 +14,7 @@ from rdflib import Graph
 from rdflib import URIRef, BNode, Literal
 from shapely.geometry import Point
 from pathlib import Path
+from frs_http import get_json
 import urllib.parse
 
 import logging
@@ -47,6 +48,7 @@ logging.basicConfig(filename=logname,
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.DEBUG)
+logging.getLogger("urllib3").setLevel(logging.WARNING)  # hide connection debug chatter, keep retries/failures
 if testing:
     logging.info(f'****** Testing Run *********')
 logging.info(f"***** Getting facility programs and naics for {state_code} from server.")
@@ -57,7 +59,7 @@ def load_data():
     facilities = []
     limit = 10000
     increment= 10000
-    start = 0
+    start = 1  # the API's row range is 1-based and inclusive at both ends, so 0 would repeat the boundary rows
 
     #count_req = f'https://data.epa.gov/efservice/FRS_SUPPLEMENTAL_INTEREST/STATE_CODE/=/{state_code}/COUNT'
     #count_url = urllib3.request("GET", count_req).data
@@ -77,8 +79,7 @@ def load_data():
     while True: #limit < facilities_count+increment:
         facilities_url = f'https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/{state_code}/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/{start}:{limit}/json' #join/frs.frs_supplemental_interest/
         print(facilities_url)
-        resp = urllib3.request("GET", facilities_url, timeout=10)
-        facilities_subset = resp.json()
+        facilities_subset = get_json(facilities_url, timeout=30)
         if facilities_subset == []:
             # stop when there are no results left
             break
@@ -87,7 +88,7 @@ def load_data():
         #print(type(facilities_subset[0]))
         if 'error' in facilities_subset[0].keys():
             #stop if an error is returned from the server
-            print(facilities_subset['error'])
+            print(facilities_subset[0]['error'])
             break
         #print(facilities_subset)
         for facility in facilities_subset:
@@ -154,7 +155,7 @@ def clean_attributes(facilities):
     
     fac['sup_pgm_sys_acrnm'] = fac['sup_pgm_sys_acrnm'].apply(lambda x: x.translate(replacements).upper() if pd.notnull(x) else None) #program for main federal programs
     # if interest type is npdes, override system and set to npdes to match other iris
-    mask = fac['sup_interest_type'].apply(lambda x: False if x==None else (True if 'NPDES' in x else False))
+    mask = fac['sup_interest_type'].apply(lambda x: bool(pd.notnull(x) and 'NPDES' in x))
     fac.loc[mask, 'sup_pgm_sys_acrnm'] = 'NPDES'
 
     fac['interest_id'] = fac['pgm_sys_id'].apply(lambda x: x.translate(replacements))
@@ -187,24 +188,29 @@ def clean_attributes(facilities):
     return fac
 
 
+def has_value(value):
+    '''True for a real value; False for None, NaN or an empty string (NaN is truthy, so plain truth tests miss it)'''
+    return pd.notnull(value) and value != ''
+
+
 def get_iris(facility):
     #build iris for any entities
     #print(facility)
     facility_iri = epa_frs_data[f"d.FRS-Facility.{facility['registry_id']}"]
     record_iri = epa_frs_data[f"d.Record.{facility['pgm_sys_acrnm']}.{facility['interest_id']}"]
-    if facility['sup_pgm_sys_id'] and facility['sup_pgm_sys_acrnm']:
-        if len(facility['sup_pgm_sys_id']) >5 and facility['sup_pgm_sys_acrnm'] != 'UST' and any(char.isdigit() for char in facility['sup_pgm_sys_id']) == True: #UST ids and some others are not unique across facilities
+    if has_value(facility['sup_pgm_sys_id']) and has_value(facility['sup_pgm_sys_acrnm']):
+        if len(str(facility['sup_pgm_sys_id'])) >5 and facility['sup_pgm_sys_acrnm'] != 'UST' and any(char.isdigit() for char in str(facility['sup_pgm_sys_id'])) == True: #UST ids and some others are not unique across facilities
             sup_iri = epa_frs_data[f"d.Record.{facility['sup_pgm_sys_acrnm']}.{facility['sup_pgm_sys_id']}"]
         else:
             sup_iri = epa_frs_data[f"d.Record.{facility['sup_pgm_sys_acrnm']}.{facility['sup_interest_id']}.{facility['sup_pgm_sys_id']}"]
-    elif facility['sup_pgm_sys_acrnm']:
+    elif has_value(facility['sup_pgm_sys_acrnm']):
         sup_iri = epa_frs_data[f"d.Record.{facility['sup_pgm_sys_acrnm']}.{facility['sup_interest_id']}"]
-    elif facility['sup_pgm_sys_id']:
+    elif has_value(facility['sup_pgm_sys_id']):
         sup_iri = epa_frs_data[f"d.Record.{facility['pgm_sys_acrnm']}-Supplemental.{facility['sup_pgm_sys_id']}"]
     else:
         sup_iri = epa_frs_data[f"d.Record.{facility['pgm_sys_acrnm']}-Supplemental.{facility['sup_interest_id']}"]
 
-    if facility['sup_pgm_sys_acrnm']:
+    if has_value(facility['sup_pgm_sys_acrnm']):
         program = epa_frs[f"d.ProgramInformationSystem.{facility['sup_pgm_sys_acrnm']}"] 
     else:
         program = epa_frs[f"d.ProgramInformationSystem.{facility['pgm_sys_acrnm']}"] 
@@ -237,7 +243,7 @@ def triplify(facilities):
 
         #supplemental record
         kg.add((sup_iri, epa_frs['fromSystem'], program))
-        if facility.sup_pgm_sys_id:
+        if has_value(facility.sup_pgm_sys_id):
             kg.add((sup_iri, DCTERMS.identifier, Literal(facility.sup_pgm_sys_id, datatype=XSD.string)))
         else:
             kg.add((sup_iri, DCTERMS.identifier, Literal(facility.sup_interest_id, datatype=XSD.string)))

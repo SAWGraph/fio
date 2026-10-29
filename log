@@ -492,3 +492,230 @@
 2025-11-14 19:17:46,975 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/FL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/150000:160000/json HTTP/1.1" 200 None
 2025-11-14 19:17:46,977 root INFO finished fetching facilities.
 2025-12-03 09:59:33,935 root INFO Start getting industries from ecos
+14:01:27,164 root INFO Running triplification for naics
+14:02:58,925 root INFO Running triplification for naics
+14:04:02,869 root INFO Running triplification for naics
+14:09:18,972 root INFO Running triplification for naics
+14:10:23,520 root INFO Running triplification for naics
+14:13:16,153 root INFO Running triplification for naics
+14:15:30,874 root INFO Running triplification for naics
+14:16:32,867 root INFO Running triplification for naics
+14:16:40,953 root INFO Running triplification for naics
+14:18:18,101 root INFO Running triplification for naics
+14:19:03,866 root INFO Running triplification for naics
+14:20:09,347 root INFO Running triplification for naics
+14:20:57,39 root INFO Running triplification for naics
+14:22:32,171 root INFO Running triplification for naics
+14:23:57,708 root INFO Running triplification for naics
+2026-08-12 15:16:33,850 root INFO Running triplification for PAT facilities  
+2026-08-13 14:58:39,402 root INFO triplifying controlled vocabulary FRS
+2026-08-13 14:58:39,403 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-13 14:58:42,703 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_interest_ref/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-13 14:58:42,706 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_interest_ref/json
+2026-08-13 14:58:42,706 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-08-13 14:58:45,842 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_interest_ref/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-08-13 14:58:45,843 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_interest_ref/json
+2026-08-13 14:58:45,843 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-08-13 14:58:48,988 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_interest_ref/json'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2026-08-13 14:58:48,988 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_interest_ref/json
+2026-08-13 14:58:48,989 urllib3.connectionpool DEBUG Starting new HTTPS connection (4): data.epa.gov:443
+2026-08-13 14:59:00,621 root INFO triplifying controlled vocabulary FRS
+2026-08-13 14:59:00,621 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-13 14:59:03,763 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_interest_ref/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-13 14:59:03,764 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_interest_ref/json
+2026-08-13 14:59:03,764 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-08-13 14:59:05,885 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_interest_ref/json HTTP/1.1" 200 None
+2026-08-13 14:59:08,886 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_agency_ref/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-13 14:59:08,886 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_agency_ref/json
+2026-08-13 14:59:08,886 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-08-13 14:59:12,22 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_agency_ref/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-08-13 14:59:12,23 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_agency_ref/json
+2026-08-13 14:59:12,23 urllib3.connectionpool DEBUG Starting new HTTPS connection (4): data.epa.gov:443
+2026-08-13 14:59:14,713 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_agency_ref/json HTTP/1.1" 200 None
+2026-08-13 15:03:38,548 root INFO triplifying controlled vocabulary FRS
+2026-08-13 15:03:38,548 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-13 15:03:41,733 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_interest_ref/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:03:41,734 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_interest_ref/json
+2026-08-13 15:03:41,734 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-08-13 15:03:44,881 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_interest_ref/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:03:44,882 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_interest_ref/json
+2026-08-13 15:03:44,882 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-08-13 15:03:48,11 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_interest_ref/json'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:03:48,12 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_interest_ref/json
+2026-08-13 15:03:48,12 urllib3.connectionpool DEBUG Starting new HTTPS connection (4): data.epa.gov:443
+2026-08-13 15:03:51,226 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_interest_ref/json HTTP/1.1" 200 None
+2026-08-13 15:03:52,998 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_agency_ref/json HTTP/1.1" 200 None
+2026-08-13 15:06:00,875 root INFO triplifying controlled vocabulary FRS
+2026-08-13 15:06:00,875 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-13 15:06:04,70 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_interest_ref/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:06:04,70 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_interest_ref/json
+2026-08-13 15:06:04,71 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-08-13 15:06:07,205 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_interest_ref/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:06:07,206 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_interest_ref/json
+2026-08-13 15:06:07,207 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-08-13 15:06:10,340 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_interest_ref/json'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:06:10,340 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_interest_ref/json
+2026-08-13 15:06:10,341 urllib3.connectionpool DEBUG Starting new HTTPS connection (4): data.epa.gov:443
+2026-08-13 15:06:13,536 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_interest_ref/json HTTP/1.1" 200 None
+2026-08-13 15:06:16,542 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_agency_ref/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:06:16,543 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_agency_ref/json
+2026-08-13 15:06:16,543 urllib3.connectionpool DEBUG Starting new HTTPS connection (5): data.epa.gov:443
+2026-08-13 15:06:19,693 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_agency_ref/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:06:19,694 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_agency_ref/json
+2026-08-13 15:06:19,694 urllib3.connectionpool DEBUG Starting new HTTPS connection (6): data.epa.gov:443
+2026-08-13 15:06:22,827 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_agency_ref/json'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:06:22,828 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_agency_ref/json
+2026-08-13 15:06:22,828 urllib3.connectionpool DEBUG Starting new HTTPS connection (7): data.epa.gov:443
+2026-08-13 15:06:55,493 root INFO triplifying controlled vocabulary FRS
+2026-08-13 15:06:55,493 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-13 15:06:57,310 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_interest_ref/json HTTP/1.1" 200 None
+2026-08-13 15:07:00,39 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_agency_ref/json HTTP/1.1" 200 None
+2026-08-13 15:07:32,588 root INFO triplifying controlled vocabulary FRS
+2026-08-13 15:07:32,588 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-13 15:07:34,349 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_interest_ref/json HTTP/1.1" 200 None
+2026-08-13 15:07:37,350 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_agency_ref/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:07:37,351 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_agency_ref/json
+2026-08-13 15:07:37,351 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-08-13 15:07:40,509 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_agency_ref/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:07:40,510 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_agency_ref/json
+2026-08-13 15:07:40,510 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-08-13 15:07:43,234 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_agency_ref/json HTTP/1.1" 200 None
+2026-08-13 15:08:35,106 root INFO triplifying controlled vocabulary FRS
+2026-08-13 15:08:35,107 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-13 15:08:38,284 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_interest_ref/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:08:38,285 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_interest_ref/json
+2026-08-13 15:08:38,286 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-08-13 15:08:41,514 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_interest_ref/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:08:41,515 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_interest_ref/json
+2026-08-13 15:08:41,515 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-08-13 15:08:43,877 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_interest_ref/json HTTP/1.1" 200 None
+2026-08-13 15:08:45,779 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_agency_ref/json HTTP/1.1" 200 None
+2026-08-13 15:10:39,446 root INFO triplifying controlled vocabulary FRS
+2026-08-13 15:10:39,446 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-13 15:10:41,975 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_interest_ref/json HTTP/1.1" 200 None
+2026-08-13 15:10:44,985 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_agency_ref/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:10:44,987 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_agency_ref/json
+2026-08-13 15:10:44,987 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-08-13 15:10:47,177 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_agency_ref/json HTTP/1.1" 200 None
+2026-08-13 15:12:24,410 root INFO triplifying controlled vocabulary FRS
+2026-08-13 15:12:24,410 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-13 15:12:26,730 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_interest_ref/json HTTP/1.1" 200 None
+2026-08-13 15:12:29,727 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_agency_ref/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:12:29,728 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_agency_ref/json
+2026-08-13 15:12:29,728 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-08-13 15:12:33,857 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_agency_ref/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:12:33,858 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_agency_ref/json
+2026-08-13 15:12:33,858 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-08-13 15:12:35,437 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_agency_ref/json HTTP/1.1" 200 None
+2026-08-13 15:14:38,344 root INFO triplifying controlled vocabulary FRS
+2026-08-13 15:14:38,344 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-13 15:14:41,544 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_interest_ref/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:14:41,545 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_interest_ref/json
+2026-08-13 15:14:41,546 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-08-13 15:14:44,675 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_interest_ref/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:14:44,676 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_interest_ref/json
+2026-08-13 15:14:44,676 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-08-13 15:14:47,807 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_interest_ref/json'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:14:47,807 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_interest_ref/json
+2026-08-13 15:14:47,807 urllib3.connectionpool DEBUG Starting new HTTPS connection (4): data.epa.gov:443
+2026-08-13 15:14:50,226 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_interest_ref/json HTTP/1.1" 200 None
+2026-08-13 15:14:53,238 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_agency_ref/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-13 15:14:53,239 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/frs.frs_agency_ref/json
+2026-08-13 15:14:53,239 urllib3.connectionpool DEBUG Starting new HTTPS connection (5): data.epa.gov:443
+2026-08-13 15:14:56,273 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_agency_ref/json HTTP/1.1" 200 None
+2026-10-21 11:18:04,288 root INFO ***** Getting facility programs and naics for c:\Users\kschw\Documents\SAWGraph\fio\.venv\Scripts\python.exe c:/Users/kschw/Documents/SAWGraph/fio/datasets/federal/us-frs/facilities_program_naics.py from server.
+2026-10-21 11:18:04,289 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-10-21 11:18:05,505 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/c:%5CUsers%5Ckschw%5CDocuments%5CSAWGraph%5Cfio%5C.venv%5CScripts%5Cpython.exe%20c:/Users/kschw/Documents/SAWGraph/fio/datasets/federal/us-frs/facilities_program_naics.py/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json HTTP/1.1" 500 0
+2026-10-21 11:18:33,466 root INFO ***** Getting facility programs NAICS for AL from server.
+2026-10-21 11:18:33,467 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-10-21 11:18:51,621 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json HTTP/1.1" 200 None
+2026-10-21 11:19:10,83 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json HTTP/1.1" 200 None
+2026-10-21 11:19:28,906 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json HTTP/1.1" 200 None
+2026-10-21 11:19:47,413 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json HTTP/1.1" 200 None
+2026-10-21 11:20:06,18 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/40000:50000/json HTTP/1.1" 200 None
+2026-10-21 11:20:16,48 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/50000:60000/json HTTP/1.1" 200 None
+2026-10-21 11:20:25,59 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/60000:70000/json HTTP/1.1" 200 None
+2026-10-21 11:20:25,60 root INFO finished fetching facilities.
+2026-10-21 11:59:48,392 root INFO ***** Getting facility programs and naics for AL from server.
+2026-10-21 11:59:48,393 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-10-21 11:59:49,908 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json HTTP/1.1" 200 None
+2026-10-21 11:59:49,909 root INFO finished fetching facilities.
+2026-10-21 12:02:52,83 root INFO ***** Getting facility programs and naics for AR from server.
+2026-10-21 12:02:52,84 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-10-21 12:03:02,427 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AR/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-21 12:03:02,427 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=10)")': /efservice/frs.frs_program_facility/state_code/equals/AR/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json
+2026-10-21 12:03:02,427 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-10-21 12:03:12,627 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AR/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-10-21 12:03:12,628 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=10)")': /efservice/frs.frs_program_facility/state_code/equals/AR/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json
+2026-10-21 12:03:12,628 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-10-21 12:03:16,957 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AR/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json HTTP/1.1" 200 None
+2026-10-21 12:03:16,958 root INFO finished fetching facilities.
+2026-10-21 12:19:02,160 root INFO ***** Getting facility programs and naics for AZ from server.
+2026-10-21 12:19:02,160 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-10-21 12:19:10,214 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AZ/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json HTTP/1.1" 200 None
+2026-10-21 12:19:10,215 root INFO finished fetching facilities.
+2026-10-28 17:45:59,284 root INFO ***** Getting facility programs and naics for AR from server.
+2026-10-28 17:48:39,610 root INFO finished fetching facilities.
+2026-10-28 18:17:17,359 root INFO Running triplification for PAT facilities  
+2026-10-28 18:17:55,971 root INFO Running triplification for PAT facilities  
+2026-10-28 18:21:46,707 root INFO Running triplification for PAT facilities  
+2026-10-28 18:26:51,757 root INFO Running triplification for PAT facilities  AR
+2026-10-28 18:29:12,675 root INFO Running triplification for PAT facilities  
+2026-10-28 18:47:14,911 root INFO Running triplification for PAT facilities  
+2026-10-28 18:48:33,216 root INFO Finished triplifying pfas analytics tool facilities - AK.
+2026-10-28 18:48:33,515 root INFO Finished triplifying pfas analytics tool facilities - AL.
+2026-10-28 18:48:33,781 root INFO Finished triplifying pfas analytics tool facilities - AR.
+2026-10-28 18:48:33,961 root INFO Finished triplifying pfas analytics tool facilities - AZ.
+2026-10-28 18:48:36,504 root INFO Finished triplifying pfas analytics tool facilities - CA.
+2026-10-28 18:48:39,46 root INFO Finished triplifying pfas analytics tool facilities - CO.
+2026-10-28 18:48:39,197 root INFO Finished triplifying pfas analytics tool facilities - CT.
+2026-10-28 18:48:39,223 root INFO Finished triplifying pfas analytics tool facilities - DC.
+2026-10-28 18:48:39,271 root INFO Finished triplifying pfas analytics tool facilities - DE.
+2026-10-28 18:48:39,815 root INFO Finished triplifying pfas analytics tool facilities - FL.
+2026-10-28 18:48:40,193 root INFO Finished triplifying pfas analytics tool facilities - GA.
+2026-10-28 18:48:40,215 root INFO Finished triplifying pfas analytics tool facilities - GU.
+2026-10-28 18:48:40,270 root INFO Finished triplifying pfas analytics tool facilities - HI.
+2026-10-28 18:48:40,608 root INFO Finished triplifying pfas analytics tool facilities - IA.
+2026-10-28 18:48:40,742 root INFO Finished triplifying pfas analytics tool facilities - ID.
+2026-10-28 18:48:41,641 root INFO Finished triplifying pfas analytics tool facilities - IL.
+2026-10-28 18:48:41,978 root INFO Finished triplifying pfas analytics tool facilities - IN.
+2026-10-28 18:48:42,308 root INFO Finished triplifying pfas analytics tool facilities - KS.
+2026-10-28 18:48:42,539 root INFO Finished triplifying pfas analytics tool facilities - KY.
+2026-10-28 18:48:43,381 root INFO Finished triplifying pfas analytics tool facilities - LA.
+2026-10-28 18:48:43,956 root INFO Finished triplifying pfas analytics tool facilities - MA.
+2026-10-28 18:48:44,207 root INFO Finished triplifying pfas analytics tool facilities - MD.
+2026-10-28 18:48:44,304 root INFO Finished triplifying pfas analytics tool facilities - ME.
+2026-10-28 18:48:44,946 root INFO Finished triplifying pfas analytics tool facilities - MI.
+2026-10-28 18:48:45,233 root INFO Finished triplifying pfas analytics tool facilities - MN.
+2026-10-28 18:48:45,859 root INFO Finished triplifying pfas analytics tool facilities - MO.
+2026-10-28 18:48:45,891 root INFO Finished triplifying pfas analytics tool facilities - MP.
+2026-10-28 18:48:46,247 root INFO Finished triplifying pfas analytics tool facilities - MS.
+2026-10-28 18:48:46,449 root INFO Finished triplifying pfas analytics tool facilities - MT.
+2026-10-28 18:48:47,9 root INFO Finished triplifying pfas analytics tool facilities - NC.
+2026-10-28 18:48:47,152 root INFO Finished triplifying pfas analytics tool facilities - ND.
+2026-10-28 18:48:47,372 root INFO Finished triplifying pfas analytics tool facilities - NE.
+2026-10-28 18:48:47,483 root INFO Finished triplifying pfas analytics tool facilities - NH.
+2026-10-28 18:48:47,893 root INFO Finished triplifying pfas analytics tool facilities - NJ.
+2026-10-28 18:48:48,608 root INFO Finished triplifying pfas analytics tool facilities - NM.
+2026-10-28 18:48:48,717 root INFO Finished triplifying pfas analytics tool facilities - NV.
+2026-10-28 18:48:49,305 root INFO Finished triplifying pfas analytics tool facilities - NY.
+2026-10-28 18:48:49,815 root INFO Finished triplifying pfas analytics tool facilities - OH.
+2026-10-28 18:48:51,506 root INFO Finished triplifying pfas analytics tool facilities - OK.
+2026-10-28 18:48:51,705 root INFO Finished triplifying pfas analytics tool facilities - OR.
+2026-10-28 18:48:52,344 root INFO Finished triplifying pfas analytics tool facilities - PA.
+2026-10-28 18:48:52,423 root INFO Finished triplifying pfas analytics tool facilities - PR.
+2026-10-28 18:48:52,525 root INFO Finished triplifying pfas analytics tool facilities - RI.
+2026-10-28 18:48:52,996 root INFO Finished triplifying pfas analytics tool facilities - SC.
+2026-10-28 18:48:53,166 root INFO Finished triplifying pfas analytics tool facilities - SD.
+2026-10-28 18:48:53,723 root INFO Finished triplifying pfas analytics tool facilities - TN.
+2026-10-28 18:48:55,49 root INFO Finished triplifying pfas analytics tool facilities - TX.
+2026-10-28 18:48:55,213 root INFO Finished triplifying pfas analytics tool facilities - UT.
+2026-10-28 18:48:55,871 root INFO Finished triplifying pfas analytics tool facilities - VA.
+2026-10-28 18:48:55,894 root INFO Finished triplifying pfas analytics tool facilities - VI.
+2026-10-28 18:48:55,955 root INFO Finished triplifying pfas analytics tool facilities - VT.
+2026-10-28 18:48:56,218 root INFO Finished triplifying pfas analytics tool facilities - WA.
+2026-10-28 18:48:56,554 root INFO Finished triplifying pfas analytics tool facilities - WI.
+2026-10-28 18:48:56,681 root INFO Finished triplifying pfas analytics tool facilities - WV.
+2026-10-28 18:48:57,542 root INFO Finished triplifying pfas analytics tool facilities - WY.
+2026-10-28 18:48:57,714 root INFO Finished triplifying pfas analytics tool facilities - Other.
+2026-10-28 18:48:57,730 root INFO Finished triplifying pfas analytics tool facilities - AS.

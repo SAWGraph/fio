@@ -65,16 +65,27 @@ def main():
 
 def load_data():
     # df = pd.read_csv(data_dir / "industrysectors_ME.csv")
-    df = pd.read_excel(data_dir / 'NAICS_2-6 digit_2022_Codes.xlsx')
-    df2 = pd.read_excel(data_dir / '2022_NAICS_Structure.xlsx')
-    df3 = pd.read_excel(data_dir / '2017_NAICS_Descriptions.xlsx')
+    df = pd.read_excel(data_dir / 'NAICS_2-6 digit_2022_Codes.xlsx') #codes without footnotes in title
+    df_desc = pd.read_excel(data_dir / '2022_NAICS_Descriptions.xlsx') #descriptions and codes with footnotes in title
+    df2 = pd.read_excel(data_dir / '2022_NAICS_Structure.xlsx') #change indicators 
+    df3 = pd.read_excel(data_dir / '2017_NAICS_Descriptions.xlsx') #2017 descriptions and codes
+    df_desc.index = df_desc['Code']
     df2.index = df2['2022 NAICS Code']
     df3.index = df3['Code']
-    print(df.info())
-    print(df2.info())
+    print(df.head())
+    print(df2.head())
+    print(df3.head())
+    print(df_desc.head())
+    #print(df.info())
+    #print(df2.info())
+    df = df.join(df_desc, on='2022 NAICS US   Code', how='left', rsuffix='_desc') #join descriptions to main df, use code as index
+    print(df.head())
     df = df.join(df2, on='2022 NAICS US   Code', how='left')
+    print(df.head())
     df = df.join(df3, on='2022 NAICS US   Code', how='left', rsuffix='_2017')
-    print(df.info())
+    print(df.head())
+
+    
     logger = logging.getLogger('Data loaded to dataframe.')
     # print(df)
     return df
@@ -105,7 +116,8 @@ def get_attributes(row):
         'name2017': row['Title'],
         'length': len(str(row['2022 NAICS US   Code'])),
         'year': 2022,
-        'change': row['Change Indicator']
+        'change': row['Change Indicator'],
+        'description': row['Description'],
     }
     #determine which class and parent class based on length
     if industry['length']<=2:
@@ -163,6 +175,7 @@ def triplify(df):
         kg.add((industry_iri, RDF.type, extra_iris['class'])) #make it an instance of the specific type
         kg.add((industry_iri, RDF.type, OWL.NamedIndividual))
         kg.add((industry_iri, DCTERMS.identifier, Literal(industry['code'], datatype=XSD.string)))
+        kg.add((industry_iri, DCTERMS.description, Literal(industry['Description'], datatype=XSD.string))) # add description of industry
         kg.add((industry_iri, RDFS.label, Literal(industry['name'], datatype=XSD.string)))
         kg.add((industry_iri, fio['ofYear'], Literal(industry['year'], datatype=XSD.gYear)))#year of code
 
@@ -180,6 +193,7 @@ def triplify(df):
             #print(industry_iri+'-2017', 'changed')
             kg2.add((industry_iri+'-2017', RDF.type, extra_iris['class']))
             kg2.add((industry_iri+'-2017', DCTERMS.identifier, Literal(industry['code'], datatype=XSD.string)))
+            kg2.add((industry_iri+'-2017', DCTERMS.description, Literal(row['Description_2017'], datatype=XSD.string))) # add description of industry
             kg2.add((industry_iri+'-2017', fio['ofYear'], Literal('2017', datatype=XSD.gYear)))#year of code
             kg2.add((industry_iri+'-2017', RDFS.label, Literal(industry['name2017'], datatype=XSD.string)))
             kg2.add((industry_iri+'-2017', fio['yearDeprecated'], Literal('2017', datatype=XSD.gYear)))#year of code

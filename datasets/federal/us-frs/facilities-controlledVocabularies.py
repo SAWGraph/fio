@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 import math
 import datetime
 import csv
+import numpy as np
 from datetime import date
 
 from rdflib.namespace import OWL, XMLNS, XSD, RDF, RDFS, DCTERMS, GEO
@@ -89,6 +90,7 @@ def Initial_KG():
     kg.bind('schema', schema)
 
     kg.add((epa_frs['controlledVocab'], RDF.type, OWL.Ontology))
+    kg.add((epa_frs['controlledVocab'], DCTERMS.modified, Literal(datetime.datetime.now().strftime("%Y-%m-%d"), datatype=XSD.date)))
     return kg
 
 
@@ -105,7 +107,8 @@ def clean_attributes(interests):
 
      #interests['interest_short'] = interests['interest_type'].apply(lambda x: (''.join(((f'{word.replace("-", "")}-' if word in ['NSR', 'NPDES', 'ICIS', 'OSHA', 'ICIS-'] else f'{word.title()}') if word in ['NSR', 'NPDES', 'ICIS', 'ICIS-','OSHA', 'MAJOR', 'MINOR', 'GAS', 'AIR', 'GEOTHERMAL', 'PESTICIDES', 'WATER', 'WIND', 'ACTIVITY', 'ASSISTANCE', 'ACTION', 'SURFACE', 'RESIDUAL','RADIOACTIVE'] else word[0]) for word in x.replace("(", "- ").replace("&", "").replace("-", "- ").replace("/", " ").split())) if len(x.split()) > 1 else x)
      interests['interest_short'] = interests['interest_type'].apply(lambda x: (''.join(((word if word in ['NSR', 'NPDES', 'ICIS', 'OSHA', 'ICIS-', 'CESQG', 'SQG', 'AFO','SW', 'BRAC', 'CZM', 'EPCRA', 'FRP', 'LQG', "II", "WIPP", 'NPL', 'TRI', 'TSCA', 'TSD', "UIC", 'VSQG', 'NESHAPS', 'SPCC'] else word.title()) for word in x.translate(replacements).split()))))
-     interests['program_short'] = interests['program_category'].apply(lambda x: None if x==None else program_category_lookup[x]) #''.join((word) for word in str(x).translate(replacements).title().split()))
+     interests['program_short'] = interests['program_category'].apply(lambda x: None if pd.isna(x) else program_category_lookup.get(x, None)) # safe NaN check and lookup
+
 
      #print(interests.interest_short.unique())
      #print(interests.program_short.unique())
@@ -166,6 +169,7 @@ def triplify(interests, agencies, programs):
          kg.add((iri['interest'], RDFS.label, Literal(interest['interest_type'], datatype=XSD.string)))
          # description (interest_desc)
          kg.add((iri['interest'], DCTERMS.description, Literal(interest['interest_desc'], datatype=XSD.string)))
+         kg.add((iri['interest'], RDFS.isDefinedBy, epa_frs['controlledVocab']))
          # program category
          if interest['program_short'] != None:
             kg.add((iri['interest'], RDF.type, iri['program_cat']))
@@ -184,6 +188,7 @@ def triplify(interests, agencies, programs):
     #add missing interest
     kg.add((epa_frs_data['d.EnvironmentalInterestType.Potw'], RDF.type, epa_frs['EnvironmentalInterestType']))
     kg.add((epa_frs_data['d.EnvironmentalInterestType.Potw'], RDFS.label,Literal("Publicly Owned Treatment Works", datatype=XSD.string)))
+    kg.add((epa_frs_data['d.EnvironmentalInterestType.Potw'], RDFS.isDefinedBy, epa_frs['controlledVocab']))
              
 
     #program category description
@@ -193,6 +198,7 @@ def triplify(interests, agencies, programs):
         iri = get_iris(agency)
 
         kg.add((iri['agency'], RDF.type, OWL.NamedIndividual))
+        kg.add((iri['agency'], RDFS.isDefinedBy, epa_frs['controlledVocab']))
         
         if pd.notnull(agency[1]) and agency[1] != 'not otherwise classified':
             kg.add((iri['agency'], RDFS.label, Literal(agency[1])))
@@ -212,6 +218,7 @@ def triplify(interests, agencies, programs):
         #kg.add((iri['pgm_sys'], RDFS.subClassOf, epa_frs['FRS-Facility']))
         kg.add((iri['pgm_sys'], RDFS.label, Literal(program['PGM_SYS_NAME'])))
         kg.add((iri['pgm_sys'], DCTERMS.description, Literal(program['PGM_SYS_DESC'])))
+        kg.add((iri['pgm_sys'], RDFS.isDefinedBy, epa_frs['controlledVocab']))
 
         #kg.add((iri['pgm_id_relation'], RDF.type, OWL.DatatypeProperty))
         #kg.add((iri['pgm_id_relation'], RDFS.label, Literal(f"has {program['PGM_SYS_ACRNM']} identifier")))

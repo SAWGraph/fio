@@ -7361,3 +7361,381 @@
 2025-11-16 18:48:11,795 urllib3.connectionpool DEBUG Starting new HTTPS connection (10): data.epa.gov:443
 2025-11-16 18:48:13,93 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/NJ/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/100000:110000/json HTTP/1.1" 200 None
 2025-11-16 18:48:13,94 root INFO finished fetching facilities.
+2026-08-11 09:55:57,699 root INFO ****** START *********
+2026-08-11 09:55:57,700 root INFO Getting facilities for AL from server.
+2026-08-11 09:55:57,701 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-11 09:56:01,21 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-11 09:56:01,22 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT
+2026-08-11 09:56:01,22 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-08-11 09:56:04,168 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-08-11 09:56:04,169 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT
+2026-08-11 09:56:04,169 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-08-11 09:56:07,317 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2026-08-11 09:56:07,317 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT
+2026-08-11 09:56:07,317 urllib3.connectionpool DEBUG Starting new HTTPS connection (4): data.epa.gov:443
+2026-08-11 10:33:09,348 root INFO ****** START *********
+2026-08-11 10:33:09,348 root INFO Getting facilities for AL from server.
+2026-08-11 10:33:09,349 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-11 10:33:10,607 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT HTTP/1.1" 200 None
+2026-08-11 10:33:10,613 root INFO found 48587 facilities for AL.
+2026-08-11 10:33:27,642 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/0:10000/JSON HTTP/1.1" 200 None
+2026-08-11 10:33:45,244 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/10000:20000/JSON HTTP/1.1" 200 None
+2026-08-11 10:33:57,37 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/20000:30000/JSON HTTP/1.1" 200 None
+2026-08-11 10:34:10,639 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/30000:40000/JSON HTTP/1.1" 200 None
+2026-08-11 10:34:25,812 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/40000:50000/JSON HTTP/1.1" 200 None
+2026-08-11 10:34:25,930 root INFO finished fetching facilities.
+2026-08-11 10:39:04,187 root INFO ****** START *********
+2026-08-11 10:39:04,187 root INFO Getting facilities for AL from server.
+2026-08-11 10:39:04,188 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-11 10:39:05,494 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT HTTP/1.1" 200 None
+2026-08-11 10:39:05,494 root INFO found 48587 facilities for AL.
+2026-08-11 10:39:10,370 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/0:10000/JSON HTTP/1.1" 200 None
+2026-08-11 10:39:17,600 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/10000:20000/JSON HTTP/1.1" 200 None
+2026-08-11 10:39:24,331 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/20000:30000/JSON HTTP/1.1" 200 None
+2026-08-11 10:39:30,995 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/30000:40000/JSON HTTP/1.1" 200 None
+2026-08-11 10:39:37,323 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/40000:50000/JSON HTTP/1.1" 200 None
+2026-08-11 10:39:37,441 root INFO finished fetching facilities.
+2026-08-11 10:42:47,361 root INFO ***** Getting facility programs NAICS for AL from server.
+2026-08-11 10:42:47,362 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-11 10:43:07,14 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json HTTP/1.1" 200 None
+2026-08-11 10:43:24,687 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json HTTP/1.1" 200 None
+2026-08-11 10:43:42,261 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json HTTP/1.1" 200 None
+2026-08-11 10:44:05,52 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json HTTP/1.1" 200 None
+2026-08-11 10:44:20,179 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/40000:50000/json HTTP/1.1" 200 None
+2026-08-11 10:44:30,422 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/50000:60000/json HTTP/1.1" 200 None
+2026-08-11 10:44:40,915 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/60000:70000/json HTTP/1.1" 200 None
+2026-08-11 10:44:40,915 root INFO finished fetching facilities.
+2026-08-11 10:50:25,416 root INFO Running triplification for PAT facilities  
+2026-08-11 10:52:15,976 root INFO Getting facility programs records for AL from server.
+2026-08-11 10:52:15,977 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-11 10:52:31,214 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-11 10:52:31,215 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json
+2026-08-11 10:52:31,216 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-08-11 10:52:46,400 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-08-11 10:52:46,404 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json
+2026-08-11 10:52:46,405 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-08-11 10:53:01,651 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2026-08-11 10:53:01,651 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json
+2026-08-11 10:53:01,652 urllib3.connectionpool DEBUG Starting new HTTPS connection (4): data.epa.gov:443
+2026-08-11 10:53:16,869 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json HTTP/1.1" 200 None
+2026-08-11 10:53:32,48 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-11 10:53:32,48 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json
+2026-08-11 10:53:32,48 urllib3.connectionpool DEBUG Starting new HTTPS connection (5): data.epa.gov:443
+2026-08-11 10:53:47,283 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-08-11 10:53:47,284 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json
+2026-08-11 10:53:47,284 urllib3.connectionpool DEBUG Starting new HTTPS connection (6): data.epa.gov:443
+2026-08-11 10:54:02,457 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2026-08-11 10:54:02,458 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json
+2026-08-11 10:54:02,458 urllib3.connectionpool DEBUG Starting new HTTPS connection (7): data.epa.gov:443
+2026-08-11 11:08:09,77 root INFO Getting facility programs records for AL from server.
+2026-08-11 11:08:09,78 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-11 11:08:19,22 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json HTTP/1.1" 200 None
+2026-08-11 11:08:30,350 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json HTTP/1.1" 200 None
+2026-08-11 11:08:45,446 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-11 11:08:45,448 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json
+2026-08-11 11:08:45,449 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-08-11 11:09:00,724 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-08-11 11:09:00,724 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json
+2026-08-11 11:09:00,725 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-08-11 11:09:15,912 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2026-08-11 11:09:15,913 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json
+2026-08-11 11:09:15,913 urllib3.connectionpool DEBUG Starting new HTTPS connection (4): data.epa.gov:443
+2026-08-11 11:09:51,852 root INFO Getting facility programs records for AL from server.
+2026-08-11 11:09:51,853 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-08-11 11:10:01,160 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json HTTP/1.1" 200 None
+2026-08-11 11:10:10,991 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json HTTP/1.1" 200 None
+2026-08-11 11:10:18,146 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json HTTP/1.1" 200 None
+2026-08-11 11:10:33,262 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-08-11 11:10:33,262 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json
+2026-08-11 11:10:33,263 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-08-11 11:10:48,522 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-08-11 11:10:48,523 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json
+2026-08-11 11:10:48,523 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-08-11 11:11:03,712 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2026-08-11 11:11:03,713 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json
+2026-08-11 11:11:03,714 urllib3.connectionpool DEBUG Starting new HTTPS connection (4): data.epa.gov:443
+2026-10-21 11:23:55,391 root INFO ****** START *********
+2026-10-21 11:23:55,391 root INFO Getting facilities for AL from server.
+2026-10-21 11:23:55,391 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-10-21 11:23:58,626 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-21 11:23:58,626 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT
+2026-10-21 11:23:58,626 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-10-21 11:24:01,808 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-10-21 11:24:01,809 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT
+2026-10-21 11:24:01,809 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-10-21 11:24:02,832 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT HTTP/1.1" 200 None
+2026-10-21 11:24:02,832 root INFO found 49492 facilities for AL.
+2026-10-21 11:24:17,925 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/0:10000/JSON HTTP/1.1" 200 None
+2026-10-21 11:24:32,576 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/10000:20000/JSON HTTP/1.1" 200 None
+2026-10-21 11:24:55,587 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/20000:30000/JSON HTTP/1.1" 200 None
+2026-10-21 11:25:10,223 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/30000:40000/JSON HTTP/1.1" 200 None
+2026-10-21 11:25:24,842 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/40000:50000/JSON HTTP/1.1" 200 None
+2026-10-21 11:25:25,13 root INFO finished fetching facilities.
+2026-10-21 11:26:22,100 root INFO ***** Getting facility programs NAICS for AL from server.
+2026-10-21 11:26:22,101 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-10-21 11:26:33,957 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json HTTP/1.1" 200 None
+2026-10-21 11:26:48,925 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json HTTP/1.1" 200 None
+2026-10-21 11:27:01,830 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json HTTP/1.1" 200 None
+2026-10-21 11:27:11,890 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json HTTP/1.1" 200 None
+2026-10-21 11:27:22,121 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/40000:50000/json HTTP/1.1" 200 None
+2026-10-21 11:27:24,830 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/50000:60000/json HTTP/1.1" 200 None
+2026-10-21 11:27:25,763 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/60000:70000/json HTTP/1.1" 200 None
+2026-10-21 11:27:25,764 root INFO finished fetching facilities.
+2026-10-21 11:27:32,556 root INFO Getting facility programs records for AL from server.
+2026-10-21 11:27:32,557 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-10-21 11:27:47,827 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-21 11:27:47,828 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json
+2026-10-21 11:27:47,828 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-10-21 11:28:03,11 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-10-21 11:28:03,12 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json
+2026-10-21 11:28:03,12 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-10-21 11:28:13,449 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json HTTP/1.1" 200 None
+2026-10-21 11:28:28,578 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-21 11:28:28,579 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json
+2026-10-21 11:28:28,579 urllib3.connectionpool DEBUG Starting new HTTPS connection (4): data.epa.gov:443
+2026-10-21 11:28:49,277 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json HTTP/1.1" 200 None
+2026-10-21 11:29:04,394 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-21 11:29:04,394 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json
+2026-10-21 11:29:04,395 urllib3.connectionpool DEBUG Starting new HTTPS connection (5): data.epa.gov:443
+2026-10-21 11:29:22,455 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json HTTP/1.1" 200 None
+2026-10-21 11:29:37,578 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-21 11:29:37,579 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json
+2026-10-21 11:29:37,579 urllib3.connectionpool DEBUG Starting new HTTPS connection (6): data.epa.gov:443
+2026-10-21 11:29:53,390 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json HTTP/1.1" 200 None
+2026-10-21 11:30:08,529 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/40000:50000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-21 11:30:08,529 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/40000:50000/json
+2026-10-21 11:30:08,529 urllib3.connectionpool DEBUG Starting new HTTPS connection (7): data.epa.gov:443
+2026-10-21 11:30:22,610 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/40000:50000/json HTTP/1.1" 200 None
+2026-10-21 11:30:49,402 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/50000:60000/json HTTP/1.1" 200 None
+2026-10-21 11:31:15,692 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/60000:70000/json HTTP/1.1" 200 None
+2026-10-21 11:31:39,836 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/70000:80000/json HTTP/1.1" 200 None
+2026-10-21 11:32:03,434 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/80000:90000/json HTTP/1.1" 200 None
+2026-10-21 11:32:27,433 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/90000:100000/json HTTP/1.1" 200 None
+2026-10-21 11:32:52,38 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/100000:110000/json HTTP/1.1" 200 None
+2026-10-21 11:33:13,981 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/110000:120000/json HTTP/1.1" 200 None
+2026-10-21 11:33:37,627 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/120000:130000/json HTTP/1.1" 200 None
+2026-10-21 11:33:59,836 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/130000:140000/json HTTP/1.1" 200 None
+2026-10-21 11:34:23,53 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/140000:150000/json HTTP/1.1" 200 None
+2026-10-21 11:34:37,308 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/150000:160000/json HTTP/1.1" 200 None
+2026-10-21 11:34:45,812 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/160000:170000/json HTTP/1.1" 200 None
+2026-10-21 11:34:45,813 root INFO finished fetching facilities.
+2026-10-21 11:38:33,120 root INFO ***** Getting facility programs and naics for AL from server.
+2026-10-21 11:38:33,120 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-10-21 11:38:41,821 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json HTTP/1.1" 200 None
+2026-10-21 11:38:41,821 root INFO finished fetching facilities.
+2026-10-28 09:09:03,854 root INFO ****** START *********
+2026-10-28 09:09:03,855 root INFO Getting facilities for AL from server.
+2026-10-28 09:09:03,855 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-10-28 09:09:07,97 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:09:07,101 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT
+2026-10-28 09:09:07,101 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-10-28 09:09:10,289 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:09:10,290 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT
+2026-10-28 09:09:10,290 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-10-28 09:09:13,483 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:09:13,483 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT
+2026-10-28 09:09:13,483 urllib3.connectionpool DEBUG Starting new HTTPS connection (4): data.epa.gov:443
+2026-10-28 09:09:14,90 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AL/COUNT HTTP/1.1" 200 None
+2026-10-28 09:09:14,91 root INFO found 49503 facilities for AL.
+2026-10-28 09:09:28,284 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/0:10000/JSON HTTP/1.1" 200 None
+2026-10-28 09:09:42,569 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/10000:20000/JSON HTTP/1.1" 200 None
+2026-10-28 09:09:56,902 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/20000:30000/JSON HTTP/1.1" 200 None
+2026-10-28 09:10:11,968 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/30000:40000/JSON HTTP/1.1" 200 None
+2026-10-28 09:10:26,55 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_facility_site/std_state_code/equals/AL/left/frs.geo_facility_point/40000:50000/JSON HTTP/1.1" 200 None
+2026-10-28 09:10:26,187 root INFO finished fetching facilities.
+2026-10-28 09:11:07,856 root INFO ***** Getting facility programs NAICS for AL from server.
+2026-10-28 09:11:07,857 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-10-28 09:11:28,483 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json HTTP/1.1" 200 None
+2026-10-28 09:11:46,517 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json HTTP/1.1" 200 None
+2026-10-28 09:12:04,588 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json HTTP/1.1" 200 None
+2026-10-28 09:12:24,234 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json HTTP/1.1" 200 None
+2026-10-28 09:12:43,331 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/40000:50000/json HTTP/1.1" 200 None
+2026-10-28 09:12:54,16 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/50000:60000/json HTTP/1.1" 200 None
+2026-10-28 09:13:03,290 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_naics/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/60000:70000/json HTTP/1.1" 200 None
+2026-10-28 09:13:03,291 root INFO finished fetching facilities.
+2026-10-28 09:13:10,333 root INFO Getting facility programs records for AL from server.
+2026-10-28 09:13:10,334 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-10-28 09:13:25,575 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:13:25,576 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json
+2026-10-28 09:13:25,576 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-10-28 09:13:40,743 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:13:40,744 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json
+2026-10-28 09:13:40,744 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-10-28 09:13:53,281 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json HTTP/1.1" 200 None
+2026-10-28 09:14:08,403 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:14:08,404 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json
+2026-10-28 09:14:08,404 urllib3.connectionpool DEBUG Starting new HTTPS connection (4): data.epa.gov:443
+2026-10-28 09:14:31,429 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json HTTP/1.1" 200 None
+2026-10-28 09:14:46,549 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:14:46,549 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json
+2026-10-28 09:14:46,549 urllib3.connectionpool DEBUG Starting new HTTPS connection (5): data.epa.gov:443
+2026-10-28 09:15:06,621 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json HTTP/1.1" 200 None
+2026-10-28 09:15:21,732 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:15:21,733 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json
+2026-10-28 09:15:21,734 urllib3.connectionpool DEBUG Starting new HTTPS connection (6): data.epa.gov:443
+2026-10-28 09:15:33,877 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json HTTP/1.1" 200 None
+2026-10-28 09:15:48,993 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/40000:50000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:15:48,994 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=15)")': /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/40000:50000/json
+2026-10-28 09:15:48,994 urllib3.connectionpool DEBUG Starting new HTTPS connection (7): data.epa.gov:443
+2026-10-28 09:16:05,348 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/40000:50000/json HTTP/1.1" 200 None
+2026-10-28 09:16:33,408 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/50000:60000/json HTTP/1.1" 200 None
+2026-10-28 09:17:01,230 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/60000:70000/json HTTP/1.1" 200 None
+2026-10-28 09:17:28,239 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/70000:80000/json HTTP/1.1" 200 None
+2026-10-28 09:18:12,467 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/80000:90000/json HTTP/1.1" 200 None
+2026-10-28 09:18:54,715 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/90000:100000/json HTTP/1.1" 200 None
+2026-10-28 09:19:37,237 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/100000:110000/json HTTP/1.1" 200 None
+2026-10-28 09:19:59,878 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/110000:120000/json HTTP/1.1" 200 None
+2026-10-28 09:20:23,606 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/120000:130000/json HTTP/1.1" 200 None
+2026-10-28 09:20:46,399 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/130000:140000/json HTTP/1.1" 200 None
+2026-10-28 09:21:09,479 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/140000:150000/json HTTP/1.1" 200 None
+2026-10-28 09:21:26,647 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/150000:160000/json HTTP/1.1" 200 None
+2026-10-28 09:21:34,935 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/160000:170000/json HTTP/1.1" 200 None
+2026-10-28 09:21:34,937 root INFO finished fetching facilities.
+2026-10-28 09:26:35,467 root INFO ***** Getting facility programs and naics for AL from server.
+2026-10-28 09:26:35,468 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): data.epa.gov:443
+2026-10-28 09:26:45,745 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:26:45,746 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=10)")': /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json
+2026-10-28 09:26:45,746 urllib3.connectionpool DEBUG Starting new HTTPS connection (2): data.epa.gov:443
+2026-10-28 09:26:59,840 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/0:10000/json HTTP/1.1" 200 None
+2026-10-28 09:27:10,75 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:27:10,76 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=10)")': /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json
+2026-10-28 09:27:10,77 urllib3.connectionpool DEBUG Starting new HTTPS connection (3): data.epa.gov:443
+2026-10-28 09:27:24,229 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10000:20000/json HTTP/1.1" 200 None
+2026-10-28 09:27:34,455 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:27:34,456 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=10)")': /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json
+2026-10-28 09:27:34,456 urllib3.connectionpool DEBUG Starting new HTTPS connection (4): data.epa.gov:443
+2026-10-28 09:27:47,812 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20000:30000/json HTTP/1.1" 200 None
+2026-10-28 09:27:58,104 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:27:58,105 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=10)")': /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json
+2026-10-28 09:27:58,105 urllib3.connectionpool DEBUG Starting new HTTPS connection (5): data.epa.gov:443
+2026-10-28 09:28:10,410 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30000:40000/json HTTP/1.1" 200 None
+2026-10-28 09:28:20,638 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/40000:50000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:28:20,639 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=10)")': /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/40000:50000/json
+2026-10-28 09:28:20,639 urllib3.connectionpool DEBUG Starting new HTTPS connection (6): data.epa.gov:443
+2026-10-28 09:28:36,15 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/40000:50000/json HTTP/1.1" 200 None
+2026-10-28 09:28:46,222 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/50000:60000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:28:46,223 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=10)")': /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/50000:60000/json
+2026-10-28 09:28:46,223 urllib3.connectionpool DEBUG Starting new HTTPS connection (7): data.epa.gov:443
+2026-10-28 09:28:49,836 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/50000:60000/json HTTP/1.1" 200 None
+2026-10-28 09:28:59,846 urllib3.util.retry DEBUG Incremented Retry for (url='/efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/60000:70000/json'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2026-10-28 09:28:59,847 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=10)")': /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/60000:70000/json
+2026-10-28 09:28:59,847 urllib3.connectionpool DEBUG Starting new HTTPS connection (8): data.epa.gov:443
+2026-10-28 09:29:02,859 urllib3.connectionpool DEBUG https://data.epa.gov:443 "GET /efservice/frs.frs_program_facility/state_code/equals/AL/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/60000:70000/json HTTP/1.1" 200 None
+2026-10-28 09:29:02,860 root INFO finished fetching facilities.
+2026-10-28 14:33:54,949 root INFO ****** START *********
+2026-10-28 14:33:54,950 root INFO Getting facilities for AL from server.
+2026-10-28 14:33:55,687 root INFO found 49503 facilities for AL.
+2026-10-28 14:45:29,929 root INFO ****** START *********
+2026-10-28 14:45:29,929 root INFO Getting facilities for AL from server.
+2026-10-28 14:45:30,679 root INFO found 49503 facilities for AL.
+2026-10-28 14:46:16,494 root INFO finished fetching facilities.
+2026-10-28 14:48:24,456 root INFO ***** Getting facility programs NAICS for AL from server.
+2026-10-28 14:49:14,441 root INFO finished fetching facilities.
+2026-10-28 14:49:33,371 root INFO Getting facility programs records for AL from server.
+2026-10-28 14:52:15,767 root INFO finished fetching facilities.
+2026-10-28 14:57:41,259 root INFO ***** Getting facility programs and naics for AL from server.
+2026-10-28 14:58:49,241 root INFO finished fetching facilities.
+2026-10-28 14:59:38,325 root INFO Running triplification for PAT facilities  AL
+2026-10-28 15:45:49,286 root INFO ****** START *********
+2026-10-28 15:45:49,287 root INFO Getting facilities for AR from server.
+2026-10-28 15:45:52,533 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AR/COUNT
+2026-10-28 15:45:55,823 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AR/COUNT
+2026-10-28 15:45:56,548 root INFO found 42407 facilities for AR.
+2026-10-28 15:47:09,694 root INFO finished fetching facilities.
+2026-10-28 15:47:44,341 root INFO ***** Getting facility programs NAICS for AR from server.
+2026-10-28 15:48:56,720 root INFO finished fetching facilities.
+2026-10-28 15:49:01,229 root INFO Getting facility programs records for AR from server.
+2026-10-28 15:52:28,202 root INFO finished fetching facilities.
+2026-10-28 15:53:30,397 root INFO ***** Getting facility programs and naics for AR from server.
+2026-10-28 15:56:15,584 root INFO finished fetching facilities.
+2026-10-28 15:57:48,364 root INFO ***** Getting facility programs and naics for RI from server.
+2026-10-28 15:59:50,149 root INFO finished fetching facilities.
+2026-10-28 18:02:23,443 root INFO ****** START *********
+2026-10-28 18:02:23,443 root INFO Getting facilities for AZ from server.
+2026-10-28 18:02:26,738 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/AZ/COUNT
+2026-10-28 18:02:29,165 root INFO found 52206 facilities for AZ.
+2026-10-28 18:03:54,38 root INFO finished fetching facilities.
+2026-10-28 18:04:38,305 root INFO ***** Getting facility programs NAICS for AZ from server.
+2026-10-28 18:05:23,765 root INFO finished fetching facilities.
+2026-10-28 18:05:26,678 root INFO Getting facility programs records for AZ from server.
+2026-10-28 18:08:48,384 root INFO finished fetching facilities.
+2026-10-28 18:09:53,383 root INFO ***** Getting facility programs and naics for AZ from server.
+2026-10-28 18:13:46,180 root INFO finished fetching facilities.
+2026-10-28 18:26:33,199 root INFO ****** START *********
+2026-10-28 18:26:33,199 root INFO Getting facilities for CA from server.
+2026-10-28 18:26:36,501 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/CA/COUNT
+2026-10-28 18:51:04,396 root INFO ****** START *********
+2026-10-28 18:51:04,396 root INFO Getting facilities for CA from server.
+2026-10-28 18:51:05,128 root INFO found 502821 facilities for CA.
+2026-10-28 19:06:52,902 root INFO finished fetching facilities.
+2026-10-28 19:15:05,277 root INFO ***** Getting facility programs NAICS for CA from server.
+2026-10-28 19:46:24,437 root INFO finished fetching facilities.
+2026-10-28 19:48:11,707 root INFO Getting facility programs records for CA from server.
+2026-10-28 20:44:24,909 root INFO finished fetching facilities.
+2026-10-28 21:05:08,367 root INFO ***** Getting facility programs and naics for CA from server.
+2026-10-28 21:24:24,612 root INFO finished fetching facilities.
+2026-10-28 21:43:18,584 root INFO ****** START *********
+2026-10-28 21:43:18,584 root INFO Getting facilities for CO from server.
+2026-10-28 21:43:21,854 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/CO/COUNT
+2026-10-28 21:43:24,346 root INFO found 75967 facilities for CO.
+2026-10-28 21:45:20,159 root INFO finished fetching facilities.
+2026-10-28 21:45:42,452 root INFO no created date for 75967/75967 facilities
+2026-10-28 21:46:07,990 root INFO ***** Getting facility programs NAICS for CO from server.
+2026-10-28 21:49:57,900 root INFO finished fetching facilities.
+2026-10-28 21:50:15,761 root INFO Getting facility programs records for CO from server.
+2026-10-28 21:57:17,709 root INFO finished fetching facilities.
+2026-10-28 21:59:31,249 root INFO ***** Getting facility programs and naics for CO from server.
+2026-10-28 22:00:41,527 root INFO finished fetching facilities.
+2026-10-29 08:59:53,728 root INFO ****** START *********
+2026-10-29 08:59:53,729 root INFO Getting facilities for CT from server.
+2026-10-29 08:59:57,11 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/CT/COUNT
+2026-10-29 09:00:00,197 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/CT/COUNT
+2026-10-29 09:00:00,886 root INFO found 40616 facilities for CT.
+2026-10-29 09:01:14,219 root INFO finished fetching facilities.
+2026-10-29 09:01:28,502 root INFO no created date for 40616/40616 facilities
+2026-10-29 09:01:47,4 root INFO ***** Getting facility programs NAICS for CT from server.
+2026-10-29 09:02:24,4 root INFO finished fetching facilities.
+2026-10-29 09:02:26,413 root INFO Getting facility programs records for CT from server.
+2026-10-29 09:05:23,522 root INFO finished fetching facilities.
+2026-10-29 09:06:26,499 root INFO ***** Getting facility programs and naics for CT from server.
+2026-10-29 09:07:57,315 root INFO finished fetching facilities.
+2026-10-29 09:15:27,354 root INFO ****** START *********
+2026-10-29 09:15:27,354 root INFO Getting facilities for DC from server.
+2026-10-29 09:15:30,644 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/DC/COUNT
+2026-10-29 09:15:33,924 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/DC/COUNT
+2026-10-29 09:15:34,633 root INFO found 3619 facilities for DC.
+2026-10-29 09:15:45,488 root INFO finished fetching facilities.
+2026-10-29 09:15:48,602 root INFO no created date for 3619/3619 facilities
+2026-10-29 09:15:52,622 root INFO ***** Getting facility programs NAICS for DC from server.
+2026-10-29 09:16:14,876 root INFO finished fetching facilities.
+2026-10-29 09:16:17,150 root INFO Getting facility programs records for DC from server.
+2026-10-29 09:16:45,104 root INFO finished fetching facilities.
+2026-10-29 09:17:03,970 root INFO ***** Getting facility programs and naics for DC from server.
+2026-10-29 09:17:34,785 root INFO finished fetching facilities.
+2026-10-29 09:37:40,785 root INFO ****** START *********
+2026-10-29 09:37:40,785 root INFO Getting facilities for DE from server.
+2026-10-29 09:37:44,56 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/DE/COUNT
+2026-10-29 09:37:47,223 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/DE/COUNT
+2026-10-29 09:37:47,874 root INFO found 16942 facilities for DE.
+2026-10-29 09:38:16,892 root INFO finished fetching facilities.
+2026-10-29 09:38:30,602 root INFO no created date for 16942/16942 facilities
+2026-10-29 09:38:45,767 root INFO ***** Getting facility programs NAICS for DE from server.
+2026-10-29 09:39:09,185 root INFO finished fetching facilities.
+2026-10-29 09:39:12,206 root INFO Getting facility programs records for DE from server.
+2026-10-29 09:40:39,218 root INFO finished fetching facilities.
+2026-10-29 09:41:25,940 root INFO ***** Getting facility programs and naics for DE from server.
+2026-10-29 09:42:37,808 root INFO finished fetching facilities.
+2026-10-29 13:21:56,756 root INFO ****** START *********
+2026-10-29 13:21:56,756 root INFO Getting facilities for FL from server.
+2026-10-29 13:22:00,54 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/FL/COUNT
+2026-10-29 13:22:03,279 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/FL/COUNT
+2026-10-29 13:22:03,933 root INFO found 137853 facilities for FL.
+2026-10-29 13:25:45,903 root INFO finished fetching facilities.
+2026-10-29 13:26:48,819 root INFO no created date for 137853/137853 facilities
+2026-10-29 13:27:43,161 root INFO ***** Getting facility programs NAICS for FL from server.
+2026-10-29 13:30:48,940 root INFO finished fetching facilities.
+2026-10-29 13:31:02,441 root INFO Getting facility programs records for FL from server.
+2026-10-29 13:33:57,248 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/FL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/40001:50000/json
+2026-10-29 13:34:43,489 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/FL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/50001:60000/json
+2026-10-29 13:46:25,810 root INFO finished fetching facilities.
+2026-10-29 13:51:50,314 root INFO ***** Getting facility programs and naics for FL from server.

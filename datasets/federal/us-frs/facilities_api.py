@@ -15,6 +15,7 @@ from rdflib import Graph
 from rdflib import URIRef, BNode, Literal
 from shapely.geometry import Point
 from pathlib import Path
+from frs_http import get_json
 
 import logging
 
@@ -48,6 +49,7 @@ logging.basicConfig(filename=logname,
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.DEBUG)
+logging.getLogger("urllib3").setLevel(logging.WARNING)  # hide connection debug chatter, keep retries/failures
 if verbose:
     logging.info(f'****** Testing Run *********')
 logging.info(f'****** START *********')
@@ -66,7 +68,7 @@ def load_data():
     facilities = []
     limit = 10000
     increment= 10000
-    start = 0
+    start = 1  # the API's row range is 1-based and inclusive at both ends, so 0 would repeat the boundary rows
 
     #temporary limit to 5 for testing
     if testing == True:
@@ -77,8 +79,7 @@ def load_data():
     # query the facilities 10000 (limit) at a time, and merge into one list
     while limit < facilities_count+increment:
         facilities_url = f'https://data.epa.gov/efservice/frs.frs_facility_site/std_state_code/equals/{state_code}/left/frs.geo_facility_point/{start}:{limit}/JSON'
-        resp = urllib3.request("GET", facilities_url, timeout=100)
-        facilities_subset = resp.json()
+        facilities_subset = get_json(facilities_url, timeout=100)
         print(facilities_url)
         for facility in facilities_subset:
             facilities.append(facility)
@@ -198,6 +199,7 @@ def triplify(facilities):
     kg = Initial_KG()
 
     facilities = clean_attributes(facilities)
+    no_created_count = 0
 
     for idx, facility in facilities.iterrows():
         #get iris
@@ -210,7 +212,10 @@ def triplify(facilities):
             kg.add((facility_iri, schema['address'], Literal(facility['std_full_address'], datatype=XSD.string)))
         kg.add((facility_iri, DCTERMS.alternative, Literal(facility['std_name'], datatype=XSD.string)))
         kg.add((facility_iri, epa_frs['hasFRSId'], Literal(facility['registry_id'], datatype=XSD.string)))
-        kg.add((facility_iri, DCTERMS.created, Literal(facility['created'].strftime('%Y-%m-%d'), datatype=XSD.date)))
+        if pd.notnull(facility['created']):
+            kg.add((facility_iri, DCTERMS.created, Literal(facility['created'].strftime('%Y-%m-%d'), datatype=XSD.date)))
+        else:
+            no_created_count += 1
         if pd.notnull(facility.updated):
             kg.add((facility_iri, DCTERMS.modified, Literal(facility['updated'].strftime('%Y-%m-%d'), datatype=XSD.date)))
 
@@ -244,6 +249,10 @@ def triplify(facilities):
             kg.add((facility_iri, epa_frs['ofFacilityType'], extra_iris['type']))
             kg.add((extra_iris['type'], RDF.type, epa_frs['FacilityType']))
             kg.add((extra_iris['type'], RDFS.label, Literal(facility['site_type_name'])))
+
+    summary = f'no created date for {no_created_count}/{len(facilities)} facilities'
+    print(summary)
+    logging.info(summary)
 
     return kg
 

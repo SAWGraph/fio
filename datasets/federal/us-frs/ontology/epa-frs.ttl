@@ -7,7 +7,7 @@
 @prefix schema: <https://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<http://w3id.org/fio/epa-frs#> rdf:type owl:Ontology ;
+<http://w3id.org/fio/epa-frs> rdf:type owl:Ontology ;
                                                   owl:versionIRI <http://w3id.org/fio/v1/epa-frs#> ;
 												  owl:imports epa-frs:controlledVocab, epa-frs:recordTypes ;
                                                   dcterms:created "2024-03-06"@en-us ;
@@ -15,7 +15,7 @@
 													<http://orcid.org/0000-0003-3547-8058>, <https://orcid.org/0000-0003-3271-6700> ;
                                                   dcterms:description "The facility registry service ontology developed as part of the AIKnowsPFAS and SAWGraph projects."@en-us ;
                                                   dcterms:issued "2024-03-06"^^xsd:date ;
-                                                  dcterms:modified "2024-03-06"^^xsd:date ;
+                                                  dcterms:modified "2026-08-13"^^xsd:date ;
                                                   dcterms:publisher <http://spatialai.org> ;
 												  dcterms:title "Ontology for Facility Registry Service"@en-us ;
                                                   owl:versionInfo "1"@en-us .
@@ -67,47 +67,56 @@ dcterms:identifier a owl:AnnotationProperty.
 epa-frs:ofFacilityType rdf:type owl:ObjectProperty ;
 		rdfs:label "of facility type";
 		rdfs:domain epa-frs:FRS-Facility;
-		rdfs:range epa-frs:FacilityType. 
+		rdfs:range epa-frs:FacilityType;
+		rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:hasRecord rdf:type owl:ObjectProperty ;
 		rdfs:label "has record" ;
 		#domain is union of FRS-Facility and Record. 
-		rdfs:range epa-frs:Record.
+		rdfs:range epa-frs:Record;
+		rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 
 epa-frs:hasMonitoringRecord rdf:type owl:ObjectProperty ;
         rdfs:subPropertyOf epa-frs:hasRecord;
 		rdfs:label "has monitoring record" ;
 		rdfs:domain epa-frs:FRS-Facility;
-		rdfs:range epa-frs:MonitoringRecord.
+		rdfs:range epa-frs:MonitoringRecord;
+		rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 
 epa-frs:hasSupplementalRecord rdf:type owl:ObjectProperty ;
         rdfs:subPropertyOf epa-frs:hasRecord;
 		rdfs:label "has supplemental record" ;
-		rdfs:range epa-frs:SupplementalRecord.
+		rdfs:range epa-frs:SupplementalRecord;
+		rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 		#domain is union of FRS-Facility and Record.
 
 epa-frs:ofInterestType rdf:type owl:ObjectProperty ;
 		rdfs:label "of program category";
-		rdfs:range epa-frs:EnvironmentalInterestType. 
+		rdfs:range epa-frs:EnvironmentalInterestType;
+		rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:hasEnvironmentalInterest rdf:type owl:ObjectProperty ;
 		rdfs:label "in program type" ;
 		owl:propertyChainAxiom (epa-frs:hasRecord epa-frs:ofInterestType);
 		#owl:propertyChainAxiom (epa-frs:hasSupplementalRecord epa-frs:ofInterestType);
 		#rdfs:domain epa-frs:FRS-Facility;
-		rdfs:range epa-frs:EnvironmentalInterestType. 
+		rdfs:range epa-frs:EnvironmentalInterestType;
+		rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:ofPrimaryIndustry rdf:type owl:ObjectProperty;
         rdfs:label "of Primary Industry";
-        rdfs:subPropertyOf fio:ofIndustry.
+        rdfs:subPropertyOf fio:ofIndustry;
+		rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
         
 epa-frs:ofSecondaryIndustry rdf:type owl:ObjectProperty;
         rdfs:label "of Secondary Industry";
-        rdfs:subPropertyOf fio:ofIndustry. 
+        rdfs:subPropertyOf fio:ofIndustry;
+		rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 fio:ofIndustry rdf:type owl:ObjectProperty;
-    owl:propertyChainAxiom (epa-frs:hasRecord epa-frs:ofPrimaryIndustry),
-                            (epa-frs:hasRecord epa-frs:ofSecondaryIndustry). 
+    	owl:propertyChainAxiom (epa-frs:hasRecord epa-frs:ofPrimaryIndustry),
+                            (epa-frs:hasRecord epa-frs:ofSecondaryIndustry);
+		rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 	
 #################################################################
@@ -118,7 +127,8 @@ epa-frs:hasFRSId rdf:type owl:DatatypeProperty ;
 			rdfs:label "has FRS Id";
 			dcterms:description "has Identifier in EPA Facility Registry Service";
 			rdfs:subPropertyOf dcterms:identifier ;
-			rdfs:domain epa-frs:FRS-Facility . 
+			rdfs:domain epa-frs:FRS-Facility;
+			rdfs:isDefinedBy <http://w3id.org/fio/epa-frs> . 
 
 
 #################################################################
@@ -127,48 +137,59 @@ epa-frs:hasFRSId rdf:type owl:DatatypeProperty ;
 epa-frs:FRS-Facility rdf:type owl:Class ;
 				rdfs:label "FRS Facility";
 				dcterms:description "Facility from EPA Facility Registry Service";
-				rdfs:subClassOf fio:Facility .
+				rdfs:subClassOf fio:Facility;
+				rdfs:isDefinedBy <http://w3id.org/fio/epa-frs> .
 
 epa-frs:EPA-PFAS-Facility rdf:type owl:Class ;
                rdfs:label "EPA PFAS Facility";
                dcterms:description "Facility identified as potentially handling PFAS in EPA PFAS Analytic tools based on industry. ";
-               rdfs:subClassOf epa-frs:FRS-Facility. 
+               rdfs:subClassOf epa-frs:FRS-Facility;
+			   rdfs:isDefinedBy <http://w3id.org/fio/epa-frs> . 
 
 epa-frs:FacilityType rdf:type owl:Class ;
 				rdfs:label "Facility Type";
-				dcterms:description "Type of Facility as defined by EPA FRS facility type controlled vocabulary".
+				dcterms:description "Type of Facility as defined by EPA FRS facility type controlled vocabulary";
+				rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 
 epa-frs:Agency rdf:type owl:Class ;
 		rdfs:label "Agency" ; 
 		dcterms:description "Federal Agency as identified in EPA Facility Registry Service";
-		rdfs:subClassOf fio:Organization. 
+		rdfs:subClassOf fio:Organization;
+		rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:Record rdf:type owl:Class;
-        rdfs:label "Facility Record".
+        rdfs:label "Facility Record";
+		rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 
 epa-frs:MonitoringRecord rdf:type owl:Class ;
 		rdfs:label "Facility Monitoring Record";
 		dcterms:description "Monitoring Record for a facility";
-        rdfs:subClassOf epa-frs:Record.
+        rdfs:subClassOf epa-frs:Record;
+		rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 
 epa-frs:SupplementalRecord rdf:type owl:Class ;
 		rdfs:label "Facility Supplemental Record"; 
 		dcterms:description "Supplemental Record that relates to a facility but primarily identifies something other than the facility itself (e.g. permit, license, incident, enforcement action records) ";
-        rdfs:subClassOf epa-frs:Record.
+        rdfs:subClassOf epa-frs:Record;
+		rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 
 epa-frs:EnvironmentalInterestType rdf:type owl:Class ;
 		rdfs:label "Environmental Interest Type";
-		dcterms:description "The environmental permit or regulatory program type that applies to the facility site".
+		dcterms:description "The environmental permit or regulatory program type that applies to the facility site";
+		rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 
 epa-frs:EnvironmentalInterestByProgram rdf:type owl:Class ; 
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType. 
+    rdfs:subClassOf epa-frs:EnvironmentalInterestType;
+	rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>. 
 
 epa-frs:EnvironmentalInterestByRecordType rdf:type owl:Class ; 
-    rdfs:subClassOf epa-frs:EnvironmentalInterestType.
+    rdfs:subClassOf epa-frs:EnvironmentalInterestType;
+	rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 
 epa-frs:ProgramInformationSystem rdf:type owl:Class ;
 		rdfs:label "Program Information System";
-		dcterms:description "An Information System maintained for an environmental program".
+		dcterms:description "An Information System maintained for an environmental program";
+		rdfs:isDefinedBy <http://w3id.org/fio/epa-frs>.
 #################################################################
 #    General axioms
 #################################################################
