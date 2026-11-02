@@ -267,7 +267,7 @@
 
 epa-frs-data:sourceDataset rdf:type stad:Dataset ;
                            rdfs:label "Envirofacts"@en ;
-                           dcterms:issued "2026-01-08"^^xsd:date ;  
+                           dcterms:issued "2026-11-02"^^xsd:date ;  
                            dcterms:source <> ;
                            stad:hasSpatialCoverage kwgr:administrativeRegion.USA.01, kwgr:administrativeRegion.USA.04, kwgr:administrativeRegion.USA.05, kwgr:administrativeRegion.USA.06, kwgr:administrativeRegion.USA.08, kwgr:administrativeRegion.USA.09,
                             kwgr:administrativeRegion.USA.10, kwgr:administrativeRegion.USA.11, kwgr:administrativeRegion.USA.12, kwgr:administrativeRegion.USA.13, kwgr:administrativeRegion.USA.16, kwgr:administrativeRegion.USA.17, kwgr:administrativeRegion.USA.18,
@@ -283,7 +283,7 @@ epa-frs-data:temporalCoverage a time:ProperInterval ;
     time:hasEnd epa-frs-data:temporalCoverage.end.
 
 epa-frs-data:temporalCoverage.end a time:Instant ;
-    time:inXSDDate "2026-08-13"^^xsd:date .
+    time:inXSDDate "2026-11-02"^^xsd:date .
 
 
 

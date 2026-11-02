@@ -7739,3 +7739,620 @@
 2026-10-29 13:34:43,489 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/FL/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/50001:60000/json
 2026-10-29 13:46:25,810 root INFO finished fetching facilities.
 2026-10-29 13:51:50,314 root INFO ***** Getting facility programs and naics for FL from server.
+2026-10-29 13:57:12,961 root INFO finished fetching facilities.
+2026-10-29 14:18:47,611 root INFO ****** START *********
+2026-10-29 14:18:47,611 root INFO Getting facilities for GA from server.
+2026-10-29 14:18:50,850 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/GA/COUNT
+2026-10-29 14:18:54,47 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/GA/COUNT
+2026-10-29 14:18:54,743 root INFO found 166341 facilities for GA.
+2026-10-29 14:23:20,112 root INFO finished fetching facilities.
+2026-10-29 14:24:12,7 root INFO no created date for 166341/166341 facilities
+2026-10-29 14:25:15,590 root INFO ***** Getting facility programs NAICS for GA from server.
+2026-10-29 14:32:23,898 root INFO finished fetching facilities.
+2026-10-29 14:32:50,25 root INFO Getting facility programs records for GA from server.
+2026-10-29 14:47:40,393 root INFO finished fetching facilities.
+2026-10-29 14:52:21,911 root INFO ***** Getting facility programs and naics for GA from server.
+2026-10-29 14:57:02,800 root INFO finished fetching facilities.
+2026-10-29 15:02:38,598 root INFO ****** START *********
+2026-10-29 15:02:38,598 root INFO Getting facilities for IA from server.
+2026-10-29 15:02:41,849 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/IA/COUNT
+2026-10-29 15:02:45,17 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/IA/COUNT
+2026-10-29 15:02:48,205 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/IA/COUNT
+2026-10-29 15:03:11,883 root INFO ****** START *********
+2026-10-29 15:03:11,883 root INFO Getting facilities for IA from server.
+2026-10-29 15:03:12,747 root INFO found 65116 facilities for IA.
+2026-10-29 15:06:51,645 root INFO finished fetching facilities.
+2026-10-29 15:07:20,219 root INFO no created date for 65116/65116 facilities
+2026-10-29 15:08:00,495 root INFO ***** Getting facility programs NAICS for IA from server.
+2026-10-29 15:10:03,931 root INFO finished fetching facilities.
+2026-10-29 15:10:08,74 root INFO Getting facility programs records for IA from server.
+2026-10-29 15:10:38,364 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/IA/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/1:10000/json
+2026-10-29 15:11:47,5 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/IA/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10001:20000/json
+2026-10-29 15:12:46,244 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/IA/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20001:30000/json
+2026-10-29 15:13:42,75 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/IA/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/30001:40000/json
+2026-10-29 15:17:01,124 root INFO finished fetching facilities.
+2026-10-29 15:18:30,106 root INFO ***** Getting facility programs and naics for IA from server.
+2026-10-29 15:24:18,325 root INFO finished fetching facilities.
+2026-10-29 15:44:53,672 root INFO ****** START *********
+2026-10-29 15:44:53,672 root INFO Getting facilities for ID from server.
+2026-10-29 15:44:56,951 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/ID/COUNT
+2026-10-29 15:45:00,151 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/ID/COUNT
+2026-10-29 15:45:00,842 root INFO found 15722 facilities for ID.
+2026-10-29 15:45:29,986 root INFO finished fetching facilities.
+2026-10-29 15:45:36,164 root INFO no created date for 15722/15722 facilities
+2026-10-29 15:45:42,514 root INFO ***** Getting facility programs NAICS for ID from server.
+2026-10-29 15:46:19,239 root INFO finished fetching facilities.
+2026-10-29 15:46:22,19 root INFO Getting facility programs records for ID from server.
+2026-10-29 15:48:34,840 root INFO finished fetching facilities.
+2026-10-29 15:49:08,756 root INFO ***** Getting facility programs and naics for ID from server.
+2026-10-29 15:49:48,817 root INFO finished fetching facilities.
+2026-10-29 15:51:16,332 root INFO ****** START *********
+2026-10-29 15:51:16,332 root INFO Getting facilities for IL from server.
+2026-10-29 15:51:19,559 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/IL/COUNT
+2026-10-29 15:51:22,781 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/IL/COUNT
+2026-10-29 15:51:23,411 root INFO found 153041 facilities for IL.
+2026-10-29 15:55:57,273 root INFO finished fetching facilities.
+2026-10-29 15:56:58,143 root INFO no created date for 153041/153041 facilities
+2026-10-29 15:58:02,746 root INFO ***** Getting facility programs NAICS for IL from server.
+2026-10-29 16:00:47,912 root INFO finished fetching facilities.
+2026-10-29 16:00:58,589 root INFO Getting facility programs records for IL from server.
+2026-10-29 16:13:11,865 root INFO finished fetching facilities.
+2026-10-29 16:18:11,622 root INFO ***** Getting facility programs and naics for IL from server.
+2026-10-29 16:29:21,868 root INFO finished fetching facilities.
+2026-10-29 16:37:51,185 root INFO ****** START *********
+2026-10-29 16:37:51,185 root INFO Getting facilities for IN from server.
+2026-10-29 16:37:56,462 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/IN/COUNT
+2026-10-29 16:37:59,815 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/IN/COUNT
+2026-10-29 16:38:03,216 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/IN/COUNT
+2026-10-29 16:38:04,111 root INFO found 110914 facilities for IN.
+2026-10-29 16:41:13,603 root INFO finished fetching facilities.
+2026-10-29 16:41:50,727 root INFO no created date for 110914/110914 facilities
+2026-10-29 16:42:36,613 root INFO ***** Getting facility programs NAICS for IN from server.
+2026-10-29 16:43:57,903 root INFO finished fetching facilities.
+2026-10-29 16:44:03,685 root INFO Getting facility programs records for IN from server.
+2026-10-29 16:44:33,985 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/IN/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/1:10000/json
+2026-10-29 16:45:04,238 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/IN/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/1:10000/json
+2026-10-29 16:45:34,510 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/IN/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/1:10000/json
+2026-10-29 16:46:04,814 root WARNING Attempt 1/5 failed for https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/IN/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/1:10000/json (MaxRetryError: HTTPSConnectionPool(host='data.epa.gov', port=443): Max retries exceeded with url: /efservice/frs.frs_program_facility/state_code/equals/IN/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/1:10000/json (Caused by ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")))
+2026-10-29 16:46:55,692 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/IN/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10001:20000/json
+2026-10-29 16:48:03,369 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/IN/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/20001:30000/json
+2026-10-29 16:56:26,742 root INFO finished fetching facilities.
+2026-10-29 17:00:24,380 root INFO ***** Getting facility programs and naics for IN from server.
+2026-10-29 17:04:37,801 root INFO finished fetching facilities.
+2026-10-29 17:09:26,899 root INFO ****** START *********
+2026-10-29 17:09:26,899 root INFO Getting facilities for KS from server.
+2026-10-29 17:09:30,212 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/KS/COUNT
+2026-10-29 17:09:33,428 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/KS/COUNT
+2026-10-29 17:09:34,38 root INFO found 49552 facilities for KS.
+2026-10-29 17:11:41,22 root INFO finished fetching facilities.
+2026-10-29 17:11:56,82 root INFO no created date for 49552/49552 facilities
+2026-10-29 17:12:14,319 root INFO ***** Getting facility programs NAICS for KS from server.
+2026-10-29 17:16:00,391 root INFO finished fetching facilities.
+2026-10-29 17:16:07,8 root INFO Getting facility programs records for KS from server.
+2026-10-29 17:20:17,168 root INFO finished fetching facilities.
+2026-10-29 17:21:40,999 root INFO ***** Getting facility programs and naics for KS from server.
+2026-10-29 17:23:58,477 root INFO finished fetching facilities.
+2026-10-29 17:30:23,484 root INFO ****** START *********
+2026-10-29 17:30:23,484 root INFO Getting facilities for KY from server.
+2026-10-29 17:30:27,492 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/KY/COUNT
+2026-10-29 17:30:30,668 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/KY/COUNT
+2026-10-29 17:30:33,918 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/KY/COUNT
+2026-10-29 20:11:33,747 root INFO ****** START *********
+2026-10-29 20:11:33,747 root INFO Getting facilities for KY from server.
+2026-10-29 20:11:34,540 root INFO found 61626 facilities for KY.
+2026-10-29 20:13:13,439 root INFO finished fetching facilities.
+2026-10-29 20:13:37,155 root INFO no created date for 61626/61626 facilities
+2026-10-29 20:14:09,255 root INFO ***** Getting facility programs NAICS for KY from server.
+2026-10-29 20:15:34,141 root INFO finished fetching facilities.
+2026-10-29 20:15:45,254 root INFO Getting facility programs records for KY from server.
+2026-10-29 20:16:15,571 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/KY/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/1:10000/json
+2026-10-29 20:21:46,543 root INFO finished fetching facilities.
+2026-10-29 20:23:34,297 root INFO ***** Getting facility programs and naics for KY from server.
+2026-10-29 20:24:50,849 root INFO finished fetching facilities.
+2026-10-29 20:32:50,422 root INFO ****** START *********
+2026-10-29 20:32:50,423 root INFO Getting facilities for LA from server.
+2026-10-29 20:32:53,701 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/LA/COUNT
+2026-10-29 20:32:56,891 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/LA/COUNT
+2026-10-29 20:32:58,36 root INFO found 59442 facilities for LA.
+2026-10-29 20:35:05,915 root INFO finished fetching facilities.
+2026-10-29 20:35:23,389 root INFO no created date for 59442/59442 facilities
+2026-10-29 20:35:43,729 root INFO ***** Getting facility programs NAICS for LA from server.
+2026-10-29 20:37:40,479 root INFO finished fetching facilities.
+2026-10-29 20:37:47,838 root INFO Getting facility programs records for LA from server.
+2026-10-29 20:41:58,83 root INFO finished fetching facilities.
+2026-10-29 20:44:33,920 root INFO ***** Getting facility programs and naics for LA from server.
+2026-10-29 20:46:09,349 root INFO finished fetching facilities.
+2026-10-29 20:55:45,880 root INFO ****** START *********
+2026-10-29 20:55:45,880 root INFO Getting facilities for MA from server.
+2026-10-29 20:55:49,143 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/MA/COUNT
+2026-10-29 20:55:52,318 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/MA/COUNT
+2026-10-29 20:55:55,510 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/MA/COUNT
+2026-10-29 21:08:07,744 root INFO ****** START *********
+2026-10-29 21:08:07,744 root INFO Getting facilities for MA from server.
+2026-10-29 21:08:08,982 root INFO found 64574 facilities for MA.
+2026-10-29 21:09:49,417 root INFO finished fetching facilities.
+2026-10-29 21:10:09,16 root INFO no created date for 64574/64574 facilities
+2026-10-29 21:10:32,726 root INFO ***** Getting facility programs NAICS for MA from server.
+2026-10-29 21:13:09,282 root INFO finished fetching facilities.
+2026-10-29 21:13:18,692 root INFO Getting facility programs records for MA from server.
+2026-10-29 21:17:43,246 root INFO finished fetching facilities.
+2026-10-29 21:19:37,701 root INFO ***** Getting facility programs and naics for MA from server.
+2026-10-29 21:22:14,508 root INFO finished fetching facilities.
+2026-10-30 08:39:14,685 root INFO ****** START *********
+2026-10-30 08:39:14,685 root INFO Getting facilities for MD from server.
+2026-10-30 08:39:17,986 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/MD/COUNT
+2026-10-30 08:39:21,178 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/MD/COUNT
+2026-10-30 08:39:22,99 root INFO found 39385 facilities for MD.
+2026-10-30 08:40:30,705 root INFO finished fetching facilities.
+2026-10-30 08:40:45,797 root INFO no created date for 39385/39385 facilities
+2026-10-30 08:41:00,418 root INFO ***** Getting facility programs NAICS for MD from server.
+2026-10-30 08:42:35,733 root INFO finished fetching facilities.
+2026-10-30 08:42:41,749 root INFO Getting facility programs records for MD from server.
+2026-10-30 08:43:12,9 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/MD/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/1:10000/json
+2026-10-30 08:43:42,350 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/MD/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/1:10000/json
+2026-10-30 08:44:26,978 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/MD/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/10001:20000/json
+2026-10-30 08:48:21,971 root INFO finished fetching facilities.
+2026-10-30 08:49:51,439 root INFO ***** Getting facility programs and naics for MD from server.
+2026-10-30 08:51:45,432 root INFO finished fetching facilities.
+2026-10-30 09:21:43,939 root INFO ****** START *********
+2026-10-30 09:21:43,939 root INFO Getting facilities for ME from server.
+2026-10-30 09:21:47,274 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/ME/COUNT
+2026-10-30 09:21:49,841 root INFO found 12733 facilities for ME.
+2026-10-30 09:22:38,395 root INFO finished fetching facilities.
+2026-10-30 09:22:42,91 root INFO no created date for 12733/12733 facilities
+2026-10-30 09:22:47,281 root INFO ***** Getting facility programs NAICS for ME from server.
+2026-10-30 09:23:19,614 root INFO finished fetching facilities.
+2026-10-30 09:23:21,768 root INFO Getting facility programs records for ME from server.
+2026-10-30 09:24:51,140 root INFO finished fetching facilities.
+2026-10-30 09:25:19,880 root INFO ***** Getting facility programs and naics for ME from server.
+2026-10-30 09:26:08,367 root INFO finished fetching facilities.
+2026-10-30 09:41:19,107 root INFO ****** START *********
+2026-10-30 09:41:19,107 root INFO Getting facilities for MI from server.
+2026-10-30 09:41:22,386 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/MI/COUNT
+2026-10-30 09:41:25,609 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/MI/COUNT
+2026-10-30 09:41:26,288 root INFO found 66415 facilities for MI.
+2026-10-30 09:43:38,704 root INFO finished fetching facilities.
+2026-10-30 09:44:31,799 root INFO no created date for 66415/66415 facilities
+2026-10-30 09:45:28,966 root INFO ***** Getting facility programs NAICS for MI from server.
+2026-10-30 09:48:15,213 root INFO finished fetching facilities.
+2026-10-30 09:48:40,545 root INFO Getting facility programs records for MI from server.
+2026-10-30 09:53:21,773 root INFO finished fetching facilities.
+2026-10-30 09:56:47,14 root INFO ***** Getting facility programs and naics for MI from server.
+2026-10-30 09:57:19,680 root INFO finished fetching facilities.
+2026-10-30 13:31:35,974 root INFO ****** START *********
+2026-10-30 13:31:35,975 root INFO Getting facilities for MN from server.
+2026-10-30 13:31:39,308 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/MN/COUNT
+2026-10-30 13:31:42,514 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/MN/COUNT
+2026-10-30 13:31:43,393 root INFO found 218679 facilities for MN.
+2026-10-30 13:37:59,839 root INFO finished fetching facilities.
+2026-10-30 13:41:18,808 root INFO no created date for 218679/218679 facilities
+2026-10-30 13:45:00,173 root INFO ***** Getting facility programs NAICS for MN from server.
+2026-10-30 13:49:35,67 root INFO finished fetching facilities.
+2026-10-30 13:50:15,763 root INFO Getting facility programs records for MN from server.
+2026-10-30 13:50:46,56 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/MN/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/1:10000/json
+2026-10-30 14:02:50,561 root INFO finished fetching facilities.
+2026-10-30 14:13:07,371 root INFO ***** Getting facility programs and naics for MN from server.
+2026-10-30 14:15:20,133 root INFO finished fetching facilities.
+2026-10-30 16:42:01,782 root INFO ****** START *********
+2026-10-30 16:42:01,782 root INFO Getting facilities for MO from server.
+2026-10-30 16:42:05,67 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/MO/COUNT
+2026-10-30 16:42:08,298 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/MO/COUNT
+2026-10-30 16:42:08,964 root INFO found 87093 facilities for MO.
+2026-10-30 16:44:27,945 root INFO finished fetching facilities.
+2026-10-30 16:44:56,839 root INFO no created date for 87093/87093 facilities
+2026-10-30 16:45:28,257 root INFO ***** Getting facility programs NAICS for MO from server.
+2026-10-30 16:47:28,408 root INFO finished fetching facilities.
+2026-10-30 16:47:36,283 root INFO Getting facility programs records for MO from server.
+2026-10-30 16:52:48,956 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/MO/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/80001:90000/json
+2026-10-30 16:53:34,786 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/MO/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/90001:100000/json
+2026-10-30 16:54:16,263 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/MO/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/100001:110000/json
+2026-10-30 16:58:47,736 root INFO finished fetching facilities.
+2026-10-30 17:02:33,39 root INFO ***** Getting facility programs and naics for MO from server.
+2026-10-30 17:05:53,742 root INFO finished fetching facilities.
+2026-10-30 17:12:47,891 root INFO ****** START *********
+2026-10-30 17:12:47,891 root INFO Getting facilities for MS from server.
+2026-10-30 17:12:51,192 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/MS/COUNT
+2026-10-30 17:12:53,797 root INFO found 48151 facilities for MS.
+2026-10-30 17:14:17,387 root INFO finished fetching facilities.
+2026-10-30 17:14:53,24 root INFO no created date for 48151/48151 facilities
+2026-10-30 17:15:24,776 root INFO ***** Getting facility programs NAICS for MS from server.
+2026-10-30 17:16:17,563 root INFO finished fetching facilities.
+2026-10-30 17:16:22,870 root INFO Getting facility programs records for MS from server.
+2026-10-30 17:18:57,162 root INFO finished fetching facilities.
+2026-10-30 17:20:14,236 root INFO ***** Getting facility programs and naics for MS from server.
+2026-10-30 17:24:44,761 root INFO finished fetching facilities.
+2026-10-30 17:35:02,753 root INFO ****** START *********
+2026-10-30 17:35:02,754 root INFO Getting facilities for MT from server.
+2026-10-30 17:35:06,112 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/MT/COUNT
+2026-10-30 17:35:09,332 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/MT/COUNT
+2026-10-30 17:35:10,64 root INFO found 26405 facilities for MT.
+2026-10-30 17:35:52,748 root INFO finished fetching facilities.
+2026-10-30 17:36:00,789 root INFO no created date for 26405/26405 facilities
+2026-10-30 17:36:11,318 root INFO ***** Getting facility programs NAICS for MT from server.
+2026-10-30 17:37:04,49 root INFO finished fetching facilities.
+2026-10-30 17:37:06,559 root INFO Getting facility programs records for MT from server.
+2026-10-30 17:39:22,955 root INFO finished fetching facilities.
+2026-10-30 17:40:22,555 root INFO ***** Getting facility programs and naics for MT from server.
+2026-10-30 17:41:19,825 root INFO finished fetching facilities.
+2026-10-30 17:42:23,990 root INFO ****** START *********
+2026-10-30 17:42:23,990 root INFO Getting facilities for NC from server.
+2026-10-30 17:42:27,300 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NC/COUNT
+2026-10-30 17:42:30,493 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NC/COUNT
+2026-10-30 17:42:31,78 root INFO found 86857 facilities for NC.
+2026-10-30 17:44:44,726 root INFO finished fetching facilities.
+2026-10-30 17:45:11,974 root INFO no created date for 86857/86857 facilities
+2026-10-30 17:45:43,714 root INFO ***** Getting facility programs NAICS for NC from server.
+2026-10-30 17:47:33,317 root INFO finished fetching facilities.
+2026-10-30 17:47:41,123 root INFO Getting facility programs records for NC from server.
+2026-10-30 17:53:08,683 root INFO finished fetching facilities.
+2026-10-30 17:55:11,489 root INFO ***** Getting facility programs and naics for NC from server.
+2026-10-30 17:58:15,742 root INFO finished fetching facilities.
+2026-10-30 18:00:05,901 root INFO ****** START *********
+2026-10-30 18:00:05,901 root INFO Getting facilities for ND from server.
+2026-10-30 18:00:09,151 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/ND/COUNT
+2026-10-30 18:00:12,376 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/ND/COUNT
+2026-10-30 18:00:13,35 root INFO found 20120 facilities for ND.
+2026-10-30 18:00:50,424 root INFO finished fetching facilities.
+2026-10-30 18:00:56,451 root INFO no created date for 20120/20120 facilities
+2026-10-30 18:01:03,796 root INFO ***** Getting facility programs NAICS for ND from server.
+2026-10-30 18:01:43,302 root INFO finished fetching facilities.
+2026-10-30 18:01:46,13 root INFO Getting facility programs records for ND from server.
+2026-10-30 18:03:10,147 root INFO finished fetching facilities.
+2026-10-30 18:03:45,603 root INFO ***** Getting facility programs and naics for ND from server.
+2026-10-30 18:04:37,315 root INFO finished fetching facilities.
+2026-10-30 18:09:33,52 root INFO ****** START *********
+2026-10-30 18:09:33,52 root INFO Getting facilities for NE from server.
+2026-10-30 18:09:36,379 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NE/COUNT
+2026-10-30 18:09:39,550 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NE/COUNT
+2026-10-30 18:09:42,760 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NE/COUNT
+2026-10-30 18:10:33,178 root INFO ****** START *********
+2026-10-30 18:10:33,178 root INFO Getting facilities for NE from server.
+2026-10-30 18:10:34,235 root INFO found 43212 facilities for NE.
+2026-10-30 18:12:43,221 root INFO finished fetching facilities.
+2026-10-30 18:12:57,345 root INFO no created date for 43212/43212 facilities
+2026-10-30 18:13:13,553 root INFO ***** Getting facility programs NAICS for NE from server.
+2026-10-30 18:14:36,750 root INFO finished fetching facilities.
+2026-10-30 18:14:40,31 root INFO Getting facility programs records for NE from server.
+2026-10-30 18:18:39,0 root INFO finished fetching facilities.
+2026-10-30 18:19:38,343 root INFO ***** Getting facility programs and naics for NE from server.
+2026-10-30 18:22:29,596 root INFO finished fetching facilities.
+2026-10-30 18:58:08,347 root INFO ****** START *********
+2026-10-30 18:58:08,347 root INFO Getting facilities for NH NJ NM NV NY from server.
+2026-10-30 18:58:11,665 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NH%20NJ%20NM%20NV%20NY/COUNT
+2026-10-30 18:58:14,881 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NH%20NJ%20NM%20NV%20NY/COUNT
+2026-10-30 18:58:15,509 root INFO found 0 facilities for NH NJ NM NV NY.
+2026-10-30 18:58:15,510 root INFO finished fetching facilities.
+2026-10-30 18:59:23,869 root INFO ****** START *********
+2026-10-30 18:59:23,869 root INFO Getting facilities for NH NJ NM NV NY from server.
+2026-10-30 18:59:24,804 root INFO found 0 facilities for NH NJ NM NV NY.
+2026-10-30 18:59:24,804 root INFO finished fetching facilities.
+2026-10-30 18:59:52,26 root INFO ****** START *********
+2026-10-30 18:59:52,26 root INFO Getting facilities for NH from server.
+2026-10-30 18:59:55,260 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NH/COUNT
+2026-10-30 18:59:57,944 root INFO found 27197 facilities for NH.
+2026-10-30 19:00:44,18 root INFO finished fetching facilities.
+2026-10-30 19:00:52,445 root INFO no created date for 27197/27197 facilities
+2026-10-30 19:01:03,5 root INFO ***** Getting facility programs NAICS for NH from server.
+2026-10-30 19:01:39,821 root INFO finished fetching facilities.
+2026-10-30 19:01:41,856 root INFO Getting facility programs records for NH from server.
+2026-10-30 19:03:12,541 root INFO finished fetching facilities.
+2026-10-30 19:03:50,762 root INFO ***** Getting facility programs and naics for NH from server.
+2026-10-30 19:04:20,243 root INFO finished fetching facilities.
+2026-10-30 22:39:36,763 root INFO ****** START *********
+2026-10-30 22:39:36,763 root INFO Getting facilities for NJ from server.
+2026-10-30 22:39:40,20 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NJ/COUNT
+2026-10-30 22:39:43,206 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NJ/COUNT
+2026-10-30 22:39:46,419 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NJ/COUNT
+2026-10-30 22:39:47,73 root INFO found 363730 facilities for NJ.
+2026-10-30 22:49:45,965 root INFO finished fetching facilities.
+2026-10-30 22:51:41,657 root INFO no created date for 363730/363730 facilities
+2026-10-30 22:53:55,912 root INFO ***** Getting facility programs NAICS for NJ from server.
+2026-10-30 22:55:12,324 root INFO finished fetching facilities.
+2026-10-30 22:55:17,261 root INFO Getting facility programs records for NJ from server.
+2026-10-30 23:06:31,575 root INFO finished fetching facilities.
+2026-10-30 23:08:53,538 root INFO ***** Getting facility programs and naics for NJ from server.
+2026-10-30 23:12:45,746 root INFO finished fetching facilities.
+2026-10-31 10:14:10,159 root INFO ****** START *********
+2026-10-31 10:14:10,159 root INFO Getting facilities for NM from server.
+2026-10-31 10:14:13,393 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NM/COUNT
+2026-10-31 10:14:16,573 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NM/COUNT
+2026-10-31 10:14:17,188 root INFO found 34497 facilities for NM.
+2026-10-31 10:15:16,808 root INFO finished fetching facilities.
+2026-10-31 10:15:28,413 root INFO no created date for 34497/34497 facilities
+2026-10-31 10:15:43,37 root INFO ***** Getting facility programs NAICS for NM from server.
+2026-10-31 10:16:43,894 root INFO finished fetching facilities.
+2026-10-31 10:16:47,543 root INFO Getting facility programs records for NM from server.
+2026-10-31 10:20:33,287 root INFO finished fetching facilities.
+2026-10-31 10:21:41,451 root INFO ***** Getting facility programs and naics for NM from server.
+2026-10-31 10:22:53,946 root INFO finished fetching facilities.
+2026-10-31 11:18:43,857 root INFO ****** START *********
+2026-10-31 11:18:43,857 root INFO Getting facilities for NV from server.
+2026-10-31 11:18:47,136 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NV/COUNT
+2026-10-31 11:18:50,336 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NV/COUNT
+2026-10-31 11:18:50,981 root INFO found 15691 facilities for NV.
+2026-10-31 11:19:18,709 root INFO finished fetching facilities.
+2026-10-31 11:19:23,323 root INFO no created date for 15691/15691 facilities
+2026-10-31 11:19:29,162 root INFO ***** Getting facility programs NAICS for NV from server.
+2026-10-31 11:19:56,871 root INFO finished fetching facilities.
+2026-10-31 11:19:58,758 root INFO Getting facility programs records for NV from server.
+2026-10-31 11:21:13,608 root INFO finished fetching facilities.
+2026-10-31 11:21:39,133 root INFO ***** Getting facility programs and naics for NV from server.
+2026-10-31 11:22:11,568 root INFO finished fetching facilities.
+2026-10-31 11:23:25,739 root INFO ****** START *********
+2026-10-31 11:23:25,739 root INFO Getting facilities for NY from server.
+2026-10-31 11:23:29,56 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NY/COUNT
+2026-10-31 11:23:32,257 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/NY/COUNT
+2026-10-31 11:23:33,73 root INFO found 251517 facilities for NY.
+2026-10-31 11:31:04,547 root INFO finished fetching facilities.
+2026-10-31 11:32:27,99 root INFO no created date for 251517/251517 facilities
+2026-10-31 11:34:19,651 root INFO ***** Getting facility programs NAICS for NY from server.
+2026-10-31 11:36:51,456 root INFO finished fetching facilities.
+2026-10-31 11:37:01,780 root INFO Getting facility programs records for NY from server.
+2026-10-31 11:52:30,142 root INFO finished fetching facilities.
+2026-10-31 11:57:59,282 root INFO ***** Getting facility programs and naics for NY from server.
+2026-10-31 12:02:10,848 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=30)")': /efservice/frs.frs_program_facility/state_code/equals/NY/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/90001:100000/json
+2026-10-31 12:14:12,528 root INFO finished fetching facilities.
+2026-10-31 14:11:32,124 root INFO ****** START *********
+2026-10-31 14:11:32,124 root INFO Getting facilities for OH from server.
+2026-10-31 14:11:35,402 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/OH/COUNT
+2026-10-31 14:11:38,560 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/OH/COUNT
+2026-10-31 14:11:41,762 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/OH/COUNT
+2026-10-31 14:11:43,249 root INFO found 85698 facilities for OH.
+2026-10-31 14:14:15,661 root INFO finished fetching facilities.
+2026-10-31 14:14:49,637 root INFO no created date for 85698/85698 facilities
+2026-10-31 14:15:20,453 root INFO ***** Getting facility programs NAICS for OH from server.
+2026-10-31 14:17:22,348 root INFO finished fetching facilities.
+2026-10-31 14:17:29,192 root INFO Getting facility programs records for OH from server.
+2026-10-31 14:22:32,973 root INFO finished fetching facilities.
+2026-10-31 14:25:11,694 root INFO ***** Getting facility programs and naics for OH from server.
+2026-10-31 14:29:16,713 root INFO finished fetching facilities.
+2026-10-31 14:31:07,287 root INFO ****** START *********
+2026-10-31 14:31:07,287 root INFO Getting facilities for OK from server.
+2026-10-31 14:31:10,712 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/OK/COUNT
+2026-10-31 14:31:13,968 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/OK/COUNT
+2026-10-31 14:31:15,212 root INFO found 41728 facilities for OK.
+2026-10-31 14:33:29,995 root INFO finished fetching facilities.
+2026-10-31 14:33:44,698 root INFO no created date for 41728/41728 facilities
+2026-10-31 14:34:08,823 root INFO ***** Getting facility programs NAICS for OK from server.
+2026-10-31 14:36:11,414 root INFO finished fetching facilities.
+2026-10-31 14:36:18,637 root INFO Getting facility programs records for OK from server.
+2026-10-31 14:39:00,54 root INFO finished fetching facilities.
+2026-10-31 14:39:58,738 root INFO ***** Getting facility programs and naics for OK from server.
+2026-10-31 14:40:29,273 root INFO finished fetching facilities.
+2026-10-31 14:40:35,493 root INFO ****** START *********
+2026-10-31 14:40:35,494 root INFO Getting facilities for OR from server.
+2026-10-31 14:40:38,836 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/OR/COUNT
+2026-10-31 14:40:42,28 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/OR/COUNT
+2026-10-31 14:40:43,144 root INFO found 66101 facilities for OR.
+2026-10-31 14:42:33,59 root INFO finished fetching facilities.
+2026-10-31 14:43:03,109 root INFO no created date for 66101/66101 facilities
+2026-10-31 14:43:30,282 root INFO ***** Getting facility programs NAICS for OR from server.
+2026-10-31 14:45:49,102 root INFO finished fetching facilities.
+2026-10-31 14:46:01,784 root INFO Getting facility programs records for OR from server.
+2026-10-31 14:49:26,0 root INFO finished fetching facilities.
+2026-10-31 14:50:57,941 root INFO ***** Getting facility programs and naics for OR from server.
+2026-10-31 14:54:57,216 root INFO finished fetching facilities.
+2026-10-31 14:56:29,803 root INFO ****** START *********
+2026-10-31 14:56:29,803 root INFO Getting facilities for PA from server.
+2026-10-31 14:56:33,193 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/PA/COUNT
+2026-10-31 14:56:36,428 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/PA/COUNT
+2026-10-31 14:56:37,108 root INFO found 96030 facilities for PA.
+2026-10-31 15:00:04,911 root INFO finished fetching facilities.
+2026-10-31 15:00:36,190 root INFO no created date for 96030/96030 facilities
+2026-10-31 15:01:10,879 root INFO ***** Getting facility programs NAICS for PA from server.
+2026-10-31 15:04:37,305 root INFO finished fetching facilities.
+2026-10-31 15:04:46,449 root INFO Getting facility programs records for PA from server.
+2026-10-31 15:13:32,613 root INFO finished fetching facilities.
+2026-10-31 15:16:48,601 root INFO ***** Getting facility programs and naics for PA from server.
+2026-10-31 15:18:21,767 root INFO finished fetching facilities.
+2026-10-31 15:18:47,205 root INFO ****** START *********
+2026-10-31 15:18:47,206 root INFO Getting facilities for RI from server.
+2026-10-31 15:18:50,509 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/RI/COUNT
+2026-10-31 15:18:53,695 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/RI/COUNT
+2026-10-31 15:18:54,299 root INFO found 16982 facilities for RI.
+2026-10-31 15:19:27,244 root INFO finished fetching facilities.
+2026-10-31 15:19:34,1 root INFO no created date for 16982/16982 facilities
+2026-10-31 15:19:40,467 root INFO ***** Getting facility programs NAICS for RI from server.
+2026-10-31 15:20:16,133 root INFO finished fetching facilities.
+2026-10-31 15:20:17,825 root INFO Getting facility programs records for RI from server.
+2026-10-31 15:21:49,33 root INFO finished fetching facilities.
+2026-10-31 15:22:14,33 root INFO ***** Getting facility programs and naics for RI from server.
+2026-10-31 15:23:19,957 root WARNING Attempt 1/5 failed for https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/RI/join/frs.frs_supplemental_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/50001:60000/json (HTTP 502: b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n')
+2026-10-31 15:23:32,758 root INFO finished fetching facilities.
+2026-10-31 15:44:35,472 root INFO ****** START *********
+2026-10-31 15:44:35,472 root INFO Getting facilities for SC from server.
+2026-10-31 15:44:38,751 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/SC/COUNT
+2026-10-31 15:44:41,968 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/SC/COUNT
+2026-10-31 15:44:42,608 root INFO found 63846 facilities for SC.
+2026-10-31 15:46:38,826 root INFO finished fetching facilities.
+2026-10-31 15:47:15,249 root INFO no created date for 63846/63846 facilities
+2026-10-31 15:47:51,662 root INFO ***** Getting facility programs NAICS for SC from server.
+2026-10-31 15:48:50,281 root INFO finished fetching facilities.
+2026-10-31 15:48:55,3 root INFO Getting facility programs records for SC from server.
+2026-10-31 15:52:35,786 root INFO finished fetching facilities.
+2026-10-31 15:54:15,134 root INFO ***** Getting facility programs and naics for SC from server.
+2026-10-31 15:57:32,548 root INFO finished fetching facilities.
+2026-10-31 15:58:37,801 root INFO ****** START *********
+2026-10-31 15:58:37,801 root INFO Getting facilities for SD from server.
+2026-10-31 15:58:41,110 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/SD/COUNT
+2026-10-31 15:58:44,297 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/SD/COUNT
+2026-10-31 15:58:44,950 root INFO found 9611 facilities for SD.
+2026-10-31 15:58:59,99 root INFO finished fetching facilities.
+2026-10-31 15:59:02,78 root INFO no created date for 9611/9611 facilities
+2026-10-31 15:59:06,951 root INFO ***** Getting facility programs NAICS for SD from server.
+2026-10-31 15:59:29,46 root INFO finished fetching facilities.
+2026-10-31 15:59:30,656 root INFO Getting facility programs records for SD from server.
+2026-10-31 16:00:10,685 root INFO finished fetching facilities.
+2026-10-31 16:00:25,829 root INFO ***** Getting facility programs and naics for SD from server.
+2026-10-31 16:00:51,790 root INFO finished fetching facilities.
+2026-10-31 16:00:54,226 root INFO ****** START *********
+2026-10-31 16:00:54,226 root INFO Getting facilities for TN from server.
+2026-10-31 16:00:57,472 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/TN/COUNT
+2026-10-31 16:01:00,767 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/TN/COUNT
+2026-10-31 16:01:01,555 root INFO found 41523 facilities for TN.
+2026-10-31 16:02:17,589 root INFO finished fetching facilities.
+2026-10-31 16:02:30,326 root INFO no created date for 41523/41523 facilities
+2026-10-31 16:02:44,928 root INFO ***** Getting facility programs NAICS for TN from server.
+2026-10-31 16:04:00,140 root INFO finished fetching facilities.
+2026-10-31 16:04:04,897 root INFO Getting facility programs records for TN from server.
+2026-10-31 16:07:43,31 root INFO finished fetching facilities.
+2026-10-31 16:09:14,700 root INFO ***** Getting facility programs and naics for TN from server.
+2026-10-31 16:10:49,702 root INFO finished fetching facilities.
+2026-10-31 16:11:18,538 root INFO ****** START *********
+2026-10-31 16:11:18,538 root INFO Getting facilities for TX from server.
+2026-10-31 16:11:21,797 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/TX/COUNT
+2026-10-31 16:11:24,983 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/TX/COUNT
+2026-10-31 16:11:28,278 urllib3.connectionpool WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/TX/COUNT
+2026-10-31 16:11:29,50 root INFO found 279613 facilities for TX.
+2026-10-31 16:20:31,350 root INFO finished fetching facilities.
+2026-10-31 16:22:04,888 root INFO no created date for 279613/279613 facilities
+2026-10-31 16:23:43,336 root INFO ***** Getting facility programs NAICS for TX from server.
+2026-10-31 16:27:14,646 root INFO finished fetching facilities.
+2026-10-31 16:27:27,599 root INFO Getting facility programs records for TX from server.
+2026-10-31 16:32:28,657 root WARNING Attempt 1/5 failed for https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/TX/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/160001:170000/json (HTTP 500: b'{"error": "There was an error in the query: cannot call Transaction.__aexit__(): the underlying connection is closed"}')
+2026-10-31 16:32:39,947 root WARNING Attempt 2/5 failed for https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/TX/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/160001:170000/json (HTTP 400: b'{"message": "The request cannot be completed. Error: cannot call Transaction.__aexit__(): the underlying connection is closed. Please try modifying your query to ensure that it is valid and can be com')
+2026-10-31 16:33:00,846 root WARNING Attempt 3/5 failed for https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/TX/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/160001:170000/json (HTTP 400: b'{"message": "The request cannot be completed. Error: cannot call Transaction.__aexit__(): the underlying connection is closed. Please try modifying your query to ensure that it is valid and can be com')
+2026-10-31 16:33:31,651 root WARNING Attempt 4/5 failed for https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/TX/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/160001:170000/json (HTTP 400: b'{"message": "The request cannot be completed. Error: cannot call Transaction.__aexit__(): the underlying connection is closed. Please try modifying your query to ensure that it is valid and can be com')
+2026-10-31 16:34:12,551 root WARNING Attempt 5/5 failed for https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/TX/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/160001:170000/json (HTTP 400: b'{"message": "The request cannot be completed. Error: cannot call Transaction.__aexit__(): the underlying connection is closed. Please try modifying your query to ensure that it is valid and can be com')
+2026-10-31 16:34:12,552 root ERROR Giving up on https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/TX/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/160001:170000/json after 5 attempts (HTTP 400: b'{"message": "The request cannot be completed. Error: cannot call Transaction.__aexit__(): the underlying connection is closed. Please try modifying your query to ensure that it is valid and can be com')
+2026-10-31 16:34:13,731 root INFO ****** START *********
+2026-10-31 16:34:13,732 root INFO Getting facilities for UT from server.
+2026-10-31 16:34:17,37 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/UT/COUNT
+2026-10-31 16:34:20,277 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/UT/COUNT
+2026-10-31 16:34:21,45 root INFO found 50955 facilities for UT.
+2026-10-31 16:35:49,788 root INFO finished fetching facilities.
+2026-10-31 16:36:11,349 root INFO no created date for 50955/50955 facilities
+2026-10-31 16:36:40,626 root INFO ***** Getting facility programs NAICS for UT from server.
+2026-10-31 16:37:28,647 root INFO finished fetching facilities.
+2026-10-31 16:37:31,974 root INFO Getting facility programs records for UT from server.
+2026-10-31 16:41:15,247 root INFO finished fetching facilities.
+2026-10-31 16:42:38,629 root INFO ***** Getting facility programs and naics for UT from server.
+2026-10-31 16:43:59,950 root INFO finished fetching facilities.
+2026-10-31 16:44:19,661 root INFO ****** START *********
+2026-10-31 16:44:19,662 root INFO Getting facilities for VA from server.
+2026-10-31 16:44:22,977 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/VA/COUNT
+2026-10-31 16:44:26,194 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/VA/COUNT
+2026-10-31 16:44:27,70 root INFO found 42261 facilities for VA.
+2026-10-31 16:45:40,629 root INFO finished fetching facilities.
+2026-10-31 16:45:53,509 root INFO no created date for 42261/42261 facilities
+2026-10-31 16:46:08,483 root INFO ***** Getting facility programs NAICS for VA from server.
+2026-10-31 16:47:49,548 root INFO finished fetching facilities.
+2026-10-31 16:47:56,86 root INFO Getting facility programs records for VA from server.
+2026-10-31 16:50:58,642 root INFO finished fetching facilities.
+2026-10-31 16:52:14,519 root INFO ***** Getting facility programs and naics for VA from server.
+2026-10-31 16:53:11,723 root INFO finished fetching facilities.
+2026-10-31 16:53:26,772 root INFO ****** START *********
+2026-10-31 16:53:26,773 root INFO Getting facilities for VT from server.
+2026-10-31 16:53:30,54 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/VT/COUNT
+2026-10-31 16:53:32,643 root INFO found 8300 facilities for VT.
+2026-10-31 16:53:48,572 root INFO finished fetching facilities.
+2026-10-31 16:53:51,47 root INFO no created date for 8300/8300 facilities
+2026-10-31 16:53:54,552 root INFO ***** Getting facility programs NAICS for VT from server.
+2026-10-31 16:54:18,255 root INFO finished fetching facilities.
+2026-10-31 16:54:20,434 root INFO Getting facility programs records for VT from server.
+2026-10-31 16:54:55,289 root INFO finished fetching facilities.
+2026-10-31 16:55:09,345 root INFO ***** Getting facility programs and naics for VT from server.
+2026-10-31 16:55:34,449 root INFO finished fetching facilities.
+2026-10-31 16:55:36,148 root INFO ****** START *********
+2026-10-31 16:55:36,148 root INFO Getting facilities for WA from server.
+2026-10-31 16:55:39,378 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/WA/COUNT
+2026-10-31 16:55:42,99 root INFO found 80540 facilities for WA.
+2026-10-31 16:58:08,910 root INFO finished fetching facilities.
+2026-10-31 16:58:34,186 root INFO no created date for 80540/80540 facilities
+2026-10-31 16:59:03,202 root INFO ***** Getting facility programs NAICS for WA from server.
+2026-10-31 17:00:35,168 root INFO finished fetching facilities.
+2026-10-31 17:00:41,263 root INFO Getting facility programs records for WA from server.
+2026-10-31 17:07:12,981 root INFO finished fetching facilities.
+2026-10-31 17:09:23,245 root INFO ***** Getting facility programs and naics for WA from server.
+2026-10-31 17:16:12,520 root INFO finished fetching facilities.
+2026-10-31 17:18:45,261 root INFO ****** START *********
+2026-10-31 17:18:45,261 root INFO Getting facilities for WI from server.
+2026-10-31 17:18:48,543 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/WI/COUNT
+2026-10-31 17:18:51,754 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/WI/COUNT
+2026-10-31 17:18:52,719 root INFO found 53039 facilities for WI.
+2026-10-31 17:20:46,694 root INFO finished fetching facilities.
+2026-10-31 17:21:02,526 root INFO no created date for 53039/53039 facilities
+2026-10-31 17:21:21,72 root INFO ***** Getting facility programs NAICS for WI from server.
+2026-10-31 17:22:48,393 root INFO finished fetching facilities.
+2026-10-31 17:22:52,922 root INFO Getting facility programs records for WI from server.
+2026-10-31 17:26:13,670 root INFO finished fetching facilities.
+2026-10-31 17:27:35,927 root INFO ***** Getting facility programs and naics for WI from server.
+2026-10-31 17:31:12,317 root INFO finished fetching facilities.
+2026-10-31 17:32:21,968 root INFO ****** START *********
+2026-10-31 17:32:21,968 root INFO Getting facilities for WV from server.
+2026-10-31 17:32:25,302 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/WV/COUNT
+2026-10-31 17:32:28,545 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/WV/COUNT
+2026-10-31 17:32:29,365 root INFO found 32697 facilities for WV.
+2026-10-31 17:33:36,904 root INFO finished fetching facilities.
+2026-10-31 17:33:46,557 root INFO no created date for 32697/32697 facilities
+2026-10-31 17:33:57,919 root INFO ***** Getting facility programs NAICS for WV from server.
+2026-10-31 17:34:38,333 root INFO finished fetching facilities.
+2026-10-31 17:34:38,975 rdflib.term WARNING http://w3id.org/fio/v1/epa-frs-data#d.Record.TRIS.{
+ does not look like a valid URI, trying to serialize this will break.
+2026-10-31 17:34:40,902 root INFO ****** START *********
+2026-10-31 17:34:40,903 root INFO Getting facilities for WY from server.
+2026-10-31 17:34:44,219 urllib3.connectionpool WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/WY/COUNT
+2026-10-31 17:34:47,406 urllib3.connectionpool WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.epa.gov', port=443): Read timed out. (read timeout=3)")': /efservice/FRS_FACILITY_SITE/STD_STATE_CODE/=/WY/COUNT
+2026-10-31 17:34:48,262 root INFO found 27903 facilities for WY.
+2026-10-31 17:35:32,710 root INFO finished fetching facilities.
+2026-10-31 17:35:40,762 root INFO no created date for 27903/27903 facilities
+2026-10-31 17:35:49,740 root INFO ***** Getting facility programs NAICS for WY from server.
+2026-10-31 17:36:50,168 root INFO finished fetching facilities.
+2026-10-31 17:36:54,261 root INFO Getting facility programs records for WY from server.
+2026-10-31 17:40:07,629 root INFO finished fetching facilities.
+2026-10-31 17:41:30,892 root INFO ***** Getting facility programs and naics for WY from server.
+2026-10-31 17:43:32,103 root INFO finished fetching facilities.
+2026-10-31 23:05:14,969 root INFO ****** START *********
+2026-10-31 23:05:14,969 root INFO Getting facilities for TX from server.
+2026-10-31 23:05:16,112 root INFO found 279613 facilities for TX.
+2026-10-31 23:09:49,875 root INFO finished fetching facilities.
+2026-10-31 23:11:12,45 root INFO no created date for 279613/279613 facilities
+2026-10-31 23:12:46,867 root INFO ***** Getting facility programs NAICS for TX from server.
+2026-10-31 23:15:31,865 root INFO finished fetching facilities.
+2026-10-31 23:15:44,574 root INFO Getting facility programs records for TX from server.
+2026-10-31 23:20:52,765 root WARNING Attempt 1/5 failed for https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/TX/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/160001:170000/json (HTTP 400: b'{"message": "The request cannot be completed. Error: cannot call Transaction.__aexit__(): the underlying connection is closed. Please try modifying your query to ensure that it is valid and can be com')
+2026-10-31 23:21:03,697 root WARNING Attempt 2/5 failed for https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/TX/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/160001:170000/json (HTTP 400: b'{"message": "The request cannot be completed. Error: cannot call Transaction.__aexit__(): the underlying connection is closed. Please try modifying your query to ensure that it is valid and can be com')
+2026-10-31 23:21:24,779 root WARNING Attempt 3/5 failed for https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/TX/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/160001:170000/json (HTTP 400: b'{"message": "The request cannot be completed. Error: cannot call Transaction.__aexit__(): the underlying connection is closed. Please try modifying your query to ensure that it is valid and can be com')
+2026-10-31 23:21:55,824 root WARNING Attempt 4/5 failed for https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/TX/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/160001:170000/json (HTTP 400: b'{"message": "The request cannot be completed. Error: cannot call Transaction.__aexit__(): the underlying connection is closed. Please try modifying your query to ensure that it is valid and can be com')
+2026-10-31 23:22:36,800 root WARNING Attempt 5/5 failed for https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/TX/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/160001:170000/json (HTTP 400: b'{"message": "The request cannot be completed. Error: cannot call Transaction.__aexit__(): the underlying connection is closed. Please try modifying your query to ensure that it is valid and can be com')
+2026-10-31 23:22:36,801 root ERROR Giving up on https://data.epa.gov/efservice/frs.frs_program_facility/state_code/equals/TX/left/frs.frs_interest/pgm_sys_id/equals/pgm_sys_id/pgm_sys_acrnm/equals/pgm_sys_acrnm/160001:170000/json after 5 attempts (HTTP 400: b'{"message": "The request cannot be completed. Error: cannot call Transaction.__aexit__(): the underlying connection is closed. Please try modifying your query to ensure that it is valid and can be com')
+2026-10-31 23:22:37,989 root INFO ****** START *********
+2026-10-31 23:22:37,989 root INFO Getting facilities for WV from server.
+2026-10-31 23:22:39,94 root INFO found 32697 facilities for WV.
+2026-10-31 23:23:12,122 root INFO finished fetching facilities.
+2026-10-31 23:23:22,480 root INFO no created date for 32697/32697 facilities
+2026-10-31 23:23:34,414 root INFO ***** Getting facility programs NAICS for WV from server.
+2026-10-31 23:23:49,669 root INFO finished fetching facilities.
+2026-10-31 23:23:50,302 rdflib.term WARNING http://w3id.org/fio/v1/epa-frs-data#d.Record.TRIS.{
+ does not look like a valid URI, trying to serialize this will break.
+2026-11-02 10:23:10,133 root INFO Getting facility programs records for KY from server.
+2026-11-02 10:33:47,131 root INFO finished fetching facilities.
+2026-11-02 10:34:16,770 root INFO ****** START *********
+2026-11-02 10:34:16,771 root INFO Getting facilities for RI from server.
+2026-11-02 10:34:17,772 root INFO found 16982 facilities for RI.
+2026-11-02 10:34:24,840 root INFO finished fetching facilities.
+2026-11-02 10:34:25,38 root INFO no created date for 200/200 facilities
+2026-11-02 10:34:26,232 root INFO ****** Testing Run *********
+2026-11-02 10:34:26,232 root INFO ***** Getting facility programs NAICS for RI from server.
+2026-11-02 10:34:33,188 root INFO finished fetching facilities.
+2026-11-02 10:34:34,299 root INFO ****** Testing Run *********
+2026-11-02 10:34:34,299 root INFO Getting facility programs records for RI from server.
+2026-11-02 10:34:37,127 root INFO finished fetching facilities.
+2026-11-02 10:34:38,214 root INFO ****** Testing Run *********
+2026-11-02 10:34:38,214 root INFO ***** Getting facility programs and naics for RI from server.
+2026-11-02 10:34:43,661 root INFO finished fetching facilities.
+2026-11-02 10:43:56,871 root INFO ****** START *********
+2026-11-02 10:43:56,871 root INFO Getting facilities for WV from server.
+2026-11-02 10:43:57,959 root INFO found 32697 facilities for WV.
+2026-11-02 10:44:39,753 root INFO finished fetching facilities.
+2026-11-02 10:44:49,101 root INFO no created date for 32697/32697 facilities
+2026-11-02 10:45:02,687 root INFO ***** Getting facility programs NAICS for WV from server.
+2026-11-02 10:45:22,725 root INFO finished fetching facilities.
+2026-11-02 10:45:23,784 root WARNING cleaned 1 distinct values with characters that are invalid in an IRI
+2026-11-02 10:45:23,785 root WARNING   IRI value '{\n' -> ''
+2026-11-02 10:45:25,326 root INFO Getting facility programs records for WV from server.
+2026-11-02 10:48:19,962 root INFO finished fetching facilities.
+2026-11-02 10:48:54,204 root WARNING cleaned 1 distinct values with characters that are invalid in an IRI
+2026-11-02 10:48:54,204 root WARNING   IRI value '{\n' -> ''
+2026-11-02 10:49:09,527 root INFO ***** Getting facility programs and naics for WV from server.
+2026-11-02 10:50:23,231 root INFO finished fetching facilities.

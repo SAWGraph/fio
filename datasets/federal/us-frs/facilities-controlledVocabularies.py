@@ -18,23 +18,12 @@ from shapely.geometry import Point
 from pathlib import Path
 
 import logging
+from frs_utils import (epa_frs, epa_frs_data, fio, naics, sic, kwgr, kwg_ont, coso, schema, FRS_DIR, setup_logging, new_graph)
 
 root_folder =Path(__file__).resolve().parent.parent.parent
 metadata_dir = root_folder / "federal/us-frs/metadata/"
-output_dir = root_folder / "federal/us-frs/ontology/"
-logname = "log"
+output_dir = FRS_DIR / "ontology"
 robust = False
-
-##namespaces
-epa_frs = Namespace(f"http://w3id.org/fio/v1/epa-frs#")
-epa_frs_data = Namespace(f"http://w3id.org/fio/v1/epa-frs-data#")
-fio = Namespace(f"http://w3id.org/fio/v1/fio#")
-naics = Namespace(f"http://w3id.org/fio/v1/naics#")
-sic = Namespace(f"http://w3id.org/fio/v1/sic#")
-kwgr = Namespace(f'http://stko-kwg.geog.ucsb.edu/lod/resource/')
-kwg_ont = Namespace(f'http://stko-kwg.geog.ucsb.edu/lod/ontology/')
-coso = Namespace(f'http://w3id.org/coso/v1/contaminoso#')
-schema = Namespace(f'http://schema.org/')
 
 replacements = str.maketrans({"(":"- ",
                      ")":"",
@@ -45,11 +34,7 @@ replacements = str.maketrans({"(":"- ",
                      " ":"",
                      "#": "-"})
 
-logging.basicConfig(filename=logname,
-                    filemode='a',
-                    format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
-                    datefmt='%Y-%m-%d %H:%M:%S',
-                    level=logging.DEBUG)
+setup_logging()
 logging.info(f'triplifying controlled vocabulary FRS')
 
 
@@ -72,26 +57,6 @@ def load_data():
      print(programs.shape[0], ' Programs')
 
      return interests, agencies, programs
-
-
-def Initial_KG():
-    #prefixes: Dict[str, str] = _PREFIX
-    kg = Graph()
-    #for prefix in prefixes:
-    #    kg.bind(prefix, prefixes[prefix])
-    kg.bind('fio', fio)
-    kg.bind('epa-frs', epa_frs)
-    kg.bind('epa-frs-data', epa_frs_data)
-    kg.bind('naics', naics)
-    kg.bind('sic', sic)
-    kg.bind('coso', coso)
-    kg.bind('kwgr', kwgr)
-    kg.bind('kwg-ont', kwg_ont)
-    kg.bind('schema', schema)
-
-    kg.add((epa_frs['controlledVocab'], RDF.type, OWL.Ontology))
-    kg.add((epa_frs['controlledVocab'], DCTERMS.modified, Literal(datetime.datetime.now().strftime("%Y-%m-%d"), datatype=XSD.date)))
-    return kg
 
 
 def clean_attributes(interests):
@@ -154,7 +119,7 @@ def get_iris(data):
 
 
 def triplify(interests, agencies, programs):
-    kg = Initial_KG()
+    kg = new_graph()
 
     #Reformat the raw data attributes
     interests = clean_attributes(interests)

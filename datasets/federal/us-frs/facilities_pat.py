@@ -8,13 +8,13 @@ import rdflib
 import pandas as pd
 import encodings
 import logging
+from frs_utils import (epa_frs, epa_frs_data, fio, naics, sic, OUTPUT_DIR, setup_logging, get_state, new_graph)
 import csv
 from datetime import datetime
 import sys
 import math
 import numpy as np
 from datetime import date
-from pyutil import *
 from pathlib import Path
 
 code_dir = Path(__file__).resolve().parent.parent
@@ -23,30 +23,18 @@ sys.path.insert(0, str(code_dir))
 #from variable import NAME_SPACE, _PREFIX
 
 ## declare variables
-logname = "log"
-sa = input("state abbreviation?")
+sa = get_state()
 state = f' {sa}'
 
 ## data path
 root_folder =Path(__file__).resolve().parent.parent.parent
 data_dir = root_folder / "data/epa_pfas_analytic_tool/"
 metadata_dir = None
-output_dir = root_folder / "federal/us-frs/triples/"
+output_dir = OUTPUT_DIR
 
-
-epa_frs = Namespace(f"http://w3id.org/fio/v1/epa-frs#")
-epa_frs_data = Namespace(f"http://w3id.org/fio/v1/epa-frs-data#")
-fio = Namespace(f"http://w3id.org/fio/v1/fio#")
-naics = Namespace(f"http://w3id.org/fio/v1/naics#")
-sic = Namespace(f"http://w3id.org/fio/v1/sic#")
 
 ## initiate log file
-logging.basicConfig(filename=logname,
-                    filemode='a',
-                    format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
-                    datefmt='%Y-%m-%d %H:%M:%S',
-                    level=logging.DEBUG)
-logging.getLogger("urllib3").setLevel(logging.WARNING)  # hide connection debug chatter, keep retries/failures
+setup_logging()
 
 logging.info(f"Running triplification for PAT facilities {state}")
 
@@ -94,18 +82,6 @@ def load_data():
     return df
 
 
-def Initial_KG() -> Graph:
-    #prefixes: Dict[str, str] = _PREFIX
-    kg = Graph()
-    #for prefix in prefixes:
-    #    kg.bind(prefix, prefixes[prefix])
-    kg.bind('fio', fio)
-    kg.bind('epa-frs', epa_frs)
-    kg.bind('epa-frs-data', epa_frs_data)
-    #kg.bind('naics', naics)
-    #kg.bind('sic', sic)
-    return kg
-
 def clean_attributes(df):
     #print(df.info())
     pass
@@ -144,26 +120,18 @@ def get_iris(facility):
 
 
 def triplify(df) -> Graph:
-    kg = Initial_KG()
+    kg = new_graph()
 
     df = clean_attributes(df)
     for idx, row in df.iterrows():
         facility = get_attributes(row)
         facility_iri = get_iris(facility)
-        if facility != False:
+        if facility != False and facility_iri != False:
             #create facility
             kg.add((facility_iri, RDF.type, epa_frs["FRS-Facility"]))
             kg.add((facility_iri, RDF.type, epa_frs["EPA-PFAS-Facility"]))
 
     return kg
-
-## utility functions
-
-def is_valid(value):
-    if math.isnan(float(value)):
-        return False
-    else:
-        return True
 
 
 if __name__ == "__main__":
